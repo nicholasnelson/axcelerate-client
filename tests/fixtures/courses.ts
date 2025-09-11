@@ -95,5 +95,3 @@ export const courseList = [
 		LASTUPDATEDUTC: "2021-03-16 23:40",
 	},
 ];
-
-export const course42 = courseList.find((c) => c.ID === 42)!;

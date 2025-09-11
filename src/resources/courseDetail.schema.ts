@@ -1,13 +1,6 @@
 import { z } from "zod";
-import { AxcelerateDate, Id } from "../util/schemas";
-
-export const GSTType = z.union([z.literal(0), z.literal(1), z.literal(2)]);
-export const ActivityType = z.union([
-	z.literal("w"),
-	z.literal("p"),
-	z.literal("el"),
-]);
-export type ActivityType = z.infer<typeof ActivityType>;
+import { AxcelerateDate, Id } from "./types";
+import { ActivityType, GSTType } from "./types";
 
 const Base = z.object({
 	OUTLINE: z.string(),
@@ -17,7 +10,7 @@ const Base = z.object({
 	NAME: z.string(),
 	ID: Id,
 	DESCRIPTION: z.string().nullable(),
-	LASTUPDATEDUTC: z.string().regex(AxcelerateDate).optional(),
+	LASTUPDATEDUTC: AxcelerateDate.optional(),
 });
 
 const OutlineElements = z.object({
@@ -40,15 +33,13 @@ export const CourseDetailWorkshop = Base.extend({
 export const CourseDetailProgram = Base.extend({ TYPE: z.literal("p") });
 export const CourseDetailELearning = Base.extend({ TYPE: z.literal("el") });
 
-export const CourseDetail = z.discriminatedUnion("TYPE", [
+export const CourseDetailObject = z.discriminatedUnion("TYPE", [
 	CourseDetailWorkshop,
 	CourseDetailProgram,
 	CourseDetailELearning,
 ]);
-export type CourseDetail = z.infer<typeof CourseDetail>;
 
 export const CourseDetailQuery = z.object({
-	id: Id,
+	ID: Id,
 	type: ActivityType,
 });
-export type CourseDetailQuery = z.infer<typeof CourseDetailQuery>;

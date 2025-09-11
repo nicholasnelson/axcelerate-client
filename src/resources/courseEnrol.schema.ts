@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { Id } from "../util/schemas";
-import { ActivityType } from "./courseDetail.schemas";
+import { AxcelerateDate, GSTType, Id } from "./types";
+import { ActivityType } from "./types";
 
 export const EnrolRequest = z.object({
 	contactID: Id,
@@ -22,11 +22,10 @@ export const EnrolRequest = z.object({
 	syncUOCdates: z.boolean().optional(),
 	syncWithClassSchedule: z.boolean().optional(),
 
-	applyGST: z.boolean().optional(), // deprecated
-	GST_type: z.number().int().optional(), // 0|1
+	GST_type: GSTType.optional(),
 
 	autoGrantCT: z.boolean().optional(),
-	dateCommenced: z.string().optional(), // 'YYYY-MM-DD' (or date string your side)
+	dateCommenced: AxcelerateDate.optional(),
 	dateCompletionExpected: z.string().optional(),
 
 	suppressNotifications: z.boolean().optional(),
@@ -44,15 +43,9 @@ export const EnrolRequest = z.object({
 	commencingProgramCohortIdentifiers: z.string().optional(),
 	discountIDList: z.string().optional(),
 
-	// custom fields -> becomes customField_[key]
-	customFields: z
-		.record(z.string(), z.union([z.string(), z.array(z.string())]))
-		.optional(),
-
 	PSTACDateVIC: z.string().optional(),
 	commencedWhileAtSchool: z.boolean().optional(),
 });
-export type EnrolRequest = z.infer<typeof EnrolRequest>;
 
 export const EnrolResponse = z.object({
 	INVOICEID: z.number().int().nonnegative(),
@@ -60,4 +53,3 @@ export const EnrolResponse = z.object({
 	LEARNERID: z.number().int().positive(),
 	AMOUNT: z.number(),
 });
-export type EnrolResponse = z.infer<typeof EnrolResponse>;

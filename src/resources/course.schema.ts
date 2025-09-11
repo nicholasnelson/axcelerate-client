@@ -1,9 +1,9 @@
 import { z } from "zod";
-import { AxcelerateDate, Id, Pagination } from "../util/schemas";
+import { ActivityType, AxcelerateDate, Id, Pagination } from "./types";
 
 export const GSTType = z.union([z.literal(0), z.literal(1), z.literal(2)]);
 
-export const CourseListItem = z.object({
+export const CourseObject = z.object({
 	ROWID: z.number().int().positive(),
 	ID: Id,
 	COUNT: z.number().int().nonnegative(),
@@ -16,17 +16,16 @@ export const CourseListItem = z.object({
 	DURATION: z.number().int().nonnegative(),
 	DURATIONTYPE: z.string().nullable(),
 	ISACTIVE: z.boolean().optional(),
-	TYPE: z.string(), // e.g. "p", "w"
+	TYPE: ActivityType,
 	SHORTDESCRIPTION: z.string().nullable(), // may contain HTML
 	PRIMARYIMAGE: z.string().nullable(),
 	SECONDARYIMAGE: z.string().nullable(),
-	LASTUPDATEDUTC: z.string().regex(AxcelerateDate),
+	LASTUPDATEDUTC: AxcelerateDate,
 });
-
-export type CourseListItem = z.infer<typeof CourseListItem>;
 
 export const ListCoursesQuery = Pagination.extend({
 	search: z.string().optional(),
-	type: z.string().optional(),
+	type: ActivityType.optional(),
 });
-export type ListCoursesQuery = z.infer<typeof ListCoursesQuery>;
+
+export const CourseList = z.array(CourseObject);

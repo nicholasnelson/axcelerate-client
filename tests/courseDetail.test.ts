@@ -1,12 +1,11 @@
-// tests/courseDetail.min.test.ts
 import { describe, it, expect } from "vitest";
-import { AxcelerateClient } from "../src/client";
+import { AxcelerateClient } from "axcelerate-client";
 import { mockApi } from "./setup";
 import { ZodError } from "zod";
 
 const base = "https://api.axcelerate.com";
 
-describe("CourseDetail", () => {
+describe("course.detail", () => {
 	it("builds correct query and parses program detail", async () => {
 		const { pool } = mockApi(base);
 		const body = {
@@ -33,7 +32,7 @@ describe("CourseDetail", () => {
 			wsToken: "y",
 			baseUrl: base + "/v2/",
 		});
-		const out = await ax.courseDetail.get({ id: 4539, type: "p" });
+		const out = await ax.course.detail.get({ ID: 4539, type: "p" });
 
 		expect(out.TYPE).toBe("p");
 		expect(out.CODE).toBe("CUF40107");
@@ -53,7 +52,7 @@ describe("CourseDetail", () => {
 			wsToken: "y",
 			baseUrl: base + "/v2/",
 		});
-		await expect(ax.courseDetail.get({ id: 999, type: "w" })).rejects.toThrow(
+		await expect(ax.course.detail.get({ ID: 999, type: "w" })).rejects.toThrow(
 			/HTTP 503/,
 		);
 	});
@@ -84,7 +83,7 @@ describe("CourseDetail", () => {
 			baseUrl: base + "/v2/",
 		});
 		await expect(
-			ax.courseDetail.get({ id: 1, type: "p" }),
+			ax.course.detail.get({ ID: 1, type: "p" }),
 		).rejects.toBeInstanceOf(ZodError);
 	});
 });

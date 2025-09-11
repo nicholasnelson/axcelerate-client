@@ -1,13 +1,12 @@
-import { AxcelerateEndpoint } from "./endpoint";
-import {
-	CourseDetail as CourseDetailSchema,
-	CourseDetailQuery,
-} from "./courseDetail.schemas";
+import { AxcelerateResource } from "../AxcelerateResource";
+import { endpoint } from "./_registry";
+import { axcelerateMethod } from "../AxcelerateMethod";
+import { CourseDetailQuery, CourseDetailObject } from "./courseDetail.schema";
 
-export class CourseDetail extends AxcelerateEndpoint {
-	async get(q: CourseDetailQuery) {
-		const { id, type } = CourseDetailQuery.parse(q);
-		const data = await this.http.get("course/detail", { ID: id, type });
-		return CourseDetailSchema.parse(data);
-	}
+@endpoint("course/detail")
+export class CourseDetail extends AxcelerateResource {
+	get = axcelerateMethod(CourseDetailQuery, CourseDetailObject, {
+		method: "GET",
+		path: "/course/detail",
+	});
 }

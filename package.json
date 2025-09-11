@@ -1,6 +1,6 @@
 {
 	"name": "axcelerate-client",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A TypeScript client for the aXcelerate API. Provides a simple, typed wrapper around aXcelerate's REST endpoints (contacts, courses, enrolments, and more) for Node.js server-side applications.",
 	"type": "module",
 	"engines": {
@@ -21,6 +21,7 @@
 		"dist"
 	],
 	"scripts": {
+		"prebuild": "npm run generate",
 		"build": "tsup src/index.ts --dts --format esm,cjs",
 		"dev": "tsup src/index.ts --watch",
 		"test": "vitest run",
@@ -28,7 +29,9 @@
 		"lint": "eslint .",
 		"format": "prettier . --write",
 		"clean": "rimraf dist",
-		"prepare": "husky install"
+		"prepare": "husky && npm run build",
+		"generate": "tsx scripts/generate.ts",
+		"check:generate": "npm run generate && git diff --quiet || (echo 'Generated files out of date' && exit 1)"
 	},
 	"repository": {
 		"type": "git",
@@ -62,7 +65,9 @@
 		"jiti": "^2.5.1",
 		"lint-staged": "^16.1.6",
 		"prettier": "^3.6.2",
+		"ts-morph": "^27.0.0",
 		"tsup": "^8.5.0",
+		"tsx": "^4.20.5",
 		"typescript": "^5.9.2",
 		"typescript-eslint": "^8.43.0",
 		"undici": "^7.16.0",

@@ -1,12 +1,12 @@
 import { describe, it, expect } from "vitest";
-import { AxcelerateClient } from "../src/client";
+import { AxcelerateClient } from "axcelerate-client";
 import { mockApi } from "./setup";
 import { instancesSample } from "./fixtures/courseInstances";
 import { ZodError } from "zod";
 
 const base = "https://api.axcelerate.com";
 
-describe("CourseInstances", () => {
+describe("course.instance", () => {
 	it("builds query and parses list", async () => {
 		const { pool } = mockApi(base);
 		pool
@@ -24,8 +24,8 @@ describe("CourseInstances", () => {
 			wsToken: "y",
 			baseUrl: base + "/v2/",
 		});
-		const out = await ax.courseInstances.list({
-			id: 16380,
+		const out = await ax.course.instance.list({
+			ID: 16380,
 			type: "w",
 			public: false,
 			current: false,
@@ -49,7 +49,7 @@ describe("CourseInstances", () => {
 			wsToken: "y",
 			baseUrl: base + "/v2/",
 		});
-		await expect(ax.courseInstances.list({ id: 1, type: "p" })).rejects.toThrow(
+		await expect(ax.course.instance.list({ ID: 1, type: "p" })).rejects.toThrow(
 			/HTTP 503/,
 		);
 	});
@@ -70,7 +70,7 @@ describe("CourseInstances", () => {
 			baseUrl: base + "/v2/",
 		});
 		await expect(
-			ax.courseInstances.list({ id: 2, type: "el" }),
+			ax.course.instance.list({ ID: 2, type: "el" }),
 		).rejects.toBeInstanceOf(ZodError);
 	});
 });

@@ -1,11 +1,11 @@
 import { describe, it, expect } from "vitest";
-import { AxcelerateClient } from "../src/client";
+import { AxcelerateClient } from "axcelerate-client";
 import { mockApi } from "./setup";
 import { ZodError } from "zod";
 
 const base = "https://api.axcelerate.com";
 
-describe("CourseEnrol", () => {
+describe("course.enrolment", () => {
 	it("POSTs form-encoded body and parses response", async () => {
 		const enrolOk = {
 			INVOICEID: 61648,
@@ -32,13 +32,12 @@ describe("CourseEnrol", () => {
 			wsToken: "y",
 			baseUrl: base + "/v2/",
 		});
-		const out = await ax.courseEnrol.enrol({
+		const out = await ax.course.enrolment.create({
 			contactID: 123,
 			instanceID: 456,
 			type: "w",
 			tentative: true,
 			generateInvoice: true,
-			customFields: { cohort: ["A,B", "C"] },
 		});
 
 		expect(out.LEARNERID).toBe(enrolOk.LEARNERID);
@@ -52,7 +51,7 @@ describe("CourseEnrol", () => {
 		});
 		await expect(
 			// @ts-expect-error invalid type string
-			ax.courseEnrol.enrol({ contactID: 1, instanceID: 2, type: "x" }),
+			ax.course.enrolment.create({ contactID: 1, instanceID: 2, type: "x" }),
 		).rejects.toBeInstanceOf(ZodError);
 	});
 
@@ -68,7 +67,7 @@ describe("CourseEnrol", () => {
 			baseUrl: base + "/v2/",
 		});
 		await expect(
-			ax.courseEnrol.enrol({ contactID: 1, instanceID: 2, type: "w" }),
+			ax.course.enrolment.create({ contactID: 1, instanceID: 2, type: "w" }),
 		).rejects.toThrow(/HTTP 400/);
 	});
 });

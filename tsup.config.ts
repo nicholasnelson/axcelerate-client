@@ -10,5 +10,4 @@ export default defineConfig({
 	minify: false,
 	treeshake: true,
 	splitting: false, // keep single-file outputs
-	external: [], // add deps to keep unbundled if needed
 });
