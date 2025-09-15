@@ -9,7 +9,8 @@
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-		"noEmit": true
+		"noEmit": true,
+		"noErrorTruncation": true
 	},
-	"include": ["src", "scripts"]
+	"include": ["src", "scripts", "mocks"],
 }

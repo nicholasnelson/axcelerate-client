@@ -1,4 +1,5 @@
 import z from "zod";
+export { AxcelerateError } from "./errors";
 
 export * from "./datetime.schemas";
 

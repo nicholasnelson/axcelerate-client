@@ -1,2 +1,1 @@
-export { AxcelerateClient, type ClientOptions } from "./AxcelerateClient";
-export { ApiError } from "./errors";
+export { createAxcelerateClient } from "./AxcelerateClient";

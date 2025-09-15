@@ -4,7 +4,7 @@ export default defineConfig({
 	test: {
 		globals: true,
 		environment: "node",
-		setupFiles: ["./tests/setup.ts"],
+		setupFiles: ["./tests/vitest.setup.ts"],
 		coverage: { reporter: ["text", "lcov"] },
 	},
 });
