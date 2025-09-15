@@ -5,6 +5,7 @@ import { CreateContactQuery, CreateContactResponse } from "./create.schema";
 import { GetContactPathParams, GetContactResponse } from "./get.schema";
 import { SearchContactsQuery, SearchContactsResponse } from "./search.schema";
 import { UpdateContactBody, UpdateContactResponse } from "./update.schema";
+import { VerifyUSIBody, VerifyUSIResponse } from "./verifyUsi.schema";
 
 @endpoint("contact")
 export class Contact extends AxcelerateResource {
@@ -26,5 +27,10 @@ export class Contact extends AxcelerateResource {
 	search = axcelerateMethod(SearchContactsQuery, SearchContactsResponse, {
 		method: "GET",
 		path: "/contacts/search",
+	});
+
+	verifyUsi = axcelerateMethod(VerifyUSIBody, VerifyUSIResponse, {
+		method: "POST",
+		path: "/contact/verifyUSI",
 	});
 }
