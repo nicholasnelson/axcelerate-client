@@ -4,6 +4,7 @@ import { axcelerateMethod } from "../../AxcelerateMethod";
 import { CreateContactQuery, CreateContactResponse } from "./create.schema";
 import { GetContactPathParams, GetContactResponse } from "./get.schema";
 import { SearchContactsQuery, SearchContactsResponse } from "./search.schema";
+import { UpdateContactBody, UpdateContactResponse } from "./update.schema";
 
 @endpoint("contact")
 export class Contact extends AxcelerateResource {
@@ -14,6 +15,11 @@ export class Contact extends AxcelerateResource {
 
 	get = axcelerateMethod(GetContactPathParams, GetContactResponse, {
 		method: "GET",
+		path: "/contact/:contactId",
+	});
+
+	update = axcelerateMethod(UpdateContactBody, UpdateContactResponse, {
+		method: "PUT",
 		path: "/contact/:contactId",
 	});
 

@@ -139,6 +139,7 @@ const RawCreateContactResponse = z.object({
 	SURNAME: z.string(),
 	CONTACTID: z.number().int().positive(),
 });
+
 export const CreateContactResponse = RawCreateContactResponse.transform(
 	(r) => ({
 		emailAddress: r.EMAILADDRESS,
@@ -147,5 +148,3 @@ export const CreateContactResponse = RawCreateContactResponse.transform(
 		contactId: r.CONTACTID,
 	}),
 );
-export type CreateContactRequest = z.input<typeof CreateContactQuery>;
-export type CreatedContact = z.output<typeof CreateContactResponse>;

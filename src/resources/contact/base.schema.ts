@@ -1,139 +1,120 @@
 import z from "zod";
 import { AUStateOrOVS, SACCCode, SACEStudentID, Sex } from "./primatives";
-import { pickCustomFields } from "./utils";
 
-const RawContactResponse = z
-	.object({
-		CONTACTID: z.number().int().positive(),
-		GIVENNAME: z.string(),
-		SURNAME: z.string(),
-		EMAILADDRESS: z.string(),
+const RawContactResponse = z.object({
+	CONTACTID: z.number().int().positive(),
+	GIVENNAME: z.string(),
+	SURNAME: z.string(),
+	EMAILADDRESS: z.string(),
 
-		SEX: Sex.nullable(),
-		DOB: z
-			.string()
-			.regex(/^\d{4}-\d{2}-\d{2}$/)
-			.nullable(),
-		USI: z.string().nullable(),
-		USI_VERIFIED: z.boolean(),
-		USI_EXEMPTION: z.boolean(),
-		TITLE: z.string().nullable(),
-		MIDDLENAME: z.string().nullable(),
-		PREFERREDNAME: z.string().nullable(),
-		LUI: z.string().nullable(),
-		TFN_RECORDED: z.boolean(),
-		OPTIONALID: z.number().int().positive().nullable(),
-		POSITION: z.string().nullable(),
-		SECTION: z.string().nullable(),
-		DIVISION: z.string().nullable(),
-		ORGANISATION: z.string().nullable(),
-		ORGID: z.string().nullable().optional(),
-		ORGIDS: z.array(z.string()).optional(),
+	SEX: Sex.nullable(),
+	DOB: z
+		.string()
+		.regex(/^\d{4}-\d{2}-\d{2}$/)
+		.nullable(),
+	USI: z.string().nullable(),
+	USI_VERIFIED: z.boolean(),
+	USI_EXEMPTION: z.boolean(),
+	TITLE: z.string().nullable(),
+	MIDDLENAME: z.string().nullable(),
+	PREFERREDNAME: z.string().nullable(),
+	LUI: z.string().nullable(),
+	TFN_RECORDED: z.boolean(),
+	OPTIONALID: z.number().int().positive().nullable(),
+	POSITION: z.string().nullable(),
+	SECTION: z.string().nullable(),
+	DIVISION: z.string().nullable(),
+	ORGANISATION: z.string().nullable(),
+	ORGID: z.string().nullable().optional(),
+	ORGIDS: z.array(z.string()).optional(),
 
-		// Postal
-		BUILDINGNAME: z.string().nullable().optional(),
-		UNITNO: z.string().nullable().optional(),
-		STREETNO: z.string().nullable().optional(),
-		STREETNAME: z.string().nullable().optional(),
-		POBOX: z.string().nullable().optional(),
-		ADDRESS1: z.string().nullable(),
-		ADDRESS2: z.string().nullable(),
-		CITY: z.string().nullable(),
-		STATE: AUStateOrOVS.nullable(),
-		POSTCODE: z.string().nullable(),
-		COUNTRYID: SACCCode.optional(),
-		COUNTRY: z.string().nullable(),
+	// Postal
+	BUILDINGNAME: z.string().nullable().optional(),
+	UNITNO: z.string().nullable().optional(),
+	STREETNO: z.string().nullable().optional(),
+	STREETNAME: z.string().nullable().optional(),
+	POBOX: z.string().nullable().optional(),
+	ADDRESS1: z.string().nullable(),
+	ADDRESS2: z.string().nullable(),
+	CITY: z.string().nullable(),
+	STATE: AUStateOrOVS.nullable(),
+	POSTCODE: z.string().nullable(),
+	COUNTRYID: SACCCode.optional(),
+	COUNTRY: z.string().nullable(),
 
-		// Residential
-		SBUILDINGNAME: z.string().nullable().optional(),
-		SUNITNO: z.string().nullable().optional(),
-		SSTREETNO: z.string().nullable().optional(),
-		SSTREETNAME: z.string().nullable().optional(),
-		SPOBOX: z.string().nullable().optional(),
-		SADDRESS1: z.string().nullable(),
-		SADDRESS2: z.string().nullable(),
-		SCITY: z.string().nullable(),
-		SSTATE: AUStateOrOVS.nullable(),
-		SPOSTCODE: z.string().nullable(),
-		SCOUNTRYID: SACCCode.optional(),
-		SCOUNTRY: z.string().nullable(),
+	// Residential
+	SBUILDINGNAME: z.string().nullable().optional(),
+	SUNITNO: z.string().nullable().optional(),
+	SSTREETNO: z.string().nullable().optional(),
+	SSTREETNAME: z.string().nullable().optional(),
+	SPOBOX: z.string().nullable().optional(),
+	SADDRESS1: z.string().nullable(),
+	SADDRESS2: z.string().nullable(),
+	SCITY: z.string().nullable(),
+	SSTATE: AUStateOrOVS.nullable(),
+	SPOSTCODE: z.string().nullable(),
+	SCOUNTRYID: SACCCode.optional(),
+	SCOUNTRY: z.string().nullable(),
 
-		PHONE: z.string().nullable(),
-		MOBILEPHONE: z.string().nullable(),
-		WORKPHONE: z.string().nullable(),
-		FAX: z.string().nullable(),
+	PHONE: z.string().nullable(),
+	MOBILEPHONE: z.string().nullable(),
+	WORKPHONE: z.string().nullable(),
+	FAX: z.string().nullable(),
 
-		COMMENT: z.string().nullable(),
-		WEBSITE: z.string().nullable(),
+	COMMENT: z.string().nullable(),
+	WEBSITE: z.string().nullable(),
 
-		CITIZENSTATUSID: z.number().int(),
-		CITIZENSTATUSNAME: z.string(),
-		COUNTRYOFBIRTHID: SACCCode,
-		COUNTRYOFBIRTHNAME: z.string(),
-		CITYOFBIRTH: z.string().nullable(),
-		COUNTRYOFCITIZENID: SACCCode,
-		COUNTRYOFCITIZENNAME: z.string(),
+	CITIZENSTATUSID: z.number().int(),
+	CITIZENSTATUSNAME: z.string(),
+	COUNTRYOFBIRTHID: SACCCode,
+	COUNTRYOFBIRTHNAME: z.string(),
+	CITYOFBIRTH: z.string().nullable(),
+	COUNTRYOFCITIZENID: SACCCode,
+	COUNTRYOFCITIZENNAME: z.string(),
 
-		INDIGENOUSSTATUSID: z.number().int(),
-		INDIGENOUSSTATUSNAME: z.string(),
+	INDIGENOUSSTATUSID: z.number().int(),
+	INDIGENOUSSTATUSNAME: z.string(),
 
-		MAINLANGUAGEID: SACCCode,
-		MAINLANGUAGENAME: z.string(),
-		ENGLISHPROFICIENCYID: z.number().int(),
-		ENGLISHASSISTANCEFLAG: z.boolean(),
+	MAINLANGUAGEID: SACCCode,
+	MAINLANGUAGENAME: z.string(),
+	ENGLISHPROFICIENCYID: z.number().int(),
+	ENGLISHASSISTANCEFLAG: z.boolean(),
 
-		HIGHESTSCHOOLLEVELID: z.number().int(),
-		HIGHESTSCHOOLLEVELYEAR: z.string().nullable(),
-		CURRENTSCHOOLLEVEL: z.string().nullable(),
-		ATSCHOOLFLAG: z.boolean(),
-		ATSCHOOLNAME: z.string().nullable(),
+	HIGHESTSCHOOLLEVELID: z.number().int(),
+	HIGHESTSCHOOLLEVELYEAR: z.string().nullable(),
+	CURRENTSCHOOLLEVEL: z.string().nullable(),
+	ATSCHOOLFLAG: z.boolean(),
+	ATSCHOOLNAME: z.string().nullable(),
 
-		PRIOREDUCATIONIDS: z.array(z.number().int()),
-		PRIOREDUCATIONNAMES: z.array(z.string()),
+	PRIOREDUCATIONIDS: z.array(z.number().int()),
+	PRIOREDUCATIONNAMES: z.array(z.string()),
 
-		DISABILITYFLAG: z.boolean(),
-		DISABILITYTYPEIDS: z.array(z.number().int()),
-		DISABILITYTYPENAMES: z.array(z.string()),
+	DISABILITYFLAG: z.boolean(),
+	DISABILITYTYPEIDS: z.array(z.number().int()),
+	DISABILITYTYPENAMES: z.array(z.string()),
 
-		LABOURFORCEID: z.number().int(),
-		LABOURFORCENAME: z.string(),
+	LABOURFORCEID: z.number().int(),
+	LABOURFORCENAME: z.string(),
 
-		EMERGENCYCONTACT: z.string().nullable(),
-		EMERGENCYCONTACTRELATION: z.string().nullable(),
-		EMERGENCYCONTACTPHONE: z.string().nullable(),
-		PARENTCONTACTID: z.number().int().nullable().optional(),
+	EMERGENCYCONTACT: z.string().nullable(),
+	EMERGENCYCONTACTRELATION: z.string().nullable(),
+	EMERGENCYCONTACTPHONE: z.string().nullable(),
+	PARENTCONTACTID: z.number().int().nullable().optional(),
 
-		ANZSCOCODE: z.string().nullable(),
-		ANZSICCODE: z.string().nullable(),
+	ANZSCOCODE: z.string().nullable(),
+	ANZSICCODE: z.string().nullable(),
 
-		EMPLOYERCONTACTID: z.number().int().nullable(),
-		PAYERCONTACTID: z.number().int().nullable(),
-		SUPERVISORCONTACTID: z.number().int().nullable(),
-		COACHCONTACTID: z.number().int().nullable(),
-		AGENTCONTACTID: z.number().int().nullable(),
+	EMPLOYERCONTACTID: z.number().int().nullable(),
+	PAYERCONTACTID: z.number().int().nullable(),
+	SUPERVISORCONTACTID: z.number().int().nullable(),
+	COACHCONTACTID: z.number().int().nullable(),
+	AGENTCONTACTID: z.number().int().nullable(),
 
-		SACESTUDENTID: SACEStudentID.nullable().optional(),
+	SACESTUDENTID: SACEStudentID.nullable().optional(),
 
-		CATEGORYIDS: z.array(z.number().int()).optional(),
-		DOMAINIDS: z.array(z.number().int()).optional(),
-	})
-	.catchall(z.unknown())
-	.superRefine((obj, ctx) => {
-		for (const [k, v] of Object.entries(obj as Record<string, unknown>)) {
-			if (k.startsWith("CUSTOMFIELD_")) {
-				const ok =
-					v === null ||
-					typeof v === "string" ||
-					(Array.isArray(v) && v.every((x) => typeof x === "string"));
-				if (!ok)
-					ctx.addIssue({
-						code: z.ZodIssueCode.custom,
-						path: [k],
-						message: "CUSTOMFIELD_* must be null | string | string[]",
-					});
-			}
-		}
-	});
+	CATEGORYIDS: z.array(z.number().int()).optional(),
+	DOMAINIDS: z.array(z.number().int()).optional(),
+});
 
 export const ContactResponseSchema = RawContactResponse.transform((r) => ({
 	contactId: r.CONTACTID,
@@ -226,5 +207,4 @@ export const ContactResponseSchema = RawContactResponse.transform((r) => ({
 	saceStudentId: r.SACESTUDENTID ?? null,
 	categoryIds: r.CATEGORYIDS ?? [],
 	domainIds: r.DOMAINIDS ?? [],
-	customFields: pickCustomFields(r),
 }));
