@@ -3,7 +3,7 @@ import { CreateContactQuery } from "./create.schema";
 import { GetContactResponse } from "./get.schema";
 
 export const ContactPathParams = z.object({
-	contactID: z.number().int().positive(),
+	contactId: z.number().int().positive(),
 });
 
 export const UpdateContactBody = CreateContactQuery.omit({

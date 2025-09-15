@@ -5,7 +5,7 @@ import {
 	SACCCode,
 	USI,
 	LUI,
-	SACEStudentID,
+	SACEStudentId,
 	Year,
 } from "./primatives";
 
@@ -38,7 +38,7 @@ export const CreateContactQuery = z.object({
 	TFN: z.string().optional(),
 	VSN: z.string().optional(),
 	WorkReadyParticipantNumber: z.string().optional(),
-	SACEStudentID: SACEStudentID.optional(),
+	SACEStudentID: SACEStudentId.optional(),
 	EmergencyContact: z.string().optional(),
 	EmergencyContactRelation: z.string().optional(),
 	EmergencyContactPhone: z.string().optional(),

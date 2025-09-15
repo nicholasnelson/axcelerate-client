@@ -40,7 +40,7 @@ describe("course.enrolment", () => {
 			generateInvoice: true,
 		});
 
-		expect(out.LEARNERID).toBe(enrolOk.LEARNERID);
+		expect(out.learnerId).toBe(enrolOk.LEARNERID);
 	});
 
 	it("validates request shape before sending", async () => {

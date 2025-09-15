@@ -2,7 +2,7 @@ import { z } from "zod";
 
 /** POST /contact/verifyUSI — body */
 export const VerifyUSIBody = z.object({
-	contactID: z.number().int().positive(),
+	contactId: z.number().int().positive(),
 });
 
 /** Reusable match enum seen in samples */

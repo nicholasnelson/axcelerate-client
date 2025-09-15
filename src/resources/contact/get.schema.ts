@@ -2,7 +2,7 @@ import { z } from "zod";
 import { ContactResponseSchema } from "./base.schema";
 
 export const GetContactPathParams = z.object({
-	contactID: z.number().int().positive(),
+	contactId: z.number().int().positive(),
 });
 
 export const GetContactResponse = ContactResponseSchema;

@@ -1,5 +1,5 @@
 import z from "zod";
-import { AUStateOrOVS, SACCCode, SACEStudentID, Sex } from "./primatives";
+import { AUStateOrOVS, SACCCode, SACEStudentId, Sex } from "./primatives";
 
 const RawContactResponse = z.object({
 	CONTACTID: z.number().int().positive(),
@@ -110,7 +110,7 @@ const RawContactResponse = z.object({
 	COACHCONTACTID: z.number().int().nullable(),
 	AGENTCONTACTID: z.number().int().nullable(),
 
-	SACESTUDENTID: SACEStudentID.nullable().optional(),
+	SACESTUDENTID: SACEStudentId.nullable().optional(),
 
 	CATEGORYIDS: z.array(z.number().int()).optional(),
 	DOMAINIDS: z.array(z.number().int()).optional(),

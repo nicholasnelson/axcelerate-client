@@ -2,9 +2,9 @@ import { z } from "zod";
 
 /** Request body */
 export const CreateContactNoteBody = z.object({
-	contactID: z.number().int().positive(),
+	contactId: z.number().int().positive(),
 	contactNote: z.string().min(1),
-	noteTypeID: z.number().int().positive().optional(),
+	noteTypeId: z.number().int().positive().optional(),
 	// numeric-list per docs; pass as comma-delimited string
 	emailNote: z.string().optional(),
 });

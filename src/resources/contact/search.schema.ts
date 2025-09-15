@@ -17,10 +17,10 @@ export const SearchContactsQuery = z
 		givenName: z.string().optional(),
 		surname: z.string().optional(),
 		emailAddress: z.email().optional(),
-		contactRoleID: z.number().int().optional(),
-		contactIDs: z.string().optional(), // comma-delimited numeric list
-		contactID: z.number().int().optional(),
-		optionalID: z.string().optional(),
+		contactRoleId: z.number().int().optional(),
+		contactIds: z.string().optional(), // comma-delimited numeric list
+		contactId: z.number().int().optional(),
+		optionalId: z.string().optional(),
 		DOB: z
 			.string()
 			.regex(/^\d{4}-\d{2}-\d{2}$/)

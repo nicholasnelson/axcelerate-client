@@ -52,9 +52,18 @@ export const CreateEnrolmentQuery = z.object({
 	commencedWhileAtSchool: z.boolean().optional(),
 });
 
-export const CreateEnrolmentResponse = z.object({
+const RawCreateEnrolmentResponse = z.object({
 	INVOICEID: z.number().int().nonnegative(),
 	CONTACTID: z.number().int().positive(),
 	LEARNERID: z.number().int().positive(),
 	AMOUNT: z.number(),
 });
+
+export const CreateEnrolmentResponse = RawCreateEnrolmentResponse.transform(
+	(r) => ({
+		invoiceId: r.INVOICEID,
+		contactId: r.CONTACTID,
+		learnerId: r.LEARNERID,
+		amount: r.AMOUNT,
+	}),
+);
