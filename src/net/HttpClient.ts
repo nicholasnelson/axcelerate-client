@@ -1,6 +1,5 @@
-import z, { ZodType } from "zod";
 import { ApiError } from "../errors";
-import { RequestData, ResponseHeaders } from "../types";
+import { RequestData } from "../types";
 import { parseHeadersForFetch } from "../utils";
 
 export interface HttpInit {
@@ -57,7 +56,7 @@ export class HttpClient {
 		path: string;
 		method: string;
 		request: RequestData;
-	}): Promise<HttpClientResponse> {
+	}): Promise<Response> {
 		const methodHasPayload = /^(POST|PUT|PATCH)$/i.test(method);
 		const url = this.url(path, methodHasPayload ? undefined : request);
 
@@ -86,53 +85,6 @@ export class HttpClient {
 
 		if (!res.ok)
 			throw new ApiError(res.status, url.toString(), await res.text());
-		return new HttpClientResponse(res);
-	}
-}
-
-export class HttpClientResponse {
-	private res: Response;
-	private statusCode: number;
-	private headers: ResponseHeaders;
-	private consumed = false;
-
-	constructor(res: Response) {
-		this.statusCode = res.status;
-		this.headers = HttpClientResponse.transformHeadersToObject(res.headers);
-		this.res = res;
-	}
-
-	getStatusCode(): number {
-		return this.statusCode;
-	}
-	getHeaders(): ResponseHeaders {
-		return this.headers;
-	}
-	getRawResponse(): Response {
-		return this.res;
-	}
-
-	private assertNotConsumed() {
-		if (this.consumed) throw new Error("Response body already consumed");
-		this.consumed = true;
-	}
-
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	async toJSON(): Promise<any> {
-		this.assertNotConsumed();
-		return this.res.json();
-	}
-
-	async parseWith<T extends ZodType>(schema: T): Promise<z.output<T>> {
-		this.assertNotConsumed();
-		const data = await this.res.json();
-		return schema.parse(data);
-	}
-
-	private static transformHeadersToObject(headers: Headers): ResponseHeaders {
-		return Array.from(headers).reduce((acc, [name, value]) => {
-			acc[name] = value;
-			return acc;
-		}, {} as ResponseHeaders);
+		return res;
 	}
 }

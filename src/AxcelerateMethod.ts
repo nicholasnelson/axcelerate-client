@@ -22,7 +22,7 @@ export function axcelerateMethod<
 		): Promise<Output> {
 			const parsedRequest = requestSchema.parse(request);
 			const response = await this.makeRequest(parsedRequest, spec);
-			return (await response.parseWith(responseSchema)) as Output;
+			return await responseSchema.parse(await response.json());
 		},
 	}[name] as (this: AxcelerateResource, request: Input) => Promise<Output>;
 

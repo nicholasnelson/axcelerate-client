@@ -9,7 +9,7 @@ describe("course", () => {
 	it("list returns typed items", async () => {
 		const { pool } = mockApi(base);
 		pool
-			.intercept({ method: "GET", path: "/v2/courses?limit=2" })
+			.intercept({ method: "GET", path: "/v2/courses?displayLength=2" })
 			.reply(200, courseList.slice(0, 2), {
 				headers: { "content-type": "application/json" },
 			});
@@ -20,9 +20,9 @@ describe("course", () => {
 			baseUrl: base + "/v2/",
 		});
 
-		const out = await ax.course.list({ limit: 2 });
+		const out = await ax.course.list({ displayLength: 2 });
 		expect(out).toHaveLength(2);
-		expect(out[0].NAME).toBe(courseList[0].NAME);
-		expect(out[0].GST_TYPE).toBe(courseList[0].GST_TYPE);
+		expect(out[0].name).toBe(courseList[0].NAME);
+		expect(out[0].gstType).toBe(courseList[0].GST_TYPE);
 	});
 });

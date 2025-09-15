@@ -32,10 +32,10 @@ describe("course.detail", () => {
 			wsToken: "y",
 			baseUrl: base + "/v2/",
 		});
-		const out = await ax.course.detail.get({ ID: 4539, type: "p" });
+		const out = await ax.course.getDetail({ ID: 4539, type: "p" });
 
-		expect(out.TYPE).toBe("p");
-		expect(out.CODE).toBe("CUF40107");
+		expect(out.type).toBe("p");
+		expect(out.code).toBe("CUF40107");
 	});
 
 	it("throws ApiError on non-2xx", async () => {
@@ -52,7 +52,7 @@ describe("course.detail", () => {
 			wsToken: "y",
 			baseUrl: base + "/v2/",
 		});
-		await expect(ax.course.detail.get({ ID: 999, type: "w" })).rejects.toThrow(
+		await expect(ax.course.getDetail({ ID: 999, type: "w" })).rejects.toThrow(
 			/HTTP 503/,
 		);
 	});
@@ -83,7 +83,7 @@ describe("course.detail", () => {
 			baseUrl: base + "/v2/",
 		});
 		await expect(
-			ax.course.detail.get({ ID: 1, type: "p" }),
+			ax.course.getDetail({ ID: 1, type: "p" }),
 		).rejects.toBeInstanceOf(ZodError);
 	});
 });

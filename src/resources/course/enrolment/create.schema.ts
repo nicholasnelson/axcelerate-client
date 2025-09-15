@@ -1,8 +1,13 @@
 import { z } from "zod";
-import { AxcelerateDate, GSTType, Id } from "./types";
-import { ActivityType } from "./types";
+import {
+	ActivityType,
+	AxcelerateDateTime,
+	GSTType,
+	Id,
+} from "../../../schemas";
 
-export const EnrolRequest = z.object({
+/** POST /course/enrolment — Query */
+export const CreateEnrolmentQuery = z.object({
 	contactID: Id,
 	instanceID: z.number().int().positive(),
 	type: ActivityType,
@@ -25,7 +30,7 @@ export const EnrolRequest = z.object({
 	GST_type: GSTType.optional(),
 
 	autoGrantCT: z.boolean().optional(),
-	dateCommenced: AxcelerateDate.optional(),
+	dateCommenced: AxcelerateDateTime.optional(),
 	dateCompletionExpected: z.string().optional(),
 
 	suppressNotifications: z.boolean().optional(),
@@ -47,7 +52,7 @@ export const EnrolRequest = z.object({
 	commencedWhileAtSchool: z.boolean().optional(),
 });
 
-export const EnrolResponse = z.object({
+export const CreateEnrolmentResponse = z.object({
 	INVOICEID: z.number().int().nonnegative(),
 	CONTACTID: z.number().int().positive(),
 	LEARNERID: z.number().int().positive(),

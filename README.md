@@ -40,41 +40,34 @@ const ax = new AxcelerateClient({
 ### Courses
 
 ```ts
-// List
-const list = await ax.courses.list({ limit: 10 });
-// Get by ID
-const one = await ax.courses.get(list[0].ID);
+// List 10 courses
+const list = await ax.courses.list({ displayLength: 10 });
 ```
 
 ### Course detail
 
 ```ts
-const detail = await ax.courseDetail.get({ id: 4539, type: "p" });
-// detail.TYPE narrows the union: "p" | "w" | "el"
+const detail = await ax.course.getDetail({ ID: 999, type: "p" });
 ```
 
 ### Course instances
 
 ```ts
-const instances = await ax.courseInstances.list({
-	id: 16380,
+const instances = await ax.course.instance.list({
+	ID: 999,
 	type: "w",
-	public: false,
-	current: false,
 });
 ```
 
 ### Enrol
 
 ```ts
-const enrol = await ax.courseEnrol.enrol({
-	contactID: 952989,
-	instanceID: 407209,
+const enrolResult = await client.course.enrolment.create({
+	contactID: 123,
+	instanceID: 999,
 	type: "w",
 	tentative: true,
 	generateInvoice: true,
-	// optional custom fields:
-	customFields: { cohort: "C" },
 });
 ```
 
@@ -87,74 +80,12 @@ Zod schema mismatches throw `ZodError`.
 import { ApiError } from "axcelerate-client";
 
 try {
-	await ax.courseDetail.get({ id: 1, type: "p" });
+	await ax.course.getDetial({ id: 1, type: "p" });
 } catch (e) {
 	if (e instanceof ApiError) {
 		console.error(e.status, e.message);
 	}
 }
-```
-
-## Testing
-
-Uses Vitest and Undici `MockAgent`.
-
-```ts
-// tests/setup.ts
-import { MockAgent, setGlobalDispatcher } from "undici";
-const mock = new MockAgent();
-mock.disableNetConnect();
-setGlobalDispatcher(mock);
-export const mockApi = (base: string) => ({ pool: mock.get(base), mock });
-```
-
-```ts
-// example test
-import { AxcelerateClient } from "../src/client";
-import { mockApi } from "./setup";
-
-const base = "https://api.axcelerate.com";
-const { pool } = mockApi(base);
-pool
-	.intercept({ method: "GET", path: "/v2/courses?limit=1" })
-	.reply(
-		200,
-		[
-			{
-				ROWID: 1,
-				ID: 101,
-				COUNT: 1,
-				NAME: "Test",
-				STREAMNAME: null,
-				CODE: "T1",
-				COST: 0,
-				GST_TYPE: 0,
-				DELIVERY: "Online",
-				DURATION: 0,
-				DURATIONTYPE: null,
-				ISACTIVE: true,
-				TYPE: "w",
-				SHORTDESCRIPTION: null,
-				PRIMARYIMAGE: null,
-				SECONDARYIMAGE: null,
-				LASTUPDATEDUTC: "2021-03-16 23:40",
-			},
-		],
-		{ headers: { "content-type": "application/json" } },
-	);
-
-const ax = new AxcelerateClient({
-	apiToken: "x",
-	wsToken: "y",
-	baseUrl: base + "/v2/",
-});
-const out = await ax.courses.list({ limit: 1 });
-```
-
-Run:
-
-```bash
-npm test
 ```
 
 ## Build
@@ -164,15 +95,6 @@ npm test
 ```bash
 npm run build
 ```
-
-## API surface
-
-- `new AxcelerateClient({ apiToken, wsToken, baseUrl, fetchImpl? })`
-- `client.courses.list(q?)`
-- `client.courses.get(id)`
-- `client.courseDetail.get({ id, type })`
-- `client.courseInstances.list({ id, type, ...filters })`
-- `client.courseEnrol.enrol(payload)`
 
 ## Notes
 

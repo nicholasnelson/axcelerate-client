@@ -32,7 +32,7 @@ describe("course.instance", () => {
 		});
 
 		expect(out).toHaveLength(2);
-		expect(out[0].INSTANCEID).toBe(407209);
+		expect(out[0].instanceId).toBe(407209);
 	});
 
 	it("throws ApiError on non-2xx", async () => {
