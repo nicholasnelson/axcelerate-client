@@ -1,110 +1,91 @@
-# axcelerate-client
+# aXcelerate Client
 
-TypeScript client for the aXcelerate API. Server-only. Node 18+.
+A fully typed Node.js client for the [aXcelerate](https://axcelerate.com.au) REST API. The library wraps vendor endpoints with [ts-rest](https://ts-rest.com) contracts and [Zod](https://zod.dev) schemas so requests and responses are validated at runtime and inferred at compile time.
 
-**API Reference**: https://app.axcelerate.com/apidocs/home
+- **API docs:** https://app.axcelerate.com/apidocs/home
+- **Requires:** Node 18 or newer (server-only usage)
 
 ## Features
 
-- Small HTTP layer using native `fetch`
-- Zod-validated request and response types
-- Classful resources mounted on a single client
-- ESM and CJS builds
-- Testable with Undici `MockAgent`
+- **End-to-end typing** — Request bodies, params, and responses are all backed by Zod schemas.
+- **Modern HTTP stack** — Uses [`ky`](https://github.com/sindresorhus/ky) with sensible timeouts, retries, and hook support.
+- **Typed resources** — Covers contacts and courses, including enrolments and course instances.
+- **Runtime validation** — Normalised error handling surfaces upstream changes early.
+- **Dual bundles** — Ships ESM & CJS builds with generated declaration files.
 
-## Install
+## Installation
 
 ```bash
-npm i axcelerate-client
-# or for development of this repo
-npm i
+pnpm add axcelerate-client
+# or
+npm install axcelerate-client
+yarn add axcelerate-client
 ```
 
-## Requirements
-
-- Node 18+
-- Server environment only. Do not ship keys to browsers.
-
-## Quick start
+## Quick Start
 
 ```ts
-import { AxcelerateClient } from "axcelerate-client";
+import { createAxcelerateClient } from "axcelerate-client";
 
-const ax = new AxcelerateClient({
-	apiToken: process.env.AXCELERATE_API_TOKEN as string,
-	wsToken: process.env.AXCELERATE_WS_TOKEN as string,
-	baseUrl: "https://yourinstance.app.axcelerate.com/api/",
+const axc = createAxcelerateClient({
+  baseUrl: "https://yourorg.api.axcelerate.com.au/api/", 
+  apiToken: process.env.AXCELERATE_API_TOKEN!,
+  wsToken: process.env.AXCELERATE_WS_TOKEN!,
 });
-```
 
-### Courses
-
-```ts
-// List 10 courses
-const list = await ax.courses.list({ displayLength: 10 });
-```
-
-### Course detail
-
-```ts
-const detail = await ax.course.getDetail({ ID: 999, type: "p" });
-```
-
-### Course instances
-
-```ts
-const instances = await ax.course.instance.list({
-	ID: 999,
-	type: "w",
+const result = await axc.courses.getCourses({
+  query: { current: true, public: true },
 });
-```
 
-### Enrol
-
-```ts
-const enrolResult = await client.course.enrolment.create({
-	contactID: 123,
-	instanceID: 999,
-	type: "w",
-	tentative: true,
-	generateInvoice: true,
-});
-```
-
-## Error handling
-
-All non-2xx responses throw `ApiError` with `status`, `url`, and body text.
-Zod schema mismatches throw `ZodError`.
-
-```ts
-import { ApiError } from "axcelerate-client";
-
-try {
-	await ax.course.getDetial({ id: 1, type: "p" });
-} catch (e) {
-	if (e instanceof ApiError) {
-		console.error(e.status, e.message);
-	}
+if (result.status === 200) {
+  result.body.forEach((course) => {
+    console.log(`${course.name} (${course.type})`);
+  });
 }
 ```
 
-## Build
+Every router method enforces the contract defined in `src/contract`. If the upstream API changes shape, Zod validation surfaces the mismatch immediately.
 
-`tsup` builds ESM and CJS with types.
+### Available Endpoints
+
+**Courses**
+- `getCourses`
+- `getCourseDetail`
+- `getCourseInstances`
+- `enrol`
+- `enrolMultiple`
+
+**Contacts**
+- `createContact`, `updateContact`, `getContact`
+- `searchContacts`
+- `verifyUSI`
+- `createContactNote`
+
+See the fixtures and specs in `tests/` for concrete request/response examples.
+
+## Development
 
 ```bash
-npm run build
+pnpm install            # install dependencies
+pnpm build              # emit dist/ (ESM + CJS)
+pnpm test               # run the Vitest suite (uses undici MockAgent)
+pnpm lint               # eslint .
+pnpm format             # prettier . --write
+pnpm dev                # tsup watch mode
 ```
 
-## Notes
+## Releasing
 
-- Dates are strings as returned by the API. Validation tolerates `YYYY-MM-DD hh:mm` where applicable.
+`tsup` bundles the library and `prepare` runs the build automatically. Bump the version, run `pnpm build`, then publish with your package manager of choice.
 
 ## Contributing
 
-- Keep endpoints small and validated.
-- Add fixtures for tests. Prefer Undici `MockAgent`.
+Bug reports and pull requests are welcome. Please:
+
+1. Discuss large changes in an issue first.
+2. Add or update tests for behavioural changes.
+3. Run `pnpm lint` and `pnpm test` before submitting.
 
 ## License
 
-MIT.
+Licensed under the [MIT License](./LICENSE).
