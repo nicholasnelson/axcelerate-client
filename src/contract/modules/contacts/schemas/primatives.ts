@@ -1,4 +1,5 @@
 import { z } from "zod";
+
 export const Sex = z.enum(["M", "F", "X"]);
 export const AUStateOrOVS = z.enum([
 	"NSW",

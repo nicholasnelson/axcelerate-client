@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { ContactResponseSchema } from "./base.schema";
 
-import { Pagination } from "../../schemas";
+import { Pagination } from "../../../../schemas";
+import { ContactResponseSchema } from "./base.schema";
 
 export const SearchContactsQuery = z
 	.object({

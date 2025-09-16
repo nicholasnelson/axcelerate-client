@@ -1,6 +1,6 @@
 import type { z } from "zod";
 
-import { GetCourseDetailResponse } from "../../../src/contract/courses/details.schema";
+import { GetCourseDetailResponse } from "../../../src/contract/modules/courses/schemas/details.schema";
 
 type CourseDetail = z.input<typeof GetCourseDetailResponse>;
 type WorkshopDetail = Extract<CourseDetail, { TYPE: "w" }>;

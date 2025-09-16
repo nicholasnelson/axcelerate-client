@@ -1,19 +1,28 @@
 import { initContract } from "@ts-rest/core";
 
-import { ContactIdPathParam } from "./base.schema";
-import { CreateContactBody, CreateContactResponse } from "./create.schema";
+import { ContactIdPathParam } from "./schemas/base.schema";
+import {
+	CreateContactBody,
+	CreateContactResponse,
+} from "./schemas/create.schema";
 import {
 	GetContactPathParams,
 	GetContactQuery,
 	GetContactResponse,
-} from "./get.schema";
+} from "./schemas/get.schema";
 import {
 	CreateContactNoteBody,
 	CreateContactNoteResponse,
-} from "./note.schema";
-import { SearchContactsQuery, SearchContactsResponse } from "./search.schema";
-import { UpdateContactBody, UpdateContactResponse } from "./update.schema";
-import { VerifyUSIBody, VerifyUSIResponse } from "./verifyUsi.schema";
+} from "./schemas/note.schema";
+import {
+	SearchContactsQuery,
+	SearchContactsResponse,
+} from "./schemas/search.schema";
+import {
+	UpdateContactBody,
+	UpdateContactResponse,
+} from "./schemas/update.schema";
+import { VerifyUSIBody, VerifyUSIResponse } from "./schemas/verifyUsi.schema";
 
 const c = initContract();
 

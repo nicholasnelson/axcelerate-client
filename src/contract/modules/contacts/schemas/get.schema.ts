@@ -1,4 +1,5 @@
 import z from "zod";
+
 import { ContactIdPathParam, ContactResponseSchema } from "./base.schema";
 
 export const GetContactPathParams = ContactIdPathParam;

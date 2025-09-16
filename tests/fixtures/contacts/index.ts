@@ -3,15 +3,15 @@ import type { z } from "zod";
 import {
 	CreateContactBody,
 	CreateContactResponse,
-} from "../../../src/contract/contacts/create.schema";
+} from "../../../src/contract/modules/contacts/schemas/create.schema";
 import {
 	CreateContactNoteBody,
 	CreateContactNoteResponse,
-} from "../../../src/contract/contacts/note.schema";
-import { SearchContactsResponse } from "../../../src/contract/contacts/search.schema";
-import { UpdateContactBody } from "../../../src/contract/contacts/update.schema";
-import { VerifyUSIResponse } from "../../../src/contract/contacts/verifyUsi.schema";
-import { GetContactResponse } from "../../../src/contract/contacts/get.schema";
+} from "../../../src/contract/modules/contacts/schemas/note.schema";
+import { SearchContactsResponse } from "../../../src/contract/modules/contacts/schemas/search.schema";
+import { UpdateContactBody } from "../../../src/contract/modules/contacts/schemas/update.schema";
+import { VerifyUSIResponse } from "../../../src/contract/modules/contacts/schemas/verifyUsi.schema";
+import { GetContactResponse } from "../../../src/contract/modules/contacts/schemas/get.schema";
 
 export const createContactBody: z.input<typeof CreateContactBody> = {
 	givenName: "Jane",

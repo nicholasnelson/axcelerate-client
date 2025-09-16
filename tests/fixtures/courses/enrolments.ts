@@ -5,7 +5,7 @@ import {
 	CreateEnrolmentResponse,
 	CreateEnrolMultipleBody,
 	CreateEnrolMultipleResponse,
-} from "../../../src/contract/courses/enrolment.schema";
+} from "../../../src/contract/modules/courses/schemas/enrolment.schema";
 
 export const enrolRequestBody: z.input<typeof CreateEnrolBody> = {
 	contactID: 10,

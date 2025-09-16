@@ -1,11 +1,12 @@
 import { z } from "zod";
+
 import {
 	Id,
 	ActivityType,
 	AxcelerateDateTime,
 	GSTType,
 	CourseTypeFilter,
-} from "../../schemas";
+} from "../../../../schemas";
 
 // ---------- Query (GET /course/detail) ----------
 export const GetCourseDetailQuery = z.object({

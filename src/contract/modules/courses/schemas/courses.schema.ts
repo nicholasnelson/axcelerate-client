@@ -1,4 +1,5 @@
 import { z } from "zod";
+
 import {
 	ActivityType,
 	AxcelerateDateTime,
@@ -7,7 +8,7 @@ import {
 	Id,
 	Pagination,
 	Sorting,
-} from "../../schemas";
+} from "../../../../schemas";
 
 // ---------- Query (GET /courses) ----------
 export const GetCoursesQuery = z

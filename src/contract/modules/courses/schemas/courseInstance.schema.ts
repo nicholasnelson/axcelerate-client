@@ -5,7 +5,7 @@ import {
 	CourseTypeFilter,
 	AxcelerateDateTime,
 	GSTType,
-} from "../../schemas";
+} from "../../../../schemas";
 
 /** GET /course/instances — Query */
 export const GetCourseInstancesQuery = z.object({

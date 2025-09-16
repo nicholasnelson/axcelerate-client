@@ -1,20 +1,20 @@
 import { initContract } from "@ts-rest/core";
 
-import { GetCoursesQuery, GetCoursesResponse } from "./courses.schema";
+import { GetCoursesQuery, GetCoursesResponse } from "./schemas/courses.schema";
 import {
 	GetCourseDetailQuery,
 	GetCourseDetailResponse,
-} from "./details.schema";
+} from "./schemas/details.schema";
 import {
 	GetCourseInstancesQuery,
 	GetCourseInstancesResponse,
-} from "./courseInstance.schema";
+} from "./schemas/courseInstance.schema";
 import {
 	CreateEnrolmentResponse,
 	CreateEnrolMultipleBody,
 	CreateEnrolMultipleResponse,
 	CreateEnrolBody,
-} from "./enrolment.schema";
+} from "./schemas/enrolment.schema";
 
 const c = initContract();
 

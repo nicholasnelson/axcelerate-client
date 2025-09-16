@@ -61,6 +61,9 @@ Every router method enforces the contract defined in `src/contract`. If the upst
 - `verifyUSI`
 - `createContactNote`
 
+**Organisations**
+- `search`
+
 See the fixtures and specs in `tests/` for concrete request/response examples.
 
 ## Development

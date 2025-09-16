@@ -1,5 +1,11 @@
 import { z } from "zod";
-import { ActivityType, AxcelerateDateTime, GSTType, Id } from "../../schemas";
+
+import {
+	ActivityType,
+	AxcelerateDateTime,
+	GSTType,
+	Id,
+} from "../../../../schemas";
 
 /** POST /course/enrolment */
 export const CreateEnrolBody = z.object({

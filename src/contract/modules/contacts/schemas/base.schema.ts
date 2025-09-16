@@ -1,4 +1,5 @@
 import { z } from "zod";
+
 import {
 	AUStateOrOVS,
 	LUI,
@@ -318,29 +319,21 @@ export const BaseContactBody = z.object({
 	AtSchoolFlag: z.boolean().optional(),
 	AtSchoolName: z.string().optional(),
 	PriorEducationStatus: z.boolean().optional(),
-	PriorEducationIDs: z.string().optional(),
+
+	PriorEducationTypeIDs: z.array(z.number().int().positive()).optional(),
+	PriorEducationTypeOther: z.string().optional(),
+
 	DisabilityFlag: z.boolean().optional(),
-	DisabilityTypeIDs: z.string().optional(),
-	IndigenousStatusID: z.number().int().nonnegative().optional(),
-	ANZSCOCode: z.string().optional(),
-	ANZSICCode: z.string().optional(),
-	SurveyContactStatusCode: z.string().optional(),
-	EmailAddressAlternative: z.string().email().optional(),
+	DisabilityTypeIDs: z.array(z.number().int().positive()).optional(),
+	DisabilityTypeOther: z.string().optional(),
 
-	employerContactID: z.number().int().positive().optional(),
-	payerContactID: z.number().int().positive().optional(),
-	supervisorContactID: z.number().int().positive().optional(),
-	agentContactID: z.number().int().positive().optional(),
-	coachContactID: z.number().int().positive().optional(),
-	internationalContactID: z.number().int().positive().optional(),
-
-	optionalID: z.string().optional(),
-	categoryIDs: z.array(z.number().int().positive()).optional(),
-	domainIDs: z.array(z.number().int().positive()).optional(),
+	VolunteerFlag: z.boolean().optional(),
+	AVETMISSStatusID: z.number().int().nonnegative().optional(),
+	ContactTypeID: z.number().int().positive().optional(),
 
 	checkEmailAddressUnique: z.boolean().optional(),
 });
 
 export const ContactIdPathParam = z.object({
-	contactId: z.number().int().nonnegative(),
+	contactId: z.number().int().positive(),
 });
