@@ -12,8 +12,8 @@ export const createAxcelerateClient = ({
 	baseUrl,
 	apiToken,
 	wsToken,
-}: ClientOptions) => {
-	const client = initClient(contract, {
+}: ClientOptions) =>
+	initClient(contract, {
 		fetchClient: createKyClient(),
 		baseUrl,
 		baseHeaders: {
@@ -23,6 +23,3 @@ export const createAxcelerateClient = ({
 		validateResponse: true,
 		throwOnUnknownStatus: true,
 	});
-
-	return client;
-};

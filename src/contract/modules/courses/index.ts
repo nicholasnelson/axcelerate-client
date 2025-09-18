@@ -16,9 +16,11 @@ import {
 	CreateEnrolBody,
 } from "./schemas/enrolment.schema";
 
-const c = initContract();
+export type { Course } from "./schemas/courses.schema";
+export type { CourseInstance } from "./schemas/courseInstance.schema";
+export type { CourseDetail } from "./schemas/details.schema";
 
-export const courses = c.router({
+export const courses = initContract().router({
 	getCourses: {
 		method: "GET",
 		path: "/courses",

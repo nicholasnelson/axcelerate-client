@@ -67,5 +67,6 @@ const Course = RawCourse.transform((r) => ({
 	secondaryImage: r.SECONDARYIMAGE,
 	lastUpdatedUtc: r.LASTUPDATEDUTC,
 }));
+export type Course = z.infer<typeof Course>;
 
 export const GetCoursesResponse = z.array(Course);

@@ -92,3 +92,4 @@ export const GetCourseDetailResponse = z.discriminatedUnion("TYPE", [
 	RawCourseDetailProgram,
 	RawCourseDetailWorkshop,
 ]);
+export type CourseDetail = z.infer<typeof GetCourseDetailResponse>;

@@ -63,5 +63,6 @@ export const CourseInstance = RawCourseInstance.transform((r) => ({
 	isActive: r.ISACTIVE,
 	status: r.STATUS,
 }));
+export type CourseInstance = z.infer<typeof CourseInstance>;
 
 export const GetCourseInstancesResponse = z.array(CourseInstance);

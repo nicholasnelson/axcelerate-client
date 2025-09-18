@@ -20,3 +20,5 @@ export const contract = c.router(
 		},
 	},
 );
+
+export type AppContract = typeof contract;
