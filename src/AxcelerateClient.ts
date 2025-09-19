@@ -1,8 +1,8 @@
 import { initClient } from "@ts-rest/core";
 import { contract } from "./contract";
-import { createKyClient } from "./kyClient";
+import { apiFetcher } from "./apiFetcher";
 
-interface ClientOptions {
+export interface AxcelerateClientOptions {
 	apiToken: string;
 	wsToken: string;
 	baseUrl: string;
@@ -12,9 +12,9 @@ export const createAxcelerateClient = ({
 	baseUrl,
 	apiToken,
 	wsToken,
-}: ClientOptions) =>
+}: AxcelerateClientOptions) =>
 	initClient(contract, {
-		fetchClient: createKyClient(),
+		api: apiFetcher,
 		baseUrl,
 		baseHeaders: {
 			apiToken,

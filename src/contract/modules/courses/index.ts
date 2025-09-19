@@ -45,6 +45,7 @@ export const courses = initContract().router({
 		query: GetCourseInstancesQuery,
 		responses: {
 			200: GetCourseInstancesResponse,
+			204: GetCourseInstancesResponse.length(0),
 		},
 		summary: "Get course instances",
 	},

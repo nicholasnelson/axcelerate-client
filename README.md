@@ -8,7 +8,6 @@ A fully typed Node.js client for the [aXcelerate](https://axcelerate.com.au) RES
 ## Features
 
 - **End-to-end typing** — Request bodies, params, and responses are all backed by Zod schemas.
-- **Modern HTTP stack** — Uses [`ky`](https://github.com/sindresorhus/ky) with sensible timeouts, retries, and hook support.
 - **Typed resources** — Covers contacts and courses, including enrolments and course instances.
 - **Runtime validation** — Normalised error handling surfaces upstream changes early.
 - **Dual bundles** — Ships ESM & CJS builds with generated declaration files.
