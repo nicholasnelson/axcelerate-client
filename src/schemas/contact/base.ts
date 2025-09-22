@@ -12,9 +12,9 @@ import {
 
 const RawContactResponse = z.object({
 	CONTACTID: z.number().int().positive(),
-	GIVENNAME: z.string(),
+	GIVENNAME: z.string().nullable(),
 	SURNAME: z.string(),
-	EMAILADDRESS: z.string(),
+	EMAILADDRESS: z.string().nullable(),
 
 	SEX: Sex.nullable(),
 	DOB: z
@@ -28,14 +28,14 @@ const RawContactResponse = z.object({
 	MIDDLENAME: z.string().nullable(),
 	PREFERREDNAME: z.string().nullable(),
 	LUI: z.string().nullable(),
-	TFN_RECORDED: z.boolean(),
-	OPTIONALID: z.number().int().positive().nullable(),
+	TFN_RECORDED: z.boolean().optional(),
+	OPTIONALID: z.string().nullable(),
 	POSITION: z.string().nullable(),
 	SECTION: z.string().nullable(),
 	DIVISION: z.string().nullable(),
 	ORGANISATION: z.string().nullable(),
-	ORGID: z.string().nullable().optional(),
-	ORGIDS: z.array(z.string()).optional(),
+	ORGID: z.int().nullable().optional(),
+	ORGIDS: z.array(z.int()).optional(),
 
 	// Postal
 	BUILDINGNAME: z.string().nullable().optional(),
@@ -48,7 +48,7 @@ const RawContactResponse = z.object({
 	CITY: z.string().nullable(),
 	STATE: AUStateOrOVS.nullable(),
 	POSTCODE: z.string().nullable(),
-	COUNTRYID: SACCCode.optional(),
+	COUNTRYID: SACCCode.nullable().optional(),
 	COUNTRY: z.string().nullable(),
 
 	// Residential
@@ -62,7 +62,7 @@ const RawContactResponse = z.object({
 	SCITY: z.string().nullable(),
 	SSTATE: AUStateOrOVS.nullable(),
 	SPOSTCODE: z.string().nullable(),
-	SCOUNTRYID: SACCCode.optional(),
+	SCOUNTRYID: SACCCode.nullable().optional(),
 	SCOUNTRY: z.string().nullable(),
 
 	PHONE: z.string().nullable(),
@@ -73,37 +73,37 @@ const RawContactResponse = z.object({
 	COMMENT: z.string().nullable(),
 	WEBSITE: z.string().nullable(),
 
-	CITIZENSTATUSID: z.number().int(),
-	CITIZENSTATUSNAME: z.string(),
-	COUNTRYOFBIRTHID: SACCCode,
-	COUNTRYOFBIRTHNAME: z.string(),
+	CITIZENSTATUSID: z.number().int().nullable(),
+	CITIZENSTATUSNAME: z.string().nullable(),
+	COUNTRYOFBIRTHID: SACCCode.nullable(),
+	COUNTRYOFBIRTHNAME: z.string().nullable(),
 	CITYOFBIRTH: z.string().nullable(),
-	COUNTRYOFCITIZENID: SACCCode,
-	COUNTRYOFCITIZENNAME: z.string(),
+	COUNTRYOFCITIZENID: SACCCode.nullable(),
+	COUNTRYOFCITIZENNAME: z.string().nullable(),
 
-	INDIGENOUSSTATUSID: z.number().int(),
-	INDIGENOUSSTATUSNAME: z.string(),
+	INDIGENOUSSTATUSID: z.number().int().nullable(),
+	INDIGENOUSSTATUSNAME: z.string().nullable(),
 
-	MAINLANGUAGEID: SACCCode,
-	MAINLANGUAGENAME: z.string(),
-	ENGLISHPROFICIENCYID: z.number().int(),
-	ENGLISHASSISTANCEFLAG: z.boolean(),
+	MAINLANGUAGEID: SACCCode.nullable(),
+	MAINLANGUAGENAME: z.string().nullable(),
+	ENGLISHPROFICIENCYID: z.number().int().nullable(),
+	ENGLISHASSISTANCEFLAG: z.boolean().nullable(),
 
-	HIGHESTSCHOOLLEVELID: z.number().int(),
+	HIGHESTSCHOOLLEVELID: z.number().int().nullable(),
 	HIGHESTSCHOOLLEVELYEAR: z.string().nullable(),
 	CURRENTSCHOOLLEVEL: z.string().nullable(),
-	ATSCHOOLFLAG: z.boolean(),
+	ATSCHOOLFLAG: z.boolean().nullable(),
 	ATSCHOOLNAME: z.string().nullable(),
 
-	PRIOREDUCATIONIDS: z.array(z.number().int()),
+	PRIOREDUCATIONIDS: z.array(z.string()),
 	PRIOREDUCATIONNAMES: z.array(z.string()),
 
-	DISABILITYFLAG: z.boolean(),
+	DISABILITYFLAG: z.boolean().nullable(),
 	DISABILITYTYPEIDS: z.array(z.number().int()),
 	DISABILITYTYPENAMES: z.array(z.string()),
 
-	LABOURFORCEID: z.number().int(),
-	LABOURFORCENAME: z.string(),
+	LABOURFORCEID: z.number().int().nullable(),
+	LABOURFORCENAME: z.string().nullable(),
 
 	EMERGENCYCONTACT: z.string().nullable(),
 	EMERGENCYCONTACTRELATION: z.string().nullable(),

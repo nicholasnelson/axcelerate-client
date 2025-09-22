@@ -18,7 +18,7 @@ const SearchContactsQuerySchema = z
 			.optional(),
 		givenName: z.string().optional(),
 		surname: z.string().optional(),
-		emailAddress: z.string().email().optional(),
+		emailAddress: z.email().optional(),
 		contactRoleID: z.number().int().optional(),
 		contactIDs: z.string().optional(), // comma-delimited numeric list
 		contactID: z.number().int().optional(),
@@ -27,10 +27,11 @@ const SearchContactsQuerySchema = z
 			.string()
 			.regex(/^\d{4}-\d{2}-\d{2}$/)
 			.optional(),
+		USI: z.string().optional(),
 	})
 	.extend(Pagination.shape);
 
-export const SearchContactsResponse = z.array(ContactResponseSchema);
+const SearchContactsResponse = z.array(ContactResponseSchema);
 
 export const SearchContacts = {
 	query: SearchContactsQuerySchema,
@@ -38,5 +39,3 @@ export const SearchContacts = {
 		200: SearchContactsResponse,
 	},
 } satisfies QueryEndpointSchemas;
-
-export const SearchContactsQuery = SearchContacts.query;

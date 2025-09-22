@@ -1,4 +1,4 @@
-import { ApiFetcher, isZodType } from "@ts-rest/core";
+import { type ApiFetcher, isZodType } from "@ts-rest/core";
 import { ZodArray } from "zod";
 
 /**
