@@ -1,6 +1,6 @@
 {
   "name": "axcelerate-client",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A TypeScript client for the aXcelerate API. Provides a simple, typed wrapper around aXcelerate's REST endpoints (contacts, courses, enrolments, and more) for Node.js server-side applications.",
   "type": "module",
   "engines": {
