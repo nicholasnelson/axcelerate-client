@@ -14,7 +14,7 @@ import {
 	searchContactsRawResponse,
 	updateContactBody,
 	verifyUsiRawResponse,
-} from "./fixtures/contacts";
+} from "./fixtures/contact";
 
 const { agent, client } = setupMockClient();
 
@@ -36,7 +36,7 @@ describe("contacts", () => {
 				},
 			});
 
-		const out = await createDefaultAxcelerateClient().contacts.createContact({
+		const out = await createDefaultAxcelerateClient().contact.create({
 			body: createContactBody,
 		});
 
@@ -57,7 +57,7 @@ describe("contacts", () => {
 				},
 			});
 
-		const out = await createDefaultAxcelerateClient().contacts.updateContact({
+		const out = await createDefaultAxcelerateClient().contact.update({
 			params: { contactId: 201 },
 			body: updateContactBody,
 		});
@@ -78,7 +78,7 @@ describe("contacts", () => {
 				},
 			});
 
-		const out = await createDefaultAxcelerateClient().contacts.getContact({
+		const out = await createDefaultAxcelerateClient().contact.get({
 			params: { contactId: 201 },
 			query: {},
 		});
@@ -101,7 +101,7 @@ describe("contacts", () => {
 				},
 			});
 
-		const out = await createDefaultAxcelerateClient().contacts.searchContacts({
+		const out = await createDefaultAxcelerateClient().contact.search({
 			query: { search: "Jane" },
 		});
 
@@ -122,7 +122,7 @@ describe("contacts", () => {
 				},
 			});
 
-		const out = await createDefaultAxcelerateClient().contacts.verifyUSI({
+		const out = await createDefaultAxcelerateClient().contact.verifyUsi({
 			body: { contactID: 201 },
 		});
 
@@ -143,10 +143,9 @@ describe("contacts", () => {
 				},
 			});
 
-		const out =
-			await createDefaultAxcelerateClient().contacts.createContactNote({
-				body: contactNoteBody,
-			});
+		const out = await createDefaultAxcelerateClient().contact.note.create({
+			body: contactNoteBody,
+		});
 
 		assertStatus(out, 200);
 		expect(out.body.noteId).toBe(contactNoteRawResponse.NOTEID);

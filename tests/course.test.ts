@@ -5,15 +5,15 @@ import {
 	createDefaultAxcelerateClient,
 	setupMockClient,
 } from "./util";
-import { getResponse } from "./fixtures/courses/get";
-import { courseDetailResponse } from "./fixtures/courses/detail";
-import { courseInstancesResponse } from "./fixtures/courses/instances";
+import { getResponse } from "./fixtures/course/get";
+import { courseDetailResponse } from "./fixtures/course/detail";
+import { courseInstancesResponse } from "./fixtures/course/instances";
 import {
 	enrolRequestBody,
 	enrolResponse,
 	enrolMultipleRequestBody,
 	enrolMultipleResponse,
-} from "./fixtures/courses/enrolments";
+} from "./fixtures/course/enrolments";
 
 const { agent, client } = setupMockClient();
 
@@ -36,7 +36,7 @@ describe("course", () => {
 				},
 			});
 
-		const out = await createDefaultAxcelerateClient().courses.getCourses();
+		const out = await createDefaultAxcelerateClient().course.get();
 		console.log(agent.getCallHistory());
 		assertStatus(out, 200);
 		expect(out.body).toHaveLength(getResponse.length);
@@ -57,7 +57,7 @@ describe("course", () => {
 				},
 			});
 
-		const out = await createDefaultAxcelerateClient().courses.getCourseDetail({
+		const out = await createDefaultAxcelerateClient().course.detail.get({
 			query: { ID: courseDetailResponse.ID, type: courseDetailResponse.TYPE },
 		});
 
@@ -87,13 +87,12 @@ describe("course", () => {
 				},
 			});
 
-		const out =
-			await createDefaultAxcelerateClient().courses.getCourseInstances({
-				query: {
-					ID: courseInstancesResponse[0].ID,
-					type: "w",
-				},
-			});
+		const out = await createDefaultAxcelerateClient().course.instance.get({
+			query: {
+				ID: courseInstancesResponse[0].ID,
+				type: "w",
+			},
+		});
 
 		assertStatus(out, 200);
 		expect(out.body).toHaveLength(courseInstancesResponse.length);
@@ -112,7 +111,7 @@ describe("course", () => {
 				},
 			});
 
-		const out = await createDefaultAxcelerateClient().courses.enrol({
+		const out = await createDefaultAxcelerateClient().course.enrol({
 			body: enrolRequestBody,
 		});
 
@@ -133,7 +132,7 @@ describe("course", () => {
 				},
 			});
 
-		const out = await createDefaultAxcelerateClient().courses.enrolMultiple({
+		const out = await createDefaultAxcelerateClient().course.enrolMultiple({
 			body: enrolMultipleRequestBody,
 		});
 

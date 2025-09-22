@@ -6,8 +6,13 @@ export default defineConfig({
 	dts: true,
 	sourcemap: true,
 	clean: true,
-	target: "node20",
-	minify: false,
+	target: "node18",
+	platform: "node",
 	treeshake: true,
-	splitting: false, // keep single-file outputs
+	splitting: false, // single-file outputs
+	outDir: "dist",
+	outExtension({ format }) {
+		// proper Node-friendly extensions
+		return { js: format === "esm" ? ".mjs" : ".cjs" };
+	},
 });

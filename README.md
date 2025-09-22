@@ -32,7 +32,7 @@ const axc = createAxcelerateClient({
   wsToken: process.env.AXCELERATE_WS_TOKEN!,
 });
 
-const result = await axc.courses.getCourses({
+const result = await axc.courses.get({
   query: { current: true, public: true },
 });
 
@@ -48,20 +48,22 @@ Every router method enforces the contract defined in `src/contract`. If the upst
 ### Available Endpoints
 
 **Courses**
-- `getCourses`
-- `getCourseDetail`
-- `getCourseInstances`
-- `enrol`
-- `enrolMultiple`
+- `courses.get`
+- `courses.instance.get`
+- `courses.enrol`
+- `courses.enrolMultiple`
+- `courses.detail.get`
 
 **Contacts**
-- `createContact`, `updateContact`, `getContact`
-- `searchContacts`
-- `verifyUSI`
-- `createContactNote`
+- `contacts.create`, `contacts.update`, `contacts.get`
+- `contacts.search`
+- `contacts.verifyUsi`
+- `contacts.note.create`
 
 **Organisations**
-- `search`
+- `organisations.search`
+
+Each action is defined in its own file under `src/contract/modules/**`, with its request/response schemas colocated in `src/schemas/**`. Query and mutation schemas conform to the shared `QueryEndpointSchemas` and `MutationEndpointSchemas` types defined in `src/schemas/meta.ts`, keeping endpoint definitions consistent across the client.
 
 See the fixtures and specs in `tests/` for concrete request/response examples.
 

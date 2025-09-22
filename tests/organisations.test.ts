@@ -8,7 +8,7 @@ import {
 import {
 	organisationSearchQuery,
 	organisationSearchResponse,
-} from "./fixtures/organisations/search";
+} from "./fixtures/organisation/search";
 
 const { agent, client } = setupMockClient();
 
@@ -31,7 +31,7 @@ describe("organisations", () => {
 				},
 			});
 
-		const out = await createDefaultAxcelerateClient().organisations.search({
+		const out = await createDefaultAxcelerateClient().organisation.search({
 			query: organisationSearchQuery,
 		});
 

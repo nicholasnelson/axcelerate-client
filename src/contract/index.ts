@@ -1,17 +1,17 @@
 import { initContract } from "@ts-rest/core";
 
-import { courses } from "./modules/courses";
-import { contacts } from "./modules/contacts";
-import { organisations } from "./modules/organisations";
-import { AxcelerateError } from "../schemas";
+import { AxcelerateError } from "@schemas/errors";
+import { contact } from "./modules/contact";
+import { course } from "./modules/course";
+import { organisation } from "./modules/organisation";
 
 const c = initContract();
 
 export const contract = c.router(
 	{
-		courses,
-		contacts,
-		organisations,
+		contact,
+		course,
+		organisation,
 	},
 	{
 		commonResponses: {
