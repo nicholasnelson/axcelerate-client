@@ -1,6 +1,6 @@
 import type { z } from "zod";
 
-import { GetCourseInstancesResponse } from "@schemas/course/courseInstance";
+import { GetCourseInstancesResponse } from "@schemas/course/instance";
 
 export const courseInstancesResponse: z.input<
 	typeof GetCourseInstancesResponse

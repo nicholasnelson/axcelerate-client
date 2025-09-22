@@ -1,13 +1,18 @@
 import type { QueryEndpointSchemas } from "@schemas/meta";
 import { z } from "zod";
 
-import { AxcelerateDateTime, GSTType, Id } from "@schemas/fields";
-import { ActivityType, CourseTypeFilter } from "../course";
+import {
+	AxcelerateDateTime,
+	GSTType,
+	Id,
+	ActivityType,
+	ActivityTypeFilter,
+} from "@schemas/fields";
 
 // ---------- Query (GET /course/detail) ----------
 const GetCourseDetailQuery = z.object({
 	ID: Id, // required
-	type: CourseTypeFilter, // required: "w" | "p" | "el"
+	type: ActivityTypeFilter, // required: "w" | "p" | "el" | "all"
 });
 
 // ---------- Response ----------

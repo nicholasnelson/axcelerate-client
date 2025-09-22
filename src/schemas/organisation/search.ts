@@ -3,7 +3,7 @@ import { z } from "zod";
 
 import { Pagination } from "@schemas/fields";
 
-export const SearchOrganisationsQuery = z
+const SearchOrganisationsQuery = z
 	.object({
 		search: z.string().optional(),
 		active: z.boolean().optional(),
@@ -82,7 +82,7 @@ const RawOrganisation = z.object({
 	EMPLOYERCONTACTID: z.number().int().nullable(),
 });
 
-export const SearchOrganisationsResponse = RawOrganisation.transform((org) => ({
+const SearchOrganisationsResponse = RawOrganisation.transform((org) => ({
 	rowId: org.ROWID,
 	orgId: org.ORGID,
 	orgOptionalId: org.ORGOPTIONALID ?? null,
@@ -156,9 +156,7 @@ export const SearchOrganisationsResponse = RawOrganisation.transform((org) => ({
 	employerContactId: org.EMPLOYERCONTACTID,
 }));
 
-export const SearchOrganisationsResponseList = z.array(
-	SearchOrganisationsResponse,
-);
+const SearchOrganisationsResponseList = z.array(SearchOrganisationsResponse);
 
 export const SearchOrganisations = {
 	query: SearchOrganisationsQuery,

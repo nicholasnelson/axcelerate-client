@@ -1,4 +1,4 @@
-import { GetCourseInstances } from "@schemas/course/courseInstance";
+import { GetCourseInstances } from "@schemas/course/instance";
 import {
 	initContract,
 	type ClientInferRequest,

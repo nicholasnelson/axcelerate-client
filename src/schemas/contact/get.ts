@@ -10,7 +10,3 @@ export const GetContact = {
 		200: ContactResponseSchema,
 	},
 } satisfies QueryEndpointSchemas;
-
-export const GetContactPathParams = GetContact.pathParams;
-export const GetContactQuery = GetContact.query;
-export const GetContactResponse = GetContact.responses[200];

@@ -1,13 +1,17 @@
 import type { QueryEndpointSchemas } from "@schemas/meta";
 import { z } from "zod";
 
-import { AxcelerateDateTime, GSTType, Id } from "@schemas/fields";
-import { CourseTypeFilter } from "./course";
+import {
+	AxcelerateDateTime,
+	GSTType,
+	Id,
+	ActivityTypeFilter,
+} from "@schemas/fields";
 
 /** GET /course/instances — Query */
-export const GetCourseInstancesQuery = z.object({
+const GetCourseInstancesQuery = z.object({
 	ID: Id, // required
-	type: CourseTypeFilter, // required: "w" | "p" | "el"
+	type: ActivityTypeFilter, // required: "w" | "p" | "el" | "all"
 	public: z.boolean().optional(),
 	current: z.boolean().optional(),
 	isActive: z.boolean().optional(),
@@ -17,7 +21,7 @@ export const GetCourseInstancesQuery = z.object({
 
 const RawCourseInstance = z.object({
 	ID: Id, // activity ID
-	INSTANCEID: z.number().int().positive(),
+	INSTANCEID: Id,
 	NAME: z.string(),
 	STARTDATE: AxcelerateDateTime,
 	FINISHDATE: AxcelerateDateTime,
@@ -25,8 +29,8 @@ const RawCourseInstance = z.object({
 	LOCATION: z.string(),
 	COST: z.number(),
 	GST_TYPE: GSTType,
-	OWNERCONTACTID: z.number().int().positive(),
-	TRAINERCONTACTID: z.number().int().positive(),
+	OWNERCONTACTID: Id,
+	TRAINERCONTACTID: Id,
 	NOTICES: z.string().nullable(),
 	PARTICIPANTS: z.number().int().nonnegative(),
 	MAXPARTICIPANTS: z.number().int().nonnegative(),
@@ -61,7 +65,7 @@ export const CourseInstance = RawCourseInstance.transform((r) => ({
 	status: r.STATUS,
 }));
 
-export const GetCourseInstancesResponse = z.array(CourseInstance);
+const GetCourseInstancesResponse = z.array(CourseInstance);
 
 export const GetCourseInstances = {
 	query: GetCourseInstancesQuery,

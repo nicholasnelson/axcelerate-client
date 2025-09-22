@@ -6,22 +6,16 @@ import {
 	GSTType,
 	Pagination,
 	Sorting,
+	ActivityType,
+	ActivityTypeFilter,
 } from "@schemas/fields";
 
-export const ActivityType = z.union([
-	z.literal("w"),
-	z.literal("p"),
-	z.literal("el"),
-]);
-
-export const CourseTypeFilter = z.enum(["w", "p", "el", "all"]);
-
 // ---------- Query (GET /courses) ----------
-export const GetCoursesQuery = z
+const GetCoursesQuery = z
 	.object({
 		ID: z.number().int().optional(),
 		searchTerm: z.string().optional(),
-		type: CourseTypeFilter.optional(), // "w" | "p" | "el" | "all"
+		type: ActivityTypeFilter.optional(), // "w" | "p" | "el" | "all"
 		trainingArea: z.string().optional(),
 		current: z.boolean().optional(),
 		public: z.boolean().optional(),
@@ -74,7 +68,7 @@ const Course = RawCourse.transform((r) => ({
 	lastUpdatedUtc: r.LASTUPDATEDUTC,
 }));
 
-export const GetCoursesResponse = z.array(Course);
+const GetCoursesResponse = z.array(Course);
 
 export const GetCourses = {
 	query: GetCoursesQuery,

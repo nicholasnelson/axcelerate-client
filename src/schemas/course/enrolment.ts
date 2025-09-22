@@ -1,11 +1,10 @@
 import type { MutationEndpointSchemas } from "@schemas/meta";
 import { z } from "zod";
 
-import { AxcelerateDateTime, GSTType, Id } from "@schemas/fields";
-import { ActivityType } from "./course";
+import { AxcelerateDateTime, GSTType, Id, ActivityType } from "@schemas/fields";
 
 /** POST /course/enrolment */
-export const CreateEnrolBody = z.object({
+const CreateEnrolBody = z.object({
 	contactID: Id,
 	instanceID: z.number().int().positive(),
 	type: ActivityType,
@@ -57,14 +56,12 @@ const RawCreateEnrolmentResponse = z.object({
 	AMOUNT: z.number(),
 });
 
-export const CreateEnrolmentResponse = RawCreateEnrolmentResponse.transform(
-	(r) => ({
-		invoiceId: r.INVOICEID,
-		contactId: r.CONTACTID,
-		learnerId: r.LEARNERID,
-		amount: r.AMOUNT,
-	}),
-);
+const CreateEnrolmentResponse = RawCreateEnrolmentResponse.transform((r) => ({
+	invoiceId: r.INVOICEID,
+	contactId: r.CONTACTID,
+	learnerId: r.LEARNERID,
+	amount: r.AMOUNT,
+}));
 
 // Accept array | single | preformatted "1,2,3", and emit comma-delimited string.
 const ContactIdList = z
@@ -74,7 +71,7 @@ const ContactIdList = z
 	);
 
 /** POST /course/enrolMultiple — body */
-export const CreateEnrolMultipleBody = z.object({
+const CreateEnrolMultipleBody = z.object({
 	contactID: ContactIdList, // required: numeric-list
 	instanceID: z.number().int().positive(), // required
 	// For this endpoint ONLY "w" is valid. Make optional (API applies default "w") but restrict if provided.
@@ -103,7 +100,7 @@ export const CreateEnrolMultipleBody = z.object({
 });
 
 /** Response = array of the single-enrol response shape */
-export const CreateEnrolMultipleResponse = z.array(CreateEnrolmentResponse);
+const CreateEnrolMultipleResponse = z.array(CreateEnrolmentResponse);
 
 export const CreateEnrol = {
 	body: CreateEnrolBody,

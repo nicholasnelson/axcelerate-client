@@ -25,5 +25,3 @@ export const CreateContact = {
 		200: CreateContactResponse,
 	},
 } satisfies MutationEndpointSchemas;
-
-export const CreateContactBody = CreateContact.body;

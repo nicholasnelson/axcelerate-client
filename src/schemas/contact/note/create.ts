@@ -23,6 +23,3 @@ export const CreateContactNote = {
 			})),
 	},
 } satisfies MutationEndpointSchemas;
-
-export const CreateContactNoteBody = CreateContactNote.body;
-export const CreateContactNoteResponse = CreateContactNote.responses[200];

@@ -2,12 +2,12 @@ import type { MutationEndpointSchemas } from "@schemas/meta";
 import { z } from "zod";
 
 /** POST /contact/verifyUSI — Body */
-export const VerifyUSIBody = z.object({
+const VerifyUSIBody = z.object({
 	contactID: z.number().int().positive(),
 });
 
 /** Reusable match enum seen in samples */
-export const USIMatch = z.enum(["MATCH", "NO_MATCH"]);
+const USIMatch = z.enum(["MATCH", "NO_MATCH"]);
 
 /** Raw response (per samples). DATA may be absent on errors. */
 const RawVerifyUSIResponse = z
@@ -26,7 +26,7 @@ const RawVerifyUSIResponse = z
 	.strict();
 
 /** Transformed response */
-export const VerifyUSIResponse = RawVerifyUSIResponse.transform((r) => ({
+const VerifyUSIResponse = RawVerifyUSIResponse.transform((r) => ({
 	usiVerified: r.USI_VERIFIED,
 	msg: r.MSG,
 	...(r.DATA ? { data: r.DATA } : {}),
