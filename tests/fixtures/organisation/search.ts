@@ -1,18 +1,16 @@
 import type { z } from "zod";
 
-import {
-	SearchOrganisationsQuery,
-	SearchOrganisationsResponseList,
-} from "@schemas/organisation/search";
+import { SearchOrganisations } from "@schemas/organisation/search";
 
-export const organisationSearchQuery: z.input<typeof SearchOrganisationsQuery> =
-	{
-		search: "Education",
-		displayLength: 2,
-	};
+export const organisationSearchQuery: z.input<
+	typeof SearchOrganisations.query
+> = {
+	search: "Education",
+	displayLength: 2,
+};
 
 export const organisationSearchResponse: z.input<
-	typeof SearchOrganisationsResponseList
+	(typeof SearchOrganisations.responses)[200]
 > = [
 	{
 		ROWID: 1,

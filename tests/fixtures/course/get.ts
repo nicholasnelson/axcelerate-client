@@ -1,8 +1,8 @@
 import type { z } from "zod";
 
-import { GetCoursesResponse } from "@schemas/course/course";
+import { GetCourses } from "@schemas/course/course";
 
-export const getResponse: z.input<typeof GetCoursesResponse> = [
+export const getResponse: z.input<(typeof GetCourses.responses)[200]> = [
 	{
 		ROWID: 1,
 		ID: 3426,

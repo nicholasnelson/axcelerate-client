@@ -1,11 +1,8 @@
 import type { z } from "zod";
 
-import { GetCourseDetailResponse } from "@schemas/course/detail";
+import { GetCourseDetail } from "@schemas/course/detail";
 
-type CourseDetail = z.input<typeof GetCourseDetailResponse>;
-type WorkshopDetail = Extract<CourseDetail, { TYPE: "w" }>;
-
-export const courseDetailResponse: WorkshopDetail = {
+export const courseDetailResponse = {
 	OUTLINE: "A sample outline",
 	CODE: "COURSE-1",
 	COST: 250,
@@ -27,4 +24,4 @@ export const courseDetailResponse: WorkshopDetail = {
 		LEARNINGOUTCOMES: ["Confidence"],
 		PROGRAMBENEFITS: ["Skill growth"],
 	},
-};
+} satisfies z.input<(typeof GetCourseDetail.responses)[200]>;

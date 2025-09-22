@@ -1,59 +1,57 @@
 import type { z } from "zod";
 
-import {
-	CreateContactBody,
-	CreateContactResponse,
-} from "@schemas/contact/create";
-import {
-	CreateContactNoteBody,
-	CreateContactNoteResponse,
-} from "@schemas/contact/note/create";
-import { SearchContactsResponse } from "@schemas/contact/search";
-import { UpdateContactBody } from "@schemas/contact/update";
-import { VerifyUSIResponse } from "@schemas/contact/verifyUsi";
-import { GetContactResponse } from "@schemas/contact/get";
+import { CreateContact } from "@schemas/contact/create";
+import { CreateContactNote } from "@schemas/contact/note/create";
+import { SearchContacts } from "@schemas/contact/search";
+import { UpdateContact } from "@schemas/contact/update";
+import { VerifyUSI } from "@schemas/contact/verifyUsi";
+import { GetContact } from "@schemas/contact/get";
 
-export const createContactBody: z.input<typeof CreateContactBody> = {
+export const createContactBody: z.input<typeof CreateContact.body> = {
 	givenName: "Jane",
 	surname: "Doe",
 	orgId: 42,
 };
 
-export const createContactRawResponse: z.input<typeof CreateContactResponse> = {
+export const createContactRawResponse: z.input<
+	(typeof CreateContact.responses)[200]
+> = {
 	EMAILADDRESS: "jane.doe@example.com",
 	GIVENNAME: "Jane",
 	SURNAME: "Doe",
 	CONTACTID: 201,
 };
 
-export const updateContactBody: z.input<typeof UpdateContactBody> = {
+export const updateContactBody: z.input<typeof UpdateContact.body> = {
 	givenName: "Janet",
 };
 
-export const contactNoteBody: z.input<typeof CreateContactNoteBody> = {
+export const contactNoteBody: z.input<typeof CreateContactNote.body> = {
 	contactID: 201,
 	contactNote: "Contacted about enrolment",
 };
 
-export const contactNoteRawResponse: z.input<typeof CreateContactNoteResponse> =
-	{
-		MESSAGE: "Created",
-		STATUS: "SUCCESS",
-		NOTEID: 501,
-	};
-
-export const verifyUsiRawResponse: z.input<typeof VerifyUSIResponse> = {
-	USI_VERIFIED: true,
-	DATA: {
-		usiStatus: "VALID",
-		firstName: "MATCH",
-		familyName: "MATCH",
-		dateOfBirth: "MATCH",
-	},
-	MSG: "USI verified",
+export const contactNoteRawResponse: z.input<
+	(typeof CreateContactNote.responses)[200]
+> = {
+	MESSAGE: "Created",
+	STATUS: "SUCCESS",
+	NOTEID: 501,
 };
 
-export const contactRawResponse: z.input<typeof GetContactResponse> = {
+export const verifyUsiRawResponse: z.input<(typeof VerifyUSI.responses)[200]> =
+	{
+		USI_VERIFIED: true,
+		DATA: {
+			usiStatus: "VALID",
+			firstName: "MATCH",
+			familyName: "MATCH",
+			dateOfBirth: "MATCH",
+		},
+		MSG: "USI verified",
+	};
+
+export const contactRawResponse: z.input<(typeof GetContact.responses)[200]> = {
 	CONTACTID: 201,
 	GIVENNAME: "Jane",
 	SURNAME: "Doe",
@@ -73,8 +71,8 @@ export const contactRawResponse: z.input<typeof GetContactResponse> = {
 	SECTION: null,
 	DIVISION: null,
 	ORGANISATION: "Widgets Co",
-	ORGID: "42",
-	ORGIDS: ["42"],
+	ORGID: 42,
+	ORGIDS: [42],
 	BUILDINGNAME: null,
 	UNITNO: null,
 	STREETNO: null,
@@ -146,5 +144,6 @@ export const contactRawResponse: z.input<typeof GetContactResponse> = {
 	DOMAINIDS: [],
 };
 
-export const searchContactsRawResponse: z.input<typeof SearchContactsResponse> =
-	[contactRawResponse];
+export const searchContactsRawResponse: z.input<
+	(typeof SearchContacts.responses)[200]
+> = [contactRawResponse];

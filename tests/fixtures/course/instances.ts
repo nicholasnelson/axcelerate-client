@@ -1,9 +1,9 @@
 import type { z } from "zod";
 
-import { GetCourseInstancesResponse } from "@schemas/course/instance";
+import { GetCourseInstances } from "@schemas/course/instance";
 
 export const courseInstancesResponse: z.input<
-	typeof GetCourseInstancesResponse
+	(typeof GetCourseInstances.responses)[200]
 > = [
 	{
 		ID: 101,

@@ -1,78 +1,83 @@
 {
-  "name": "axcelerate-client",
-  "version": "0.1.9",
-  "description": "A TypeScript client for the aXcelerate API. Provides a simple, typed wrapper around aXcelerate's REST endpoints (contacts, courses, enrolments, and more) for Node.js server-side applications.",
-  "type": "module",
-  "engines": {
-    "node": ">=18"
-  },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    },
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
-    "lint": "eslint .",
-    "format": "prettier . --write",
-    "clean": "rimraf dist",
-    "prepare": "husky && npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nicholasnelson/axcelerate-client.git"
-  },
-  "keywords": [
-    "axcelerate",
-    "api",
-    "client",
-    "typescript",
-    "nodejs",
-    "wrapper",
-    "sdk"
-  ],
-  "author": {
-    "name": "Nicholas Nelson",
-    "url": "https://github.com/nicholasnelson"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nicholasnelson/axcelerate-client/issues"
-  },
-  "homepage": "https://github.com/nicholasnelson/axcelerate-client#readme",
-  "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*": "prettier --write"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.35.0",
-    "@types/node": "^24.3.1",
-    "eslint": "^9.35.0",
-    "eslint-config-prettier": "^10.1.8",
-    "globals": "^16.4.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.1.6",
-    "prettier": "^3.6.2",
-    "tsup": "^8.5.0",
-    "typescript": "^5.9.2",
-    "typescript-eslint": "^8.43.0",
-    "undici": "^7.16.0",
-    "vitest": "^3.2.4"
-  },
-  "dependencies": {
-    "@ts-rest/core": "^3.53.0-rc.1",
-    "zod": "^4.1.8"
-  }
+	"name": "axcelerate-client",
+	"version": "0.1.9",
+	"description": "A TypeScript client for the aXcelerate API. Provides a simple, typed wrapper around aXcelerate's REST endpoints (contacts, courses, enrolments, and more) for Node.js server-side applications.",
+	"type": "module",
+	"engines": {
+		"node": ">=22"
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs"
+		},
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"check": "npm run type-check && npm run lint && npm run format:check",
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"test": "vitest run",
+		"test:watch": "vitest watch",
+		"type-check": "tsc --noEmit",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"format": "prettier . --write",
+		"format:check": "prettier . --check",
+		"clean": "rimraf dist",
+		"prepare": "husky",
+		"prepublishOnly": "npm run build"
+	},
+	"lint-staged": {
+		"*.{ts,tsx,cts,mts,js,cjs,mjs}": "eslint --cache --fix --max-warnings=0",
+		"*.{ts,tsx,cts,mts,js,cjs,mjs,json,md,yml,yaml,css,scss}": "prettier --write"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nicholasnelson/axcelerate-client.git"
+	},
+	"keywords": [
+		"axcelerate",
+		"api",
+		"client",
+		"typescript",
+		"nodejs",
+		"wrapper",
+		"sdk"
+	],
+	"author": {
+		"name": "Nicholas Nelson",
+		"url": "https://github.com/nicholasnelson"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/nicholasnelson/axcelerate-client/issues"
+	},
+	"homepage": "https://github.com/nicholasnelson/axcelerate-client#readme",
+	"devDependencies": {
+		"@eslint/js": "^9.35.0",
+		"@types/node": "^22",
+		"eslint": "^9.35.0",
+		"eslint-config-prettier": "^10.1.8",
+		"globals": "^16.4.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.1.6",
+		"prettier": "^3.6.2",
+		"tsup": "^8.5.0",
+		"typescript": "^5.9.2",
+		"typescript-eslint": "^8.43.0",
+		"undici": "^7.16.0",
+		"vitest": "^3.2.4"
+	},
+	"dependencies": {
+		"@ts-rest/core": "^3.53.0-rc.1",
+		"zod": "^4.1.8"
+	}
 }

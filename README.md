@@ -3,7 +3,7 @@
 A fully typed Node.js client for the [aXcelerate](https://axcelerate.com.au) REST API. The library wraps vendor endpoints with [ts-rest](https://ts-rest.com) contracts and [Zod](https://zod.dev) schemas so requests and responses are validated at runtime and inferred at compile time.
 
 - **API docs:** https://app.axcelerate.com/apidocs/home
-- **Requires:** Node 18 or newer (server-only usage)
+- **Requires:** Node 22 or newer (server-only usage)
 
 ## Features
 
@@ -15,9 +15,8 @@ A fully typed Node.js client for the [aXcelerate](https://axcelerate.com.au) RES
 ## Installation
 
 ```bash
-pnpm add axcelerate-client
-# or
 npm install axcelerate-client
+# or
 yarn add axcelerate-client
 ```
 
@@ -27,19 +26,19 @@ yarn add axcelerate-client
 import { createAxcelerateClient } from "axcelerate-client";
 
 const axc = createAxcelerateClient({
-  baseUrl: "https://yourorg.api.axcelerate.com.au/api/", 
-  apiToken: process.env.AXCELERATE_API_TOKEN!,
-  wsToken: process.env.AXCELERATE_WS_TOKEN!,
+	baseUrl: "https://yourorg.api.axcelerate.com.au/api/",
+	apiToken: process.env.AXCELERATE_API_TOKEN!,
+	wsToken: process.env.AXCELERATE_WS_TOKEN!,
 });
 
 const result = await axc.courses.get({
-  query: { current: true, public: true },
+	query: { current: true, public: true },
 });
 
 if (result.status === 200) {
-  result.body.forEach((course) => {
-    console.log(`${course.name} (${course.type})`);
-  });
+	result.body.forEach((course) => {
+		console.log(`${course.name} (${course.type})`);
+	});
 }
 ```
 
@@ -48,6 +47,7 @@ Every router method enforces the contract defined in `src/contract`. If the upst
 ### Available Endpoints
 
 **Courses**
+
 - `courses.get`
 - `courses.instance.get`
 - `courses.enrol`
@@ -55,12 +55,14 @@ Every router method enforces the contract defined in `src/contract`. If the upst
 - `courses.detail.get`
 
 **Contacts**
+
 - `contacts.create`, `contacts.update`, `contacts.get`
 - `contacts.search`
 - `contacts.verifyUsi`
 - `contacts.note.create`
 
 **Organisations**
+
 - `organisations.search`
 
 Each action is defined in its own file under `src/contract/modules/**`, with its request/response schemas colocated in `src/schemas/**`. Query and mutation schemas conform to the shared `QueryEndpointSchemas` and `MutationEndpointSchemas` types defined in `src/schemas/meta.ts`, keeping endpoint definitions consistent across the client.
@@ -70,17 +72,17 @@ See the fixtures and specs in `tests/` for concrete request/response examples.
 ## Development
 
 ```bash
-pnpm install            # install dependencies
-pnpm build              # emit dist/ (ESM + CJS)
-pnpm test               # run the Vitest suite (uses undici MockAgent)
-pnpm lint               # eslint .
-pnpm format             # prettier . --write
-pnpm dev                # tsup watch mode
+npm install                # install dependencies
+npm run build              # emit dist/ (ESM + CJS)
+npm run test               # run the Vitest suite (uses undici MockAgent)
+npm run lint               # eslint .
+npm run format             # prettier . --write
+npm run dev                # tsup watch mode
 ```
 
 ## Releasing
 
-`tsup` bundles the library and `prepare` runs the build automatically. Bump the version, run `pnpm build`, then publish with your package manager of choice.
+`tsup` bundles the library and `prepare` runs the build automatically. Bump the version, run `npm build`, then publish with your package manager of choice.
 
 ## Contributing
 
@@ -88,7 +90,7 @@ Bug reports and pull requests are welcome. Please:
 
 1. Discuss large changes in an issue first.
 2. Add or update tests for behavioural changes.
-3. Run `pnpm lint` and `pnpm test` before submitting.
+3. Run `npm run check` and `npm run test` before submitting.
 
 ## License
 
