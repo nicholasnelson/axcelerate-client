@@ -235,7 +235,7 @@ export const BaseContactBody = z.object({
 	workphone: z.string().optional(),
 	fax: z.string().optional(),
 	organisation: z.string().optional(),
-	orgId: z.number().int().positive(),
+	orgId: z.number().int().positive().optional(),
 	orgIds: z.array(z.number().int().positive()).max(5).optional(),
 	position: z.string().optional(),
 	section: z.string().optional(),
