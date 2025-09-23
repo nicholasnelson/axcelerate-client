@@ -9,6 +9,7 @@ import {
 export const create = initContract().mutation({
 	method: "POST",
 	path: "/contact/note",
+	contentType: "application/x-www-form-urlencoded",
 	body: CreateContactNote.body,
 	responses: {
 		...CreateContactNote.responses,

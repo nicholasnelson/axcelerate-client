@@ -9,6 +9,7 @@ import {
 export const update = initContract().mutation({
 	method: "PUT",
 	path: "/contact/:contactId",
+	contentType: "application/x-www-form-urlencoded",
 	pathParams: UpdateContact.pathParams,
 	body: UpdateContact.body,
 	responses: {

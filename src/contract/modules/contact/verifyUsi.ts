@@ -9,6 +9,7 @@ import {
 export const verifyUsi = initContract().mutation({
 	method: "POST",
 	path: "/contact/verifyUSI",
+	contentType: "application/x-www-form-urlencoded",
 	body: VerifyUSI.body,
 	responses: {
 		...VerifyUSI.responses,
