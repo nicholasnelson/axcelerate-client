@@ -1,0 +1,324 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "ID": 16380,
+            "INSTANCEID": 407209,
+            "NAME": "aXcelerate Client Forum",
+            "STARTDATE": "2017-03-06 09:00",
+            "FINISHDATE": "2017-03-09 12:30",
+            "DATEDESCRIPTOR": "6 - 9 March 2017",
+            "LOCATION": "Sydney CBD",
+            "COST": 20,
+            "GST_TYPE": 1,
+            "OWNERCONTACTID": 1038809,
+            "TRAINERCONTACTID": 4744,
+            "NOTICES": null,
+            "PARTICIPANTS": 18,
+            "MAXPARTICIPANTS": 20,
+            "MINPARTICIPANTS": 1,
+            "PARTICIPANTVACANCY": 2,
+            "ENROLMENTOPEN": false,
+            "LASTUPDATEDUTC": "2021-03-16 23:40",
+            "ISACTIVE": true,
+            "STATUS": null
+          },
+          {
+            "ID": 16380,
+            "INSTANCEID": 423316,
+            "NAME": "aXcelerate Client Forum",
+            "STARTDATE": "2017-03-14 09:30",
+            "FINISHDATE": "2017-03-14 13:00",
+            "DATEDESCRIPTOR": "14 March 2017",
+            "LOCATION": "Melbourne",
+            "COST": 0,
+            "GST_TYPE": 0,
+            "OWNERCONTACTID": 4744,
+            "TRAINERCONTACTID": 4744,
+            "NOTICES": null,
+            "PARTICIPANTS": 1,
+            "MAXPARTICIPANTS": 12,
+            "MINPARTICIPANTS": 5,
+            "PARTICIPANTVACANCY": 11,
+            "ENROLMENTOPEN": true,
+            "LASTUPDATEDUTC": "2021-03-16 23:40",
+            "ISACTIVE": true,
+            "STATUS": null
+          },
+          {
+            "ID": 16380,
+            "INSTANCEID": 407217,
+            "NAME": "aXcelerate Client Forum",
+            "STARTDATE": "2017-05-11 09:00",
+            "FINISHDATE": "2017-05-11 12:30",
+            "DATEDESCRIPTOR": "11 May 2017",
+            "LOCATION": "Brisbane City",
+            "COST": 0,
+            "GST_TYPE": 2,
+            "OWNERCONTACTID": 1038809,
+            "TRAINERCONTACTID": 8694,
+            "NOTICES": null,
+            "PARTICIPANTS": 0,
+            "MAXPARTICIPANTS": 20,
+            "MINPARTICIPANTS": 1,
+            "PARTICIPANTVACANCY": 20,
+            "ENROLMENTOPEN": true,
+            "LASTUPDATEDUTC": "2021-03-16 23:40",
+            "ISACTIVE": true,
+            "STATUS": null
+          }
+        ],
+        "DESCRIPTION": "Courses Instance data returned in JSON format. Note that some of these fields (those dealing with participant numbers) only apply to workshop instances.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/instance/search",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "2940661290C0D00606BBE6E512497E3F",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Activity Type ID."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "InstanceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Instance ID."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of the activity. w = workshop, p = accredited program, el = e-learning, all = workshops, accredited programs and e-learning."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "trainingCategory",
+      "TYPE": "string",
+      "DESCRIPTION": "The Training Category to Search - Uses Like operator %name%"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "location",
+      "TYPE": "string",
+      "DESCRIPTION": "The course delivery location to search - Uses Like operator %name%. Only works with type 'w' instances where a delivery location is specified. Matches on Display Name if it is used or Delivery Location Name if Display Name is blank."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "state",
+      "TYPE": "string",
+      "DESCRIPTION": "The course State to search - works with type 'w' & 'p' instances."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "code",
+      "TYPE": "string",
+      "DESCRIPTION": "The course code to search - Uses Like operator: code%"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "name",
+      "TYPE": "string",
+      "DESCRIPTION": "The course name to search - Uses Like operator %name%"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "searchTerm",
+      "TYPE": "string",
+      "DESCRIPTION": "For a general search use this param"
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "enrolmentOpen",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Return Course Instances that are open for enrolment."
+    },
+    {
+      "DEFAULT": "3 months ago",
+      "REQUIRED": "false",
+      "NAME": "startDate_min",
+      "TYPE": "date",
+      "DESCRIPTION": "The course start date must be greater than this date. Null values will also be returned for el and p types. Ignored if instanceID is passed."
+    },
+    {
+      "DEFAULT": "3 months ahead",
+      "REQUIRED": "false",
+      "NAME": "startDate_max",
+      "TYPE": "date",
+      "DESCRIPTION": "The course start date must be less than this date. Null values will also be returned for el and p types. Ignored if instanceID is passed."
+    },
+    {
+      "DEFAULT": "3 months ago",
+      "REQUIRED": "false",
+      "NAME": "finishDate_min",
+      "TYPE": "date",
+      "DESCRIPTION": "The course finish date must be greater than this date. Null values will also be returned for el and p types."
+    },
+    {
+      "DEFAULT": "3 months ahead",
+      "REQUIRED": "false",
+      "NAME": "finishDate_max",
+      "TYPE": "date",
+      "DESCRIPTION": "The course finish date must be less than this date. Null values will also be returned for el and p types."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "lastUpdated_min",
+      "TYPE": "datetime",
+      "DESCRIPTION": "In 'YYYY-MM-DD hh:mm' format with time optional. The course instance last updated date must be greater than or equal to this datetime. <b>NOTE:</b> lastUpdated_min & max must be used together (unless ID is passed) and can be up to <b>90 days apart</b>. These fields are mutually exclusive with start and finish date min/max searches and are both ignored if instanceID is passed."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "lastUpdated_max",
+      "TYPE": "datetime",
+      "DESCRIPTION": "In 'YYYY-MM-DD hh:mm' format with time optional. The course instance last updated date must be less than or equal to this datetime. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "trainerContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ContactID of the Trainer/Consultant the instance is assigned to."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "domainID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The DomainID the instance belongs to (the domainID of the user)."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "deliveryLocationID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "For type = p only. The unique ID of an accredited delivery location, reported to NCVER. Refers to locations listed under the <b>course/deliveryLocations</b> endpoint."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "orgID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The organisation ID of the Client Contact of the course."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "orgIDTree",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Client Contact of the course is either this Organisation ID or a child organisation of this Organisation ID."
+    },
+    {
+      "DEFAULT": "0",
+      "REQUIRED": "false",
+      "NAME": "offset",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Used for paging - start at record."
+    },
+    {
+      "DEFAULT": "10",
+      "REQUIRED": "false",
+      "NAME": "displayLength",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Used for paging - total records to retrieve."
+    },
+    {
+      "DEFAULT": "1",
+      "REQUIRED": "false",
+      "NAME": "sortColumn",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The column index to sort by."
+    },
+    {
+      "DEFAULT": "ASC",
+      "REQUIRED": "false",
+      "NAME": "sortDirection",
+      "TYPE": "string",
+      "DESCRIPTION": "The sort by direction 'ASC' OR 'DESC'."
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "public",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Whether to include public courses. If false, returns only In-House course instances."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "isActive",
+      "TYPE": "boolean",
+      "DESCRIPTION": "You can chose to include or exclude Deleted / Archived and Inactive courses."
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "purgeCache",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Currently the API will cache the query for 30 seconds - Setting this flag to true gets the latest data."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "groupedCourseName",
+      "TYPE": "string",
+      "DESCRIPTION": "If the Grouped Workshop Data flag is on in your account, you can search by the Grouped Course Name (Type W Only)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "groupedCourseID",
+      "TYPE": "string",
+      "DESCRIPTION": "If the Grouped Workshop Data flag is on in your account, you can search by the Grouped Course ID (Type W Only)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "Status",
+      "TYPE": "string",
+      "DESCRIPTION": "Status of the Workshop. The available choices are as follows: Active, Cancelled, Completed, Incomplete, Tentative"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "searchCourseInstances"
+  },
+  "DESCRIPTION": "Advanced Course Instance Search - Returns instances."
+}

@@ -1,0 +1,116 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "CONSULTANTID": 844333,
+          "EXTRACONSID": 322,
+          "INVRECEIVED": false,
+          "PDATAID": 2322,
+          "QUANTITY": 1,
+          "RATE": 30.5,
+          "RATECONS": 24,
+          "RATETYPE": "hour"
+        },
+        "DESCRIPTION": "Extra trainerdata returned in JSON format. GET returns an array of all against the workshop instance. Delete returns 204 No Content",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/instance/extratrainer/:instanceID-numeric",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "instanceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The instanceID (workshopID) of the activity you want details from."
+    }
+  ],
+  "RESOURCEID": "9804DCB3CA1411353D11014FCBBA7E9A",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key vale"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "extraconsid",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Extra Trainer ID .REQUIRED for DELETE "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contact ID of extra trainer.REQUIRED for POST. This field can also be called: ConsultantID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "consultantID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "An alias for contactID - Use one or the other"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "quantity",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Quantity value. REQUIRED for POST"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ratetype",
+      "TYPE": "string",
+      "DESCRIPTION": "Rate Type : hours, sessions, days, halfdays "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ratecons",
+      "TYPE": "money",
+      "DESCRIPTION": "Client Rate value "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "rate",
+      "TYPE": "money",
+      "DESCRIPTION": "Rate Cons value "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "invreceived",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Invoice received 1 or 0 "
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "DELETE",
+  "ACTION": {
+    "PUT": "updateExtraTrainer",
+    "GET": "getExtraTrainer",
+    "DELETE": "deleteExtraTrainer",
+    "POST": "addExtraTrainer"
+  },
+  "DESCRIPTION": "Get/Create/Delete extra trainer for workshop."
+}

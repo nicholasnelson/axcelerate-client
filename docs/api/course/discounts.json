@@ -1,0 +1,162 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "ORIGINALPRICE": 600,
+          "REVISEDPRICE": 526.5,
+          "TOTALSAVING": 73.5,
+          "DISCOUNTSAPPLIED": [
+            {
+              "DISCOUNTID": 6543,
+              "NAME": "$15 off for booking two weeks in advance",
+              "CALCULATIONDESCRIPTION": "$15 off",
+              "CALCULATIONMETHOD": "Flat rate off",
+              "CALCULATIONVALUE": 15,
+              "DISCOUNTTYPEID": 1,
+              "DISCOUNTTYPEDESCRIPTION": "Early Bird",
+              "NOTINCONJUNCTION": false,
+              "GLOBALCOURSES": false,
+              "GLOBALSHOPPINGCART": false,
+              "STATUS": "ACTIVE",
+              "EXPIRYDATE": null,
+              "CRITERIA": [
+                {
+                  "TEXT": "14 days",
+                  "VALUE": 14
+                },
+                "ORIGINALPRICE",
+                ": 600",
+                "REVISEDPRICE",
+                ": 585",
+                "SAVING",
+                ": 15"
+              ]
+            },
+            {
+              "DISCOUNTID": 6172,
+              "NAME": "A special 10% off discount for members",
+              "CALCULATIONDESCRIPTION": "10% off",
+              "CALCULATIONMETHOD": "Percent off",
+              "CALCULATIONVALUE": 10,
+              "DISCOUNTTYPEID": 2,
+              "DISCOUNTTYPEDESCRIPTION": "Membership",
+              "NOTINCONJUNCTION": false,
+              "GLOBALCOURSES": false,
+              "GLOBALSHOPPINGCART": false,
+              "STATUS": "ACTIVE",
+              "EXPIRYDATE": null,
+              "CRITERIA": [
+                {
+                  "DOCUMENTNAME": "Membership Card",
+                  "ISMEMBERSHIP": true,
+                  "CERTTYPEID": 2577
+                },
+                "ORIGINALPRICE",
+                ": 585",
+                "REVISEDPRICE",
+                ": 526.5",
+                "SAVING",
+                ": 58.50"
+              ]
+            }
+          ]
+        },
+        "DESCRIPTION": "",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/discounts",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "A2E97B5ED86E46C77857AB7B2D4AB0D3",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contactID - will check against membership, category and organisation discounts"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of course (w, p, el)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "instanceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The instanceID of the course"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "originalPrice",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The original price of the course. This is the value that will be used to calculate the correct discounted price (returned as revisedPrice in the return struct)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "GroupBookingSize",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The size of a group booking. Used to find any applicable group booking discounts"
+    },
+    {
+      "DEFAULT": "TODAY",
+      "REQUIRED": false,
+      "NAME": "BookingDate",
+      "TYPE": "date",
+      "DESCRIPTION": "The date of the booking. Used to calculate expiries and early bird specials"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "PromoCode",
+      "TYPE": "string",
+      "DESCRIPTION": "Used to find promo discounts"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ConcessionDiscountIDs",
+      "TYPE": "string",
+      "DESCRIPTION": "A list of discountIDs of specific concession discounts. Only concession type discounts will apply here and only those that are linked to this course will be considered."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "bookingInfo",
+      "TYPE": "string",
+      "DESCRIPTION": "A JSON formatted string of any additional information that may affect discounts"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.discount",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getCourseDiscounts"
+  },
+  "DESCRIPTION": "Calculates potential discount values given a course instance, a contact, an originalPrice and any other additional information, including group booking size, promo codes etc. It also brings back information on the discounts that were applied. This discountIDs as well as the revisedPrice should be passed into the enrol method to properly apply these discounts to the enrolment."
+}

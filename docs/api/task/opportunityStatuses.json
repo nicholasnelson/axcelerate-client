@@ -1,0 +1,31 @@
+{
+  "RESPONSE": {},
+  "PATTERN": "/task/opportunityStatuses",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "8AC0A301B7A1018856B595F8E54E7702",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.task",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "categories"
+  },
+  "DESCRIPTION": "Pull back the list of workflow user task Opportunity Statuses"
+}

@@ -1,0 +1,171 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "PK": 12344,
+          "ItemDescription": "my super bagua",
+          "ItemCode": "supercode",
+          "FinCodeID": 0,
+          "DefaultPrice": 35,
+          "GST_type": 1,
+          "GST_type_postage": 1,
+          "Inactive": false,
+          "LMSID": 528457344,
+          "Item_Details": "",
+          "Category": "super cat",
+          "ImageName": "",
+          "DisplayPublic": false,
+          "Postage_nett": 0,
+          "Postage_gross": 0,
+          "Postage_tax_percent": 0,
+          "DomainID": 0,
+          "PostagePerItem_nett": 0,
+          "PostagePerItem_gross": 0
+        },
+        "DESCRIPTION": "On a PUT request update a Catalogue item details, will return a catalogue item JSON object. ",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": {
+          "PK": 12344,
+          "ItemDescription": "my super bagua",
+          "ItemCode": "supercode",
+          "FinCodeID": 0,
+          "DefaultPrice": 35,
+          "GST_type": 1,
+          "GST_type_postage": 1,
+          "Inactive": false,
+          "LMSID": 528457344,
+          "Item_Details": "",
+          "Category": "super cat",
+          "ImageName": "",
+          "DisplayPublic": false,
+          "Postage_nett": 0,
+          "Postage_gross": 0,
+          "Postage_tax_percent": 0,
+          "DomainID": 0,
+          "PostagePerItem_nett": 0,
+          "PostagePerItem_gross": 0
+        },
+        "DESCRIPTION": "On a GET request,returns array of a Catalogue item JSON objects",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/accounting/catalogueitem/:itemID-numeric",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "ItemID",
+      "TYPE": "numeric",
+      "DESCRIPTION": ".Catalogue Item ID."
+    }
+  ],
+  "RESOURCEID": "CA317FC30E0E42E7D339EB7D370366DC",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ItemDescription",
+      "TYPE": "string",
+      "DESCRIPTION": " Optional.Catalogue Item Description."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "itemCode",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional.Catalogue Item Code."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "DefaultPrice",
+      "TYPE": "money",
+      "DESCRIPTION": "Optional.Catalogue Item default price."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "FinCodeID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional.Catalogue Item finance code. Only Finance Codes that exist for your account - could be used"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "GST_type",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional.GTS type applied to item price; 0- no GST, 1- GST included, 2- GST exclusive"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "GST_type_postage",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional.GTS type applied to item's postage'; 0- no GST, 1- GST included, 2- GST exclusive"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "Inactive",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Optional.If Catalogue item is active"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "Item_Details",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional.Detailed description of catalogue item "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "Category",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional.Category Name that item related to "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "DisplayPublic",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Optional.if item will be visible to public"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "Postage_tax_percent",
+      "TYPE": "money",
+      "DESCRIPTION": "Optional.Amount of tax percent of Postage"
+    }
+  ],
+  "DEFAULTFORMAT": "JSON",
+  "HANDLER": "api.accounting.catalogueitem",
+  "METHODS": "PUT",
+  "ACTION": {
+    "PUT": "edit",
+    "GET": "view"
+  },
+  "DESCRIPTION": "Get the details of a catalogue items(GET). Or updata details of a catalogue item (PUT)."
+}

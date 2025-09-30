@@ -1,0 +1,629 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": "10 - Program completed (issued)\r\n20 - Program completed (not issued)\r\n25 - Successfully achieved intended outcome\r\n30 - In training\r\n40 - Withdrawn - Official\r\n41 - Withdrawn - Apparent\r\n42 - Withdrawn - Deferred\r\n50 - Completion of lower level of program\r\n60 - Nested program\r\n70 - Superseded program\r\n80 - Streamed program\r\n85 - Not yet started",
+        "DESCRIPTION": "Program Status Identifiers (VIC, TAS)",
+        "FORMAT": "html"
+      },
+      {
+        "BODY": "\n\t\t\t\t\tI - Internal delivery\n\t\t\t\t\tE - External delivery\n\t\t\t\t\tW - Workplace-based",
+        "DESCRIPTION": "deliveryModeAVETMISS",
+        "FORMAT": "text"
+      },
+      {
+        "BODY": "\n\t\t\t\t\tC - Local classroom\n\t\t\t\t\tR - Remote conferencing\n\t\t\t\t\tS - Self-paced - on-site\n\t\t\t\t\tE - Self-paced - external\n\t\t\t\t\tW - Workplace delivery\n\t\t\t\t\tA - Workplace assessment\n\t\t\t\t\tP - Auspiced partnership",
+        "DESCRIPTION": "deliveryModeRAPT",
+        "FORMAT": "text"
+      },
+      {
+        "BODY": "\n\t\t\t\t\t1 - To get a job\n\t\t\t\t\t2 - To develop my existing business\n\t\t\t\t\t3 - To start my own business\n\t\t\t\t\t4 - To try for a different career\n\t\t\t\t\t5 - To get a better job or promotion\n\t\t\t\t\t6 - It was a requirement of my job\n\t\t\t\t\t7 - I wanted extra skills for my job\n\t\t\t\t\t8 - To get into another course of study\n\t\t\t\t\t11 - Other reasons\n\t\t\t\t\t12 - For personal interest or self-development\n\t\t\t\t\t13 - To get skills for community/voluntary work",
+        "DESCRIPTION": "studyReason",
+        "FORMAT": "text"
+      },
+      {
+        "BODY": "Revenue from government\r\n11 - Commonwealth and state general purpose recurrent\r\n13 - Commonwealth specific purpose programs\r\n15 - State specific purpose programs\r\n\r\nOther revenue\r\n20 - Domestic full fee-paying client\r\n30 - International full fee-paying client (Until 2020)\r\n31 - International onshore client (From 2020)\r\n32 - International offshore client (From 2020)\r\n80 - Revenue earned from another training organisation",
+        "DESCRIPTION": "FundingNational",
+        "FORMAT": "text"
+      },
+      {
+        "BODY": "\n\t\t\t\t\t03 - Fee for Service\n\t\t\t\t\t11 - Commonwealth and State General purpose Recurrent\n\t\t\t\t\t13 - Commonwealth Specific Purpose programs\n\t\t\t\t\t15 - State Specific Purpose programs\n\t\t\t\t\t1GT - Gap Training\n\t\t\t\t\t1SA - Skills Assessments\n\t\t\t\t\t20 - Domestic full fee-paying student\n\t\t\t\t\t2GT - Gap Training\n\t\t\t\t\t2SA - Skills Assessments\n\t\t\t\t\t30 - International full fee-paying student\n\t\t\t\t\t9GT - Gap Training\n\t\t\t\t\t9SA - Skills Assessments\n\t\t\t\t\tBMI - Mining Industry\n\t\t\t\t\tCCP - Civil Construction Brokerage Pilot\n\t\t\t\t\tCHL - Civil Construction Higher Level Skills\n\t\t\t\t\tCLG - Cert III Guarantee - Community Learning\n\t\t\t\t\tCLI - Community Learning Intervention\n\t\t\t\t\tCLP - Community Literacy Program\n\t\t\t\t\tCSG - Civil Construction Skills Assessment and Gap Training\n\t\t\t\t\tCSP - Community Services Skilling Plan\n\t\t\t\t\tCSQ - Construction Skills Queensland\n\t\t\t\t\tENH - Higher Level Skills program - Mainstream student\n\t\t\t\t\tENT - Cert III Guarantee - Mainstream students\n\t\t\t\t\tETR - ETRF Accredited Training & Employment Youth Initiatives\n\t\t\t\t\tF2 - Strategic Purchasing Program\n\t\t\t\t\tF3 - User Choice competitively funded - Apprenticeships\n\t\t\t\t\tGK - User Choice competitively funded - Trainees\n\t\t\t\t\tGS1 - Cert III Guarantee - Year 12 graduates\n\t\t\t\t\tGS2 - Cert III Guarantee - User Choice Full Fee\n\t\t\t\t\tGS3 - Cert III Guarantee - User Choice Partial Exemption\n\t\t\t\t\tGS4 - Cert III Guarantee - User Choice Full Exemption\n\t\t\t\t\tHLT - Higher Level Skills program - Student accessing VET FEE-HELP loan\n\t\t\t\t\tHS1 - Higher Skills Program 1\n\t\t\t\t\tIFF - Strategic Investment Fund Fees\n\t\t\t\t\tIFN - Strategic Investment Fund NoIFP - Indigenous Funding Program\n\t\t\t\t\tIP3 - Cert III Guarantee - Industry Partnerships Strategy\n\t\t\t\t\tIPH - Higher Level Skills program - Industry Partnerships Strategy\n\t\t\t\t\tIT3 - Cert III Guarantee - Indigenous Training Strategy\n\t\t\t\t\tITH - Higher Level Skills program - Indigenous Training Strategy\n\t\t\t\t\tLLN - Language Literacy and Numeracy\n\t\t\t\t\tNWC - National Workforce Critical Skills\n\t\t\t\t\tNWE - National Workforce Existing Worker\n\t\t\t\t\tNWJ - National Workforce Jobseeker\n\t\t\t\t\tPBJ - Productivity Brokerage Job Seeker\n\t\t\t\t\tPBW - Productivity Brokerage Existing Worker\n\t\t\t\t\tPEW - Productivity Places Program - Existing Workers (Enterprise)\n\t\t\t\t\tPPP - Productivity Places Program\n\t\t\t\t\tPRJ - PPP (Job Seekers)\n\t\t\t\t\tPRW - PPP (Existing Workers)\n\t\t\t\t\tPSJ - PPP Skilling Queenslanders for Work (Job Seekers)\n\t\t\t\t\tPT1 - Post-Trade Training Program\n\t\t\t\t\tRWF - Regional Workforce Development Initiative\n\t\t\t\t\tRWN - Regional Workforce Development Initiative\n\t\t\t\t\tSAT - User Choice competitively funded - School-based\n\t\t\t\t\tSC1 - Short Courses Program 1\n\t\t\t\t\tSJ3 - training delivered under the Single and Teenage Parent Program (STPP) - Fees paid by Government\n\t\t\t\t\tSQW - Skilling Queenslanders for Work\n\t\t\t\t\tSSQ - Skilling Solutions Queensland\n\t\t\t\t\tST3 - training delivered under the Single and Teenage Parent Program (STPP)\n\t\t\t\t\tST5 - training delivered under the Single and Teenage Parent Program (STPP)\n\t\t\t\t\tTFW - Training For Work\n\t\t\t\t\tTIF - Training Initiative for Indigenous Adults Regional/Remote (TIFIARRC)\n\t\t\t\t\tTRA - Training Skills Assessment and Gap Training\n\t\t\t\t\tTSC - Trade Start - Civil Construction Program\n\t\t\t\t\tTSG - Trade Start General\n\t\t\t\t\tVSS - VET in Schools (secondary school students)\n\t\t\t\t\tIT5 - Indigenous VET Partnerships\n\t\t\t\t\tSQI - Training funded under Skilling QLD for Work\n\t\t\t\t\tSQT - Training funded under Certificate 3 Guarentee\n\t\t\t\t\tT02 - TAFE User Choice\n\t\t\t\t\t20 - Domestic full fee-paying client\n\t\t\t\t\tSPP - Schools Private Provider",
+        "DESCRIPTION": "FundingState",
+        "FORMAT": "text"
+      },
+      {
+        "BODY": ", \"Blank\", \"Training Not Yet Commenced/Still Occurring\", (NSW_ACE, NSW)\n\t\t\t\n\t\t\t\t0, \"N.R.\", \"Not Reported for AVETMISS\", (NSW, VIC, QLD, SA, WA_RAPT, TAS, NT, ACT, NSW_ACE, NAT, NSW_SS)\n\t\t\t\n\t\t\t\t1, \"C\", \"Competent\", (WA_RAPT)\n\t\t\t\n\t\t\t\t10, \"W-FP\", \"Withdrawn formally (after some participation)\", (WA_RAPT)\n\t\t\t\n\t\t\t\t100, \"W-N\", \"Never started - no participation\", (WA_RAPT)\n\t\t\t\n\t\t\t\t105, \"NoSt\", \"Not yet started\", (WA_RAPT)\n\t\t\t\n\t\t\t\t11, \"W-P\", \"Discontinued - no formal withdrawal (after some participation)\", (WA_RAPT)\n\t\t\t\n\t\t\t\t2, \"NC\", \"Not competent\", (WA_RAPT)\n\t\t\t\n\t\t\t\t20, \"C\", \"Competency achieved/pass\", (NSW, VIC, QLD, SA, TAS, NT, ACT, NSW_ACE, NAT, NSW_SS)\n\t\t\t\n\t\t\t\t25, \"C-GAP\", \"Competency Achieved/Pass as determined via Gap Training and Assessment\", (VIC)\n\t\t\t\n\t\t\t\t3, \"NAS\", \"Non-assessable enrolment - withdrawn or not satisfactorily completed\", (WA_RAPT)\n\t\t\t\n\t\t\t\t30, \"CNA\", \"Competency not achieved/fail\", (NSW, VIC, QLD, SA, TAS, NT, ACT, NSW_ACE, NAT, NSW_SS)\n\t\t\t\n\t\t\t\t4, \"NAS\", \"Non-assessable enrolment - satisfactorily completed\", (WA_RAPT)\n\t\t\t\n\t\t\t\t40, \"W\", \"Withdrawn/discontinued\", (NSW, VIC, QLD, SA, TAS, NT, ACT, NSW_ACE, NAT, NSW_SS)\n\t\t\t\n\t\t\t\t41, \"CLOS\", \"Incomplete due to RTO closure\", (VIC, QLD, SA, TAS, NT, ACT, NSW_ACE, NAT, NSW_SS)\n\t\t\t\n\t\t\t\t5, \"P+E\", \"Participating but studies not finished (with evidence)\", (WA_RAPT)\n\t\t\t\n\t\t\t\t50, \"RPL-IP\", \"Recognition of prior learning - in progress\", (VIC)\n\t\t\t\n\t\t\t\t51, \"RPL-G\", \"Recognition of prior learning - granted\", (NSW, VIC, QLD, SA, TAS, NT, ACT, NSW_ACE, NAT, NSW_SS)\n\t\t\t\n\t\t\t\t52, \"RPL-NG\", \"Recognition of prior learning - not granted\", (NSW, VIC, QLD, SA, TAS, NT, ACT, NSW_ACE, NAT)\n\t\t\t\n\t\t\t\t53, \"RCC-G\", \"Recognition of current competency - granted\", (VIC)\n\t\t\t\n\t\t\t\t54, \"RCC-NG\", \"Recognition of current competency - not granted\", (VIC)\n\t\t\t\n\t\t\t\t55, \"P\", \"Participating but studies not finished (NO evidence)\", (WA_RAPT)\n\t\t\t\n\t\t\t\t6, \"RPL-G\", \"Status granted by RPL (Recognition of Prior Learning)\", (WA_RAPT)\n\t\t\t\n\t\t\t\t60, \"CT\", \"Credit transfer/national recognition\", (NSW, VIC, QLD, SA, TAS, NT, ACT, NSW_ACE, NAT, NSW_SS)\n\t\t\t\n\t\t\t\t61, \"SUP\", \"Superseded subject\", (NSW, VIC, QLD, SA, WA_RAPT, TAS, NT, ACT, NSW_ACE, NAT, NSW_SS)\n\t\t\t\n\t\t\t\t65, \"C-GAP\", \"Gap Training (superseded qualification)\", (QLD)\n\t\t\t\n\t\t\t\t66, \"No Start\", \"Did Not Start\", (NSW)\n\t\t\t\n\t\t\t\t7, \"RPL-NG\", \"Recognition of Prior Learning (RPL) not granted\", (WA_RAPT)\n\t\t\t\n\t\t\t\t70, \"CA\", \"Continuing activity\", (NSW, VIC, QLD, SA, TAS, NT, ACT, NSW_ACE, NAT, NSW_SS)\n\t\t\t\n\t\t\t\t79, \"WES\", \"Waiting employer signoff or a practical placement\", (VIC)\n\t\t\t\n\t\t\t\t81, \"NAS\", \"Non-assessable activity - satisfactorily completed\", (NSW, VIC, QLD, SA, TAS, NT, ACT, NSW_ACE, NAT)\n\t\t\t\n\t\t\t\t82, \"NAS\", \"Non-assessable activity - withdrawn or not satisfactorily completed\", (NSW, VIC, QLD, SA, TAS, NT, ACT, NSW_ACE, NAT)\n\t\t\t\n\t\t\t\t85, \"NYS\", \"Not yet started\", (VIC, QLD, SA, TAS, NT, ACT, NSW_ACE, NAT, NSW_SS)\n\t\t\t\n\t\t\t\t9, \"CT\", \"Credit Transfer granted\", (WA_RAPT)\n\t\t\t\n\t\t\t\t15, \"RCC-G\", \"Recognition of Current Competencies (RCC) granted\", (WA_RAPT (deprecated))\n\t\t\t\n\t\t\t\t16, \"RCC-NG\", \"Recognition of Current Competencies (RCC) not granted\", (WA_RAPT (deprecated))\n\t\t\t\n\t\t\t\t8, \"CJOB\", \"Provisionally competent off the job (apprentices only)\", (WA_RAPT (deprecated))\n\t\t\t\n\t\t\t\t90, \"NYA\", \"Not yet available\", (VIC (deprecated), QLD (deprecated), SA (deprecated), TAS (deprecated), NT (deprecated), ACT (deprecated), NSW_ACE (deprecated), NAT (deprecated), NSW_SS (deprecated))\n\t\t\t\n\t\t\t\t , \"Blank\", \"Training Not Yet Commenced/Still Occurring\", (NSW_SS (deprecated))",
+        "DESCRIPTION": "Competency Codes",
+        "FORMAT": "text"
+      },
+      {
+        "BODY": {
+          "STATUS": "success",
+          "MSG": "Enrolment was updated successfully."
+        },
+        "DESCRIPTION": "This returns a status and a message",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": "21 - School - Government\r\n25 - School - Catholic\r\n27 - School - Independent\r\n31 - Technical and Further Education institute\r\n61 - Community-based adult education provider\r\n91 - Privately operated registered training organisation\r\n92 - Home school arrangement",
+        "DESCRIPTION": "School Type Identifier",
+        "FORMAT": "html"
+      }
+    ]
+  },
+  "PATTERN": "/course/enrolment",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "862A7E8EEA976C342F681436FD10942F",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "PUT",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Contact."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "instanceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Activity Instance. (Not required when using subjectCode)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "programInstanceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "This is required when updating a subject enrolment. (InstanceID of the Accredited Program)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "subjectCode",
+      "TYPE": "string",
+      "DESCRIPTION": "This can be used to update a subject enrolment (instead of InstanceID)."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of the activity. w = workshop, p = accredited program, s = subject (of an accredited program), el = e-learning."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "logType",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=W] Change/add status entry for a Participant: <br/> <ul>\n\t\t\t\t\t<li>'Tentative' - Tentative.</li>\n\t\t\t\t\t<li>'Booked' - Booked / In Progress.</li>\n\t\t\t\t\t<li>'Cancelled' - Cancelled.</li>\n\t\t\t\t\t<li>'Invoiced' - Invoice has been sent.</li>\n\t\t\t\t\t<li>'Paid' - Invoice has been paid.</li>\n\t\t\t\t\t<li>'Completed' - Completed.</li>\n\t\t\t\t\t</ul>"
+    },
+    {
+      "DEFAULT": "Now",
+      "REQUIRED": "false",
+      "NAME": "logEntryDate",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=W,Type=EL] The date the new status was requested"
+    },
+    {
+      "DEFAULT": "Online",
+      "REQUIRED": "false",
+      "NAME": "theMethod",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=W] How the new status was requested: 'Phone,Email,Fax,In Person,Online,Other'"
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "allowDuplicateEntry",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=W] Allow duplicate status entry for a Participant."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "cost",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=W] Workshop Cost for Participant."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "PONum",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=W] Purchase Order Number."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "discountIDs",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=W] Any discount IDs that should apply to the Participant."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "invoiceNum",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=W] The Invoice ID associated with the Participant."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "finCodeID",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=W & P] The Finance Code ID associated with the Participant."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "financeModelID",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=P] The Finance Model ID to be associated with the Participant."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "additionalComments",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=W] Participant Enrolment (General) Comments (see also 'comments' for Status related commets)."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "DateEnrolled",
+      "TYPE": "date",
+      "DESCRIPTION": "[Type=P,Type=S] The Date the Contact Enrolled."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "DateCommenced",
+      "TYPE": "date",
+      "DESCRIPTION": "[Type=P] The Activity Commencement Date."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "DateCompletionExpected",
+      "TYPE": "date",
+      "DESCRIPTION": "[Type=P] The Expected Completion Date."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "DateCompleted",
+      "TYPE": "date",
+      "DESCRIPTION": "[Type=P] The Actual Completion Date."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "isCancelled",
+      "TYPE": "boolean",
+      "DESCRIPTION": "[Type=P] DEPRECATED - Please use the enrolmentStatus parameter"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "trainerID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=P,Type=S] The Contact ID of the Trainer associated with this enrolment."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "enrolmentStatus",
+      "TYPE": "string",
+      "DESCRIPTION": "Updates the enrolment to one of the following statuses:\n\t\t\t\t\t<br/>[Type=P] <ul>\n\t\t\t\t\t<li>'tent' - Tentative. Rules: No subject enrolments may exist</li>\n\t\t\t\t\t<li>'ip' - In Progress.</li>\n\t\t\t\t\t<li>'canc' - Cancelled. Rules: No interim subject enrolments may exist</li>\n\t\t\t\t\t<li>'def' - Deferred.</li>\n\t\t\t\t\t<li>'susp' - Suspended.</li>\n\t\t\t\t\t<li>'comp' - Completed. Rules: No interim subject enrolments may exist</li>\n\t\t\t\t\t</ul>\n\t\t\t\t\t<br/>\n\t\t\t\t\t[Type=EL] <ul>\n\t\t\t\t\t<li>'A' - Approved</li>\n\t\t\t\t\t<li>'Cm' - Commenced / In Progress.</li>\n\t\t\t\t\t<li>'C' - Cancelled.</li>\n\t\t\t\t\t<li>'F' - Failed.</li>\n\t\t\t\t\t<li>'Co' - Completed.</li>\n\t\t\t\t\t</ul>\n\t\t\t\t\tIf an enrolment status change is not successful, no changes will be applied to the enrolment."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "vicProgramStatusIDCode",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=P] The Program Status Identifier field for AVETMISS reporting. See Samples below for a full list of options."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "stageDate_[currentStage]",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=P] Useage: 'stageDate_1'='2014-12-12' to change the stage 1 date"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "AddUnitCompetency",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=P] List of Unit IDs to add to the enrolment"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "AddElectiveUnit",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=P] List of Unit IDs to add to the elective list"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "AddUnitCompetencyByCode",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=P] List of Unit/Subject Codes to add to the enrolment"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "AddElectiveUnitByCode",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=P] List of Unit/Subject Codes to add to the elective list"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ModuleIDList",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=P] List of Module IDs to add (VSL only)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "hasRPL",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=P] Update VET Student Loans RPL data (VSL only)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "competent",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=S] competency code - To update a Subject use the UnitID as the InstanceID & ContactID. See Competency Code table below (use the integer value)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "outcomeTrainingOrg",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=S] competency code - internal (outcome identifier - training organisation)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "activityStartDate",
+      "TYPE": "date",
+      "DESCRIPTION": "[Type=S,Type=EL] Activity Start Date"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "proposedEndDate",
+      "TYPE": "date",
+      "DESCRIPTION": "[Type=S] Proposed End Date"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "activityEndDate",
+      "TYPE": "date",
+      "DESCRIPTION": "[Type=S,Type=EL] Activity End Date"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "deliveryModeAVETMISS",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=S] Delivery Mode - AVETMISS. This is to be used for AVETMISS 8.0 reporting. Provide a comma-delimited list of the applicable delivery modes character codes listed under &quot;Samples&quot; below. The first value will be treated as the predominant delivery mode for reporting purposes. Note that delivery mode is typically stored against a subject OR a course insteance (type=P), so these values will not be affected by this endpoint. Examples: &quot;I&quot;, &quot;W,E&quot;, &quot;E,I,W&quot;"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "deliveryModeRAPT",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=S] Delivery Mode - RAPT/TAMS. This is to be used for RAPT 3.0+ reporting. Provide a comma-delimited list of the applicable delivery modes character codes listed under &quot;Samples&quot; below. The second and third values will be reported as supplementary delivery modes. All values after that will not be reported. Note that the value &quot;Z - Not Applicable&quot; cannot be supplied, as this is calculated dynamically based on the competency status. Note also that delivery mode is typically stored against a subject OR a course insteance (type=P), so these values will not be affected by this endpoint. Examples: &quot;C&quot;, &quot;E,S&quot;."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "vet_DeliveryMode",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=S] DEPRECATED from 2018. Delivery Mode - Legacy (AVETMISS 7.0)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "doNotReportAvetmiss",
+      "TYPE": "boolean",
+      "DESCRIPTION": "[Type=S] A flag to prevent this record from being exported in AVETMISS reports."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "comments",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=S,Type=W,Type=EL] Comments (Brief Comment)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "waEnrolmentCategoryID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=S] WA Enrolment Category ID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "hoursAttended",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=S] Hours attended"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "deliveryLocationId",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=S] Delivery Location ID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "noFunding",
+      "TYPE": "boolean",
+      "DESCRIPTION": "[Type=S] Not Funded / RAPT/TAMS Funding Removed flag "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "scheduledHours",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=S] Scheduled Hours"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "cost",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=S] Subject Cost"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "scheduleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=S] Schedule ID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "concessionTypeID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=S] Concesssion Type ID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "primaryScheduleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=S] Primary Schedule ID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "subcontractedOrgID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=S] Subcontracted organisation ID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "hostEmployerOrgID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=S] Host Employer Organisation ID for AVETMISS Workplace ABN (VIC)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "pleaseSyncLADates",
+      "TYPE": "boolean",
+      "DESCRIPTION": "[Type=S] Flag to synchronise (related) Learning Activity Dates"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "updateClassEnrolmentCompletedOrExpectedDate",
+      "TYPE": "boolean",
+      "DESCRIPTION": "[Type=S] Flag to update class enrolment Completed or Expected completion date (depending on compentency status)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "costHourlyRate",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=S] Cost Hourly Rate - Victoria"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "fundingEligibilityKeyVIC",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=P] Funding Eligibility Key - Victoria. Maximum 10 characters alphanumeric."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "programUniqueSupervisedHoursVIC",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=P] Program Unique Supervised Hours - Victoria. Must be within range 0-99999.5"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "PSTACDateVIC",
+      "TYPE": "date",
+      "DESCRIPTION": "[Type=P] Program Supervised Teaching Activity Completion Date - Victoria. Must be a valid date and should be less than or equal to the final subject activity end date"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "commencedWhileAtSchool",
+      "TYPE": "boolean",
+      "DESCRIPTION": "[Type=P] Commenced While at School Flag for Victorian AVETMISS reporting."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "studyReason",
+      "TYPE": "numeric",
+      "DESCRIPTION": "AVETMISS Study Reason - National (For Accredited enrolments) - See sample table below for values."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "customField_[variableName]",
+      "TYPE": "string",
+      "DESCRIPTION": "Replace [variableName] with the actual customField variable name to update a customField value against the enrolment (if enabled and set up). If updating a custom field that supports multiple values, you can use comma-delimited values or a JSON array. If using comma-delimited, it is expected the data is URL encoded first. For example, to get 2 values: 'A,B' and 'C' you would either pass: \"['A,B','C']\" or \"A%2CB,C\" "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "FundingNational",
+      "TYPE": "numeric",
+      "DESCRIPTION": "AVETMISS Funding Source - National (For Accredited enrolments) - See sample table below for values."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "FundingState",
+      "TYPE": "string",
+      "DESCRIPTION": "AVETMISS Funding Source - State (For Accredited enrolments) - See sample table below for values."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "schoolTypeID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=P] School Type Identifier AVETMISS field. See samples below for valid values."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "schoolOrgID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=P] Organisation that represents the school for this enrolment"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "tc_type",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=P] The traineeship/apprenticeship type. Options: traineeship, apprenticeship"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "tc_status",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=P] The traineeship/apprenticeship status. Options: active, suspended, cancelled, withdrawn, completed"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "CIDApprenticeships",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=P] The traineeship/apprenticeship client identifier. Maximum of 10 characters"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "TCID2",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=P] The training/apprenticeship contract identifier. Maximum of 10 characters"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "tc_contractType",
+      "TYPE": "string",
+      "DESCRIPTION": "[Type=P] The traineeship/apprenticeship contract type. Options: full-time, part-time, school based"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "tc_dateCommenced",
+      "TYPE": "date",
+      "DESCRIPTION": "[Type=P] The traineeship/apprenticeship commencement date"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "tc_dateTrainingPlanCreated",
+      "TYPE": "date",
+      "DESCRIPTION": "[Type=P] The traineeship/apprenticeship training plan creation date"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "tc_dateCompletionExpected",
+      "TYPE": "date",
+      "DESCRIPTION": "[Type=P] The expected completion date of the traineeship/apprenticeship"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "tc_dateCompleted",
+      "TYPE": "date",
+      "DESCRIPTION": "[Type=P] The actual completion date of the traineeship/apprenticeship"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "tc_durationYears",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=P] The duration of the traineeship/apprenticeship in years (0-20) - used in combination with tc_durationMonths"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "tc_durationMonths",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=P] The duration of the traineeship/apprenticeship in months (0-11) - used in combination with tc_durationYears"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "tc_aac",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=P] The organisation ID for the AAC associated with the traineeship/apprenticeship"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "tc_hostEmployer",
+      "TYPE": "numeric",
+      "DESCRIPTION": "[Type=P] The organisation ID for the host employer associated with the traineeship/apprenticeship"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "PUT",
+  "ACTION": {
+    "PUT": "updateEnrolment"
+  },
+  "DESCRIPTION": "Update an enrolment"
+}

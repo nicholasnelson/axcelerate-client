@@ -1,0 +1,113 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "DATA": [
+            {
+              "Qualification Name": "Certificate I in Business",
+              "Organisation": "VM Learning / aXcelerate",
+              "Class Descriptor": "# W OUT DATES",
+              "Trainer Full Name": "",
+              "Actual Completion Date": "",
+              "Full Name": "Nathan Gordon",
+              "Commencement Date": "2015-07-17",
+              "USI": "",
+              "Qualification Code": "BSB10112",
+              "Enrolment Date": "2015-07-17",
+              "Expected Completion Date": "2015-07-17"
+            }
+          ],
+          "ERRORMSG": "",
+          "REPORTNAME": "Qualification Enrolments and Outcomes",
+          "PATH": "",
+          "SUCCESS": true,
+          "COUNT": 1,
+          "CONTENTTYPE": "application/json",
+          "FILTERS": [
+            {
+              "VALUE2": "",
+              "NAME": "enrolments.enrolstatus",
+              "VALUE": "comp"
+            },
+            {
+              "VALUE2": "",
+              "NAME": "enrolments.dateenrolled",
+              "VALUE": "01/01/2015"
+            },
+            {
+              "VALUE2": "",
+              "NAME": "contacts.givenname",
+              "VALUE": "Nathan"
+            },
+            {
+              "VALUE2": "",
+              "NAME": "contacts.surname",
+              "VALUE": "Gordon"
+            }
+          ],
+          "DESCRIPTION": "JSON/Collection"
+        },
+        "DESCRIPTION": "An example report returned in JSON format",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/report/run",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "5E5F485AB3A2E5BC083F5EEBFBD4E820",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "reportReference",
+      "TYPE": "string",
+      "DESCRIPTION": "The reference for the desired report. This can be found by either querying the <b>api/report/list</b> API, or as the ref parameter in the URL when running the report in aXcelerate. For example, for the Contact Details report is the value is: <em>contactsSimple</em>"
+    },
+    {
+      "DEFAULT": "Each report has default view fields",
+      "REQUIRED": "false",
+      "NAME": "selectedViewFields",
+      "TYPE": "list",
+      "DESCRIPTION": "A comma-separated list of field names to include in the report. The list of available fields can be found for a report by querying the <b>api/report/fields</b> API. An example value could be: <em>vmcontacts.surname, vmcontacts.givenName</em>"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "selectedFilterFields",
+      "TYPE": "json",
+      "DESCRIPTION": "A JSON representation of an array of filter structs to pass to the report. The structs must have the keys: name, value, and operator. For a list of available filters for a report, query the API <b>api/report/fields</b>. For a more comprehensive list of the values and operators available for a field, query the API <b>api/report/field</b> and pass the field name as 'fieldReference'. The string is not case sensitive. An example value for the contactsSimple report, to return all contacts with the surname 'Jones' would be: <em>[{name:'vmcontacts.surname', value:'Jones', operator:'IS'}]</em>"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "reportID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "If passed, this endpoint acts the same as <b>api/report/saved/run</b>."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.report",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "runReport"
+  },
+  "DESCRIPTION": "Interacts with the aXcelerate Report Builder. You can run any* Report , provide selected view fields and filters and it will return the results in JSON format. <br><br> List of reports that is not intended for API : <br> 1/Recognised Revenue report <br> 2/Recognised Revenue Summary report "
+}

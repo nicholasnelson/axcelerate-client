@@ -1,0 +1,140 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "DUEDATE": "2015-06-25 00:00",
+            "CATEGORY": null,
+            "CATEGORYID": null,
+            "STATUS": "Completed",
+            "SUCCESS": true,
+            "PRIORITY": 2,
+            "COMPLETEDDATE": "2015-07-21 00:00",
+            "OWNERID": 999,
+            "REQUESTERID": 775,
+            "NAME": "Kermit marketing task",
+            "ID": 1050,
+            "OWNER": "Frank Grimes",
+            "REQUESTER": "Herbert Powell",
+            "STATUS_CODE": 4,
+            "TYPE": "task"
+          },
+          {
+            "DUEDATE": "2015-07-03 00:00",
+            "CATEGORY": null,
+            "CATEGORYID": null,
+            "STATUS": "Completed",
+            "SUCCESS": true,
+            "PRIORITY": 4,
+            "COMPLETEDDATE": "2015-08-27 00:00",
+            "OWNERID": 999,
+            "REQUESTERID": 775,
+            "NAME": "Certificate I in Business - Qualification - Online Enquiry",
+            "ID": 1275,
+            "OWNER": "Frank Grimes",
+            "REQUESTER": "Herbert Powell",
+            "STATUS_CODE": 4,
+            "TYPE": "task"
+          },
+          {
+            "DUEDATE": "2015-07-03 00:00",
+            "CATEGORY": "Marketing",
+            "CATEGORYID": 4984,
+            "STATUS": "Completed",
+            "SUCCESS": true,
+            "PRIORITY": 4,
+            "COMPLETEDDATE": "2015-07-15 00:00",
+            "OWNERID": 999,
+            "REQUESTERID": 775,
+            "NAME": "Test Course - E-Learning - Online Enquiry",
+            "ID": 1276,
+            "OWNER": "Frank Grimes",
+            "REQUESTER": "Herbert Powell",
+            "STATUS_CODE": 4,
+            "TYPE": "task"
+          },
+          {
+            "DUEDATE": "2015-07-20 00:00",
+            "CATEGORY": "Sales",
+            "CATEGORYID": 534,
+            "STATUS": "Completed",
+            "SUCCESS": true,
+            "PRIORITY": 2,
+            "COMPLETEDDATE": "2015-07-27 00:00",
+            "OWNERID": 999,
+            "REQUESTERID": 775,
+            "NAME": "Follow-up: Kermit Frog",
+            "ID": 3003,
+            "OWNER": "Frank Grimes",
+            "REQUESTER": "Herbert Powell",
+            "STATUS_CODE": 4,
+            "TYPE": "task"
+          },
+          {
+            "DUEDATE": "2015-08-27 00:00",
+            "CATEGORY": null,
+            "CATEGORYID": null,
+            "STATUS": "Completed",
+            "SUCCESS": true,
+            "PRIORITY": 2,
+            "COMPLETEDDATE": "2015-08-10 00:00",
+            "OWNERID": 999,
+            "REQUESTERID": 775,
+            "NAME": "Marketing task for Wayne",
+            "ID": 3408,
+            "OWNER": "Frank Grimes",
+            "REQUESTER": "Herbert Powell",
+            "STATUS_CODE": 4,
+            "TYPE": "task"
+          }
+        ],
+        "DESCRIPTION": "JSON returned for a task search. This structure is different from those returned by drilling directly into the task. This example was returned by searching on ownerID=99 and incomplete=0",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/tasks",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "6A01BCE0BAA605267141EA1136A68BD8",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "searchTerm",
+      "TYPE": "string",
+      "DESCRIPTION": "Will search name (starts with only), owner's name, status, and category."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "incomplete",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If passed, will return any statuses that are or are not Complete (4) based on the value passed."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.task",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "search"
+  },
+  "DESCRIPTION": "Search for workflow user tasks. You can do an exact search by any of the main parameters for a task (name, ownerID, PDataID, etc.)"
+}

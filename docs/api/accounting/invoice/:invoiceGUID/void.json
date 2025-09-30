@@ -1,0 +1,47 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": "",
+        "DESCRIPTION": "A successful POST request will return a 204 status code with no content.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/accounting/invoice/:invoiceGUID-numeric/void",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "InvoiceGUID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Invoice GUID for the invoice."
+    }
+  ],
+  "RESOURCEID": "D4BF4E04FE71CD442561DFA6D2241264",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "JSON",
+  "HANDLER": "accounting.invoice",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "void"
+  },
+  "DESCRIPTION": "Void an invoice. Note that invoices that have had payments applied cannot be voided."
+}

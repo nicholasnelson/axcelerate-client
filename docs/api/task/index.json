@@ -1,0 +1,266 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "REMINDERSCHEDULEID": 2898,
+          "DUEDATE": "2014-09-18 08:30",
+          "REMINDERAUTOTASKID": 2425,
+          "STATUSDISPLAYNAME": "Not Started",
+          "PDATAID": 345345,
+          "REMINDERDATE": "2014-09-17 08:30",
+          "TASKID": 88,
+          "PROGRAMCODEID": null,
+          "STATUS": 1,
+          "CATEGORY": "Sales",
+          "CATEGORYID": 534,
+          "PRIORITY": 2,
+          "COMPLETEDDATE": null,
+          "OWNERID": 3534534,
+          "REQUESTERID": 435222,
+          "NAME": "Check trainer availability",
+          "CREATIONDATE": "2014-09-17 08:30",
+          "OWNER": "Johnny Tester",
+          "REQUESTER": "Jill Tester",
+          "DETAILS": "This is a test task only."
+        },
+        "DESCRIPTION": "The main task JSON returned for a standard task.",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": {
+          "MARKETINGCONTACTID": 79071,
+          "REMINDERSCHEDULEID": 3504,
+          "FORECASTDISTRIBUTION": [
+            {
+              "MONTH": "2015-07-01 00:00",
+              "VALUE": 33.34
+            },
+            {
+              "MONTH": "2015-08-01 00:00",
+              "VALUE": 33.33
+            },
+            {
+              "MONTH": "2015-09-01 00:00",
+              "VALUE": 33.33
+            }
+          ],
+          "REMINDERAUTOTASKID": 3055,
+          "STATUSDISPLAYNAME": "Not Started",
+          "FORECASTVALUE": 100,
+          "MARKETINGNOTESID": 4778423,
+          "DIPLOMAID": 3296,
+          "STATUS": 1,
+          "OWNERID": 564654,
+          "REQUESTERID": 32424,
+          "NAME": "Test task with marketing details",
+          "CREATIONDATE": "2015-07-06 04:45",
+          "OPPORTUNITYSTATUS": "Pending",
+          "DETAILS": null,
+          "MARKETINGLEARNINGACTIVITYID": null,
+          "DUEDATE": "2015-07-15 00:00",
+          "REMINDERDATE": "2015-07-14 12:00",
+          "TASKID": 2725,
+          "CLASSID": 27495,
+          "ISQUOTETASK": null,
+          "MARKETINGLASTCONTACTNOTE": {
+            "NOTETEXT": "This shows the last note added that is non-system",
+            "NOTEDATE": "2015-07-06 04:46",
+            "NOTESID": 4778423,
+            "NOTE_ENTEREDBYID": 564654,
+            "NOTE_ENTEREDBY": "Bob Dyla"
+          },
+          "ENROLID": null,
+          "CATEGORY": null,
+          "CATEGORYID": null,
+          "PRIORITY": 2,
+          "FORECASTPROBABILITY": 45,
+          "COMPLETEDDATE": null,
+          "OWNER": "Bob Dylan",
+          "REQUESTER": "Paul McCartney"
+        },
+        "DESCRIPTION": "The main task JSON returned for a marketing task.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/task/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "C1A05AA0502B34E4441BC5C2F72D26FB",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "taskID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID for the task. Required for GET, PUT and DELETE. Not valid for POST requests. Can also be added to the URL, as in: api/task/:taskID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "name",
+      "TYPE": "string",
+      "DESCRIPTION": "The task - required when creating a new task."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "details",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional additional details for the task"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "dueDate",
+      "TYPE": "date",
+      "DESCRIPTION": "The task due date. This should be set using the format: YYYY-MM-DD"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ownerID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contactID of the user responsible for the task"
+    },
+    {
+      "DEFAULT": "1",
+      "REQUIRED": "false",
+      "NAME": "status",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The status for the task. Possible statuses are from 1-4. See endpoint api/task/statuses for a list of statuses"
+    },
+    {
+      "DEFAULT": "2",
+      "REQUIRED": "false",
+      "NAME": "priority",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The priority for the task. Possible priorities are from 1 (Low) to 4 (Urgent). See endpoint api/task/priorities for a list"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "completedDate",
+      "TYPE": "date",
+      "DESCRIPTION": "Only valid for status 4 (Completed). Use format: YYYY-MM-DD"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "categoryID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "A category for the task. Task categories are user-defined and can be managed using the task/category endpoint."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "reminderDate",
+      "TYPE": "datetime",
+      "DESCRIPTION": "A date and time to set an email reminder. Only valid for users with the Workflow Engine feature. Format: YYYY-MM-DD hh:mm"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "PDataID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "To link a task to a workshop instance. You can also use the parameters, type='w' and instanceID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ProgramCodeID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "To link a task to a workshop type. You can also use the parameters, type='w' and ID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "classID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "To link a task to a class instance. You can also use the parameters, type='p' and instanceID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "diplomaID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "To link a task to a qualification or class type. You can also use the parameters, type='p' and ID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "marketingLearningActivityID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "To link a task to an E-Learning instance."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "marketingContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "To link a task to a contact. If this field is set, the task is considered to be a marketing Follow-up task. If this field is not set, all forecast and opportunity fields will be ignored."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "OpportunityStatus",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The opportunity status of a marketing task. See endpoint task/opportunityStatuses for a list of valid values. This field is required if you give the task a Forecast value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ForecastValue",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The monetary value of a task, for forecast calculation purposes."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ForecastProbability",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The percentage chance of the forecast task being converted. It must be a value between 0 and 100. If, for example, you attempt to set this value to 200 - an error will not be thrown, it will simply set it to 100."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ForecastDistribution_Month",
+      "TYPE": "date",
+      "DESCRIPTION": "Works with the ForecastDistribution_Value parameter and you can have more than one (a list). It is the forecast month. You can specify in YYYY-MM or YYYY-MM-DD format. Day will be truncated to the first."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ForecastDistribution_Value",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The monetary value of a task for the matching ForecastDistribution_Month"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.task",
+  "METHODS": "GET,POST,PUT,DELETE",
+  "ACTION": {
+    "PUT": "update",
+    "GET": "read",
+    "DELETE": "delete",
+    "POST": "create"
+  },
+  "DESCRIPTION": "Interacts with workflow user tasks. These are tasks that can be found when going to Settings > Workflow."
+}

@@ -1,0 +1,56 @@
+{
+  "RESPONSE": {},
+  "PATTERN": "/task/category",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "A789B3D487145CE9810BCED245045D37",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "categoryID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID for the task category. Required for GET, PUT and DELETE. Not valid for POST requests. Can also be added to the URL, as in: api/task/category/:categoryID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "name",
+      "TYPE": "string",
+      "DESCRIPTION": "The category name"
+    },
+    {
+      "DEFAULT": "#ffffff",
+      "REQUIRED": "false",
+      "NAME": "colour",
+      "TYPE": "string",
+      "DESCRIPTION": "A colour for the category. This column is not used in the main aXcelerate interface."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.task",
+  "METHODS": "GET,POST,PUT,DELETE",
+  "ACTION": {
+    "PUT": "updateCategory",
+    "GET": "getCategory",
+    "DELETE": "deleteCategory",
+    "POST": "createCategory"
+  },
+  "DESCRIPTION": "Interacts with workflow user task categories."
+}

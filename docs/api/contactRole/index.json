@@ -1,0 +1,128 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "MESSAGE": "Contact Role Created Successfully",
+          "STATUS": "success",
+          "CONTACTROLEID": 1579
+        },
+        "DESCRIPTION": "Message returned in JSON format",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contactRole/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "5F417583F26428022D92BDBC70D76244",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "name",
+      "TYPE": "string",
+      "DESCRIPTION": "The name of the Contact Role."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of the Contact Role"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "posNumber",
+      "TYPE": "string",
+      "DESCRIPTION": "The number associated with the Contact Role"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "posDescription",
+      "TYPE": "string",
+      "DESCRIPTION": "The description for the Contact Role"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "posstart",
+      "TYPE": "date",
+      "DESCRIPTION": "The start date of the Contact Role"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "posend",
+      "TYPE": "date",
+      "DESCRIPTION": "The end date of the Contact Role"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "dateCommenced",
+      "TYPE": "date",
+      "DESCRIPTION": "The commencement date of the Contact Role"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "directManager",
+      "TYPE": "boolean",
+      "DESCRIPTION": "The Direct Manager Flag: set this (to 1) if the role is intended to be used as a manager"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "managerContactRoleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "A valid ContactRoleID which this Contact Role reports to"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "costCentreID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "A valid cost centre ID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "skillGroupIDs",
+      "TYPE": "string",
+      "DESCRIPTION": "A list of valid Skill Group IDs to assign to the Contact Role (comma separated)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "orgID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "A valid Organisation ID."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contactRole",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "create"
+  },
+  "DESCRIPTION": "Creates a new Contact Role. This API will not try and search for any existing contact role (of the same name), but simply creates a new one."
+}

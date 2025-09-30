@@ -1,0 +1,220 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "DISCOUNTID": 6543,
+            "NAME": "$15 off for booking two weeks in advance",
+            "CALCULATIONDESCRIPTION": "$15 off",
+            "CALCULATIONMETHOD": "Flat rate off",
+            "CALCULATIONVALUE": 15,
+            "DISCOUNTTYPEID": 1,
+            "DISCOUNTTYPEDESCRIPTION": "Early Bird",
+            "NOTINCONJUNCTION": false,
+            "GLOBALCOURSES": false,
+            "GLOBALSHOPPINGCART": false,
+            "STATUS": "ACTIVE",
+            "EXPIRYDATE": null,
+            "CRITERIA": [
+              {
+                "TEXT": "14 days",
+                "VALUE": 14
+              }
+            ]
+          },
+          {
+            "DISCOUNTID": 6172,
+            "NAME": "A special 10% off discount for members",
+            "CALCULATIONDESCRIPTION": "10% off",
+            "CALCULATIONMETHOD": "Percent off",
+            "CALCULATIONVALUE": 10,
+            "DISCOUNTTYPEID": 2,
+            "DISCOUNTTYPEDESCRIPTION": "Membership",
+            "NOTINCONJUNCTION": false,
+            "GLOBALCOURSES": false,
+            "GLOBALSHOPPINGCART": false,
+            "STATUS": "ACTIVE",
+            "EXPIRYDATE": null,
+            "CRITERIA": [
+              {
+                "DOCUMENTNAME": "Membership Card",
+                "ISMEMBERSHIP": true,
+                "CERTTYPEID": 2577
+              }
+            ]
+          },
+          {
+            "DISCOUNTID": 5171,
+            "NAME": "Discount for all contacts in category ABC",
+            "CALCULATIONDESCRIPTION": "$25.00 flat rate",
+            "CALCULATIONMETHOD": "Flat rate",
+            "CALCULATIONVALUE": 25,
+            "DISCOUNTTYPEID": 3,
+            "DISCOUNTTYPEDESCRIPTION": "Category",
+            "NOTINCONJUNCTION": false,
+            "GLOBALCOURSES": false,
+            "GLOBALSHOPPINGCART": false,
+            "STATUS": "ACTIVE",
+            "EXPIRYDATE": "2016-04-30",
+            "CRITERIA": [
+              {
+                "CATEGORYID": 16737,
+                "CATEGORYNAME": "ABC Category",
+                "CATEGORYCODE": "ABC"
+              }
+            ]
+          },
+          {
+            "DISCOUNTID": 5177,
+            "NAME": "Discount for all staff",
+            "CALCULATIONDESCRIPTION": "$666.00 flat rate",
+            "CALCULATIONMETHOD": "Flat rate",
+            "CALCULATIONVALUE": 666,
+            "DISCOUNTTYPEID": 4,
+            "DISCOUNTTYPEDESCRIPTION": "Organisation",
+            "NOTINCONJUNCTION": false,
+            "GLOBALCOURSES": false,
+            "GLOBALSHOPPINGCART": false,
+            "STATUS": "ACTIVE",
+            "EXPIRYDATE": null,
+            "CRITERIA": [
+              {
+                "ORGID": 3434,
+                "ORGANISATIONNAME": "ABC ORG"
+              },
+              {
+                "ORGID": 445,
+                "ORGANISATIONNAME": "ABC other ORG"
+              }
+            ]
+          },
+          {
+            "DISCOUNTID": 5170,
+            "NAME": "Another Test - flat rate for groups of 6",
+            "CALCULATIONDESCRIPTION": "$100.00 flat rate",
+            "CALCULATIONMETHOD": "Flat rate",
+            "CALCULATIONVALUE": 100,
+            "DISCOUNTTYPEID": 5,
+            "DISCOUNTTYPEDESCRIPTION": "Group Discount",
+            "NOTINCONJUNCTION": false,
+            "GLOBALCOURSES": false,
+            "GLOBALSHOPPINGCART": false,
+            "STATUS": "ACTIVE",
+            "EXPIRYDATE": "2016-04-30",
+            "CRITERIA": [
+              {
+                "TEXT": "Group Booking of 6 or more",
+                "VALUE": 6
+              }
+            ]
+          },
+          {
+            "DISCOUNTID": 5178,
+            "NAME": "Special Promo offer",
+            "CALCULATIONDESCRIPTION": "3% off",
+            "CALCULATIONMETHOD": "Percent off",
+            "CALCULATIONVALUE": 3,
+            "DISCOUNTTYPEID": 6,
+            "DISCOUNTTYPEDESCRIPTION": "Promo Code",
+            "NOTINCONJUNCTION": true,
+            "GLOBALCOURSES": false,
+            "GLOBALSHOPPINGCART": false,
+            "STATUS": "ACTIVE",
+            "EXPIRYDATE": null,
+            "CRITERIA": [
+              {
+                "PROMOCODE": "PROMO-123-456"
+              }
+            ]
+          }
+        ],
+        "DESCRIPTION": "This is an example return. The discounts are ordered by status, then type, then name.",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": "\t1\tEarly Bird\n\t2\tMembership\n\t3\tCategory\n\t4\tOrganisation\n\t5\tGroup Discount\n\t6\tPromo Code\n\t7\tConcession",
+        "DESCRIPTION": "Discount Types. You must pass the typeID, not the type name into the discountTypeID field.",
+        "FORMAT": "text"
+      }
+    ]
+  },
+  "PATTERN": "/discounts",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "D7551226744DAE184EEB5F4E76E52468",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "status",
+      "TYPE": "string",
+      "DESCRIPTION": "Used for searching the status of a discount. Possible values are: ACTIVE, INACTIVE, and EXPIRED"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "discountTypeID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The type of discount you are looking for (eg '1=Early Bird'). See below for a list of discount types. This field also supports more than one value as a list."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "globalCourses",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If 'true', the discount applies to all courses"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of course (w, p, el). If passed with one of instanceID or ID, you can return all discounts linked to that course."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "instanceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The instanceID of the course"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the course type"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "directlyLinkedOnly",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Used when searching via courses to pull back discounts that are directly linked only - not those only linked to the type or global"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.discount",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getDiscounts"
+  },
+  "DESCRIPTION": "Searches and returns system discounts. To calculate a discount for a course, use discounts/course"
+}

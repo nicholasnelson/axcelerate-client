@@ -1,0 +1,56 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "CERTIFICATE": "JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBvYmoKPDwvTGVuZ3RoID..."
+        },
+        "DESCRIPTION": "The PDF will be returned as a base64 string.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contact/enrolment/certificate",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "E76D2729D37B5727E68E28753E08EF6E",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "enrolID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The accredited enrolmentID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "statusID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The non-accredited enrolmentID"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contact",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getCertificate"
+  },
+  "DESCRIPTION": "Returns an issued certificate for a completed enrolment."
+}

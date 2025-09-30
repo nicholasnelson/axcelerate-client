@@ -1,0 +1,226 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "ROWID": 1,
+            "ID": 3426,
+            "COUNT": 5,
+            "NAME": "Certificate II in Surface Extraction Operations",
+            "STREAMNAME": null,
+            "CODE": "RII20209",
+            "COST": 99,
+            "GST_TYPE": 1,
+            "DELIVERY": "Face-to-Face",
+            "DURATION": 0,
+            "DURATIONTYPE": null,
+            "ISACTIVE": true,
+            "TYPE": "p",
+            "SHORTDESCRIPTION": null,
+            "PRIMARYIMAGE": null,
+            "SECONDARYIMAGE": null,
+            "LASTUPDATEDUTC": "2021-03-16 23:40"
+          },
+          {
+            "ROWID": 2,
+            "ID": 3296,
+            "COUNT": 5,
+            "NAME": "Certificate IV in Superannuation",
+            "STREAMNAME": null,
+            "CODE": "FNS40911",
+            "COST": 399,
+            "GST_TYPE": 0,
+            "DELIVERY": "Face-to-Face",
+            "DURATION": 0,
+            "DURATIONTYPE": null,
+            "TYPE": "p",
+            "SHORTDESCRIPTION": "<span style='color: rgb(51, 51, 51); font-family: sans-serif; line-height: 18px; '>Certificate IV in Superannuation (ASFA 100) provides a comprehensive introduction to the Australian superannuationsystem for those with little or no knowledge.</span>",
+            "PRIMARYIMAGE": null,
+            "SECONDARYIMAGE": null,
+            "LASTUPDATEDUTC": "2021-03-16 23:40"
+          },
+          {
+            "ROWID": 3,
+            "ID": 3285,
+            "COUNT": 5,
+            "NAME": "Licence to perform dogging",
+            "STREAMNAME": null,
+            "CODE": "CPCCLDG3001A",
+            "COST": 999,
+            "GST_TYPE": 2,
+            "DELIVERY": "Face-to-Face",
+            "DURATION": 0,
+            "DURATIONTYPE": null,
+            "ISACTIVE": true,
+            "TYPE": "p",
+            "SHORTDESCRIPTION": null,
+            "PRIMARYIMAGE": null,
+            "SECONDARYIMAGE": null,
+            "LASTUPDATEDUTC": "2021-03-16 23:40"
+          },
+          {
+            "ROWID": 4,
+            "ID": 168,
+            "COUNT": 5,
+            "NAME": "Axcelerate Training Program",
+            "STREAMNAME": null,
+            "CODE": "AXCEL_2010",
+            "COST": 0,
+            "GST_TYPE": 1,
+            "DELIVERY": "Face-to-Face",
+            "DURATION": 0,
+            "DURATIONTYPE": null,
+            "ISACTIVE": true,
+            "TYPE": "p",
+            "SHORTDESCRIPTION": "<p class='title'>The Academy Summer School starts in February and there has never been a better time to become an Accredited Wedding Planner.</p>",
+            "PRIMARYIMAGE": null,
+            "SECONDARYIMAGE": null,
+            "LASTUPDATEDUTC": "2021-03-16 23:40"
+          },
+          {
+            "ROWID": 5,
+            "ID": 211,
+            "COUNT": 5,
+            "NAME": "Assertiveness Skills",
+            "STREAMNAME": null,
+            "CODE": "ASSERT",
+            "COST": 100,
+            "GST_TYPE": 2,
+            "DELIVERY": "Face-to-Face",
+            "DURATION": 4,
+            "DURATIONTYPE": "hours",
+            "ISACTIVE": true,
+            "TYPE": "w",
+            "SHORTDESCRIPTION": "The key to effective human relating is maintaining respect in communication with others. Learning to act assertively is vital in gaining influence and developing successful relationships. \r\n\r\n",
+            "PRIMARYIMAGE": null,
+            "SECONDARYIMAGE": null,
+            "LASTUPDATEDUTC": "2021-03-16 23:40"
+          }
+        ],
+        "DESCRIPTION": "Courses returned in JSON format",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/courses/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "B8C18B3F9669CD5370147927B77CFA2C",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Course to filter."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "searchTerm",
+      "TYPE": "string",
+      "DESCRIPTION": "The term to use when filtering activities."
+    },
+    {
+      "DEFAULT": "all",
+      "REQUIRED": "false",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The course type to return. w = workshop, p = accredited program, el = e-learning, all = All types."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "trainingArea",
+      "TYPE": "string",
+      "DESCRIPTION": "The Training Area to Search"
+    },
+    {
+      "DEFAULT": "0",
+      "REQUIRED": "false",
+      "NAME": "offset",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Used for paging - start at record."
+    },
+    {
+      "DEFAULT": "10",
+      "REQUIRED": "false",
+      "NAME": "displayLength",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Used for paging - total records to retrieve."
+    },
+    {
+      "DEFAULT": "1",
+      "REQUIRED": "false",
+      "NAME": "sortColumn",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The column index to sort by."
+    },
+    {
+      "DEFAULT": "ASC",
+      "REQUIRED": "false",
+      "NAME": "sortDirection",
+      "TYPE": "string",
+      "DESCRIPTION": "The sort by direction 'ASC' OR 'DESC'."
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "current",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Current courses flag. True to show only current courses"
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "public",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Whether to include public courses only. If false, returns all couse types regardless of public settings."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "lastUpdated_min",
+      "TYPE": "datetime",
+      "DESCRIPTION": "In 'YYYY-MM-DD hh:mm' format. The course last updated date must be greater than or equal to this datetime. Courses last updated prior to Nov 2018 may not appear. Time is optional and in client's current timezone. Only applicable to w or p types."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "lastUpdated_max",
+      "TYPE": "datetime",
+      "DESCRIPTION": "In 'YYYY-MM-DD hh:mm' format. The course last updated date must be less than or equal to this datetime. Courses last updated prior to Nov 2018 may not appear. Time is optional and in client's current timezone. Only applicable to w or p types."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "isActive",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Whether to include active/inactive courses only. By default both will be included"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getCourses"
+  },
+  "DESCRIPTION": "Returns a list of courses. Returns accredited, Non-accredited and e-learning courses seperately or returns all together"
+}

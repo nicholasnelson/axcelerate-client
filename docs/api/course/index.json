@@ -1,0 +1,74 @@
+{
+  "RESPONSE": {},
+  "PATTERN": "/course/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "FF34EAACD9B6883D466C305A58E93F11",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "programCode",
+      "TYPE": "string",
+      "DESCRIPTION": "Program Code for new Workshop Type instance"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "program",
+      "TYPE": "string",
+      "DESCRIPTION": "Title for new Workshop Type instance"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "cost",
+      "TYPE": "money",
+      "DESCRIPTION": "The cost per student for new Workshop Type instance "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "shortDescription",
+      "TYPE": "string",
+      "DESCRIPTION": "The short Description for new Workshop Type instance "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "optionalID",
+      "TYPE": "string",
+      "DESCRIPTION": "The optionalID for new Workshop Type instance "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "GST_type",
+      "TYPE": "numeric",
+      "DESCRIPTION": "GST type; 0- no GST, 1- GST included, 2 - GST excluded "
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "createWorkshopType"
+  },
+  "DESCRIPTION": "create new instance of workhsop type"
+}

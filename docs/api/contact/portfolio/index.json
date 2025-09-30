@@ -1,0 +1,288 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "PORTFOLIOTYPE": "Licence",
+          "PORTFOLIOTYPENAME": "Driver Licence",
+          "CONTACTID": 12345,
+          "NUMBER": "ABC0034323",
+          "PORTFOLIOID": 34242,
+          "FILES": [
+            {
+              "FILENAME": "licence_screenshot04.png",
+              "FOLDER": "licence",
+              "PORTFOLIODOCID": 79,
+              "ACCESSMIN": 30,
+              "TEMPORARYACCESSURL": "https://demo.app.axcelerate.com/example_only/9999"
+            }
+          ],
+          "PORTFOLIOTYPEID": 6783,
+          "DATEEXPIRES": "2021-09-05",
+          "ISSUEDBY": "Queensland Transport",
+          "DATEISSUED": "2016-09-06",
+          "DETAILS": null,
+          "CUSTOMFIELD_LICENCESTATE": "QLD",
+          "CUSTOMFIELD_PHOTOQUALITY": "Average",
+          "CUSTOMFIELD_MULTIFIELD": [
+            "Example A",
+            "Example X"
+          ]
+        },
+        "DESCRIPTION": "The structure of a portfolio object returned when using POST, PUT, or GET with a portfolioID",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "PORTFOLIOTYPE": "Licence",
+            "PORTFOLIOTYPENAME": "Driver Licence",
+            "CONTACTID": 12345,
+            "NUMBER": "ABC0034323",
+            "PORTFOLIOID": 34242,
+            "FILES": [
+              {
+                "FILENAME": "licence_screenshot04.png",
+                "FOLDER": "licence",
+                "PORTFOLIODOCID": 579,
+                "ACCESSMIN": 30,
+                "TEMPORARYACCESSURL": "https://demo.app.axcelerate.com/example_only/9999"
+              }
+            ],
+            "PORTFOLIOTYPEID": 6783,
+            "DATEEXPIRES": "2021-09-05",
+            "ISSUEDBY": "Queensland Transport",
+            "DATEISSUED": "2016-09-06",
+            "DETAILS": null,
+            "CUSTOMFIELD_LICENCESTATE": "QLD",
+            "CUSTOMFIELD_PHOTOQUALITY": "Average",
+            "CUSTOMFIELD_MULTIFIELD": [
+              "Example A",
+              "Example X"
+            ]
+          },
+          {
+            "PORTFOLIOTYPE": "Membership",
+            "CUSTOMFIELD_PHOBIAS": null,
+            "PORTFOLIOTYPENAME": "XYZ Corporate Membership",
+            "CONTACTID": 12345,
+            "NUMBER": null,
+            "PORTFOLIOID": 33576,
+            "FILES": [],
+            "PORTFOLIOTYPEID": 74,
+            "DATEEXPIRES": null,
+            "ISSUEDBY": "My Corp",
+            "DATEISSUED": "2014-04-02",
+            "DETAILS": "Membership required for this example"
+          },
+          {
+            "PORTFOLIOTYPE": "Registration",
+            "PORTFOLIOTYPENAME": "Example Reg Type",
+            "REGISTRATION": "2AA",
+            "CONTACTID": 12345,
+            "NUMBER": null,
+            "PORTFOLIOID": 333399,
+            "FILES": [
+              {
+                "FILENAME": "refapplication.pdf",
+                "FOLDER": "certificate",
+                "PORTFOLIODOCID": 344,
+                "ACCESSMIN": 30,
+                "TEMPORARYACCESSURL": "https://demo.app.axcelerate.com/example_only/7577"
+              },
+              {
+                "FILENAME": "invoice_doc23.pdf",
+                "FOLDER": "tax",
+                "PORTFOLIODOCID": 345,
+                "ACCESSMIN": 30,
+                "TEMPORARYACCESSURL": "https://demo.app.axcelerate.com/example_only/4344"
+              }
+            ],
+            "PORTFOLIOTYPEID": 190,
+            "DATEEXPIRES": null,
+            "ISSUEDBY": "Sam Spaceman",
+            "DATEISSUED": "2016-09-06",
+            "DETAILS": null
+          }
+        ],
+        "DESCRIPTION": "An array of portfolio objects, returned when searching for all objects for a contact",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "PORTFOLIOTYPE": "Licence",
+            "PORTFOLIOTYPENAME": "Driver Licence",
+            "CONTACTID": 12345,
+            "NUMBER": null,
+            "PORTFOLIOID": 0,
+            "FILES": [],
+            "PORTFOLIOTYPEID": 6783,
+            "DATEEXPIRES": null,
+            "ISSUEDBY": null,
+            "DATEISSUED": null,
+            "DETAILS": null,
+            "CUSTOMFIELD_LICENCESTATE": null,
+            "CUSTOMFIELD_PHOTOQUALITY": null,
+            "CUSTOMFIELD_MULTIFIELD": [
+              "Example A",
+              "Example X"
+            ]
+          },
+          {
+            "PORTFOLIOTYPE": "Membership",
+            "CUSTOMFIELD_PHOBIAS": null,
+            "PORTFOLIOTYPENAME": "XYZ Corporate Membership",
+            "CONTACTID": 12345,
+            "NUMBER": null,
+            "PORTFOLIOID": 33576,
+            "FILES": [],
+            "PORTFOLIOTYPEID": 74,
+            "DATEEXPIRES": null,
+            "ISSUEDBY": "My Corp",
+            "DATEISSUED": "2014-04-02",
+            "DETAILS": "Membership required for this example"
+          }
+        ],
+        "DESCRIPTION": "An array of portfolio objects, returned when searching by a checklist. In this example, the checklist has 2 items, a membership and a licence, but the contact only has a membership recorded.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contact/portfolio/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "AB475EA264BE1273307F119D8D457FA5",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Contact to interact with."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "portfolioID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the portfolio object to interact with. Only requried for PUT (update) requests. For GET requests, if passed, a single structure will be returned - otherwise an array of results will be returned."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "portfolioTypeID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the client defined portfolio document type to use. You can also filter GET results by this type for a contact. These can be found by checking endpoint <b>api/portfolio/types</b>"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "portfolioChecklistID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "GET only. If passed, portfolio objects will be returned which match those in the checklist. Missing items will be returned as placeholders with PORTFOLIOID = 0. These can be found by checking endpoint <b>api/portfolio/checklists</b>"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "isCRICOS",
+      "TYPE": "boolean",
+      "DESCRIPTION": "GET only. If passed, will return the documents against the defined CRICOS checklist. The output is the same as passing a portfolioChecklistID. This feature must be enabled and the checklist must defined in the client's System Settings or an error will be thrown."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "number",
+      "TYPE": "string",
+      "DESCRIPTION": "This and the parameters below are for PUT and POST requests only. The portfolio number. Used only all but Qualification type portfolio objects."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "registration",
+      "TYPE": "string",
+      "DESCRIPTION": "Used only for Registration type portfolio objects."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "name",
+      "TYPE": "string",
+      "DESCRIPTION": "Used only for Qualification type portfolio objects."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "specialty",
+      "TYPE": "string",
+      "DESCRIPTION": "Used only for Qualification type portfolio objects."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "startDate",
+      "TYPE": "date",
+      "DESCRIPTION": "Used only for Qualification type portfolio objects."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "status",
+      "TYPE": "string",
+      "DESCRIPTION": "Used only for Qualification type portfolio objects and only for clients who have enabled the system setting. Valid values are: Completed, Commenced, Attended, Suspended, Canceled, Withdrawn, and Pending"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "dateIssued",
+      "TYPE": "date",
+      "DESCRIPTION": ""
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "dateExpires",
+      "TYPE": "date",
+      "DESCRIPTION": ""
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "issuedBy",
+      "TYPE": "string",
+      "DESCRIPTION": ""
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "details",
+      "TYPE": "string",
+      "DESCRIPTION": ""
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.portfolio",
+  "METHODS": "GET,POST,PUT",
+  "ACTION": {
+    "PUT": "update",
+    "GET": "read",
+    "POST": "create"
+  },
+  "DESCRIPTION": "Returns, updates and creates meta data and documents against a contact's portfolio"
+}

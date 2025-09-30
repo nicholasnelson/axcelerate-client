@@ -1,0 +1,49 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "PAYMENTURL": "https://dev.axcelerate.com/index.cfm/payment/invoice/?invGUID=1380B800-BBF6-4F54-92D94AFA528768F8"
+        },
+        "DESCRIPTION": "On a PUT request,updates an invoice to be ready for payment and returns payment URL.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/accounting/invoice/:invoiceGUID-numeric/approve",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "InvoiceGUID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Invoice GUID to prepare for payment."
+    }
+  ],
+  "RESOURCEID": "B6AAE345FFB3DC3F6A561E0632AAE32C",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "PUT",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "JSON",
+  "HANDLER": "accounting.invoice",
+  "METHODS": "PUT",
+  "ACTION": {
+    "PUT": "approve"
+  },
+  "DESCRIPTION": "Prepare an invoice for payment, and return payment URL"
+}

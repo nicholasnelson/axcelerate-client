@@ -1,0 +1,31 @@
+{
+  "RESPONSE": {},
+  "PATTERN": "/task/priorities",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "7CCAFB79A445BBAE245F729A1A19CC9F",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.task",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "categories"
+  },
+  "DESCRIPTION": "Pull back a list of workflow user task priorities"
+}

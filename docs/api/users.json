@@ -1,0 +1,125 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "ROLETYPEID": 1,
+            "USERID": 2571198,
+            "DOMAINID": null,
+            "FIRSTLOGINDATE": "",
+            "CONTACTID": 12220288,
+            "ROLEID": 2456,
+            "ROLENAME": "Developer",
+            "PENDINGLOGININVITE": false,
+            "ACTIVE": 1,
+            "PARTNERORGANISATIONID": "",
+            "USERNAME": "chris.bailey3",
+            "CONTACT_NAME": "Chris Bailey"
+          },
+          {
+            "ROLETYPEID": 1,
+            "USERID": 7098,
+            "DOMAINID": null,
+            "FIRSTLOGINDATE": "",
+            "CONTACTID": 1100635,
+            "ROLEID": 2530,
+            "ROLENAME": "Old User",
+            "PENDINGLOGININVITE": false,
+            "ACTIVE": 0,
+            "PARTNERORGANISATIONID": "",
+            "USERNAME": "Ryan.dw",
+            "CONTACT_NAME": "Ryan de Weijer"
+          },
+          {
+            "ROLETYPEID": 1,
+            "USERID": 6028,
+            "DOMAINID": null,
+            "FIRSTLOGINDATE": "",
+            "CONTACTID": 884923,
+            "ROLEID": 2386,
+            "ROLENAME": "Client Services",
+            "PENDINGLOGININVITE": false,
+            "ACTIVE": 0,
+            "PARTNERORGANISATIONID": "",
+            "USERNAME": "Meeta.Doolabh",
+            "CONTACT_NAME": "Meeta Doolabh"
+          }
+        ],
+        "DESCRIPTION": "The user information will be returned in a flat object.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/users",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "2E7C017377D6413A3E6FA1F2F6A6C1F4",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The aXcelerate ContactID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "username",
+      "TYPE": "string",
+      "DESCRIPTION": "The Username"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "givenName",
+      "TYPE": "string",
+      "DESCRIPTION": "The Associated Contact's Given Name"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "surname",
+      "TYPE": "string",
+      "DESCRIPTION": "The Associated Contact's Surname."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "email",
+      "TYPE": "string",
+      "DESCRIPTION": "The Associated Contact's email address"
+    },
+    {
+      "DEFAULT": "1",
+      "REQUIRED": false,
+      "NAME": "isActive",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The User status. Enter 0 = inactive, 1 = active, 2 = all"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.user",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "search"
+  },
+  "DESCRIPTION": "Lists aXcelerate Users - Display Length is defaulted to 10. Note: this endpoint does not have paging. The parameters below refer only to POST requests."
+}

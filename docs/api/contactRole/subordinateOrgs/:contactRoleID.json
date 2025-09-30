@@ -1,0 +1,48 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "CONTACTROLEID": 2386,
+            "ORGID": 36590
+          },
+          {
+            "CONTACTROLEID": 5740,
+            "ORGID": 36590
+          }
+        ],
+        "DESCRIPTION": "Contact Role returned in JSON format",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contactRole/subordinateOrgs/:contactRoleID",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "2011D046BED96F81962D68610E5C2E55",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contactRole",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getSubordinateOrgs"
+  },
+  "DESCRIPTION": "Retrieves a list of Organisations related to a Manager's direct reports."
+}

@@ -1,0 +1,78 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "startTime": "9:00 AM",
+          "linkID": 4674335,
+          "source": "Complex",
+          "clashDate": "May, 26 2023 00:00:00 +1000",
+          "clashID": 12229180,
+          "endTime": "5:00 PM",
+          "clashOf": "Trainer",
+          "Reason": "test Workshop 1",
+          "editID": 1599886
+        },
+        "DESCRIPTION": "A successful call will give you a response like this:",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/trainer/availability/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "198B3F390F21833CEC72F15A43518C49",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Contact (who is a Trainer)."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "date",
+      "TYPE": "date",
+      "DESCRIPTION": "The Date to check."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "startTime",
+      "TYPE": "string",
+      "DESCRIPTION": "The Start Time to check."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "finishTime",
+      "TYPE": "string",
+      "DESCRIPTION": "The End Time to check."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.trainer",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "getAvailability"
+  },
+  "DESCRIPTION": "Check a Trainer's availability - returns an array of 'clashes' if unavailable."
+}

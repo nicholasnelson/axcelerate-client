@@ -1,0 +1,61 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "ID": 4566,
+          "CODE": "3000",
+          "NAME": "MELBOURNE",
+          "BUILDINGNAME": "E Building",
+          "UNITNO": "99A",
+          "STREETNO": "35",
+          "STREETNAME": "Vic Lane",
+          "CITY": "MELBOURNE",
+          "STATE": "VIC",
+          "POSTCODE": "3000",
+          "COUNTRY": "Australia",
+          "COUNTRYID": 1101,
+          "ACTIVE": true
+        },
+        "DESCRIPTION": "",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/deliveryLocation/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "B85F5E9978464819AAE93670DF32B2A1",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "ID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of Delivery Location to read."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.deliveryLocation",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "read"
+  },
+  "DESCRIPTION": "Returns a single accredited delivery location. These are the locations reported to NCVER through the AVETMISS reports and are attached to classes (type=p) and units only."
+}

@@ -1,0 +1,187 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "POSDESCRIPTION": "",
+          "ISACTIVE": true,
+          "DATEUPDATED": "2015-03-05 13:28",
+          "POSEND": "",
+          "NAME": "Developer",
+          "DIRECTMANAGER": false,
+          "DATEINSERTED": "2015-03-03 11:16",
+          "POSSTART": "2015-03-03 11:16",
+          "CONTACTROLEID": 1579,
+          "ORGID": 36590,
+          "POSNUMBER": "DEV01",
+          "MANAGER": {
+            "POSDESCRIPTION": "",
+            "ISACTIVE": true,
+            "DATEUPDATED": "2015-03-05 13:31",
+            "POSEND": "",
+            "NAME": "Operations Manager",
+            "DIRECTMANAGER": true,
+            "DATEINSERTED": "2015-03-05 13:16",
+            "POSSTART": "2015-03-05 13:16",
+            "CONTACTROLEID": 1580,
+            "ORGID": 36590,
+            "POSNUMBER": "OPMAN01",
+            "MANAGER": {},
+            "DATECOMMENCED": "",
+            "COSTCENTREID": null,
+            "TYPE": "manager",
+            "COSTCENTRE": {},
+            "SKILLGROUPS": [
+              {
+                "ISACTIVE": true,
+                "DATEUPDATED": null,
+                "NAME": "people Management",
+                "TYPE": "management",
+                "SKILLGROUPID": 111,
+                "DATEINSERTED": "2015-03-05 13:29"
+              }
+            ]
+          },
+          "DATECOMMENCED": "",
+          "COSTCENTREID": null,
+          "TYPE": "IT",
+          "COSTCENTRE": {},
+          "SKILLGROUPS": [
+            {
+              "ISACTIVE": false,
+              "DATEUPDATED": "2013-06-26 18:22",
+              "NAME": "BLAH",
+              "TYPE": "BLAH",
+              "SKILLGROUPID": 19,
+              "DATEINSERTED": "2013-06-07 15:55"
+            },
+            {
+              "ISACTIVE": true,
+              "DATEUPDATED": null,
+              "NAME": "Programming",
+              "TYPE": "IT",
+              "SKILLGROUPID": 110,
+              "DATEINSERTED": "2015-03-05 13:27"
+            }
+          ]
+        },
+        "DESCRIPTION": "Contact Role returned in JSON format",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contactRole/:contactRoleID",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "EB73CD9F2245EF4DB64BBDA7EFB35BF6",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "name",
+      "TYPE": "string",
+      "DESCRIPTION": "The name of the Contact Role."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of the Contact Role"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "posNumber",
+      "TYPE": "string",
+      "DESCRIPTION": "The number associated with the Contact Role"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "posDescription",
+      "TYPE": "string",
+      "DESCRIPTION": "The description for the Contact Role"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "posstart",
+      "TYPE": "date",
+      "DESCRIPTION": "The start date of the Contact Role"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "posend",
+      "TYPE": "date",
+      "DESCRIPTION": "The end date of the Contact Role"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "dateCommenced",
+      "TYPE": "date",
+      "DESCRIPTION": "The commencement date of the Contact Role"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "directManager",
+      "TYPE": "boolean",
+      "DESCRIPTION": "The Direct Manager Flag: set this (to 1) if the role is intended to be used as a manager"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "managerContactRoleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "A valid ContactRoleID which this Contact Role reports to"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "costCentreID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "A valid cost centre ID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "skillGroupIDs",
+      "TYPE": "string",
+      "DESCRIPTION": "A list of valid Skill Group IDs to assign to the Contact Role (comma separated)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "orgID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "A valid Organisation ID."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contactRole",
+  "METHODS": "GET,PUT",
+  "ACTION": {
+    "PUT": "update",
+    "GET": "read"
+  },
+  "DESCRIPTION": "Interacts with a specfic contact role. You can read (GET) or update (PUT) a Contact Role. The parameters below refer only to PUT requests."
+}

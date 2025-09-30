@@ -1,0 +1,92 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "DATA": [
+            {
+              "Qualification Name": "Certificate I in Business",
+              "Organisation": "VM Learning / aXcelerate",
+              "Class Descriptor": "# W OUT DATES",
+              "Trainer Full Name": "",
+              "Actual Completion Date": "",
+              "Full Name": "Nathan Gordon",
+              "Commencement Date": "2015-07-17",
+              "USI": "",
+              "Qualification Code": "BSB10112",
+              "Enrolment Date": "2015-07-17",
+              "Expected Completion Date": "2015-07-17"
+            }
+          ],
+          "ERRORMSG": "",
+          "REPORTNAME": "Qualification Enrolments and Outcomes",
+          "PATH": "",
+          "SUCCESS": true,
+          "COUNT": 1,
+          "CONTENTTYPE": "application/json",
+          "FILTERS": [
+            {
+              "VALUE2": "",
+              "NAME": "enrolments.enrolstatus",
+              "VALUE": "comp"
+            },
+            {
+              "VALUE2": "",
+              "NAME": "enrolments.dateenrolled",
+              "VALUE": "01/01/2015"
+            },
+            {
+              "VALUE2": "",
+              "NAME": "contacts.givenname",
+              "VALUE": "Nathan"
+            },
+            {
+              "VALUE2": "",
+              "NAME": "contacts.surname",
+              "VALUE": "Gordon"
+            }
+          ],
+          "DESCRIPTION": "JSON/Collection"
+        },
+        "DESCRIPTION": "An example report returned in JSON format",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/savedReport/:reportID [DEPRECATED]",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "5EF9480DA774B0C44366AA5B078CBEA0",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "filterOverride",
+      "TYPE": "json",
+      "DESCRIPTION": "Override the standard filter value(s): <br/> i.e: To override the Enrolment Status Value you can pass:<br/> [{NAME:'enrolments.enrolstatus', VALUE:'canc', VALUE2:''}] <br/> <strong>NOTE:</strong> You cannot test/use this in the API Simulator"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.report",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "runReport"
+  },
+  "DESCRIPTION": "DEPRECATED: Please use POST: /report/saved/run"
+}

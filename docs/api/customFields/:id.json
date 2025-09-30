@@ -1,0 +1,39 @@
+{
+  "RESPONSE": {},
+  "PATTERN": "/customFields/:id-numeric",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "id",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Custom Field ID to interact with"
+    }
+  ],
+  "RESOURCEID": "A07432DC8BFE81657B7D06331F12D3C2",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "DELETE",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.customField",
+  "METHODS": "DELETE",
+  "ACTION": {
+    "DELETE": "delete"
+  },
+  "DESCRIPTION": "Delete a specific Custom Field."
+}

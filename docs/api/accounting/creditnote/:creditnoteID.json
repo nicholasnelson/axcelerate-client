@@ -1,0 +1,390 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "CONTACTNAME": "Michael Gorbachev",
+          "CREDITNOTEDATE": "2021-11-19",
+          "PRICEGROSS": 1.11,
+          "HOUSENR": "11",
+          "ISARCHIVED": false,
+          "ISEXPORTABLE": true,
+          "ADDRESS2": null,
+          "ORDERDATE": "2021-11-19",
+          "OWNERCONTACTID": 261302,
+          "COUNTRYID": 14,
+          "ORGANISATION": "aXcelerate",
+          "CONTACTID": 12012508,
+          "ISCANCELLED": false,
+          "ISSEQUENCENOISSUED": true,
+          "CREDITGUID": "9023D4E1-A711-41B0-AB22562D9263734A",
+          "CREDITNOTEID": 175770,
+          "ISCREDITNOTENRLOCKED": true,
+          "STATE": "QLD",
+          "FIRSTNAME": "Michael",
+          "COMMENT": null,
+          "PHONENR": null,
+          "MOBILENR": "04109998787",
+          "CITY": "Milton",
+          "ORGID": 28716,
+          "ORDERNR": null,
+          "EMAIL": "misha.gorby@kremlin.ru",
+          "SOURCEINVOICEID": null,
+          "PRICENETT": 1.01,
+          "ISFORCEBILLTOCONTACT": false,
+          "MOBILECOUNTRYCODE": null,
+          "AREITEMSLOCKED": false,
+          "LASTNAME": "Gorbachev",
+          "HASAPPLIEDAMOUNT": false,
+          "STREET": "kremlin",
+          "BALANCE": 1.11,
+          "ITEMS": [
+            {
+              "TOTALTAX": 0.1,
+              "UNITPRICETAX": 0.1,
+              "DOMAINID": null,
+              "UNITPRICENETT": 1.01,
+              "QTY": 1,
+              "TAXPERCENT": 10,
+              "TOTALGROSS": 1.11,
+              "ITEMCODE": "11111",
+              "FINANCECODE": "1-0000",
+              "TOTALNETT": 1.01,
+              "SOURCEID": 0,
+              "SERVICEDATE": null,
+              "UNITPRICEGROSS": 1.11,
+              "ITEMID": 287936,
+              "DESCRIPTION": "kgb",
+              "COSTCENTRECODE": null
+            }
+          ],
+          "ISVOID": false,
+          "CREDITNOTENR": "aX00189",
+          "CURRENCY": "AUD",
+          "FORCENOTEXPORTABLE": false,
+          "POSTCODE": "4000",
+          "ISPAID": false
+        },
+        "DESCRIPTION": "Credit note array returned in JSON format",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "QTY": 1,
+            "ITEMCODE": "widget",
+            "DESCRIPTION": "Some item",
+            "UNITPRICEGROSS": 15.96,
+            "TAXPERCENT": 10
+          }
+        ],
+        "DESCRIPTION": "For creating a credit note with a new line item",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "ITEMID": 123456,
+            "QTY": 6,
+            "ITEMCODE": "widget",
+            "DESCRIPTION": "Some other widget",
+            "UNITPRICEGROSS": 9,
+            "TAXPERCENT": 0
+          }
+        ],
+        "DESCRIPTION": "For editing an existing line item. (note specifying an itemid)",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "ITEMID": 123456,
+            "QTY": 0,
+            "ITEMCODE": "widget",
+            "DESCRIPTION": "Some item",
+            "UNITPRICEGROSS": 15.96,
+            "TAXPERCENT": 10
+          }
+        ],
+        "DESCRIPTION": "For deleting a line item from the credit note.(note specifying an item id and setting qty to zero)",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/accounting/creditnote/:creditnoteID",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "creditnoteID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The creditnoteID to retrieve. Note that this is NOT the same as the credit note number"
+    }
+  ],
+  "RESOURCEID": "5F71F7CA969BC489FE59B11DAE12BA99",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contactID for credit notes"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "firstname",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional.Given Names credit note bill to "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "surname",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional.Last Names credit note bill to"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "CREDITNOTEDATE",
+      "TYPE": "date",
+      "DESCRIPTION": "Optional. Credit note date yyyy-mm-dd "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem",
+      "TYPE": "json",
+      "DESCRIPTION": "Optional.Credit Note item(s) data in json format"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.DESCRIPTION",
+      "TYPE": "string",
+      "DESCRIPTION": "The item description"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.QTY",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional for PUT(edit).Item Quantity. Must be greater than zero. If QTY is zero and an ITEMID is defined then the line item matching that ITEMID is removed from the invoice."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.ITEMCODE",
+      "TYPE": "string",
+      "DESCRIPTION": "The item code associated with this line item."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.ITEMID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "To edit an existing line item the ITEMID must be specified, for a new line item this value can be omitted or set to zero. Note: If an ITEMID is specified and QTY is set to zero then that line item is deleted from the invoice."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.FINANCECODE",
+      "TYPE": "string",
+      "DESCRIPTION": "The finance code to associate with the line-item."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.TAXPERCENT",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The amount of GST on that item ten percent would be: 10"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.UNITPRICEGROSS",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The gross price for a single quantity of the item. Fifteen Dollars Ninety Six Cents would be: 15.96"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.DOMAINID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The system-id of the domain that is to be associated with the line-item."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.DATA",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional for PUT(edit).credit note item data"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.PARTID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional for PUT(edit).credit note part ID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.COSTCENTRECODE",
+      "TYPE": "string",
+      "DESCRIPTION": "The cost center that is associated with the line-item."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.SERVICEDATE",
+      "TYPE": "date",
+      "DESCRIPTION": "The service date associated with the line-item. Supported Formats are: {ts 'YYYY-MM-DDThh:mm:ss'} or YYYY-MM-DDThh:mm:ss"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.CHILDREN",
+      "TYPE": "json",
+      "DESCRIPTION": "Optional for PUT(edit).credit note children structure"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "HOUSENR",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional. Address house number"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ADDRESS2",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Address line 2 "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ORDERDATE",
+      "TYPE": "date",
+      "DESCRIPTION": "Optional. Order date yyyy-mm-dd "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "COUNTRYID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional.Country ID code"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "STATE",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Address State"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "COMMENT",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Comment text "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "PHONENR",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Phone number "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "MOBILECOUNTRYCODE",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Phone country code number "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "COUNTRYID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional.Country ID code"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "CITY",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Address City"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ORGID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional.Organisation ID code"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ORDERNR",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional. Order number"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "email",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Email address "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "STREET",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Street name "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "FORCENOTEXPORTABLE",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Optional. force Credit note export"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "POSTCODE",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Address Post Code"
+    }
+  ],
+  "DEFAULTFORMAT": "JSON",
+  "HANDLER": "api.accounting.creditnote",
+  "METHODS": "GET,PUT",
+  "ACTION": {
+    "PUT": "edit",
+    "GET": "view"
+  },
+  "DESCRIPTION": "Get the details of a credit note / Update a credit note <br>The general process for creating the expected payload of the AITEM field is as follows:<br>\n\t\t\t\t<li>Create an array of line items. Depending on the programming language that would be a structs / dictionary / hashmap).</li>\n\t\t\t\t<li>Serialize the array to JSON. </li>\n\t\t\t\t<li>Pass the serialised string in the AITEM form field.</li>"
+}

@@ -1,0 +1,154 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "ROWID": 1,
+            "ID": 3287782,
+            "TEXT": "\r\n\tMerge Document emailed by Jade\r\n\tSubject: Testing Victorian AVETMISS 2015 Format Updates\r\n View Email",
+            "TYPE": "System Generated Note",
+            "DATEINSERTED": "2014-12-16 13:17",
+            "DATEUPDATED": null,
+            "ADDEDBY": "Jade Steffensen",
+            "UPDATEDBY": null,
+            "ADDEDBYCONTACTID": 4746,
+            "UPDATEDBYCONTACTID": null,
+            "ATTACHMENTS": null,
+            "COUNT": 5
+          },
+          {
+            "ROWID": 2,
+            "ID": 734371,
+            "TEXT": "\r\n\tTesting notes 123\r\n",
+            "TYPE": "Appointment Made - Existing Contact",
+            "DATEINSERTED": "2013-04-24 11:34",
+            "DATEUPDATED": null,
+            "ADDEDBY": "Nathan Gordon",
+            "UPDATEDBY": null,
+            "ADDEDBYCONTACTID": 116482,
+            "UPDATEDBYCONTACTID": null,
+            "ATTACHMENTS": null,
+            "COUNT": 5
+          },
+          {
+            "ROWID": 3,
+            "ID": 2206415,
+            "TEXT": "Organisation changed from TESTING 123 to VM Learning / aXcelerate by Nathan1",
+            "TYPE": "System Generated Note",
+            "DATEINSERTED": "2014-08-01 12:20",
+            "DATEUPDATED": null,
+            "ADDEDBY": "SYSTEM",
+            "UPDATEDBY": null,
+            "ADDEDBYCONTACTID": null,
+            "UPDATEDBYCONTACTID": null,
+            "ATTACHMENTS": null,
+            "COUNT": 5
+          },
+          {
+            "ROWID": 4,
+            "ID": 2196207,
+            "TEXT": "Organisation changed to TESTING 123 by Nathan1",
+            "TYPE": "System Generated Note",
+            "DATEINSERTED": "2014-07-31 09:17",
+            "DATEUPDATED": null,
+            "ADDEDBY": "SYSTEM",
+            "UPDATEDBY": null,
+            "ADDEDBYCONTACTID": null,
+            "UPDATEDBYCONTACTID": null,
+            "ATTACHMENTS": "rlssa-logo.png",
+            "COUNT": 5
+          },
+          {
+            "ROWID": 5,
+            "ID": 1411408,
+            "TEXT": "Testing 123",
+            "TYPE": "aXcelerate - Client Service - Heart Day",
+            "DATEINSERTED": "2014-02-19 19:10",
+            "DATEUPDATED": null,
+            "ADDEDBY": "Nathan Gordon",
+            "UPDATEDBY": null,
+            "ADDEDBYCONTACTID": 116482,
+            "UPDATEDBYCONTACTID": null,
+            "ATTACHMENTS": "upload1.docx,upload2.pdf",
+            "COUNT": 5
+          }
+        ],
+        "DESCRIPTION": "The enrolment information will be returned in an object.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contact/notes/:contactID",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Contact to interact with."
+    }
+  ],
+  "RESOURCEID": "B899CD733D3E3CCD23A654CFFFAC7D15",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "search",
+      "TYPE": "string",
+      "DESCRIPTION": "The search string."
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": false,
+      "NAME": "hideSystemNotes",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Hide system generated notes."
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": false,
+      "NAME": "purgeCache",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Force the system to retrieve data from the database (don't use cached query)."
+    },
+    {
+      "DEFAULT": "0",
+      "REQUIRED": false,
+      "NAME": "offset",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The record to start at."
+    },
+    {
+      "DEFAULT": "10",
+      "REQUIRED": false,
+      "NAME": "displayLength",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The amount of records to display."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contact",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getContactNotes"
+  },
+  "DESCRIPTION": "Returns notes for a specific contact."
+}

@@ -1,0 +1,158 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "PORTFOLIOID": "2597217",
+            "FILEPATH": "/var/axcelerate/private/clients/528457344/students/3367956/portfolio/2597231/enrolment/enrolmentInfo.pdf",
+            "LINKEDENOLMENT": "10190156"
+          }
+        ],
+        "DESCRIPTION": "This is an example of creating a portfolio enrolment document for a class enrolment. The parameters passed were: planID=12345, type=p, instanceID=123, portfolioTypeID=54321, contactID=411411",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/template/portfolio",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "DB44740557A8C8A28F3CE06EA3C56BEA",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "planID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of a template to use."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contact that the portfolio will be created for."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "portfolioTypeID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Portfolio Type that will determine the type of portfolio item that is generated."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "instanceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the linked instance. If the contactID and instanceID match a class enrolment, the portfolio item will be linked as an enrolment document."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of instance (w = workshop, p = class)."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "folder",
+      "TYPE": "string",
+      "DESCRIPTION": "The folder of that the file will be stored against in the portfolio item."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "replaceContent",
+      "TYPE": "string",
+      "DESCRIPTION": "JSON object (stringified) containing key value pairs. Keys will represent template fields which will then be replaced within the template, allowing custom content to be added. The values can be HTML content that the template field will be replaced with."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "dateIssued",
+      "TYPE": "date",
+      "DESCRIPTION": ""
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "dateExpires",
+      "TYPE": "date",
+      "DESCRIPTION": ""
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "issuedBy",
+      "TYPE": "string",
+      "DESCRIPTION": ""
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "details",
+      "TYPE": "string",
+      "DESCRIPTION": ""
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "registration",
+      "TYPE": "string",
+      "DESCRIPTION": "Used only for Registration type portfolio objects."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "name",
+      "TYPE": "string",
+      "DESCRIPTION": "Used only for Qualification type portfolio objects."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "specialty",
+      "TYPE": "string",
+      "DESCRIPTION": "Used only for Qualification type portfolio objects."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "startDate",
+      "TYPE": "date",
+      "DESCRIPTION": "Used only for Qualification type portfolio objects."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "status",
+      "TYPE": "string",
+      "DESCRIPTION": "Used only for Qualification type portfolio objects and only for clients who have enabled the system setting. Valid values are: Completed, Commenced, Attended, Suspended, Canceled, Withdrawn, and Pending"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.template",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "portfolio"
+  },
+  "DESCRIPTION": "Will create a Portfolio item and generate a PDF of a template that will be saved against the contact Portfolio. If the linked instance ID and contact ID matches a class enrolment, an enrolment document will be created by linking the portfolio item to the class enrolment."
+}

@@ -1,0 +1,72 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "MESSAGE": "Note was added to Contact: 116482.",
+          "STATUS": "success",
+          "NOTEID": 1234
+        },
+        "DESCRIPTION": "The result will look like this if the call was successful.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contact/note/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "E3698BBD56CC91086DEB552E66C48DCE",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ContactID to add the note to."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactNote",
+      "TYPE": "string",
+      "DESCRIPTION": "The note to add to the Contact."
+    },
+    {
+      "DEFAULT": 88,
+      "REQUIRED": false,
+      "NAME": "noteTypeID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The type of note to add to the Contact. This defaults to System Note"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "emailNote",
+      "TYPE": "numeric-list",
+      "DESCRIPTION": "A list of ContactIDs to email the note to."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contact",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "addContactNote"
+  },
+  "DESCRIPTION": "Adds a note against a specific Contact."
+}

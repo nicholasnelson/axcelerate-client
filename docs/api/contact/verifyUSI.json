@@ -1,0 +1,78 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "USI_VERIFIED": true,
+          "DATA": {
+            "usiStatus": "Valid",
+            "firstName": "MATCH",
+            "familyName": "MATCH",
+            "dateOfBirth": "MATCH"
+          },
+          "MSG": "USI Verified successfully"
+        },
+        "DESCRIPTION": "An example successful call. The USI was correctly verified.",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": {
+          "USI_VERIFIED": false,
+          "DATA": {
+            "usiStatus": "Valid",
+            "firstName": "NO_MATCH",
+            "familyName": "MATCH",
+            "dateOfBirth": "MATCH"
+          },
+          "MSG": "USI Valid but the student's personal data does not match. This must be fixed before their USI can be marked as verified. Please check: First Name. "
+        },
+        "DESCRIPTION": "An example unsuccessful call. The USI was not verified because the first name did not match. The actual data returned by the USI Service is in the DATA key.",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": {
+          "USI_VERIFIED": false,
+          "MSG": "An error exists for this contact and must be corrected before calling the USI Service. Date of birth is required. "
+        },
+        "DESCRIPTION": "An example unsuccessful call. An attempt was not made to verify the USI because data was missing.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contact/verifyUSI",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "D38C4108FB5EA9CC6D399AD95FF8442D",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contactID of the contact to verify."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contact",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "verifyUSI"
+  },
+  "DESCRIPTION": "A wrapper for the USI Service verify USI call. It will return a structure with the boolean key USI_VERIFED and a MSG with any errors."
+}

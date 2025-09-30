@@ -1,0 +1,203 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "CONSULTANTID": 1234,
+            "PDATAID": "1584203",
+            "COMPLEXSTART": "08:30",
+            "ROOMID": 234,
+            "COMPLEXDATE": "2021-10-13",
+            "COMPLEXID": "4664499",
+            "EQUIPMENTIDLIST": "123,456,678",
+            "LOCATION": "super location ",
+            "SETUPDURATION": "10",
+            "VCRECORDINGLINK": null,
+            "VENUEID": null,
+            "VCRECORDINGACCESSCODE": null,
+            "PACKUPDURATION": "20",
+            "COMPLEXFINISH": "16:30",
+            "BREAKDURATION": "15",
+            "DESCRIPTION": "this is the best part",
+            "TRAINERS": [
+              {
+                "FINISHDATEANDTIMEOVERRIDE": "03:00 PM",
+                "FKCOMPLEXID": 4664499,
+                "PACKUP": false,
+                "FKTRAINERCONTACTID": 1234,
+                "SETUP": false,
+                "STARTDATEANDTIMEOVERRIDE": "01:00 PM"
+              }
+            ]
+          }
+        ],
+        "DESCRIPTION": "Courses returned in JSON format. The example below is for an accredited program (type=p)",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/instance/complexdate/:instanceID-numeric",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "A89F215889B8E3E5245C85DE2C59465A",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "complexdate",
+      "TYPE": "string",
+      "DESCRIPTION": "Date of new complex date for POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "complexstart",
+      "TYPE": "string",
+      "DESCRIPTION": "Start time for new complex date for POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "complexfinish",
+      "TYPE": "string",
+      "DESCRIPTION": "End time for new complex date for POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "Location",
+      "TYPE": "string",
+      "DESCRIPTION": "Location for new complex date for POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ConsultantID",
+      "TYPE": "string",
+      "DESCRIPTION": "Trainer ID for new complex date for POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "RoomID",
+      "TYPE": "string",
+      "DESCRIPTION": "Room ID for new complex date for POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "description",
+      "TYPE": "string",
+      "DESCRIPTION": "description for new complex date for POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "setupDuration",
+      "TYPE": "string",
+      "DESCRIPTION": "Setup Duration in minutes for new complex date for POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "breakDuration",
+      "TYPE": "string",
+      "DESCRIPTION": "Break Duration in minutes for new complex date for POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "packupDuration",
+      "TYPE": "string",
+      "DESCRIPTION": "Packup Duration in minutes for new complex date for POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "venueID",
+      "TYPE": "string",
+      "DESCRIPTION": "Valid Venue ID for new complex date for POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "withVenue",
+      "TYPE": "string",
+      "DESCRIPTION": "flag if yes - return venue data GET(getComplexDates)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "withEquipmentList",
+      "TYPE": "string",
+      "DESCRIPTION": "flag if yes - return EquipmentList GET(getComplexDates)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "trainerIDs",
+      "TYPE": "string",
+      "DESCRIPTION": "Comma-separated list of contactIDs for trainers on the session. Example trainerID1,trainerID2. Trainer session details are updated based on the aXcelerate system settings. POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "sessionDate",
+      "TYPE": "string",
+      "DESCRIPTION": "Date of new complex date for POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "sessionStartTime",
+      "TYPE": "string",
+      "DESCRIPTION": "Session start time for new complex date for POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "sessionFinishTime",
+      "TYPE": "string",
+      "DESCRIPTION": "Session end time for new complex date for POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "trainerStartTime_[trainerID1]",
+      "TYPE": "string",
+      "DESCRIPTION": "Session start time of the individual trainer for POST(setComplexDate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "trainerFinishTime_[trainerID1]",
+      "TYPE": "string",
+      "DESCRIPTION": "Session end time of the individual trainer for POST(setComplexDate)"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "POST",
+  "ACTION": {
+    "GET": "getComplexDates",
+    "POST": "setComplexDate"
+  },
+  "DESCRIPTION": "Set or get sessions for a workshop."
+}

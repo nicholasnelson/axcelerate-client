@@ -1,0 +1,146 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "UNITS": [],
+          "TRAININGRELATED": [
+            {
+              "DOCUMENTID": 1834,
+              "DOCUMENTNAME": "Time Master - Weekly Action Plan",
+              "DOCUMENTFILENAME": "Time Master - Weekly Action Plan - Example.pdf",
+              "ISPROGRAMRELATED": 1,
+              "DELETED": 0,
+              "FORMGROUP": "",
+              "POLICYGROUP": "",
+              "CATEGORY": "",
+              "SUBGROUP": "",
+              "STUDENTACCESS": 1,
+              "TRAINERACCESS": 1,
+              "PUBLICACCESS": 0,
+              "ROOTDOCUMENT": 1276,
+              "VERMAJOR": 1,
+              "VERMINOR": 2,
+              "CREATEDATE": "September, 14 2010 15:07:29 +0000",
+              "USERID": 5101,
+              "REVIEWPERIOD": "",
+              "GIVENNAME": "Bianca",
+              "SURNAME": "Guz",
+              "USERNAME": "Bianca Guz"
+            }
+          ],
+          "DIPLOMAS": [],
+          "WORKSHOPS": [],
+          "POLICIESFORMS": [
+            {
+              "DOCUMENTID": 75934,
+              "DOCUMENTNAME": "aXcelerate Database Input Rules",
+              "DOCUMENTFILENAME": "aXcelerate Database Input Rules1.pdf",
+              "ISPROGRAMRELATED": 0,
+              "DELETED": 0,
+              "FORMGROUP": "",
+              "POLICYGROUP": "Marketing",
+              "CATEGORY": "Marketing",
+              "SUBGROUP": "Client Service",
+              "STUDENTACCESS": 1,
+              "TRAINERACCESS": 1,
+              "PUBLICACCESS": 0,
+              "ROOTDOCUMENT": 4763,
+              "VERMAJOR": 1,
+              "VERMINOR": 2,
+              "CREATEDATE": "June, 29 2015 04:54:46 +0000",
+              "USERID": 4746,
+              "REVIEWPERIOD": 12,
+              "GIVENNAME": "Jade",
+              "SURNAME": "Steffensen",
+              "USERNAME": "Jade Steffensen"
+            },
+            {
+              "DOCUMENTID": 75137,
+              "DOCUMENTNAME": "Consolidated Data Migrations Spreadsheet",
+              "DOCUMENTFILENAME": "Consolidated Data Migrations Spreadsheet.v1.0.xlsx",
+              "ISPROGRAMRELATED": 0,
+              "DELETED": 0,
+              "FORMGROUP": "",
+              "POLICYGROUP": "aXcelerate",
+              "CATEGORY": "aXcelerate",
+              "SUBGROUP": "",
+              "STUDENTACCESS": 1,
+              "TRAINERACCESS": 1,
+              "PUBLICACCESS": 1,
+              "ROOTDOCUMENT": 75136,
+              "VERMAJOR": 1,
+              "VERMINOR": 1,
+              "CREATEDATE": "May, 21 2015 16:53:27 +0000",
+              "USERID": 12345,
+              "REVIEWPERIOD": "",
+              "GIVENNAME": "Mark",
+              "SURNAME": "Gilmore",
+              "USERNAME": "Mark Gilmore"
+            }
+          ]
+        },
+        "DESCRIPTION": "This returns an array of structs containing the documentID and documentName. When using the CONTACTID only: this will return a structure containing arrays (Use the /resource/ endpoint to retrieve the file).",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/resources",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "0B49DCBA2D92F98256CEC17D99474C7E",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Contact."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Activity Type"
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of the activity. w = workshop, p = accredited program, s = subject. <b>Only required if you use ID</b>"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "forceStudentAccessOnly",
+      "TYPE": "boolean",
+      "DEFEFAULT": "false",
+      "DESCRIPTION": "Only return resources that are for Students"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getResources"
+  },
+  "DESCRIPTION": "Return relevant resources for an activity or a contact."
+}

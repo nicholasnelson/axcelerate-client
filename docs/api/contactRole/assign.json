@@ -1,0 +1,58 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "MESSAGE": "5 Contacts have been assigned to ContactRoleID:1579 Successfully",
+          "STATUS": "success",
+          "CONTACTROLEID": 1579
+        },
+        "DESCRIPTION": "Contact Role returned in JSON format",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contactRole/assign",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "059A3B3BE21EFC3B86EE7C65E574E872",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": 0,
+      "REQUIRED": "false",
+      "NAME": "contactRoleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Contact Role ID."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "contactIDs",
+      "TYPE": "string",
+      "DESCRIPTION": "A list of valid Contact IDs to assign the Contact Role to (comma separated)"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contactRole",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "assign"
+  },
+  "DESCRIPTION": "Assigns a Contact Role to 1 or many Contact IDs OR if ContactRoleID = 0 it will remove any Contact Role from 1 or many Contact IDs"
+}

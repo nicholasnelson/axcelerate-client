@@ -1,0 +1,67 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "REQUEST": {
+            "CANCELURL": "https://some.domain.com/checkout.html",
+            "WEBHOOKURL": "",
+            "REDIRECTURL": "https://some.domain.com/complete.html",
+            "INVOICEGUID": "EFCFBED7-152F-4635-86A11BF511B073D5"
+          },
+          "STATE": "paid",
+          "PLATFORM": "stripe",
+          "RESULT": {
+            "ERROR": {
+              "CODE": 0,
+              "MSG": ""
+            },
+            "TRANSACTIONGUID": "2CD2C4BA22B1308458A7EB9684E6C51A",
+            "TRANSACTIONID": "pi_3LcgKwHWrsl8cbQY1Fn98Ksg",
+            "OK": true,
+            "PLATFORM": "stripe"
+          },
+          "PLATFORMREFERENCE": "pi_3LcgKwHWrsl8cbQY1Fn98Ksg"
+        },
+        "DESCRIPTION": "STATE: The current state of this payment flow process. (pending,paid,failed)<br>REQUEST.CANCELURL:The client will be directed to this url if they cancel payment processing..<br>REQUEST.INVOICEGUID: The GUID of the aXcelerate invoice against which this payment will be applied.<br>REQUEST.REDIRECTURL: The client will be redirected to this url after payment processing.<br>REQUEST.WEBHOOKURL: This property is for internal use only.<br>RESULT.ERROR.CODE: The error code that occurred during processing.<br>RESULT.ERROR.MSG: Short description of the raised error.<br>RESULT.TRANSACTIONGUID: The aXcelerate identifier for this transaction. Only available if STATE is Paid.<br>RESULT.PLATFORM: The payment platform through which this payment was processed.<br>PLATFORMREFERENCE: The reference for this payment within the payment platform.<br>RESULT.OK: This property should not be used in new implementations. Use the STATE property.<br>RESULT.TRANSACTIONID: This property should not be used in new implementations. Use the STATE property.<br><br><br>",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/accounting/ecommerce/payment/ref/:reference",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "E53E6ECED881B287FE2C60108E9FAEED",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "reference",
+      "TYPE": "string",
+      "DESCRIPTION": "The external identifier for the payment flow process."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.accounting.ecommerce.flow_handler",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getReference"
+  },
+  "DESCRIPTION": "Returns the current state of a payment flow process."
+}

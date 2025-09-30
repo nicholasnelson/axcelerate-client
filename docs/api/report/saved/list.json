@@ -1,0 +1,90 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "REPORTNAME": "Progress of last year's business students",
+            "CREATEDBYCONTACTID": 2630274,
+            "CREATEDBY": "Shary Bobbins",
+            "REPORTID": 4479,
+            "REPORTREFERENCE": "classEnrolmentDetailsCached",
+            "ACTIVE": true,
+            "REPORTVERSION": "1.2",
+            "DESCRIPTION": "Returns the current progress of last year's business students"
+          },
+          {
+            "REPORTNAME": "Class Details for Frank",
+            "CREATEDBYCONTACTID": 2630274,
+            "CREATEDBY": "Shary Bobbins",
+            "REPORTID": 1840,
+            "REPORTREFERENCE": "classDetails_withAggregates",
+            "ACTIVE": true,
+            "REPORTVERSION": "1.0",
+            "DESCRIPTION": "My class details"
+          },
+          {
+            "REPORTNAME": "Class Enrolments with outstanding debts",
+            "CREATEDBYCONTACTID": 2630274,
+            "CREATEDBY": "Shary Bobbins",
+            "REPORTID": 3445,
+            "REPORTREFERENCE": "classEnrolmentDetailsCached",
+            "ACTIVE": true,
+            "REPORTVERSION": "1.2",
+            "DESCRIPTION": "Students that owe more than $1000"
+          },
+          {
+            "REPORTNAME": "Contact Portfolio - with custom fields - All staff to use",
+            "CREATEDBYCONTACTID": 4745,
+            "CREATEDBY": "Kym Boss",
+            "REPORTID": 4445,
+            "REPORTREFERENCE": "portfolioCached",
+            "ACTIVE": true,
+            "REPORTVERSION": "1.0",
+            "DESCRIPTION": "Run this report before calling students"
+          },
+          {
+            "REPORTNAME": "End of Month - for Workflow",
+            "CREATEDBYCONTACTID": 2630274,
+            "CREATEDBY": "Shary Bobbins",
+            "REPORTID": 557,
+            "REPORTREFERENCE": "classEnrolmentDetailsCached",
+            "ACTIVE": true,
+            "REPORTVERSION": "1.1",
+            "DESCRIPTION": ""
+          }
+        ],
+        "DESCRIPTION": "An example report returned in JSON format.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/report/saved/list",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "3229B47477D03C812013FAE5C0D11FF5",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.report",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "listSavedReports"
+  },
+  "DESCRIPTION": "Returns an array of available reports, their names and descriptions. "
+}

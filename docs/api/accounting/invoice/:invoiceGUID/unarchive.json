@@ -1,0 +1,47 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": "",
+        "DESCRIPTION": "A successful POST request will return a 204 status code with no content.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/accounting/invoice/:invoiceGUID-numeric/unarchive",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "InvoiceGUID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Invoice GUID for the invoice."
+    }
+  ],
+  "RESOURCEID": "E52B3F079F1715641B4CD7E6EFA4AC40",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "JSON",
+  "HANDLER": "accounting.invoice",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "unarchive"
+  },
+  "DESCRIPTION": "Unarchiving (unlocking) a finalised invoice allows edits but may lead to data inconsistencies, especially if the invoice has already been exported. This action requires Master Finance permission."
+}

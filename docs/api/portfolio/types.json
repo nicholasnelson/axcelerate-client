@@ -1,0 +1,80 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "PORTFOLIOTYPE": "Licence",
+            "PORTFOLIOTYPENAME": "Driver Licence",
+            "PORTFOLIOTYPEID": 6783
+          },
+          {
+            "PORTFOLIOTYPE": "Licence",
+            "PORTFOLIOTYPENAME": "Some other licence",
+            "PORTFOLIOTYPEID": 1339
+          },
+          {
+            "PORTFOLIOTYPE": "Membership",
+            "PORTFOLIOTYPENAME": "XYZ Corporate Membership",
+            "PORTFOLIOTYPEID": 74
+          },
+          {
+            "PORTFOLIOTYPE": "Other",
+            "PORTFOLIOTYPENAME": "Academic Records",
+            "PORTFOLIOTYPEID": 3176
+          },
+          {
+            "PORTFOLIOTYPE": "Other",
+            "PORTFOLIOTYPENAME": "Cover Letter",
+            "PORTFOLIOTYPEID": 2059
+          },
+          {
+            "PORTFOLIOTYPE": "Other",
+            "PORTFOLIOTYPENAME": "Resume",
+            "PORTFOLIOTYPEID": 2058
+          },
+          {
+            "PORTFOLIOTYPE": "Qualification",
+            "PORTFOLIOTYPENAME": "Qualification Certificate",
+            "PORTFOLIOTYPEID": 5897
+          },
+          {
+            "PORTFOLIOTYPE": "Registration",
+            "PORTFOLIOTYPENAME": "Example Reg Type",
+            "PORTFOLIOTYPEID": 190
+          }
+        ],
+        "DESCRIPTION": "",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/portfolio/types",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "D19AB22FF00B0DF467E00F84F9AA4400",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.portfolio",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "types"
+  },
+  "DESCRIPTION": "Returns a list of Contact Portfolio document types as defined in the system. These types are used when accessing <b>/api/contact/portfolio</b>. Currently the entire list is returned for a client. No filters are supported."
+}

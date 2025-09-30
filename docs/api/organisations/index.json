@@ -1,0 +1,173 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "ROWID": 1,
+            "ORGID": 264487,
+            "ORGOPTIONALID": "EdHub0002",
+            "NAME": "Education Hub",
+            "LEGALNAME": "Hub of Knowledge Pty Ltd",
+            "ANZSIC": null,
+            "ORGANISATIONNOTES": "Providing diverse educational services.",
+            "HIERACHYROOT": 264487,
+            "HIERACHYPATH": "/264487/",
+            "HIERACHYDEPTH": 1,
+            "SCHOOLTYPEID": "91",
+            "BOOKING_NOTES": "Available for conferences and events.",
+            "FINANCESYSTEMCARDID": null,
+            "ORGNAMEACCOUNTING": null,
+            "ABN": "12 345 678 901",
+            "PURCHASEORDERREQUIRED": 0,
+            "NWDF_ORGSIZEBRACKET": null,
+            "BANNER": "<img src='/images/EducationHubLogo.png'>",
+            "COUNT": 2,
+            "DETAILS": [
+              {
+                "DETAILID": 55241,
+                "ORGID": 276322,
+                "TYPE": "Street Address",
+                "PHONE": "07 9191 9191",
+                "FAX": "07 9191 9191",
+                "EMAILADDRESS": "info@educationhub.edu.au",
+                "WEBSITE": "www.educationhub.edu.au",
+                "ADDRESS1": "1 University Avenue",
+                "ADDRESS2": null,
+                "CITY": "CITY PARK",
+                "STATE": "QLD",
+                "POSTCODE": "4567",
+                "COUNTRY": "Australia",
+                "ADDRESSLINE1": null,
+                "ADDRESSLINE2": null
+              },
+              {
+                "DETAILID": 55242,
+                "ORGID": 276322,
+                "TYPE": "Postal Address",
+                "PHONE": "07 9191 9191",
+                "FAX": "07 9191 9191",
+                "EMAILADDRESS": "admissions@educationhub.edu.au",
+                "WEBSITE": null,
+                "ADDRESS1": "2 University Avenue",
+                "ADDRESS2": null,
+                "CITY": "CITY PARK",
+                "STATE": "QLD",
+                "POSTCODE": "4567",
+                "COUNTRY": "Australia",
+                "ADDRESSLINE1": null,
+                "ADDRESSLINE2": null
+              }
+            ],
+            "PARENT": {},
+            "PARENTORGID": null,
+            "PAYERCONTACTID": null,
+            "EMPLOYERCONTACTID": null
+          },
+          {
+            "ROWID": 2,
+            "ORGID": 264488,
+            "NAME": "Education Hub - Branch 2",
+            "LEGALNAME": "Hub of Knowledge Pty Ltd - Branch 2",
+            "ANZSIC": null,
+            "ORGANISATIONNOTES": "Testing 9876543210",
+            "HIERACHYROOT": 264487,
+            "HIERACHYPATH": "/264487/264488/",
+            "HIERACHYDEPTH": 2,
+            "SCHOOLTYPEID": "92",
+            "BOOKING_NOTES": "Limited space, booking in advance is recommended.",
+            "FINANCESYSTEMCARDID": null,
+            "ORGNAMEACCOUNTING": null,
+            "ABN": "12 345 678 902",
+            "PURCHASEORDERREQUIRED": 0,
+            "NWDF_ORGSIZEBRACKET": null,
+            "BANNER": "<img src='/images/Branch2Logo.png'>",
+            "COUNT": 2,
+            "DETAILS": [],
+            "PARENT": {
+              "HIERACHYDEPTH": 1,
+              "HIERACHYPATH": "/264487/",
+              "NWDF_ORGSIZEBRACKET": null,
+              "ORGNAMEACCOUNTING": null,
+              "PURCHASEORDERREQUIRED": 0,
+              "BOOKING_NOTES": "Available for conferences and events.",
+              "LEGALNAME": "Hub of Knowledge Pty Ltd",
+              "FINANCESYSTEMCARDID": null,
+              "HIERACHYROOT": 264487,
+              "PAYERCONTACTID": null,
+              "NAME": "Education Hub",
+              "ORGID": 264487,
+              "EMPLOYERCONTACTID": null,
+              "ABN": "12 345 678 901",
+              "ANZSIC": null,
+              "PARENTORGID": null,
+              "ORGANISATIONNOTES": "Testing 543210"
+            },
+            "PARENTORGID": 264487,
+            "PAYERCONTACTID": null,
+            "EMPLOYERCONTACTID": null
+          }
+        ],
+        "DESCRIPTION": "Returns an array of organisation information. The following example was a search on name=test and displayLength=3.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/organisations/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "51CC0586BEA4E98EF6A12E09B94B7CE4",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "search",
+      "TYPE": "string",
+      "DESCRIPTION": "The search term"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "active",
+      "TYPE": "boolean",
+      "DESCRIPTION": "The organisation's active status. If not provided, both active and inactive organisations will be returned."
+    },
+    {
+      "DEFAULT": "0",
+      "REQUIRED": false,
+      "NAME": "offset",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The record to start at"
+    },
+    {
+      "DEFAULT": "10",
+      "REQUIRED": false,
+      "NAME": "displayLength",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Maximum number of records to return."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.organisation",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "search"
+  },
+  "DESCRIPTION": "An Organisation search. This method will return an array of organisations. You can search on most fields."
+}

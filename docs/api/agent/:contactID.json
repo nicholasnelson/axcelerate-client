@@ -1,0 +1,79 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "MARKETINGAGENTID": 711,
+          "CONTACTID": 222233,
+          "DEFAULTCOMMISSIONRATE": 3,
+          "ACTIVE": true,
+          "CUSTOMFIELD_REGIONS": [
+            "North Sydney",
+            "Sydney CSB"
+          ],
+          "CUSTOMFIELD_AGENCYNUMBER": "N004343"
+        },
+        "DESCRIPTION": "This example shows an agent with a default commission rate of 3%",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/agent/:contactID",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "091F848DDF62C82EA8D7CDEC81494B1A",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contact ID of the marketing agent"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "taxRuleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "PUT Only: The tax rule to be specified for this agent. 1 = Excluding GST, 2 = Including GST, 3 = Exempt"
+    },
+    {
+      "DEFAULT": 0,
+      "REQUIRED": false,
+      "NAME": "commissionRate",
+      "TYPE": "numeric",
+      "DESCRIPTION": "PUT ONLY: The percentage commission, between 0 and 100, that the agent will receive."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "Custom_Field_[variableName]",
+      "TYPE": "text",
+      "DESCRIPTION": "PUT ONLY: Custom fields may be updated by specifying their variable name prefixed by custom_field_ EG: custom_field_region, custom_field_specialty. Values used should correspond to the custom field specified. Note: this will not create custom fields, they must already exist."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.agent",
+  "METHODS": "GET,PUT",
+  "ACTION": {
+    "PUT": "update",
+    "GET": "read"
+  },
+  "DESCRIPTION": "This endpoint is only available for clients using the Marketing/Sales Agents feature. It returns a structure representing the data set against a marketing/sales agent. This includes custom fields, if applicable. If the user has finance view permissions, this will also return the agent's default commission rate as a percentage. Without this permission, this key will not be returned. This endpoint only supports searching by contactID. If the contactID passed is not a marketing agent, a 204 No Content will be returned. A 412 will be returned when using PUT if any required parameters are missing or exceed allowed values. A 404 will be returned on put if the record does not exist. NOTE: PUT requests cannot reassign an agentID to a different contact, contactID or Agent ID will be used to locate the record, with contactID taking preference."
+}

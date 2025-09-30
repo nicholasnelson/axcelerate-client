@@ -1,0 +1,258 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "ROWID": 1,
+            "MODELID": 4067,
+            "NAME": "Cert I in Business",
+            "ID": 11238,
+            "TYPE": "p",
+            "COST": 5000,
+            "COMBINEDFORTUITIONFEE": false,
+            "GOVERNMENT": {},
+            "EMPLOYER": {},
+            "STUDENT": {
+              "FUNDTYPE": "Per Unit",
+              "FUNDPERCENTAGE": 0,
+              "FUNDVALUE": 400,
+              "MINFUND": 0,
+              "MAXFUND": 0
+            },
+            "OTHER": {},
+            "COUNT": 11
+          },
+          {
+            "ROWID": 2,
+            "MODELID": 1866,
+            "NAME": "Certificate IV in Superannuation - Member - Flexible online",
+            "ID": 3296,
+            "TYPE": "p",
+            "COST": 1750,
+            "COMBINEDFORTUITIONFEE": false,
+            "GOVERNMENT": {},
+            "EMPLOYER": {},
+            "STUDENT": {
+              "FUNDTYPE": "Per Qualification",
+              "FUNDPERCENTAGE": 0,
+              "FUNDVALUE": 775,
+              "MINFUND": 0,
+              "MAXFUND": 0
+            },
+            "OTHER": {},
+            "COUNT": 11
+          },
+          {
+            "ROWID": 3,
+            "MODELID": 4672,
+            "NAME": "Certificate IV in Superannuation - Member - Flexible online {Duplicated}",
+            "ID": 3296,
+            "TYPE": "p",
+            "COST": null,
+            "COMBINEDFORTUITIONFEE": true,
+            "GOVERNMENT": {},
+            "EMPLOYER": {},
+            "STUDENT": {
+              "FUNDTYPE": "Per Qualification",
+              "FUNDPERCENTAGE": 0,
+              "FUNDVALUE": 775,
+              "MINFUND": 0,
+              "MAXFUND": 0
+            },
+            "OTHER": {},
+            "COUNT": 11
+          },
+          {
+            "ROWID": 4,
+            "MODELID": 4673,
+            "NAME": "Certificate IV in Superannuation - Member - Flexible online {Duplicated}",
+            "ID": 3296,
+            "TYPE": "p",
+            "COST": null,
+            "COMBINEDFORTUITIONFEE": true,
+            "GOVERNMENT": {},
+            "EMPLOYER": {},
+            "STUDENT": {
+              "FUNDTYPE": "Per Qualification",
+              "FUNDPERCENTAGE": 0,
+              "FUNDVALUE": 775,
+              "MINFUND": 0,
+              "MAXFUND": 0
+            },
+            "OTHER": {},
+            "COUNT": 11
+          },
+          {
+            "ROWID": 5,
+            "MODELID": 1863,
+            "NAME": "Certificate IV in Superannuation - Member - Public Workshop",
+            "ID": 3296,
+            "TYPE": "p",
+            "COST": 1650,
+            "COMBINEDFORTUITIONFEE": true,
+            "GOVERNMENT": {},
+            "EMPLOYER": {},
+            "STUDENT": {
+              "FUNDTYPE": "Per Qualification",
+              "FUNDPERCENTAGE": 0,
+              "FUNDVALUE": 1650,
+              "MINFUND": 0,
+              "MAXFUND": 0
+            },
+            "OTHER": {},
+            "COUNT": 11
+          },
+          {
+            "ROWID": 6,
+            "MODELID": 1865,
+            "NAME": "Certificate IV in Superannuation - Non-member - Flexible online",
+            "ID": 3296,
+            "TYPE": "p",
+            "COST": 875,
+            "COMBINEDFORTUITIONFEE": true,
+            "GOVERNMENT": {},
+            "EMPLOYER": {},
+            "STUDENT": {
+              "FUNDTYPE": "Per Qualification",
+              "FUNDPERCENTAGE": 0,
+              "FUNDVALUE": 875,
+              "MINFUND": 0,
+              "MAXFUND": 0
+            },
+            "OTHER": {},
+            "COUNT": 11
+          },
+          {
+            "ROWID": 7,
+            "MODELID": 1864,
+            "NAME": "Certificate IV in Superannuation - Non-member - Public Workshop",
+            "ID": 3296,
+            "TYPE": "p",
+            "COST": 1750,
+            "COMBINEDFORTUITIONFEE": true,
+            "GOVERNMENT": {},
+            "EMPLOYER": {},
+            "STUDENT": {
+              "FUNDTYPE": "Per Qualification",
+              "FUNDPERCENTAGE": 0,
+              "FUNDVALUE": 1750,
+              "MINFUND": 0,
+              "MAXFUND": 0
+            },
+            "OTHER": {},
+            "COUNT": 11
+          },
+          {
+            "ROWID": 8,
+            "MODELID": 1317,
+            "NAME": "Test demo model",
+            "ID": 168,
+            "TYPE": "p",
+            "COST": 5100,
+            "COMBINEDFORTUITIONFEE": false,
+            "GOVERNMENT": {},
+            "EMPLOYER": {},
+            "STUDENT": {
+              "FUNDTYPE": "Per Hour",
+              "FUNDPERCENTAGE": 0,
+              "FUNDVALUE": 10.05,
+              "MINFUND": 0,
+              "MAXFUND": 0
+            },
+            "OTHER": {
+              "FUNDTYPE": "Per Qualification",
+              "FUNDPERCENTAGE": 0,
+              "FUNDVALUE": 0,
+              "ID": 28993,
+              "NAME": null
+            },
+            "COUNT": 11
+          },
+          {
+            "ROWID": 9,
+            "MODELID": 4674,
+            "NAME": "Test demo model {Duplicated}",
+            "ID": 168,
+            "TYPE": "p",
+            "COST": null,
+            "COMBINEDFORTUITIONFEE": true,
+            "GOVERNMENT": {},
+            "EMPLOYER": {},
+            "STUDENT": {
+              "FUNDTYPE": "Per Qualification",
+              "FUNDPERCENTAGE": 50,
+              "FUNDVALUE": 0,
+              "MINFUND": 0,
+              "MAXFUND": 0
+            },
+            "OTHER": {
+              "FUNDTYPE": "Per Qualification",
+              "FUNDPERCENTAGE": 50,
+              "FUNDVALUE": 0,
+              "ID": 28993,
+              "NAME": null
+            },
+            "COUNT": 11
+          },
+          {
+            "ROWID": 10,
+            "MODELID": 4670,
+            "NAME": "Test demo model {Duplicated}",
+            "ID": 168,
+            "TYPE": "p",
+            "COST": null,
+            "COMBINEDFORTUITIONFEE": true,
+            "GOVERNMENT": {},
+            "EMPLOYER": {},
+            "STUDENT": {
+              "FUNDTYPE": "Per Qualification",
+              "FUNDPERCENTAGE": 50,
+              "FUNDVALUE": 0,
+              "MINFUND": 0,
+              "MAXFUND": 0
+            },
+            "OTHER": {
+              "FUNDTYPE": "Per Qualification",
+              "FUNDPERCENTAGE": 50,
+              "FUNDVALUE": 0,
+              "ID": 28993,
+              "NAME": null
+            },
+            "COUNT": 11
+          }
+        ],
+        "DESCRIPTION": "A successful GET call will give you a response like this:",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/financeModel/:modelID",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "4F9FF22C1115F42B7CE0523DE197835D",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.financeModel",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "read"
+  },
+  "DESCRIPTION": "Get (GET) a Finance Model."
+}

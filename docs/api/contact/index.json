@@ -1,0 +1,703 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "EMAILADDRESS": "jim@doors.com",
+          "GIVENNAME": "Jim",
+          "SURNAME": "Morrison",
+          "CONTACTID": 634026
+        },
+        "DESCRIPTION": "Will return basic contact information in a flat object. If you want to return the full contact object, run a read request on the returned contactID",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contact/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "1AF37F544B91FD2B44524F879F42AA75",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "givenName",
+      "TYPE": "string",
+      "DESCRIPTION": "Given (first) name. Maximum 40 characters."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "surname",
+      "TYPE": "string",
+      "DESCRIPTION": "Surname (last name). Maximum 40 characters."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "title",
+      "TYPE": "string",
+      "DESCRIPTION": "Tile/salutation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "emailAddress",
+      "TYPE": "string",
+      "DESCRIPTION": "Email address. Must be a valid email address"
+    },
+    {
+      "DEFAULT": true,
+      "REQUIRED": false,
+      "NAME": "ContactActive",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Retrieve Active Contact Records. Passing false will return inactive records."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "dob",
+      "TYPE": "date",
+      "DESCRIPTION": "Date of Birth in the format YYYY-MM-DD. This cannot be dated in the future."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "sex",
+      "TYPE": "character",
+      "DESCRIPTION": "Must be only a single letter. Valid values are M, F or X (for Other)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "middleName",
+      "TYPE": "string",
+      "DESCRIPTION": "Middle name(s). Maximum 40 characters."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "phone",
+      "TYPE": "string",
+      "DESCRIPTION": "Home phone number"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "mobilephone",
+      "TYPE": "string",
+      "DESCRIPTION": "Mobile phone number"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "workphone",
+      "TYPE": "string",
+      "DESCRIPTION": "Work phone number"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "fax",
+      "TYPE": "string",
+      "DESCRIPTION": "Fax number"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "organisation",
+      "TYPE": "string",
+      "DESCRIPTION": "Organisation name"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "orgId",
+      "TYPE": "list",
+      "DESCRIPTION": "ID of the organisation to assign the contact. Will be their primary organisation if the contact has multiple."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "orgIds",
+      "TYPE": "list",
+      "DESCRIPTION": "A list of organisation IDs to set against the contact. This will overwrite any existing non-primary organisations against the contact. This will allow upto five organisation IDs."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "position",
+      "TYPE": "string",
+      "DESCRIPTION": "Position within the organisation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "section",
+      "TYPE": "string",
+      "DESCRIPTION": "Section within the organisation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "division",
+      "TYPE": "string",
+      "DESCRIPTION": "Division within the organisation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "SourceCodeID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The client-specific sourceID from the list set up in aXcelerate and returned from the contact/sources resource."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "HistoricClientID",
+      "TYPE": "string",
+      "DESCRIPTION": "The Historical ID used with the student record. IMPORTANT IF: you have reported a person previously with a different SMS."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "USI",
+      "TYPE": "string",
+      "DESCRIPTION": "Unique Student Identifier (USI). A 10-digit code. If passed, this code must conform to the minimum validation: It must be 10 digits in length and consist of only capital letters and numbers, excluding I, 1, 0 and O."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "LUI",
+      "TYPE": "string",
+      "DESCRIPTION": "The Queensland Studies Authority Learner Unique Identifier (LUI). A 10-digit, numeric code."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "TFN",
+      "TYPE": "string",
+      "DESCRIPTION": "The student's Tax File Number, used for VET Student Loans reporting. The number must pass the ATO's check alorithm."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "VSN",
+      "TYPE": "string",
+      "DESCRIPTION": "The Victorian Student Number The VSN is a student identification number that is assigned by the Department of Education and Early Childhood Development to all students in government and non‑government schools, and students in Vocational Education and Training institutions."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "WorkReadyParticipantNumber",
+      "TYPE": "string",
+      "DESCRIPTION": "This field was formerly knows as 'Skills for All Number'. A South Australian student identifier."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "SACEStudentID",
+      "TYPE": "string",
+      "DESCRIPTION": "South Australian Certificate of Education student identifier. It should consist of six numbers and one alpha letter, for e.g., 123456A."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "EmergencyContact",
+      "TYPE": "string",
+      "DESCRIPTION": "Name of an emergency contact"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "EmergencyContactRelation",
+      "TYPE": "string",
+      "DESCRIPTION": "The relationship of the emergency contact (eg sister)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "EmergencyContactPhone",
+      "TYPE": "string",
+      "DESCRIPTION": "The phone number of the emergency contact"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ParentContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contactID of the parent or guardian"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "buildingName",
+      "TYPE": "string",
+      "DESCRIPTION": "AVETMISS 7.0 fields - will take these fields over address1 and address2 if passed. Note, you cannot search contacts by these discrete fields."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "unitNo",
+      "TYPE": "string",
+      "DESCRIPTION": "AVETMISS 7.0 fields"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "streetNo",
+      "TYPE": "string",
+      "DESCRIPTION": "AVETMISS 7.0 fields"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "streetName",
+      "TYPE": "string",
+      "DESCRIPTION": "AVETMISS 7.0 fields"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "POBox",
+      "TYPE": "string",
+      "DESCRIPTION": "AVETMISS 7.0 fields"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "address1",
+      "TYPE": "string",
+      "DESCRIPTION": "First line of POSTAL address - address fields will be used only if AVETMISS 7.0 fields not passed. The return structure will also include these fields."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "address2",
+      "TYPE": "string",
+      "DESCRIPTION": "Second line of postal address"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "city",
+      "TYPE": "string",
+      "DESCRIPTION": "Postal suburb, locality or town"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "state",
+      "TYPE": "string",
+      "DESCRIPTION": "Postal state / Territory. <b>NOTE: </b>This field is tailored for Australia and accepts only the following values: NSW, VIC, QLD, SA, WA, TAS, NT, ACT or OTH (which means 'Other Australian Territory') or OVS (which means 'Overseas')"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "postcode",
+      "TYPE": "string",
+      "DESCRIPTION": "Postal postcode"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "countryID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Postal Country - a 4-digit SACC code. This is only used if the full AVETMISS 7.0 address details are passed. Otherwise this field is ignored. Use Country instead."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "country",
+      "TYPE": "string",
+      "DESCRIPTION": "Postal Country"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "sbuildingName",
+      "TYPE": "string",
+      "DESCRIPTION": "AVETMISS 7.0 fields - will take these fields over address1 and address2 if passed. Note, you cannot search contacts by these discrete fields. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "sunitNo",
+      "TYPE": "string",
+      "DESCRIPTION": "AVETMISS 7.0 fields"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "sstreetNo",
+      "TYPE": "string",
+      "DESCRIPTION": "AVETMISS 7.0 fields"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "sstreetName",
+      "TYPE": "string",
+      "DESCRIPTION": "AVETMISS 7.0 fields"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "sPOBox",
+      "TYPE": "string",
+      "DESCRIPTION": "AVETMISS 7.0 fields"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "saddress1",
+      "TYPE": "string",
+      "DESCRIPTION": "First line of STREET / residential address - address fields will be deprecated with the coming of AVETMISS 7.0 which will break the address into further fields (eg Flat/unit number, Street Name)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "saddress2",
+      "TYPE": "string",
+      "DESCRIPTION": "Second line of street / residential address - to be deprecated in the future"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "scity",
+      "TYPE": "string",
+      "DESCRIPTION": "Residential suburb, locality or town"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "sstate",
+      "TYPE": "string",
+      "DESCRIPTION": "Residential state / Territory. <b>NOTE: </b>This field is tailored for Australia and accepts only the following values: NSW, VIC, QLD, SA, WA, TAS, NT, ACT or OTH (which means 'Other Australian Territory') or OVS (which means 'Overseas')"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "spostcode",
+      "TYPE": "string",
+      "DESCRIPTION": "Residential postcode"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "scountryID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Residential Country - a 4-digit SACC code. This is only used if the full AVETMISS 7.0 address details are passed. Otherwise this field is ignored. Use SCountry instead."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "scountry",
+      "TYPE": "string",
+      "DESCRIPTION": "Residential Country"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "termAddress1",
+      "TYPE": "string",
+      "DESCRIPTION": "First line of TERM address. <b>Term address is only available for clients who have enabled the VET Student Loan feature.</b>"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "termAddress2",
+      "TYPE": "string",
+      "DESCRIPTION": "Second line of term address"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "termCity",
+      "TYPE": "string",
+      "DESCRIPTION": "Term Address suburb, locality or town"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "termState",
+      "TYPE": "string",
+      "DESCRIPTION": "Term Address state / Territory. <b>NOTE: </b>This field is tailored for Australia and accepts only the following values: NSW, VIC, QLD, SA, WA, TAS, NT, ACT or OTH (which means 'Other Australian Territory') or OVS (which means 'Overseas')"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "termPostcode",
+      "TYPE": "string",
+      "DESCRIPTION": "Term Address postcode"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "termCountryID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Term Address Country - a 4-digit SACC code. You can use this or termCountry"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "termCountry",
+      "TYPE": "string",
+      "DESCRIPTION": "Term Address Country"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "CountryofBirthID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Country of Birth as a valid 4-digit SACC code. For a list of codes, please refer to NCVER website <a href='www.ncver.edu.au'>www.ncver.edu.au</a>"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "CityofBirth",
+      "TYPE": "string",
+      "DESCRIPTION": "City of Birth. This data is used if later creating a USI for this contact. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "CountryofCitizenID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Country of citizenship as a valid 4-digit SACC code. For a list of codes, please refer to NCVER website <a href='www.ncver.edu.au'>www.ncver.edu.au</a>"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "CitizenStatusID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Citizenship status. The valid values are numbers 1-11. For a list of the meanings of these numbers, please contact aXcelerate"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ResidencyStatusID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Residency status. For a list of valid numbers/codes, please refer to the TAMS 1.2 specifications."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "LabourForceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "AVETMISS Labour force status identifier. For valid values see the AVETMISS documentation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "MainLanguageID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "AVETMISS Main language other than English spoken at home identifier as a valid 4-digit SACC code. For a list of codes, please refer to NCVER website <a href='www.ncver.edu.au'>www.ncver.edu.au</a>"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "EnglishProficiencyID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "AVETMISS Proficiency in spoken English. For valid values see the AVETMISS documentation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "EnglishAssistanceFlag",
+      "TYPE": "boolean",
+      "DESCRIPTION": "A true/false flag to indicate whether English assistance is required"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "HighestSchoolLevelID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "AVETMISS highest school level completed identifier. For valid values see the AVETMISS documentation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "HighestSchoolLevelYear",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The year the highest school level was completed. Must be a valid year no later than the current year"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "AtSchoolFlag",
+      "TYPE": "boolean",
+      "DESCRIPTION": "A true/false AVETMISS flag to indicate whether the contact is currently at secondary school"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "AtSchoolName",
+      "TYPE": "string",
+      "DESCRIPTION": "The name of the contact's current secondary school"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "PriorEducationStatus",
+      "TYPE": "boolean",
+      "DESCRIPTION": "A true/false AVETMISS flag to indicate whether a contact has successfully completed some post-secondary education. A true value here will be ignored without also passing PriorEducationIDs."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "PriorEducationIDs",
+      "TYPE": "string",
+      "DESCRIPTION": "A comma delimited list of AVETMISS prior educational achievement identifiers to indicate prior higher education. For valid values see the AVETMISS documentation. The Victorian AVETMISS field Prior Educational Achievement Recognition Identifier may be appended (e.g. 420A). Also accepts @ if not specified."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "DisabilityFlag",
+      "TYPE": "boolean",
+      "DESCRIPTION": "A true/false AVETMISS flag to indicate whether the contact considers themselves to have a disability, impairment or long-term condition"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "DisabilityTypeIDs",
+      "TYPE": "list",
+      "DESCRIPTION": "A comma delimited list of AVETMISS disability type identifiers. For valid values see the AVETMISS documentation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "IndigenousStatusID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "AVETMISS indigenous status identifier to indicates a contact who self-identifies as being of Australian Aboriginal or Torres Strait Islander descent. For valid values see the AVETMISS documentation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ANZSCOCode",
+      "TYPE": "string",
+      "DESCRIPTION": "Australian and New Zealand Standard Classification of Occupations (ANZSCO), ABS catalogue no.1220.0, 2009. The major group of this code is used for the Victorian AVETMISS field Client Occupation Identifier (left most digit)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ANZSICCode",
+      "TYPE": "string",
+      "DESCRIPTION": "Australian and New Zealand Standard Industrial Classification (ANZSIC), ABS catalogue no.1292.0, 2006. The division of this code is used for the Victorian AVETMISS field Client Industry of Employment (see ABS catalogue)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "SurveyContactStatusCode",
+      "TYPE": "string",
+      "DESCRIPTION": "AVETMISS 8.0 Survey contact status - Survey contact status identifies reasons to exclude clients from the Student Outcomes Survey and other communications. For a list of possible codes, please refer to the data definitions on the NCVER website <a href='https://www.ncver.edu.au/__data/assets/pdf_file/0022/62383/AVETMISS_Data_element_definitions_2_3.pdf'>AVETMISS Data element definitions</a> "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "EmailAddressAlternative",
+      "TYPE": "string",
+      "DESCRIPTION": "AVETMISS 8.0 Alternate email address"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "employerContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ContactID of the Contact Record who is the Employer of this Contact."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "payerContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ContactID of the Contact Record who is the Payer of this Contact."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "supervisorContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ContactID of the Contact Record who is the Supervisor of this Contact."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "agentContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ContactID of the Contact Record who is the Agent for this Contact."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "coachContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ContactID of the Contact Record who is the Coach for this Contact."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "internationalContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ContactID of the Contact Record who is the International Contact for this Contact (CRICOS)."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "optionalID",
+      "TYPE": "string",
+      "DESCRIPTION": "An optional identifier to use for this Contact record."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "categoryIDs",
+      "TYPE": "list",
+      "DESCRIPTION": "A list of valid category IDs. (adds to Contact ONLY)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "customField_[variableName]",
+      "TYPE": "string",
+      "DESCRIPTION": "Replace [variableName] with the actual customField variable name to set a customField value against the contact. If updating a custom field that supports multiple values, you can use comma-delimited values or a JSON array. If using comma-delimited, it is expected the data is URL encoded first. For example, to get 2 values: 'A,B' and 'C' you would either pass: \"['A,B','C']\" or \"A%2CB,C\" "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "domainIDs",
+      "TYPE": "array",
+      "DESCRIPTION": "A list of domainIDs to set against the contact. This will overwrite any existing domains against the contact. Requires the Contact Domains feature to be enabled in the account."
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": false,
+      "NAME": "checkEmailAddressUnique",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If set to true, the system will check that the email address is unique before creating the contact. If it is not unique, an error will be thrown."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contact",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "create"
+  },
+  "DESCRIPTION": "Creates a new contact. This API will not try and search for any existing contact, but simply creates a new one. If you ended up creating duplicate contacts, they can be later merged by logging into aXcelerate."
+}

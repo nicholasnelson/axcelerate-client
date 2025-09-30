@@ -1,0 +1,194 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "TRANSACTIONID": 2346,
+          "CHEQUENR": null,
+          "CONTACTID": 445036,
+          "GUID": "85052D7C-0F04-45CF-A2CEB425AC1C4EDD",
+          "CHEQUEDRAWER": null,
+          "START": "2014-06-02 15:32",
+          "UNASSIGNEDAMOUNT": 0,
+          "REFERENCE": "SC00123213",
+          "ISCOMPLETED": true,
+          "TRANSDATE": "2014-06-02 15:32",
+          "FINISH": "2014-06-02 15:32",
+          "BANKNAME": null,
+          "PAYMENTMETHODID": 2,
+          "TRANSACTIONPROVIDERID": 5,
+          "TRANSACTIONTYPEID": 1,
+          "ORGANISATION": "My co.",
+          "ORGID": 999,
+          "BANKBSB": null,
+          "CURRENCY": "AUD",
+          "FRAGMENTS": [
+            {
+              "INVOICEID": 61645,
+              "CREDITNOTEID": null,
+              "LOCKEDDATE": null,
+              "APPLIEDDATE": "2014-06-02 15:35",
+              "ISLOCKED": 61645,
+              "AMOUNT": 20,
+              "FRAGMENTID": 129746
+            }
+          ],
+          "DESCRIPTION": null,
+          "AMOUNT": 20
+        },
+        "DESCRIPTION": "On a POST request to create a transaction, will return a transaction JSON object to represent the new transaction. To check if an amount was assigned to the invoice (if applicable), see the fragments array in the returned struct. ",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "TRANSACTIONID": 2346,
+            "CONTACTID": 445036,
+            "GUID": "FF052D7C-0F04-45CF-A2CEB425AC1C4EDD",
+            "UNASSIGNEDAMOUNT": 10,
+            "REFERENCE": "SOME_REF",
+            "TRANSDATE": "2019-06-02 15:32",
+            "PAYMENTMETHOD": "EFTPOS",
+            "PAYMENTMETHODID": 6,
+            "TRANSACTIONPROVIDER": "Manual Entry",
+            "TRANSACTIONPROVIDERID": 1,
+            "TRANSACTIONTYPE": "Money Received",
+            "TRANSACTIONTYPEID": 1,
+            "CURRENCY": "AUD",
+            "FRAGMENTS": [
+              {
+                "INVOICEID": 61645,
+                "INVOICENR": "INV000505",
+                "CREDITNOTEID": null,
+                "CREDITNOTENR": null,
+                "LOCKEDDATE": null,
+                "APPLIEDDATE": "2019-06-02 15:35",
+                "ISLOCKED": 61645,
+                "AMOUNT": 20,
+                "FRAGMENTID": 129746
+              }
+            ],
+            "DESCRIPTION": "Payment for course fees",
+            "AMOUNT": 20
+          }
+        ],
+        "DESCRIPTION": "On a GET search request, returns an array of transaction JSON objects. Use the optional parameter includeFragments to include the FRAGMENTS array.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/accounting/transaction/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "7328F77FD67F6F30D805B7C748043062",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contact to record the transaction against or search for transactions for (GET method). This should be the person who paid. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "amount",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Transaction amount in dollars"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "invoiceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "If applied, this transaction will be recorded and then applied against this invoice."
+    },
+    {
+      "DEFAULT": "2",
+      "REQUIRED": "false",
+      "NAME": "paymentMethodID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Recorded payment method. The options are: 1=Cash, 2=Credit Card, 4=Direct Deposit, 5=Cheque, 6=EFTPOS"
+    },
+    {
+      "DEFAULT": "Now()",
+      "REQUIRED": false,
+      "NAME": "transDate",
+      "TYPE": "datetime",
+      "DESCRIPTION": "The date of the transaction."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "reference",
+      "TYPE": "string",
+      "DESCRIPTION": "An optional reference / reciept number"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "description",
+      "TYPE": "string",
+      "DESCRIPTION": "An optional description"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ChequeNr",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. For cheque types (5)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ChequeDrawer",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. For cheque types (5)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "BankName",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. For cheque types (5)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "BankBSB",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. For cheque types (5). Must be a 6-digit number if passed"
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": false,
+      "NAME": "includeFragments",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Optional. For the GET search only. Will return the fragments array with each transaction"
+    }
+  ],
+  "DEFAULTFORMAT": "",
+  "HANDLER": "api.accounting.transaction",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "search",
+    "POST": "create"
+  },
+  "DESCRIPTION": "Get a list of transactions for a contact (GET). Or record a new transaction which can optionally be applied against an invoice (POST)."
+}

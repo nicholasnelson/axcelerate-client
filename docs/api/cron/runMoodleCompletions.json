@@ -1,0 +1,108 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "COUNT": 3,
+          "SUCCESS": true,
+          "REPORT": [
+            {
+              "COURSENAME": "aXcelerate Quals Units Courses",
+              "LEARNINGACTIVITYID": 343
+            },
+            {
+              "COURSENAME": "Contact Management",
+              "LEARNINGACTIVITYID": 553
+            },
+            {
+              "COURSENAME": "Food Hygiene Level 1 ",
+              "LEARNINGACTIVITYID": 999
+            }
+          ]
+        },
+        "DESCRIPTION": "The return when the verbose flag is on and running for all courses.",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": {
+          "COUNT": 2,
+          "SUCCESS": true,
+          "REPORT": [
+            {
+              "ERRORMSG": "",
+              "COMPLETIONDATE": "July, 01 2015 09:35:03 +0000",
+              "COMPLETE": true,
+              "COURSENAME": "Hospitality for Cruise Ships",
+              "LEARNINGACTIVITYID": 555,
+              "LEARNERID": 32567,
+              "UPDATED": true,
+              "NAME": "Tom Steffensenburger"
+            },
+            {
+              "ERRORMSG": "",
+              "COMPLETIONDATE": "July, 01 2015 09:35:03 +0000",
+              "COMPLETE": true,
+              "COURSENAME": "Hospitality for Cruise Ships",
+              "LEARNINGACTIVITYID": 555,
+              "LEARNERID": 32575,
+              "UPDATED": true,
+              "NAME": "Michelle Ryan"
+            }
+          ]
+        },
+        "DESCRIPTION": "The return when the verbose flag is on and running for a single E-Learning courses. The parameter passed for this return would've been type=el, instanceID=555",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/cron/runMoodleCompletions",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "824F7F529C4D58D575971150AC6EE2B0",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "true",
+      "REQUIRED": false,
+      "NAME": "verbose",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If set, returns a more verbose report."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of course to run completions for. The only valid values are: 'el' (for E-Learning) and 'p' (for Programs)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "instanceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The course ID."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.cron",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "runMoodleCompletions"
+  },
+  "DESCRIPTION": "This endpoint allows clients with Moodle intergation to run the completions for every course in their account. You can run this for specific instances or for all instances. If run for all instances, the actual process is done as a background process. If the verbose flag is used, this action returns a report of the completion running for individual courses. If running for all instances, the verbose report only returns the instances handed to the background process. "
+}

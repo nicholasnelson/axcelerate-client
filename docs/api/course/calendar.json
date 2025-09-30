@@ -1,0 +1,124 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "id": "36162BE3-7907-46A6-8670470275E5D926",
+            "title": "aXc Day: Session Three - For existing aXcelerate Users (Operational level)",
+            "start": "2013-07-24 13:30",
+            "allDay": false,
+            "type": "non-accredited",
+            "location": "Brisbane",
+            "courseInstanceID": 40505,
+            "courseID": 5089,
+            "end": "2013-07-24 15:30",
+            "virtualClassroomID": ""
+          },
+          {
+            "id": "D59EAC05-A4FE-48B8-BE261964D3645012",
+            "title": "aXc Day: Session Two - For RTO Managers and Business Owners (Strategic Level)",
+            "start": "2013-07-24 11:00",
+            "allDay": false,
+            "type": "non-accredited",
+            "location": "Brisbane",
+            "courseInstanceID": 40504,
+            "courseID": 5088,
+            "end": "2013-07-24 12:30",
+            "virtualClassroomID": "8444"
+          },
+          {
+            "id": "24CDF04D-82B1-474D-A4D143023EE3D0A3",
+            "title": "aXc Day: Session One - For aXcelerate Prospects & RTO Consultants",
+            "start": "2013-07-24 08:30",
+            "allDay": false,
+            "type": "non-accredited",
+            "location": "Brisbane",
+            "courseInstanceID": 40503,
+            "courseID": 5087,
+            "end": "2013-07-24 10:30",
+            "virtualClassroomID": "345"
+          },
+          {
+            "id": "052D1703-1A55-48CE-9EAC8AA685E104A1",
+            "title": "aXcelerate Training",
+            "start": "2013-07-25 09:00",
+            "allDay": false,
+            "type": "non-accredited",
+            "location": "Olympus Mons, Mars",
+            "courseInstanceID": 44604,
+            "courseID": 1727,
+            "end": "2013-07-25 11:00",
+            "virtualClassroomID": ""
+          }
+        ],
+        "DESCRIPTION": "Courses Instance data returned in JSON format. By default: returns results for the current and next month. The format includes a GUID id for use with the <a href='http://arshaw.com/fullcalendar/'>Full Calendar jQuery plugin</a>",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/calendar",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "AA7B0F7CFC77CA69E86D9C1FE0BF4226",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "The current month",
+      "REQUIRED": "false",
+      "NAME": "monthFrom",
+      "TYPE": "string",
+      "DESCRIPTION": "Where the Calendar should start."
+    },
+    {
+      "DEFAULT": "The next month",
+      "REQUIRED": "false",
+      "NAME": "monthTo",
+      "TYPE": "string",
+      "DESCRIPTION": "Where the Calendar should end."
+    },
+    {
+      "DEFAULT": "current year",
+      "REQUIRED": "false",
+      "NAME": "year",
+      "TYPE": "string",
+      "DESCRIPTION": "The Year"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "location",
+      "TYPE": "string",
+      "DESCRIPTION": "Filter Calendar Data by location."
+    },
+    {
+      "DEFAULT": "all",
+      "REQUIRED": "false",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of workshops. a = accredited, na = Non-accredited, all = all."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getCalendar"
+  },
+  "DESCRIPTION": "Returns JSON structure for FullCalendar."
+}

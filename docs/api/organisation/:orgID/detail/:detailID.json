@@ -1,0 +1,142 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "DETAILID": 99999,
+          "ORGID": 99991,
+          "TYPE": "Street Address",
+          "PHONE": "0401 010 101",
+          "FAX": null,
+          "EMAILADDRESS": "admin@test.com.au",
+          "WEBSITE": "www.test.com.au",
+          "ADDRESS1": "1 Testing Ave",
+          "ADDRESS2": null,
+          "CITY": "Testerville",
+          "STATE": "QLD",
+          "POSTCODE": "4000",
+          "COUNTRY": "Australia"
+        },
+        "DESCRIPTION": "Example response for a successful (GET) request.",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": {
+          "MESSAGE": "Organisation Details Updated Successfully",
+          "DETAILID": 123456,
+          "STATUS": "success"
+        },
+        "DESCRIPTION": "Example response for a successful (PUT) request.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/organisation/:orgID/detail/:detailID",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "orgID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Organisation ID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "detailID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Organisation Detail ID"
+    }
+  ],
+  "RESOURCEID": "225127BF2FC3D635E42E4FD22AB1635F",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "phone",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation phone number"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "fax",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation fax number"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "emailAddress",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation email address"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "address1",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation address (line 1)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "address2",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation address (line 2)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "city",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation city / suburb"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "state",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation state"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "postCode",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation post code"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "country",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation country"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.organisation",
+  "METHODS": "GET,PUT",
+  "ACTION": {
+    "PUT": "updateDetail",
+    "GET": "readDetail"
+  },
+  "DESCRIPTION": "Read (GET) or Update (PUT) an Organisation Detail record. The parameters below refer only to PUT requests."
+}

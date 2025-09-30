@@ -1,0 +1,86 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "MTASKID": 1234,
+          "STATUS": "success",
+          "MESSAGE": "Follow Up Created Successfully"
+        },
+        "DESCRIPTION": "A successful POST call will give you a response like this:",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/followUp/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "4CBEEC16090BB7F313FF9BFC975A418C",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "followUpContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contactID to create the Follow Up (task) against (Task Owner)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contactID to create the Follow Up for (Client)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "followUpDate",
+      "TYPE": "string",
+      "DESCRIPTION": "The Follow Up date"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "note",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Note"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "noteCodeID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The NoteCodeID (from aXcelerate)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "color",
+      "TYPE": "string",
+      "DESCRIPTION": "The Follow-up Colour - HEX i.e #FF0000"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.followUp",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "create"
+  },
+  "DESCRIPTION": "Create legacy follow up task (Marketing Tasks)."
+}

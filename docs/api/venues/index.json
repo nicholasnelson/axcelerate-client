@@ -1,0 +1,120 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "CONTACTID": "123456",
+          "NAME": "VM Learning",
+          "SADDRESS1": "PO Box 1234",
+          "SADDRESS2": null,
+          "SCITY": "BRISBANE",
+          "SSTATE": "QLD",
+          "SPOSTCODE": "4000",
+          "MOBILEPHONE": null
+        },
+        "DESCRIPTION": "The Venue information will be returned in a flat object.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/venues/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "4DB275D4DF013B6166E833BACB08C807",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "0",
+      "REQUIRED": "false",
+      "NAME": "offset",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Used for paging - start at record."
+    },
+    {
+      "DEFAULT": "10",
+      "REQUIRED": false,
+      "NAME": "displayLength",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Maximum number of records to return (up to a system maximum of 100)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the related Contact"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "name",
+      "TYPE": "string",
+      "DESCRIPTION": "The Name of the Venue"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "sAddress1",
+      "TYPE": "string",
+      "DESCRIPTION": "Venue address line 1."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "sAddress2",
+      "TYPE": "string",
+      "DESCRIPTION": "Venue address line 2."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "sCity",
+      "TYPE": "string",
+      "DESCRIPTION": "Venue City."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "sState",
+      "TYPE": "string",
+      "DESCRIPTION": "Venue State."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "sPostcode",
+      "TYPE": "string",
+      "DESCRIPTION": "Venue Post Code."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "mobilePhone",
+      "TYPE": "string",
+      "DESCRIPTION": "Venue Contact mobile phone"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.venue",
+  "METHODS": "GET,POST",
+  "ACTION": {
+    "GET": "search",
+    "POST": "search"
+  },
+  "DESCRIPTION": "A venue search. This method will return an array of venues. You can search on any field."
+}

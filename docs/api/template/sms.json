@@ -1,0 +1,181 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "FAILEDCOUNT": 1,
+          "MESSAGE": "2 SMS(es) sent successfully. 1 SMS(es) not sent because the contact did not have a valid mobile phone number. ",
+          "ATTEMPTEDCOUNT": 3,
+          "SUCCESSCOUNT": 2,
+          "REPORT": [
+            {
+              "TEXT": "Hello Lisa Jones - your course aXcelerate Day: Part One will start on 09/07/2015",
+              "CONTACTID": 438788,
+              "TO": [
+                {
+                  "MESSAGE": "SMS sent successfully. ",
+                  "MOBILEPHONE": "0411555555",
+                  "CONTACTID": 438788,
+                  "SENT": true
+                }
+              ]
+            },
+            {
+              "TEXT": "Hello Julie Smith - your course aXcelerate Day: Part One will start on 09/07/2015",
+              "CONTACTID": 508599,
+              "TO": [
+                {
+                  "MESSAGE": "SMS sent successfully. ",
+                  "MOBILEPHONE": "0422555555",
+                  "CONTACTID": 508599,
+                  "SENT": true
+                }
+              ]
+            },
+            {
+              "TEXT": "Hello Jill Watston - your course aXcelerate Day: Part One will start on 09/07/2015",
+              "CONTACTID": 323099,
+              "TO": [
+                {
+                  "MESSAGE": "Invalid mobile number",
+                  "MOBILEPHONE": "",
+                  "CONTACTID": 323099,
+                  "SENT": false
+                }
+              ]
+            }
+          ]
+        },
+        "DESCRIPTION": "This is an example of SMSing students in a workshop. The parameters passed were: type=w, instanceID=123, includeStatus=Enrolled,Completed, content='Hello [Trainee Full name] - your course [Workshop Name] will start on [Workshop Start Date]', and verbose=1 ",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/template/sms",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "CC613936D877544E729C184F72A6A9CE",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "verbose",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If passed, an additional key REPORT will be passed which will be an array with information on each student SMSed. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "planID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of a template to use. One of planID or content is required. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "content",
+      "TYPE": "string",
+      "DESCRIPTION": "The template content to use. For example, anywhere you use the text [Trainee Full Name] it will replace that text with the contact's name. One of planID or content is required. "
+    },
+    {
+      "DEFAULT": "student",
+      "REQUIRED": "false",
+      "NAME": "to",
+      "TYPE": "string",
+      "DESCRIPTION": "Only used in conjunction with type=w or p and an instanceID. Normally templates are generated for students, however, you can also SMS other contacts related to the workshop. The valid values include: [student,creator,client,owner,trainer]. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contact to SMS. Either contactID must be passed, or a search parameter to determine contacts (instanceID/type, userRoleID, etc.)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of course to use. Use with the instanceID or ID parameters. Either a course type and ID must be passed or a contactID. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "instanceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The course instance. If you pass an instanceID and type, you can SMS each student on the course with the one call. Use the includeStatus parameter to determine which students to SMS. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The courseID to use. It is preferable to use instanceID as a course at the ID level does not have students. If you pass type and ID you must also pass a contactID. "
+    },
+    {
+      "DEFAULT": "Enrolled,Completed",
+      "REQUIRED": false,
+      "NAME": "includeStatus",
+      "TYPE": "string",
+      "DESCRIPTION": "A list of statuses. Students that fall under the status will get the SMS. The available statuses are: [All,Enrolled,Completed,Tentative,Cancelled,Suspended,Deferred]. This is used in combination with type and instanceID. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "invoiceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "An invoiceID. Passing this will correctly parse any invoice related fields."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "userRoleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "SMS contacts who are users in this role. Can be a list."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "contactRoleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Enterprise only. SMS contacts who belong to this contact role. Can be a list."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "skillGroupID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Enterprise only. SMS contacts whose contact role contains this skill group. Can be a list."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "replaceContent",
+      "TYPE": "string",
+      "DESCRIPTION": "JSON object (stringified) containing key value pairs. Keys will represent template fields which will then be replaced within the template, allowing custom content to be added. The values can be HTML content that the template field will be replaced with."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.template",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "sms"
+  },
+  "DESCRIPTION": "Will SMS the selected template to the selected contacts. Returns a report of the results. You must have an SMS provider (such as SMS Global) defined in your system settings in order for this endpoint to work. Due to the shorter nature of SMS, it is likely you would prefer the content parameter for this endpoint, however, as with /api/template you can pass either a planID from the system to use a saved template. "
+}

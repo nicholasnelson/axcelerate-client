@@ -1,0 +1,31 @@
+{
+  "RESPONSE": {},
+  "PATTERN": "/task/statuses",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "35505213E6F71B32C0E5F914D6BA5B55",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.task",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "categories"
+  },
+  "DESCRIPTION": "Pull back the list of workflow user task statues"
+}

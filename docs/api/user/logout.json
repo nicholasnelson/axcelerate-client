@@ -1,0 +1,51 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "MESSAGE": "User 'nathan1' was logged out successfully.",
+          "STATUS": "success",
+          "RETURN_TO": "https://subdomain.app.axcelerate.com/auth/user/logout.cfm"
+        },
+        "DESCRIPTION": "The user information will be returned in a flat object and include a return_to parameter where the user's browser should be redirected to finish the logout process.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/user/logout",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "7416BE421343961FEA801AEF84BEBD30",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "axtoken",
+      "TYPE": "string",
+      "DESCRIPTION": "User Token value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "return_to",
+      "TYPE": "string",
+      "DESCRIPTION": "To append your own return_to parameter to the value being sent here so that users are redirected to your own portal after logout"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.user",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "logout"
+  },
+  "DESCRIPTION": "Logout an aXcelerate User. The parameters below refer only to POST requests."
+}

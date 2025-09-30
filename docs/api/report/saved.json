@@ -1,0 +1,114 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "VIEWFIELDS": [
+            {
+              "DISPLAY": "Qualification Code",
+              "NAME": "classes.diplomacode"
+            },
+            {
+              "DISPLAY": "Class Descriptor",
+              "NAME": "classes.classdescriptor"
+            },
+            {
+              "DISPLAY": "USI",
+              "NAME": "contactsaggregates.usi"
+            },
+            {
+              "DISPLAY": "Full Name",
+              "NAME": "contactsaggregates.fullname"
+            },
+            {
+              "DISPLAY": "Enrolment Date",
+              "NAME": "enrolments.dateenrolled"
+            },
+            {
+              "DISPLAY": "Commencement Date",
+              "NAME": "enrolments.datecommenced"
+            },
+            {
+              "DISPLAY": "Expected Completion Date",
+              "NAME": "enrolments.datecompletionexpected"
+            },
+            {
+              "DISPLAY": "Competent %",
+              "NAME": "enrolmentaggregates.competencyachievedpercent"
+            },
+            {
+              "DISPLAY": "Enrolment Status",
+              "NAME": "enrolments.enrolstatusdescriptor"
+            },
+            {
+              "DISPLAY": "Skype Username",
+              "NAME": "contact_custom.skypeuname"
+            }
+          ],
+          "REPORTNAME": "Progress of last year's business students",
+          "CREATEDBYCONTACTID": 2630274,
+          "CREATEDBY": "Shary Bobbins",
+          "REPORTID": 4479,
+          "FILTERFIELDS": [
+            {
+              "VALUE2": "",
+              "OPERATOR": "IN",
+              "DISPLAY": "Qualification",
+              "NAME": "classes.diplomaid",
+              "VALUE": "11238,15584"
+            },
+            {
+              "VALUE2": "31/12/2015",
+              "OPERATOR": "LAST Year",
+              "DISPLAY": "Enrolment Date",
+              "NAME": "enrolments.dateenrolled",
+              "VALUE": "01/01/2015"
+            }
+          ],
+          "REPORTREFERENCE": "classEnrolmentDetailsCached",
+          "ACTIVE": true,
+          "REPORTVERSION": "1.2",
+          "DESCRIPTION": "Returns the current progress of last year's business students"
+        },
+        "DESCRIPTION": "An example of fields and filters that might be set for a saved Enrolment Warehoused report.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/report/saved",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "125DEA017A2279E2A01DD37839DE1986",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "reportID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The reportID of the saved report."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.report",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getSavedReport"
+  },
+  "DESCRIPTION": "Returns details on the view fields and filters set for a given saved report. Note that this does <b>not</b> run the report. It returns the definition of the report. To run it, use <b>api/report/saved/run</b>"
+}

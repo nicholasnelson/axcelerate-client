@@ -1,0 +1,133 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "legacy_response_format": {
+            "FORECASTVALUE": "",
+            "NOTESID": 1064352,
+            "CONTACTID": 22627,
+            "COLOR": "#F60EE0",
+            "FORECASTPROBABILITY": "",
+            "FOLLOWUPCONTACTID": 23423,
+            "OPPORTUNITYSTATUS": "",
+            "MTASKID": 48642,
+            "LASTNOTE": {
+              "NOTETEXT": "Called Suzie following an email complaint from her that her AVETMISS reports were being rejected. She was correct that there are over 1500 records missing from the reports when she generates them from aXcelerate. I looked into the issue - her last zip file she sent for importing had the correct number of participants, however there were some previous imports that had poor data. Perhaps the new import is not overwriting old data when it should. She indicated that she could get a list of students missing from the report so I emailed her after the call to see if she could send that through. I will set a follow up if she cannot supply the file for Monday. ",
+              "NOTEDATE": "2013-10-10 03:19 PM",
+              "ENTEREDBY": "Michael Smith"
+            },
+            "FOLLOWUPDATE": "2013-10-14 12:00 AM",
+            "OPPORTUNITY": ""
+          },
+          "new_response_format": {
+            "MARKETINGCONTACTID": 1372669,
+            "MARKETINGLEARNINGACTIVITYID": null,
+            "DUEDATE": "2015-06-23",
+            "FORECASTDISTRIBUTION": [
+              {
+                "MONTH": "2015-05-01",
+                "VALUE": 4.99
+              },
+              {
+                "MONTH": "2015-06-01",
+                "VALUE": 5
+              }
+            ],
+            "STATUSDISPLAYNAME": "Not Started",
+            "FORECASTVALUE": 9.99,
+            "OWNERCONTACTID": 4744,
+            "TASKID": 1049,
+            "MARKETINGNOTESID": 4777887,
+            "STATUS": 1,
+            "CATEGORIES": [
+              20
+            ],
+            "PRIORITY": 4,
+            "FORECASTPROBABILITY": 50,
+            "COMPLETEDDATE": "",
+            "NAME": "Follow-up: Billy Bloggs",
+            "CREATIONDATE": "2015-06-16 01:46 PM",
+            "OPPORTUNITYSTATUS": "Pending",
+            "OWNER": "Reay Mackay",
+            "LASTNOTE": {
+              "NOTETEXT": "For testing report - pending",
+              "NOTEDATE": "2015-06-16 01:46 PM",
+              "NOTESID": 4777887,
+              "NOTE_ENTEREDBYID": 445036,
+              "NOTE_ENTEREDBY": "Scott O'Connell"
+            },
+            "DETAILS": ""
+          }
+        },
+        "DESCRIPTION": "A successful GET call will give you a response like this:",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/followUp/:mtaskID",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "25C2359663BD24657BCD828606051358",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "legacyTask",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Read/Update a Legacy or New Follow Up Task."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "FollowUpStatus",
+      "TYPE": "string",
+      "DESCRIPTION": "Update the Follow Up Status (new task system): 'Not Started', 'Commenced', 'Pending' and 'Completed'."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "OppertunityStatus",
+      "TYPE": "string",
+      "DESCRIPTION": "Update the Opportunity Status: 'Lost', 'Pending', 'Scheduled', 'Abandoned', 'Won' + (NEW ONLY) 'Qualified Lead' and 'Prospect' "
+    },
+    {
+      "DEFAULT": "now()",
+      "REQUIRED": false,
+      "NAME": "CompletedDate",
+      "TYPE": "string",
+      "DESCRIPTION": "The Completed Date (if not passed with the 'Completed' Follow Up status; todays date will be used)."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ForecastValue",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Update the Opportunity Forecast Value."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.followUp",
+  "METHODS": "GET,PUT",
+  "ACTION": {
+    "PUT": "update",
+    "GET": "read"
+  },
+  "DESCRIPTION": "Get (GET) or Update (PUT) a follow up task (Marketing Tasks)."
+}

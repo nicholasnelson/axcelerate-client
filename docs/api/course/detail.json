@@ -1,0 +1,102 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "OUTLINE": "This is the outline....",
+          "CODE": "CUF40107",
+          "COST": 3000,
+          "GST_TYPE": 1,
+          "NAME": "Certificate IV in Screen and Media",
+          "ID": 4539,
+          "TYPE": "p",
+          "DESCRIPTION": "This certificate will allow you to work in the exciting screen and media industry",
+          "LASTUPDATEDUTC": "2021-03-16 23:40"
+        },
+        "DESCRIPTION": "Course detail example for a Qualification/Program (type=p)",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": {
+          "OUTLINE": "<div id='workshopOutlineContainer'>\r\n\t\t\t\t\t<div class='workshopOutlineData'>....",
+          "CODE": "AX-API-101",
+          "COST": 200,
+          "GST_TYPE": 0,
+          "DURATION": "4 hours",
+          "OUTLINEELEMENTS": {
+            "CONTENT": [
+              "What is REST?",
+              "API documentation is your friend",
+              "Setting up data in aXcelerate FIRST"
+            ],
+            "SHORTDESCRIPTION": "This course doesn't actually exist. It is only a test.",
+            "INTRODUCTION": "Ever wondered how to code against <strong>aXcelerate's APIs</strong>? Well, this fake workshop could teach you how!",
+            "IMAGES": [],
+            "TARGETAUDIENCE": "Developers",
+            "ADDITIONALINFORMATION": "Price includes a complementary drink of water",
+            "LEARNINGMETHODS": "You will learn by seeing, hearing and doing",
+            "LEARNINGOUTCOMES": [
+              "Learn how to read our API documentation",
+              "Learn the difference between a workshop, class, and E-learning activity",
+              "Code an amazing integration against the aXcelerate API"
+            ],
+            "PROGRAMBENEFITS": [
+              "Better API and Relax understanding",
+              "Increased happiness"
+            ]
+          },
+          "NAME": "Learning how to use the aXcelerate API",
+          "ID": 26825,
+          "TYPE": "w",
+          "DESCRIPTION": "This course doesn't actually exist. It is only a test.",
+          "LASTUPDATEDUTC": "2021-03-16 23:40"
+        },
+        "DESCRIPTION": "Course detail example for a Workshop Type (type=w). Note that for workshops, the outline is broken into elements.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/detail",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "F1C90E250D49C5F44E86E5D8E4F2451C",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "ID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the activity you want details from."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of the activity. w = workshop, p = accredited program, el = e-learning."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getCourseDetails"
+  },
+  "DESCRIPTION": "Returns details of an activity."
+}

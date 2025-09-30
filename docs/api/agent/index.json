@@ -1,0 +1,86 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "MARKETINGAGENTID": 711,
+          "CONTACTID": 222233,
+          "DEFAULTCOMMISSIONRATE": 3,
+          "ACTIVE": true,
+          "CUSTOMFIELD_REGIONS": [
+            "North Sydney",
+            "Sydney CSB"
+          ],
+          "CUSTOMFIELD_AGENCYNUMBER": "N004343"
+        },
+        "DESCRIPTION": "This example shows an agent with a default commission rate of 3%",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/agent/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "2FD56EA806B349BEB7FC7BB82DEEA985",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contact ID of the marketing agent"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "agentID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "PUT Only, the agentID may be used in the body, in place of contactID in the path but only for PUT requests."
+    },
+    {
+      "DEFAULT": 0,
+      "REQUIRED": false,
+      "NAME": "commissionRate",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The percentage commission, between 0 and 100, that the agent will receive."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "taxRuleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The tax rule to be specified for this agent. 1 = Excluding GST, 2 = Including GST, 3 = Exempt"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "Custom_Field_[VariableName]",
+      "TYPE": "text",
+      "DESCRIPTION": "Custom fields may be updated by specifying their variable name prefixed by custom_field_ EG: custom_field_region, custom_field_specialty. Values used should correspond to the custom field specified. Note: this will not create custom fields, they must already exist."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.agent",
+  "METHODS": "POST, PUT",
+  "ACTION": {
+    "PUT": "update",
+    "POST": "create"
+  },
+  "DESCRIPTION": "This endpoint is only available for clients using the Marketing/Sales Agents feature. POST will create a marketing agent for the contact ID specified in the request. PUT will update an existing marketing agent. A 412 will be returned if any required parameters are missing or exceed allowed values. NOTE: PUT requests cannot reassign an agentID to a different contact, contactID or Agent ID will be used to locate the record, with contactID taking preference."
+}

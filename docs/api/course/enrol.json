@@ -1,0 +1,305 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": "Revenue from government\r\n11 - Commonwealth and state general purpose recurrent\r\n13 - Commonwealth specific purpose programs\r\n15 - State specific purpose programs\r\n\r\nOther revenue\r\n20 - Domestic full fee-paying client\r\n30 - International full fee-paying client (Until 2020)\r\n31 - International onshore client (From 2020)\r\n32 - International offshore client (From 2020)\r\n80 - Revenue earned from another training organisation",
+        "DESCRIPTION": "FundingNational",
+        "FORMAT": "text"
+      },
+      {
+        "BODY": "\n\t\t\t\t\t03 - Fee for Service\n\t\t\t\t\t11 - Commonwealth and State General purpose Recurrent\n\t\t\t\t\t13 - Commonwealth Specific Purpose programs\n\t\t\t\t\t15 - State Specific Purpose programs\n\t\t\t\t\t1GT - Gap Training\n\t\t\t\t\t1SA - Skills Assessments\n\t\t\t\t\t20 - Domestic full fee-paying student\n\t\t\t\t\t2GT - Gap Training\n\t\t\t\t\t2SA - Skills Assessments\n\t\t\t\t\t30 - International full fee-paying student\n\t\t\t\t\t9GT - Gap Training\n\t\t\t\t\t9SA - Skills Assessments\n\t\t\t\t\tBMI - Mining Industry\n\t\t\t\t\tCCP - Civil Construction Brokerage Pilot\n\t\t\t\t\tCHL - Civil Construction Higher Level Skills\n\t\t\t\t\tCLG - Cert III Guarantee - Community Learning\n\t\t\t\t\tCLI - Community Learning Intervention\n\t\t\t\t\tCLP - Community Literacy Program\n\t\t\t\t\tCSG - Civil Construction Skills Assessment and Gap Training\n\t\t\t\t\tCSP - Community Services Skilling Plan\n\t\t\t\t\tCSQ - Construction Skills Queensland\n\t\t\t\t\tENH - Higher Level Skills program - Mainstream student\n\t\t\t\t\tENT - Cert III Guarantee - Mainstream students\n\t\t\t\t\tETR - ETRF Accredited Training & Employment Youth Initiatives\n\t\t\t\t\tF2 - Strategic Purchasing Program\n\t\t\t\t\tF3 - User Choice competitively funded - Apprenticeships\n\t\t\t\t\tGK - User Choice competitively funded - Trainees\n\t\t\t\t\tGS1 - Cert III Guarantee - Year 12 graduates\n\t\t\t\t\tGS2 - Cert III Guarantee - User Choice Full Fee\n\t\t\t\t\tGS3 - Cert III Guarantee - User Choice Partial Exemption\n\t\t\t\t\tGS4 - Cert III Guarantee - User Choice Full Exemption\n\t\t\t\t\tHLT - Higher Level Skills program - Student accessing VET FEE-HELP loan\n\t\t\t\t\tHS1 - Higher Skills Program 1\n\t\t\t\t\tIFF - Strategic Investment Fund Fees\n\t\t\t\t\tIFN - Strategic Investment Fund NoIFP - Indigenous Funding Program\n\t\t\t\t\tIP3 - Cert III Guarantee - Industry Partnerships Strategy\n\t\t\t\t\tIPH - Higher Level Skills program - Industry Partnerships Strategy\n\t\t\t\t\tIT3 - Cert III Guarantee - Indigenous Training Strategy\n\t\t\t\t\tITH - Higher Level Skills program - Indigenous Training Strategy\n\t\t\t\t\tLLN - Language Literacy and Numeracy\n\t\t\t\t\tNWC - National Workforce Critical Skills\n\t\t\t\t\tNWE - National Workforce Existing Worker\n\t\t\t\t\tNWJ - National Workforce Jobseeker\n\t\t\t\t\tPBJ - Productivity Brokerage Job Seeker\n\t\t\t\t\tPBW - Productivity Brokerage Existing Worker\n\t\t\t\t\tPEW - Productivity Places Program - Existing Workers (Enterprise)\n\t\t\t\t\tPPP - Productivity Places Program\n\t\t\t\t\tPRJ - PPP (Job Seekers)\n\t\t\t\t\tPRW - PPP (Existing Workers)\n\t\t\t\t\tPSJ - PPP Skilling Queenslanders for Work (Job Seekers)\n\t\t\t\t\tPT1 - Post-Trade Training Program\n\t\t\t\t\tRWF - Regional Workforce Development Initiative\n\t\t\t\t\tRWN - Regional Workforce Development Initiative\n\t\t\t\t\tSAT - User Choice competitively funded - School-based\n\t\t\t\t\tSC1 - Short Courses Program 1\n\t\t\t\t\tSJ3 - training delivered under the Single and Teenage Parent Program (STPP) - Fees paid by Government\n\t\t\t\t\tSQW - Skilling Queenslanders for Work\n\t\t\t\t\tSSQ - Skilling Solutions Queensland\n\t\t\t\t\tST3 - training delivered under the Single and Teenage Parent Program (STPP)\n\t\t\t\t\tST5 - training delivered under the Single and Teenage Parent Program (STPP)\n\t\t\t\t\tTFW - Training For Work\n\t\t\t\t\tTIF - Training Initiative for Indigenous Adults Regional/Remote (TIFIARRC)\n\t\t\t\t\tTRA - Training Skills Assessment and Gap Training\n\t\t\t\t\tTSC - Trade Start - Civil Construction Program\n\t\t\t\t\tTSG - Trade Start General\n\t\t\t\t\tVSS - VET in Schools (secondary school students)\n\t\t\t\t\tIT5 - Indigenous VET Partnerships\n\t\t\t\t\tSQI - Training funded under Skilling QLD for Work\n\t\t\t\t\tSQT - Training funded under Certificate 3 Guarentee\n\t\t\t\t\tT02 - TAFE User Choice\n\t\t\t\t\t20 - Domestic full fee-paying client\n\t\t\t\t\tSPP - Schools Private Provider",
+        "DESCRIPTION": "FundingState",
+        "FORMAT": "text"
+      },
+      {
+        "BODY": "Values for National AND VET Student Loans\n\t\t\t\t\tstudyReasons = [\n\t\t\t\t\t{code = 1, description = 'To get a job'},\n\t\t\t\t\t{code = 2, description = 'To develop my existing business'},\n\t\t\t\t\t{code = 3, description = 'To start my own business'},\n\t\t\t\t\t{code = 4, description = 'To try for a different career'},\n\t\t\t\t\t{code = 5, description = 'To get a better job or promotion'},\n\t\t\t\t\t{code = 6, description = 'It was a requirement of my job'},\n\t\t\t\t\t{code = 7, description = 'I wanted extra skills for my job'},\n\t\t\t\t\t{code = 8, description = 'To get into another course of study'},\n\t\t\t\t\t{code = 11, description = 'Other reasons'},\n\t\t\t\t\t{code = 12, description = 'For personal interest or self-development'}\n\t\t\t\t\t{code = 13, description = 'To get skills for community/voluntary work'}\n\t\t\t\t\t]\n\n\n\t\t\t\t\tWA RAPT/TAMS Values\n\t\t\t\t\tstudyReasons = [\n\t\t\t\t\t{code = 1, description = 'To get a job'},\n\t\t\t\t\t{code = 3, description = 'To get a promotion/improve my career'},\n\t\t\t\t\t{code = 4, description = 'To start a different career'},\n\t\t\t\t\t{code = 6, description = 'To get into another course at TAFE or University'},\n\t\t\t\t\t{code = 8, description = 'Other reasons'},\n\t\t\t\t\t{code = 22, description = 'To develop my own business'},\n\t\t\t\t\t{code = 23, description = 'To start my own business'},\n\t\t\t\t\t{code = 26, description = 'It was a requirement for my job'},\n\t\t\t\t\t{code = 27, description = 'I wanted extra skills for my job'},\n\t\t\t\t\t{code = 29, description = 'For personal interest'},\n\t\t\t\t\t{code = 30, description = 'For self development'}\n\t\t\t\t\t])",
+        "DESCRIPTION": "Study Reason IDs",
+        "FORMAT": "text"
+      },
+      {
+        "BODY": {
+          "INVOICEID": 61648,
+          "CONTACTID": 952989,
+          "LEARNERID": 507096,
+          "AMOUNT": 490
+        },
+        "DESCRIPTION": "Upon a successful enrolment, this returns the unique learnerID for this student's enrolment. It also returns an invoiceID, amount and the contactID. Note that for type p bookings, where an invoice has not yet been created, one will not automatically be created by the API, so the invoiceID will remain 0. ",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/enrol",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "E9080B34CD89A40A478E54615812E422",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Contact you are enrolling."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "instanceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Activity Instance you are enrolling the contact into."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of the activity. w = workshop, p = accredited program, el = e-learning."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "tentative",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Enrol the Contact as Tentative."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "payerID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Contact that is paying for the course. If omitted, it will be assumed that the student (contactID) is paying."
+    },
+    {
+      "DEFAULT": "0",
+      "REQUIRED": "false",
+      "NAME": "invoiceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the invoice created for this Contact (created during payment) OR the ID of the invoice you wish to add this enrolment to. If the invoiceID is not passed, or is 0, the booking will still go ahead and the contact will be invoiced for it."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "PONumber",
+      "TYPE": "string",
+      "DESCRIPTION": "If a new invoice is generated as a result of this booking, use this as the Purchase Order Number. "
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "generateInvoice",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Determines whether you'd like a new invoice to be generated as a result of this booking. This will only work if the course cost is greater than $0. This also will not work if your aXcelerate System Settings are set to 'Free Online Bookings'. "
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "lockInvoiceItems",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If an new invoice is generated, determines whether the items are locked. Items must be locked before a payment can be applied against an invoice. However, some invoice details can later be changed, such as address and purchase order numbers. "
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "archiveInvoice",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If an new invoice is generated, determines whether it is completely locked and archived. Once archived, no invoice details can later be changed. "
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "forceBooking",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Don't check to see if the enrolment is closed first. "
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "bookOnDefaultWorkshops",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Applicable only to program bookings (type=p), this will book the contact into any workshops linked to the class's units. For this to work, each unit in the class can only be linked to a single workshop. An error will be thrown if more than one workshop is against a class unit and this parameter is set to true."
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "syncDatesWithWorkshop",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Applicable only to program bookings (type=p) and where bookOnDefaultWorkshops is true. This will set unit start/end dates to the same as that of the linked workshops."
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "syncUOCdates",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Applicable only to program bookings (type=p). Will set the Unit of Competency start and end dates to match those of the Unit of Study. It will only work if 'syncDatesWithWorkshop' set to FALSE"
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "syncWithClassSchedule",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Applicable only to program bookings (type=p) and passing the dateCommenced parameter. This will offset all unit start/end dates based on the offset between the student's date commenced and the class start."
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "applyGST (DEPRECATED - Please use the GST_TYPE parameter)",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Applicable only to program bookings (type=p) - if true will mark the cost as includes GST. Normally, accredited training should be GST-free."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "GST_type",
+      "TYPE": "numeric",
+      "DESCRIPTION": "GST type; 0- no GST, 1- GST included"
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "autoGrantCT",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Applicable to any accredited bookings. The system will automatically set the subject outcome to CT for students where it detects a pre-existing competency. This will also prevent the student from being enrolled into any linked workshops or E-Learning for that subject. Subjects that expire will not have competencies automatically granted."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "dateCommenced",
+      "TYPE": "date",
+      "DESCRIPTION": "Applicable only to program bookings (type=p) - The enrolment Commencement Date."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "dateCompletionExpected",
+      "TYPE": "date",
+      "DESCRIPTION": "Applicable only to program bookings (type=p) - The Expected Completion Date. Ignored if using syncWithClassSchedule"
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "suppressNotifications",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Don't send any email booking notifications. Auto-generate user emails will still send. "
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "sendAdminNotification",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If suppressNotifications is true, this allows the admin booking notification to still be sent."
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "blockAdminNotification",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Explicitly blocks the admin notification, regardless of suppress settings"
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "useRegistrationFormDefaults",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Used for direct or linked accredited program bookings (type p). If true, the system will apply the default enrolment form values set against the system settings. This form can be edited under Settings > Registration Form > Class Enrolment Form. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "StudyReasonID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "AVETMISS Study Reason (For Accredited enrolments). "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "FundingNational",
+      "TYPE": "numeric",
+      "DESCRIPTION": "AVETMISS Funding Source - National (For Accredited enrolments) - See sample table below for values."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "marketingAgentContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Contact that should be set as the marketing agent for the enrolment."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "serviceDate",
+      "TYPE": "string",
+      "DESCRIPTION": "The (invoice item) Service date."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "cost",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Discounted Cost."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "commencingProgramCohortIdentifiers",
+      "TYPE": "string",
+      "DESCRIPTION": "Commencing program cohort ID. Maximum of first 6 characters considered."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "discountIDList",
+      "TYPE": "string",
+      "DESCRIPTION": "A list of valid discountIDs for this booking. Required when 'cost' is passed."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "customField_[variableName]",
+      "TYPE": "string",
+      "DESCRIPTION": "Replace [variableName] with the actual customField variable name to set a customField value against the enrolment (if enabled and set up). If updating a custom field that supports multiple values, you can use comma-delimited values or a JSON array. If using comma-delimited, it is expected the data is URL encoded first. For example, to get 2 values: 'A,B' and 'C' you would either pass: \"['A,B','C']\" or \"A%2CB,C\" "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "FundingState",
+      "TYPE": "string",
+      "DESCRIPTION": "AVETMISS Funding Source - State (For Accredited enrolments) - See sample table below for values."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "PSTACDateVIC",
+      "TYPE": "date",
+      "DESCRIPTION": "[Type=P] Program Supervised Teaching Activity Completion Date for Victorian AVETMISS reporting."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "commencedWhileAtSchool",
+      "TYPE": "boolean",
+      "DESCRIPTION": "[Type=P] Commenced While at School Flag for Victorian AVETMISS reporting."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "enrol"
+  },
+  "DESCRIPTION": "Enrols a Contact in an Activity Instance. This method will also send an email to the student, the payer, and a notification to your administrator. Enrolments into linked E-Learning will be scheduled and done later by the system."
+}

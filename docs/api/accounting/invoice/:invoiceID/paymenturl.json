@@ -1,0 +1,49 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "PAYMENTURL": "https://dev.axcelerate.com/index.cfm/payment/invoice/?invGUID=1380B800-BBF6-4F54-92D94AFA528768F8"
+        },
+        "DESCRIPTION": "On a GET request,returns payment URL for an invoice.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/accounting/invoice/:invoiceID-numeric/paymenturl",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "InvoiceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Invoice ID to retrieve a payment URL for."
+    }
+  ],
+  "RESOURCEID": "8981F7DADFD27BA5365DC55C672675DD",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "JSON",
+  "HANDLER": "accounting.invoice",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getPaymentURL"
+  },
+  "DESCRIPTION": "Get a payable URL for an invoice."
+}

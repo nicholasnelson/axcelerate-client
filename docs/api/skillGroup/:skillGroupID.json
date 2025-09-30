@@ -1,0 +1,62 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "SKILLGROUPID": 9999,
+          "NAME": "All Staff",
+          "TYPE": "Staff",
+          "ISACTIVE": true,
+          "DATEUPDATED": "2015-03-05 13:28",
+          "DATEINSERTED": "2015-03-03 11:16"
+        },
+        "DESCRIPTION": "Skill Group returned in JSON format",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/skillGroup/:skillGroupID",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "ED210B54FE6B7170239D5D2163BFA75B",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "name",
+      "TYPE": "string",
+      "DESCRIPTION": "The name of the Skill Group."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of the Skill Group."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.skillGroup",
+  "METHODS": "GET,PUT",
+  "ACTION": {
+    "PUT": "update",
+    "GET": "read"
+  },
+  "DESCRIPTION": "Interacts with a specfic Skill Group. You can read (GET) or update (PUT) a Skill Group. The parameters below refer only to PUT requests."
+}

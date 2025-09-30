@@ -1,0 +1,473 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "INVOICENR": "INV0002",
+          "CONTACTNAME": "Scott Jones",
+          "PRICEGROSS": 20,
+          "SHIPSTREET": "Williams Street",
+          "HOUSENR": "61",
+          "ISARCHIVED": true,
+          "ADDRESS2": null,
+          "ORDERDATE": "2014-06-02",
+          "OWNERCONTACTID": 445036,
+          "ORGANISATION": "My Org. (Geelong) Pty Ltd",
+          "CONTACTID": 507615,
+          "SHIPLASTNAME": "Jones",
+          "SHIPHOUSENR": "61",
+          "SHIPPRICEGROSS": 0,
+          "SHIPCITY": "BREAKWATER",
+          "SHIPPOSTCODE": "3219",
+          "SHIPCOUNTRY": "AUSTRALIA",
+          "SHIPCOUNTRYISO3166": "AU",
+          "ISINVOICENRLOCKED": true,
+          "SHIPTAXPERCENT": 0,
+          "SHIPPRICETAX": 0,
+          "STATE": "VIC",
+          "FIRSTNAME": "Scott",
+          "COMMENT": null,
+          "SHIPADDRESS2": null,
+          "PHONENR": "0393804116",
+          "SHIPFIRSTNAME": "Scott",
+          "CITY": "BREAKWATER",
+          "COUNTRY": "AUSTRALIA",
+          "COUNTRYISO3166": "AU",
+          "PAYMENTS": [],
+          "ORDERNR": null,
+          "EMAIL": "sjones@abcd.com.au",
+          "DUEDATE": "2014-06-09",
+          "PRICENETT": 18.18,
+          "SHIPORGANISATION": "My Org. (Geelong) Pty Ltd",
+          "INVOICEID": 61645,
+          "DUEDATEOFFSET": 7,
+          "AREITEMSLOCKED": true,
+          "LASTNAME": "Jones",
+          "STREET": " Williams Street",
+          "INVGUID": "8A47F4A9-AF26-46BC-9BA7F91D87C0C54E",
+          "BALANCE": 0,
+          "ITEMS": [
+            {
+              "TOTALTAX": 1.82,
+              "UNITPRICETAX": 1.82,
+              "DOMAINID": 0,
+              "PARTID": 0,
+              "UNITPRICENETT": 18.18,
+              "QTY": 1,
+              "ENROLMENT": {
+                "CONTACTID": 12012348,
+                "INSTANCEID": 1618835,
+                "TYPE": "w"
+              },
+              "TAXPERCENT": 10,
+              "TOTALGROSS": 20,
+              "ITEMCODE": "123",
+              "FINANCECODE": null,
+              "TOTALNETT": 18.18,
+              "SERVICEDATE": null,
+              "UNITPRICEGROSS": 20,
+              "ITEMID": 114872,
+              "DESCRIPTION": "test",
+              "COSTCENTRECODE": null
+            }
+          ],
+          "INVOICEDATE": "2014-06-02",
+          "CURRENCY": "AUD",
+          "POSTCODE": "3219",
+          "SHIPPRICENETT": 0,
+          "ISPAID": false,
+          "SHIPSTATE": "VIC"
+        },
+        "DESCRIPTION": "Invoice returned in JSON format",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "QTY": 1,
+            "ITEMCODE": "widget",
+            "DESCRIPTION": "Some item",
+            "UNITPRICEGROSS": 15.96,
+            "TAXPERCENT": 10
+          }
+        ],
+        "DESCRIPTION": "For creating an invoice with a new line item",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "ITEMID": 123456,
+            "QTY": 6,
+            "ITEMCODE": "widget",
+            "DESCRIPTION": "Some other widget",
+            "UNITPRICEGROSS": 9,
+            "TAXPERCENT": 0
+          }
+        ],
+        "DESCRIPTION": "For editing an existing line item. (note specifying an itemid)",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "ITEMID": 123456,
+            "QTY": 0,
+            "ITEMCODE": "widget",
+            "DESCRIPTION": "Some item",
+            "UNITPRICEGROSS": 15.96,
+            "TAXPERCENT": 10
+          }
+        ],
+        "DESCRIPTION": "For deleting a line item from the invoice.(note specifying an item id and setting qty to zero)",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/accounting/invoice/:invoiceID",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "invoiceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The invoiceID to retrieve. Note that this is NOT the same as the invoice number"
+    }
+  ],
+  "RESOURCEID": "FCB1CBC4CFCF211F67D584970618866E",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional.The contactID for invoice contact"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem",
+      "TYPE": "json",
+      "DESCRIPTION": "Optional. Invoice item(s) data in json format"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.DESCRIPTION",
+      "TYPE": "string",
+      "DESCRIPTION": "The item description"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.QTY",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional for PUT(edit) only.Item Quantity. Must be greater than zero. If QTY is zero and an ITEMID is defined then the line item matching that ITEMID is removed from the invoice."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.ITEMCODE",
+      "TYPE": "string",
+      "DESCRIPTION": "The item code associated with this line item."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.FINANCECODE",
+      "TYPE": "string",
+      "DESCRIPTION": "The finance code to associate with the line-item."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.TAXPERCENT",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The amount of GST on that item ten percent would be: 10"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.UNITPRICEGROSS",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The gross price for a single quantity of the item. Fifteen Dollars Ninety Six Cents would be: 15.96"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.DOMAINID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The system-id of the domain that is to be associated with the line-item."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.PARTID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional for PUT(edit).Part ID for invoice item"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.ITEMCODE",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional for PUT(edit).The item code associated with this line item."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.COSTCENTRECODE",
+      "TYPE": "string",
+      "DESCRIPTION": "The cost center that is associated with the line-item."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.DATA",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional for PUT(edit).Invoice item data"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.SERVICEDATE",
+      "TYPE": "date",
+      "DESCRIPTION": "The service date associated with the line-item. Supported Formats are: {ts 'YYYY-MM-DDThh:mm:ss'} or YYYY-MM-DDThh:mm:ss"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.ITEMID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "To edit an existing line item the ITEMID must be specified, for a new line item this value can be omitted or set to zero. Note: If an ITEMID is specified and QTY is set to zero then that line item is deleted from the invoice."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.CHILDREN",
+      "TYPE": "json",
+      "DESCRIPTION": "Optional for PUT(edit).Invoic children structure"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "surname",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Last Names person invoice bill to"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "firstname",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Given Names person invoice bill to "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ADDRESS2",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Address line 2 "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "SHIPLASTNAME",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Last Names of person on a shipping address "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "SHIPFIRSTNAME",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Given Names of person on a shipping address "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "SHIPHOUSENR",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional. House number of a shipping address"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "SHIPPOSTCODE",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional. Post code of a shipping address "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "SHIPADDRESS2",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Address line 2 of a shipping address "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "COMMENT",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Comment text "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "STREET",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Street name "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "INVOICEDATE",
+      "TYPE": "date",
+      "DESCRIPTION": "Optional. Invoice date yyyy-mm-dd "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "SHIPSTATE",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. State of a shipping address"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "SHIPSTREET",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Address Street Name "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "HOUSENR",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional. Address house number"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ORDERDATE",
+      "TYPE": "date",
+      "DESCRIPTION": "Optional. Order date yyyy-mm-dd "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "SHIPCITY",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. City name on a shipping address "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "SHIPCOUNTRYISO3166",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional. Ship Country ISO 3166 code "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "COUNTRYISO3166",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional. Country ISO 3166 code "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "STATE",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Address State"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "COUNTRY",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional. Address Country code"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "CITY",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Address City"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "POSTCODE",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Address Post Code"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "PHONENR",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Phone number "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ORDERNR",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional. Order number"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "EXTERNALREFERENCE",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. External Reference Key (60 characters max)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ORGID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional.Organisation ID code"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "email",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Email address "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "includeEnrolmentData",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Optional for GET. If a line item is linked to an enrolment, include those details with the line item response."
+    }
+  ],
+  "DEFAULTFORMAT": "JSON",
+  "HANDLER": "api.accounting.invoice",
+  "METHODS": "GET,PUT",
+  "ACTION": {
+    "PUT": "edit",
+    "GET": "view"
+  },
+  "DESCRIPTION": "Get the details of an invoice / Update an invoice <br>The general process for creating the expected payload of the AITEM field is as follows:<br>\n\t\t\t\t<li>Create an array of line items. Depending on the programming language that would be a structs / dictionary / hashmap).</li>\n\t\t\t\t<li>Serialize the array to JSON. </li>\n\t\t\t\t<li>Pass the serialised string in the AITEM form field.</li> "
+}

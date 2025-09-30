@@ -1,0 +1,78 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "OPERATOROPTIONS": [
+            {
+              "REQUIRESVALUE2": false,
+              "DISPLAY": "Equals",
+              "OPTGROUP": "",
+              "VALUE": "IS"
+            }
+          ],
+          "VALUEOPTIONS": [
+            {
+              "REQUIRESVALUE2": false,
+              "DISPLAY": "Male",
+              "OPTGROUP": "",
+              "VALUE": "M"
+            },
+            {
+              "REQUIRESVALUE2": false,
+              "DISPLAY": "Female",
+              "OPTGROUP": "",
+              "VALUE": "F"
+            },
+            {
+              "REQUIRESVALUE2": false,
+              "DISPLAY": "Other",
+              "OPTGROUP": "",
+              "VALUE": "X"
+            }
+          ],
+          "DISPLAY": "Gender",
+          "NAME": "participantdetails.gender"
+        },
+        "DESCRIPTION": "This is an example when querying the api with fieldReference = <em>participantdetails.gender</em>. Note that these field names are internal references for aXcelerate, and so there may be aliases for the same field. This example is also called <em>contacts.gender</em>, however, you must use the name required by the individual report.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/report/field",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "AC21F5BCE771CA0CA974CA4A312D1FE6",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "fieldReference",
+      "TYPE": "string",
+      "DESCRIPTION": "The reference for the desired field. This can be found by querying <b>api/report/fields</b> and is the NAME parameter."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.report",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "field"
+  },
+  "DESCRIPTION": "More detailed information for a given report field. This will include the list of possible operators and values for fields, if applicable. Note that fields are general and can be used by more than one report, however, not all fields that are filters are available as filters for all reports. Check <b>api/report/fields</b> for the filters and fields available for a given report"
+}

@@ -1,0 +1,56 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "USERID": 1559,
+          "EXPIRES": "2020-10-24 15:40:56",
+          "AXTOKEN": "4d9969c2-995b-4b7c-b122-66172ea3c3d8",
+          "ROLES": "Administrator",
+          "ROLETYLEID": 1,
+          "CONTACTID": 60001,
+          "USERNAME": "sarah.jones32",
+          "RESPONSE_CODE": "SUCCESS"
+        },
+        "DESCRIPTION": "The user information will be returned in a flat object.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/user/login",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "F37419B81152A7FB6BB19FBE656A4B0D",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "accessCode",
+      "TYPE": "string",
+      "DESCRIPTION": "Returned access code from Oauth mechanism"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "userID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The user to log in as"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.user",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "login"
+  },
+  "DESCRIPTION": "Login an aXcelerate User. The parameters below refer only to POST requests. The API Token is still required for this endpoint.\n\t\t\t\t<div class='notice'>\n\t\t\t\t\t<p>As part of ongoing improvements to infrastructure and security, the authentication mechanism, including this endpoint, has changed.</p>\n\t\t\t\t\t<p>For more infomration on using the authentication mechanism, click here: <a href='#swagger'>Login Api</a></p>\n\t\t\t\t</div>\n\t\t\t\t"
+}

@@ -1,0 +1,423 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "INVOICENR": "INV0002",
+            "PRICEGROSS": 20,
+            "DUEDATE": "2014-06-09",
+            "INVOICEID": 61645,
+            "AREITEMSLOCKED": true,
+            "FIRSTNAME": "Scott",
+            "LASTNAME": "Jones",
+            "ISCANCELLED": false,
+            "BALANCE": 0,
+            "INVOICEDATE": "2014-06-02",
+            "ISPAID": true,
+            "ISVOID": false
+          },
+          {
+            "INVOICENR": "INV0006",
+            "PRICEGROSS": 200.3,
+            "DUEDATE": "2014-07-09",
+            "INVOICEID": 61645,
+            "AREITEMSLOCKED": true,
+            "FIRSTNAME": "Scott",
+            "LASTNAME": "Jones",
+            "ISCANCELLED": false,
+            "BALANCE": 100,
+            "INVOICEDATE": "2014-07-02",
+            "ISPAID": false,
+            "ISVOID": false
+          }
+        ],
+        "DESCRIPTION": "Invoice array returned in JSON format. For more details directly call the /accounting/invoice/:invoiceID endpoint",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": {
+          "INVOICENR": "AUTO",
+          "PRICEGROSS": 1.25,
+          "ADDRESS2": null,
+          "OWNERCONTACTID": 1745197,
+          "ORGANISATION": null,
+          "SHIPLASTNAME": null,
+          "SHIPHOUSENR": null,
+          "SHIPORGID": null,
+          "SHIPPOSTCODE": null,
+          "COMMENT": null,
+          "PHONENR": null,
+          "ORGID": null,
+          "PAYMENTS": [],
+          "SHIPCOUNTRY": null,
+          "DUEDATE": null,
+          "SHIPORGANISATION": null,
+          "INVOICEID": 2512370,
+          "DUEDATEOFFSET": 10,
+          "AREITEMSLOCKED": false,
+          "LASTNAME": "Castro",
+          "STREET": null,
+          "ITEMS": [
+            {
+              "TOTALTAX": 0.11,
+              "CHILDREN": {},
+              "UNITPRICETAX": 0.11,
+              "DOMAINID": 0,
+              "HASCHILDREN": 0,
+              "PARTID": 0,
+              "UNITPRICENETT": 1.12,
+              "QTY": 1,
+              "TAXPERCENT": 10,
+              "TOTALGROSS": 1.23,
+              "ITEMCODE": null,
+              "FINANCECODE": null,
+              "TOTALNETT": 1.12,
+              "SOURCEID": 0,
+              "SERVICEDATE": null,
+              "UNITPRICEGROSS": 1.23,
+              "ITEMID": 4446639,
+              "DESCRIPTION": "dsfasdfa",
+              "COSTCENTRECODE": null
+            },
+            {
+              "TOTALTAX": 0,
+              "CHILDREN": {
+                "1": {
+                  "DATA": {
+                    "OPTION": "+",
+                    "ONAME": "",
+                    "ID": "+",
+                    "NAME": ""
+                  },
+                  "CHILDID": 1,
+                  "TYPEID": 1
+                },
+                "2": {
+                  "DATA": {
+                    "OPTION": "+",
+                    "ONAME": "",
+                    "ID": "+",
+                    "NAME": ""
+                  },
+                  "CHILDID": 2,
+                  "TYPEID": 1
+                }
+              },
+              "UNITPRICETAX": 0,
+              "DOMAINID": 0,
+              "HASCHILDREN": true,
+              "PARTID": 0,
+              "UNITPRICENETT": 0.02,
+              "QTY": 1,
+              "TAXPERCENT": 9.84,
+              "TOTALGROSS": 0.02,
+              "ITEMCODE": "ccsurcharge",
+              "FINANCECODE": "4-2335",
+              "TOTALNETT": 0.02,
+              "SOURCEID": 0,
+              "SERVICEDATE": null,
+              "UNITPRICEGROSS": 0.02,
+              "ITEMID": 4446640,
+              "DESCRIPTION": "Credit+Card+Surcharge+(2222222%)",
+              "COSTCENTRECODE": null
+            }
+          ],
+          "INVOICEDATE": null,
+          "CURRENCY": "AUD",
+          "SHIPPRICENETT": 0,
+          "SHIPSTATE": null,
+          "CONTACTNAME": "Nikita Tkachov",
+          "SHIPCOUNTRYISO3166": null,
+          "SHIPSTREET": null,
+          "HOUSENR": null,
+          "ISARCHIVED": false,
+          "ORDERDATE": null,
+          "CONTACTID": 261302,
+          "SHIPCITY": null,
+          "SHIPPRICEGROSS": 0,
+          "COUNTRYISO3166": null,
+          "ISINVOICENRLOCKED": false,
+          "SHIPTAXPERCENT": 0,
+          "SHIPPRICETAX": 0,
+          "STATE": null,
+          "FIRSTNAME": "Fidel",
+          "SHIPADDRESS2": null,
+          "SHIPFIRSTNAME": null,
+          "CITY": null,
+          "ORDERNR": null,
+          "EMAIL": null,
+          "PRICENETT": 1.14,
+          "COUNTRY": null,
+          "INVGUID": "91FE4137-5196-4F33-815E0E1C6E0E6D97",
+          "BALANCE": 1.25,
+          "POSTCODE": null,
+          "ISPAID": false
+        },
+        "DESCRIPTION": "NEW Invoice array returned in JSON format.",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "TOTALTAX": 0,
+            "CHILDREN": {
+              "1": {
+                "DATA": {
+                  "OPTION": "+",
+                  "ONAME": "",
+                  "ID": "+",
+                  "NAME": ""
+                },
+                "CHILDID": 1,
+                "TYPEID": 1
+              },
+              "2": {
+                "DATA": {
+                  "OPTION": "+",
+                  "ONAME": "",
+                  "ID": "+",
+                  "NAME": ""
+                },
+                "CHILDID": 2,
+                "TYPEID": 1
+              }
+            },
+            "DATA": "",
+            "UNITPRICETAX": 0,
+            "DOMAINID": 0,
+            "HASCHILDREN": true,
+            "PARTID": 0,
+            "DOMAIN": "",
+            "UNITPRICENETT": 0,
+            "QTY": 1,
+            "TAXPERCENT": 10,
+            "TOTALGROSS": 0,
+            "ITEMCODE": "",
+            "FINANCECODE": "02024",
+            "TOTALNETT": 0,
+            "SOURCEID": 0,
+            "SERVICEDATE": "{ts+'1900-01-01+00:00:00'}",
+            "UNITPRICEGROSS": 0,
+            "ITEMID": 4446693,
+            "DESCRIPTION": "blah",
+            "COSTCENTRECODE": ""
+          }
+        ],
+        "DESCRIPTION": "NEW Invoice Item array example.",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "QTY": 1,
+            "ITEMCODE": "widget",
+            "DESCRIPTION": "Some item",
+            "UNITPRICEGROSS": 15.96,
+            "TAXPERCENT": 10
+          }
+        ],
+        "DESCRIPTION": "For creating an invoice with a new line item",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "ITEMID": 123456,
+            "QTY": 6,
+            "ITEMCODE": "widget",
+            "DESCRIPTION": "Some other widget",
+            "UNITPRICEGROSS": 9,
+            "TAXPERCENT": 0
+          }
+        ],
+        "DESCRIPTION": "For editing an existing line item. (note specifying an itemid)",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "ITEMID": 123456,
+            "QTY": 0,
+            "ITEMCODE": "widget",
+            "DESCRIPTION": "Some item",
+            "UNITPRICEGROSS": 15.96,
+            "TAXPERCENT": 10
+          }
+        ],
+        "DESCRIPTION": "For deleting a line item from the invoice.(note specifying an item id and setting qty to zero)",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/accounting/invoice/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "0AB8E3ACBEAC0BD62CFE7082680C27E4",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "REQUIRED for both actions.The contactID to return invoices for that contact"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "firstname",
+      "TYPE": "string",
+      "DESCRIPTION": "REQUIRED for POST(create) only.Given Names invoice bill to "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "surname",
+      "TYPE": "string",
+      "DESCRIPTION": "REQUIRED for POST(create) only.Last Names invoice bill to"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "invoiceDate",
+      "TYPE": "string",
+      "DESCRIPTION": "REQUIRED for POST(create) supported format YYYY-MM-DD"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "orderDate",
+      "TYPE": "string",
+      "DESCRIPTION": "REQUIRED for POST(create) supported format YYYY-MM-DD"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "externalReference",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. External Reference Key (60 characters max)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem",
+      "TYPE": "json",
+      "DESCRIPTION": "REQUIRED for POST(create) only.Invoice item(s) data in json format"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.DESCRIPTION",
+      "TYPE": "string",
+      "DESCRIPTION": "The item description"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.QTY",
+      "TYPE": "numeric",
+      "DESCRIPTION": "REQUIRED for POST(create) only.Item Quantity. Must be greater than zero. If QTY is zero and an ITEMID is defined then the line item matching that ITEMID is removed from the invoice."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.ITEMCODE",
+      "TYPE": "string",
+      "DESCRIPTION": "The item code associated with this line item."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.ITEMID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "To edit an existing line item the ITEMID must be specified, for a new line item this value can be omitted or set to zero. Note: If an ITEMID is specified and QTY is set to zero then that line item is deleted from the invoice."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.FINANCECODE",
+      "TYPE": "string",
+      "DESCRIPTION": "The finance code to associate with the line-item."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.TAXPERCENT",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The amount of GST on that item ten percent would be: 10"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.HASCHILDREN",
+      "TYPE": "boolean",
+      "DESCRIPTION": "REQUIRED for POST(create) only.whether item has children "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.COSTCENTRECODE",
+      "TYPE": "string",
+      "DESCRIPTION": "The cost center that is associated with the line-item."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "aItem.UNITPRICEGROSS",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The gross price for a single quantity of the item. Fifteen Dollars Ninety Six Cents would be: 15.96"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.DOMAINID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The system-id of the domain that is to be associated with the line-item."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.SERVICEDATE",
+      "TYPE": "date",
+      "DESCRIPTION": "The service date associated with the line-item. Supported Formats are: {ts 'YYYY-MM-DDThh:mm:ss'} or YYYY-MM-DDThh:mm:ss"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.PARTID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional for POST(create).Part ID for invoice item"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "aItem.DATA",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional for POST(create).Invoice item data"
+    }
+  ],
+  "DEFAULTFORMAT": "JSON",
+  "HANDLER": "api.accounting.invoice",
+  "METHODS": "GET,POST",
+  "ACTION": {
+    "GET": "search",
+    "POST": "create"
+  },
+  "DESCRIPTION": "Get an array of invoices for an account(GET). Or create a new invoice (POST).<br>The general process for creating the expected payload of the AITEM field is as follows:<br>\n\t\t\t\t<li>Create an array of line items. Depending on the programming language that would be a structs / dictionary / hashmap).</li>\n\t\t\t\t<li>Serialize the array to JSON. </li>\n\t\t\t\t<li>Pass the serialised string in the AITEM form field.</li>"
+}

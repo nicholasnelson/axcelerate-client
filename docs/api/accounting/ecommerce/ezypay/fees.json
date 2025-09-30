@@ -1,0 +1,81 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "pricingCode": "failed_payment_fee",
+            "description": "Failed Payment Fee",
+            "appliesTo": [],
+            "accountingCode": null,
+            "chargingOption": "AMOUNT",
+            "amount": 8.5,
+            "percentage": 0
+          },
+          {
+            "pricingCode": "transaction_fee",
+            "description": "Card Fee",
+            "appliesTo": [
+              "MASTERCARD",
+              "VISA"
+            ],
+            "accountingCode": null,
+            "chargingOption": "BOTH",
+            "amount": 0.5,
+            "percentage": 0.37
+          },
+          {
+            "pricingCode": "transaction_fee",
+            "description": "Bank Fee",
+            "appliesTo": [
+              "BANK"
+            ],
+            "accountingCode": null,
+            "chargingOption": "BOTH",
+            "amount": 0.35,
+            "percentage": 0.15
+          },
+          {
+            "pricingCode": "load_fee",
+            "description": "Load Fee",
+            "appliesTo": [],
+            "accountingCode": null,
+            "chargingOption": "AMOUNT",
+            "amount": 2,
+            "percentage": 0
+          }
+        ],
+        "DESCRIPTION": "Example response from ezypay",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/accounting/ecommerce/ezypay/fees",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "59ED0A362D40096B0BF965F39A4EAFE5",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.accounting.ecommerce.ezypay.ezpay_plan_handler",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getMerchantFeeSchedule"
+  },
+  "DESCRIPTION": "Retrieves a list of all customer allocated fees configured for the current merchant. Information returned by this service resource includes: the type of each fee, the payment method to which the fee applies, the accounting code associated with the fee, and the method used to calculate the fee amount (e.g. fixed amount, percentage, or both)."
+}

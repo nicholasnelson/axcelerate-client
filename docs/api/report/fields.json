@@ -1,0 +1,92 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "VIEWFIELDS": [
+            {
+              "DISPLAY": "Contact ID",
+              "NAME": "vmcontacts.contactid",
+              "GROUP": "Contact"
+            },
+            {
+              "DISPLAY": "Optional ID",
+              "NAME": "vmcontacts.optionalid",
+              "GROUP": "Contact"
+            },
+            {
+              "DISPLAY": "Title",
+              "NAME": "vmcontacts.title",
+              "GROUP": "Contact"
+            },
+            {
+              "DISPLAY": "Given Name",
+              "NAME": "vmcontacts.givenname",
+              "GROUP": "Contact"
+            },
+            {
+              "DISPLAY": "Gender",
+              "NAME": "participantdetails.gender",
+              "GROUP": "Contact"
+            }
+          ],
+          "FILTERFIELDS": [
+            {
+              "DISPLAY": "Contact ID Filter",
+              "NAME": "vmcontacts.contactid",
+              "GROUP": "Contact"
+            },
+            {
+              "DISPLAY": "Given Name",
+              "NAME": "vmcontacts.givenname",
+              "GROUP": "Contact"
+            },
+            {
+              "DISPLAY": "Gender",
+              "NAME": "participantdetails.gender",
+              "GROUP": "Contact"
+            }
+          ]
+        },
+        "DESCRIPTION": "An example for the fields available for the contactsSimple report. This example displays only a small subset of the full list of fields.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/report/fields",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "0554B87FF641C1364B8AD065E563BCFD",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "reportReference",
+      "TYPE": "string",
+      "DESCRIPTION": "The reference for the desired report. This can be found by either querying the <b>api/report/list</b> API, or as the ref parameter in the URL when running the report in aXcelerate. For example, for the Contact Details report is the value is: <em>contactsSimple</em>"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.report",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "fields"
+  },
+  "DESCRIPTION": "Returns details on the view fields and filters available for a given report. The names and operators can be using when running the report (api/report/run)."
+}

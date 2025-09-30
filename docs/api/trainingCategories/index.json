@@ -1,0 +1,68 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "AREAID": 64,
+            "AREA": "Leadership",
+            "BGCOLOURHEX": "de7fe8",
+            "BORDERCOLOURHEX": "000000",
+            "CORE": 1
+          },
+          {
+            "AREAID": 75,
+            "AREA": "Professional Development",
+            "BGCOLOURHEX": "ADD8E6",
+            "BORDERCOLOURHEX": "000000",
+            "CORE": 0
+          },
+          {
+            "AREAID": 139,
+            "AREA": "Graduate Programs",
+            "BGCOLOURHEX": "F5DEB3",
+            "BORDERCOLOURHEX": "000000",
+            "CORE": 1
+          },
+          {
+            "AREAID": 273,
+            "AREA": "FaHCSIA Programs",
+            "BGCOLOURHEX": "FF69B4",
+            "BORDERCOLOURHEX": "000000",
+            "CORE": 1
+          }
+        ],
+        "DESCRIPTION": "A successful call will give you a response like this:",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/trainingCategories/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "E9E5329F6BBFD21997047171D43FB6AB",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.trainingCategory",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "read"
+  },
+  "DESCRIPTION": "Returns a list of defined Training Categories."
+}

@@ -1,0 +1,113 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "DATA": [
+            {
+              "Qualification Name": "Certificate I in Business",
+              "Organisation": "VM Learning / aXcelerate",
+              "Class Descriptor": "# W OUT DATES",
+              "Trainer Full Name": "",
+              "Actual Completion Date": "",
+              "Full Name": "Nathan Gordon",
+              "Commencement Date": "2015-07-17",
+              "USI": "",
+              "Qualification Code": "BSB10112",
+              "Enrolment Date": "2015-07-17",
+              "Expected Completion Date": "2015-07-17"
+            }
+          ],
+          "ERRORMSG": "",
+          "REPORTNAME": "Qualification Enrolments and Outcomes",
+          "PATH": "",
+          "SUCCESS": true,
+          "COUNT": 1,
+          "CONTENTTYPE": "application/json",
+          "FILTERS": [
+            {
+              "VALUE2": "",
+              "NAME": "enrolments.enrolstatus",
+              "VALUE": "comp"
+            },
+            {
+              "VALUE2": "",
+              "NAME": "enrolments.dateenrolled",
+              "VALUE": "01/01/2015"
+            },
+            {
+              "VALUE2": "",
+              "NAME": "contacts.givenname",
+              "VALUE": "Nathan"
+            },
+            {
+              "VALUE2": "",
+              "NAME": "contacts.surname",
+              "VALUE": "Gordon"
+            }
+          ],
+          "DESCRIPTION": "JSON/Collection"
+        },
+        "DESCRIPTION": "An example report returned in JSON format",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/report/saved/run",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "38AB25C21802D2E018E5AA512475A696",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "reportID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "ReportID of the saved report to run."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "filterOverride",
+      "TYPE": "json",
+      "DESCRIPTION": "Override the standard filter value(s): <br/> e.g: To override the Enrolment Status Value you can pass:<br/> [{NAME:'enrolments.enrolstatus', VALUE:'canc', VALUE2:''}] <br/> <strong>NOTE:</strong> You cannot test/use this in our API relax console simulator"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "displayLength",
+      "TYPE": "numeric",
+      "DESCRIPTION": "a.k.a 'pageSize' - Warehoused reports only: The maximum supported value is 1000. The number of row objects to return in the data[] response element. This should be used in conjunction with offsetRows to page through data. Wait for a response before calling the next page of data."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "offsetRows",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Warehoused reports only: The number of report rows to skip before returning row objects in the data[] response element. The maximum supported value is 100,000. Reports larger than this are not supported"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.report",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "runReport"
+  },
+  "DESCRIPTION": "Interacts with the aXcelerate Report Builder to run a specified saved report. It will return the results in JSON format."
+}

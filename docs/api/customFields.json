@@ -1,0 +1,214 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "LINKTO": "contact",
+          "OPTIONS": [
+            "Finance",
+            "Marketing",
+            "Operations"
+          ],
+          "MANDATORY": false,
+          "VARIABLENAME": "contact_department",
+          "ID": 18760,
+          "ACTIVE": true,
+          "TYPE": "select",
+          "LABEL": "Business Department",
+          "AVAILABLETOEXTERNAL": true
+        },
+        "DESCRIPTION": "A successful POST request will return the newly created custom field:",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "LINKTO": "contact",
+            "OPTIONS": "red,black",
+            "VARIABLENAME": "ant",
+            "ID": 531,
+            "ACTIVE": true,
+            "TYPE": "select",
+            "LABEL": "Ant Colour",
+            "MANDATORY": false,
+            "AVAILABLETOEXTERNAL": true
+          },
+          {
+            "LINKTO": "contact",
+            "OPTIONS": null,
+            "VARIABLENAME": "personalEmail",
+            "ID": 483,
+            "ACTIVE": true,
+            "TYPE": "text",
+            "LABEL": "Personal Email",
+            "MANDATORY": false,
+            "AVAILABLETOEXTERNAL": true
+          },
+          {
+            "LINKTO": "contact",
+            "OPTIONS": null,
+            "VARIABLENAME": "Test",
+            "ID": 498,
+            "ACTIVE": true,
+            "TYPE": "text",
+            "LABEL": "test",
+            "MANDATORY": false,
+            "AVAILABLETOEXTERNAL": true
+          },
+          {
+            "LINKTO": "contact",
+            "OPTIONS": "test,values,that,are,set",
+            "VARIABLENAME": "Test_Select",
+            "ID": 537,
+            "ACTIVE": true,
+            "TYPE": "select",
+            "LABEL": "Test_Select",
+            "MANDATORY": false,
+            "AVAILABLETOEXTERNAL": true
+          },
+          {
+            "LINKTO": "contact",
+            "OPTIONS": null,
+            "VARIABLENAME": "TestTestTest",
+            "ID": 500,
+            "ACTIVE": true,
+            "TYPE": "text",
+            "LABEL": "TestTestTest",
+            "MANDATORY": false,
+            "AVAILABLETOEXTERNAL": true
+          }
+        ],
+        "DESCRIPTION": "A successful GET request will return an array of custom fields:",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/customFields",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "1760A0224A39F7B1581F8936CC811F31",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "linkTo",
+      "TYPE": "string",
+      "DESCRIPTION": "Where the Custom Field links to. Available options are [contact,classEnrolment,class,workshop,workshopBooking,organisation,marketingAgent,portfolio,studentActivity,enrolmentGroup,unitEnrolment]."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "variableName",
+      "TYPE": "string",
+      "DESCRIPTION": "The internal name of the Custom Field, used for setting the value in other endpoints i.e. customField_ant : red."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The Type of the Custom Field - i.e. Text, Select, Radio. Available options are [text,number,date,textarea,html,url,select,radio,select-multi,checkbox]."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "options",
+      "TYPE": "string",
+      "DESCRIPTION": "For Custom Fields where a list of values are needed. One of the listed types must be used [select,radio,select-multi,checkbox]. Example string with brackets ['one','two','three']."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "label",
+      "TYPE": "string",
+      "DESCRIPTION": "The Label for the Custom Field."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "active",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Whether the field is active or not."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "includeAnyStatus",
+      "TYPE": "boolean",
+      "DESCRIPTION": "By default, only the active custom fields are returned. If this field is set, both active and inactive custom fields will be returned."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "orderBy",
+      "TYPE": "string",
+      "DESCRIPTION": "The field to order the results by. Default ordered by label name."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "notLinkedTo",
+      "TYPE": "string",
+      "DESCRIPTION": "Exclude the linkTo value from the results."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "searchTerm",
+      "TYPE": "string",
+      "DESCRIPTION": "Search for a specific term in the label or variable name."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "mandatory",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Whether the field is mandatory or not for completion (Unit Enrolments only)."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "availableToExternal",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Whether this field should be displayed externally (i.e. Certificate Validation page) (Unit Enrolments only)."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "offset",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Used for paging - start at record. Both offset and limit needs to work paging."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "limit",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Used for paging - total records to retrieve. Both offset and limit needs to work paging."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.customField",
+  "METHODS": "GET,POST",
+  "ACTION": {
+    "GET": "search",
+    "POST": "create"
+  },
+  "DESCRIPTION": "Create a new custom field or search existing custom fields."
+}

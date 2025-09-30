@@ -1,0 +1,87 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "ROLETYPEID": 1,
+          "USERID": 1559,
+          "DOMAINID": null,
+          "CONTACTID": 116482,
+          "CONTACT_NAME": "Nathan Smith",
+          "PARTNERORGANISATIONID": null,
+          "PENDINGLOGININVITE": false,
+          "ROLEID": 2456,
+          "ROLENAME": "Developer",
+          "ACTIVE": 1,
+          "USERNAME": "nathan1"
+        },
+        "DESCRIPTION": "The user information will be returned in a flat object.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/user",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "099685A74083DB73429DED5D757904B9",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The aXcelerate ContactID the user is associated with"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "username",
+      "TYPE": "string",
+      "DESCRIPTION": "The Username. It will be auto-generated if not provided. Username is being phased out with the new global accounts."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "domainID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The DomainID. Set the Domain for the User"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "roleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Role to assign the User to. If this is omitted; aXcelerate will try to set them to Learner if the Default Role has been configured (In Additional Options)"
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "sendEmail",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Send the user creation invitation email. In most cases, this should be set to true, except possibly when user access is managed by Corporate Identity Providers."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.user",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "create"
+  },
+  "DESCRIPTION": "Creates a new User. The parameters below refer only to POST requests."
+}

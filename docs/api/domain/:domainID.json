@@ -1,0 +1,50 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "DOMAINID": 773,
+          "DOMAINNAME": "Testing 123"
+        },
+        "DESCRIPTION": "A successful call will give you a response like this:",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/domain/:domainID",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "7D65F3457D9809C588B2A9A331A8C81E",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "domainID",
+      "TYPE": "string",
+      "DESCRIPTION": "The ID of the Domain."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.domain",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "read"
+  },
+  "DESCRIPTION": "Returns an array of defined Domains."
+}

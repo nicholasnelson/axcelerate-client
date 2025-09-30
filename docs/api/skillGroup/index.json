@@ -1,0 +1,58 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "MESSAGE": "Skill Group Created Successfully",
+          "STATUS": "success",
+          "CONTACTROLEID": 9999
+        },
+        "DESCRIPTION": "Message returned in JSON format",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/skillGroup/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "DE16C72BDAEEF6EA52B141144DBA1157",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "name",
+      "TYPE": "string",
+      "DESCRIPTION": "The name of the Skill Group."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of the Skill Group"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.skillGroup",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "create"
+  },
+  "DESCRIPTION": "Creates a new Skill Group. This API will not try and search for any existing Skill Group (of the same name), but simply creates a new one."
+}

@@ -1,0 +1,54 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "DOCUMENT": {
+            "HAVEFILE": true,
+            "DETAIL": {
+              "AWARDTYPE": "Certificate of Training (Non-accred.)",
+              "STATUSID": 12345,
+              "CONTACTID": 116482,
+              "SURNAME": "Gordon",
+              "ISSUEDBY": "VM Learning / aXcelerate",
+              "ACTIVITYNAME": "aXcelerate Contact Management",
+              "GIVENNAME": "Nathan"
+            }
+          },
+          "RESULT": true,
+          "MSG": "Certificate verification successful! Certificate has been generated."
+        },
+        "DESCRIPTION": "An example of a successful certificate verification. The 'HaveFile' property refers to the generated PDF; it will be <strong>false</strong> if the certificate was issued but not saved (on the server). The ID is the last set of digits in the Certificate ID (found on the printed certificate) - i.e.: '116482-54321-<strong>12345</strong>'",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contact/enrolment/verifyCertificate/:ID",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "B2D1A5C18B6D340B37DC88C8976E8BC2",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contact",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "verifyCertificate"
+  },
+  "DESCRIPTION": "Checks the system for a certificate issued by the Client."
+}

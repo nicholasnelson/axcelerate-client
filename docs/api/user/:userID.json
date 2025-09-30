@@ -1,0 +1,96 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "ROLETYPEID": 1,
+          "USERID": 1559,
+          "DOMAINID": null,
+          "CONTACTID": 116482,
+          "CONTACT_NAME": "Nathan Smith",
+          "PARTNERORGANISATIONID": null,
+          "PENDINGLOGININVITE": false,
+          "ROLEID": 2456,
+          "ROLENAME": "Developer",
+          "ACTIVE": 1,
+          "USERNAME": "nathan1"
+        },
+        "DESCRIPTION": "The user information will be returned in a flat object.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/user/:userID",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "userID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The resource user ID to interact with"
+    }
+  ],
+  "RESOURCEID": "17329D7F35148B6B51E1E660C8410233",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "userID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The aXcelerate UserID."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "roleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The User Role associated with the User"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "domainID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Domain associated with the User"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "active",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The User's Active status"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "username",
+      "TYPE": "string",
+      "DESCRIPTION": "The Username (Not applicable with the new global accounts)"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.user",
+  "METHODS": "GET,PUT",
+  "ACTION": {
+    "PUT": "update",
+    "GET": "read"
+  },
+  "DESCRIPTION": "Interacts with a specific user. You can read (GET) or update (PUT) user details. The parameters below refer only to PUT requests."
+}

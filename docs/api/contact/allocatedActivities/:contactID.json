@@ -1,0 +1,95 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "EL": [],
+          "ASC": [
+            {
+              "LOCATION": "",
+              "DELIVERY": "Face-to-Face",
+              "INSTANCEID": 157228,
+              "STARTDATE": "",
+              "STATUS": "Not Enrolled",
+              "DATECOMMENCED": "",
+              "FINISHDATE": "",
+              "ENROLID": 0,
+              "MANDATORY": true,
+              "NAME": "CUS10101 - 1111 Test Qualification",
+              "ID": 4369,
+              "TYPE": "accredited"
+            },
+            {
+              "LOCATION": "",
+              "DELIVERY": "Face-to-Face",
+              "INSTANCEID": 157232,
+              "STARTDATE": "18/07/2015",
+              "STATUS": "Not Enrolled",
+              "DATECOMMENCED": "",
+              "FINISHDATE": "19/07/2015",
+              "ENROLID": 0,
+              "MANDATORY": true,
+              "NAME": "CPCCLDG3001A - Licence to perform dogging",
+              "ID": 3285,
+              "TYPE": "accredited"
+            }
+          ],
+          "NASC": [
+            {
+              "LOCATION": "",
+              "DELIVERY": "Face-to-Face",
+              "INSTANCEID": 0,
+              "STARTDATE": "17/07/2015",
+              "STATUS": "Not Enrolled",
+              "DATECOMMENCED": "",
+              "FINISHDATE": "17/07/2015",
+              "ENROLID": 0,
+              "MANDATORY": true,
+              "NAME": "test - test",
+              "ID": 18714,
+              "TYPE": "Non-accredited"
+            }
+          ]
+        },
+        "DESCRIPTION": "The allocation information will be returned in an object - <strong>NOTE:</strong> Where there instanceID is 0; the Skill Group was applied to the type.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contact/allocatedActivities/:contactID",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contact ID to interact with"
+    }
+  ],
+  "RESOURCEID": "6D91AE20EBA571E2AD281B1D464FBC2F",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contact",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getAllocatedActivities"
+  },
+  "DESCRIPTION": "Returns enrolments for a specific contact."
+}

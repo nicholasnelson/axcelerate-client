@@ -1,0 +1,204 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "ROWID": 1,
+            "CONTACTROLEID": 1584,
+            "NAME": "API Endpoint Test #1",
+            "TYPE": "aXcelerateDevTest",
+            "POSNUMBER": "AXAPITEST001",
+            "POSDESCRIPTION": null,
+            "POSSTART": null,
+            "POSEND": null,
+            "DATECOMMENCED": null,
+            "DIRECTMANAGER": true,
+            "DATEINSERTED": "2015-03-09 12:24",
+            "DATEUPDATED": "2015-03-09 12:37",
+            "MANAGERROLEID": null,
+            "ORGID": 36590,
+            "ISACTIVE": true,
+            "COUNT": 4
+          },
+          {
+            "ROWID": 2,
+            "CONTACTROLEID": 1585,
+            "NAME": "API Endpoint Test #2",
+            "TYPE": "aXcelerateDevTest",
+            "POSNUMBER": "AXAPITEST002",
+            "POSDESCRIPTION": null,
+            "POSSTART": null,
+            "POSEND": null,
+            "DATECOMMENCED": null,
+            "DIRECTMANAGER": false,
+            "DATEINSERTED": "2015-03-09 12:25",
+            "DATEUPDATED": "2015-03-09 12:44",
+            "MANAGERROLEID": 1584,
+            "ORGID": 36590,
+            "ISACTIVE": true,
+            "COUNT": 4
+          },
+          {
+            "ROWID": 3,
+            "CONTACTROLEID": 1579,
+            "NAME": "Developer",
+            "TYPE": "IT",
+            "POSNUMBER": "DEV01",
+            "POSDESCRIPTION": null,
+            "POSSTART": "2015-03-03 11:16",
+            "POSEND": null,
+            "DATECOMMENCED": null,
+            "DIRECTMANAGER": false,
+            "DATEINSERTED": "2015-03-03 11:16",
+            "DATEUPDATED": "2015-03-05 13:28",
+            "MANAGERROLEID": 1580,
+            "ORGID": 36590,
+            "ISACTIVE": true,
+            "COUNT": 4
+          },
+          {
+            "ROWID": 4,
+            "CONTACTROLEID": 1580,
+            "NAME": "Operations Manager",
+            "TYPE": "manager",
+            "POSNUMBER": "OPMAN01",
+            "POSDESCRIPTION": null,
+            "POSSTART": "2015-03-05 13:16",
+            "POSEND": null,
+            "DATECOMMENCED": null,
+            "DIRECTMANAGER": true,
+            "DATEINSERTED": "2015-03-05 13:16",
+            "DATEUPDATED": "2015-03-05 13:31",
+            "MANAGERROLEID": null,
+            "ORGID": 36590,
+            "ISACTIVE": true,
+            "COUNT": 4
+          }
+        ],
+        "DESCRIPTION": "Contact Role returned in JSON format",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contactRoles/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "15F1BEAE7F942EDD9B3D79E61880BA8B",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "name",
+      "TYPE": "string",
+      "DESCRIPTION": "The name or part of the name to search for"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type or part of the type to search for"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "posNumber",
+      "TYPE": "string",
+      "DESCRIPTION": "The number (or part of) associated with the Contact Role"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "posDescription",
+      "TYPE": "string",
+      "DESCRIPTION": "The description (or part of) for the Contact Role"
+    },
+    {
+      "DEFAULT": "1",
+      "REQUIRED": "false",
+      "NAME": "isActive",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Search for Active or Inactive Roles."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "directManager",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Search for Direct Managers (only) = 1 OR All Other = 0"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "managerContactRoleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Search roles which have this ContactRoleID as their manager."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "orgID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Search roles which are related to this Organisation ID."
+    },
+    {
+      "DEFAULT": "0",
+      "REQUIRED": "false",
+      "NAME": "offset",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Used for paging - start at record."
+    },
+    {
+      "DEFAULT": "10",
+      "REQUIRED": "false",
+      "NAME": "displayLength",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Used for paging - total records to retrieve."
+    },
+    {
+      "DEFAULT": "1",
+      "REQUIRED": "false",
+      "NAME": "sortColumn",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The column index to sort by."
+    },
+    {
+      "DEFAULT": "ASC",
+      "REQUIRED": "false",
+      "NAME": "sortDirection",
+      "TYPE": "string",
+      "DESCRIPTION": "The sort by direction 'ASC' OR 'DESC'."
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "purgeCache",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Currently the API will cache the query for 30 seconds – Setting this flag to true gets the latest data."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contactRole",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "search"
+  },
+  "DESCRIPTION": "Contact Role Search (paged results) "
+}

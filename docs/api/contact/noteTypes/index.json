@@ -1,0 +1,54 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "COLOUR": null,
+            "ENTRYDATE": "2009-11-11 08:47",
+            "NOTETYPEID": 165,
+            "ACTIVE": true,
+            "DESCRIPTOR": "Appointment Made - New Contact"
+          },
+          {
+            "COLOUR": null,
+            "ENTRYDATE": "2009-11-11 08:48",
+            "NOTETYPEID": 166,
+            "ACTIVE": true,
+            "DESCRIPTOR": "General Client Conversation"
+          }
+        ],
+        "DESCRIPTION": "The enrolment information will be returned in an object.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contact/noteTypes/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "AFC30AC17D71B4CFBE6C38D504C814CE",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contact",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getContactNoteCodes"
+  },
+  "DESCRIPTION": "Get Note Types configured in the account."
+}

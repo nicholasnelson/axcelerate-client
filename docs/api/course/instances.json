@@ -1,0 +1,156 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "ID": 16380,
+            "INSTANCEID": 407209,
+            "NAME": "aXcelerate Client Forum",
+            "STARTDATE": "2017-03-06 09:00",
+            "FINISHDATE": "2017-03-09 12:30",
+            "DATEDESCRIPTOR": "6 - 9 March 2017",
+            "LOCATION": "Sydney CBD",
+            "COST": 20,
+            "GST_TYPE": 1,
+            "OWNERCONTACTID": 1038809,
+            "TRAINERCONTACTID": 4744,
+            "NOTICES": null,
+            "PARTICIPANTS": 18,
+            "MAXPARTICIPANTS": 20,
+            "MINPARTICIPANTS": 1,
+            "PARTICIPANTVACANCY": 2,
+            "ENROLMENTOPEN": false,
+            "LASTUPDATEDUTC": "2021-03-16 23:40",
+            "ISACTIVE": true,
+            "STATUS": null
+          },
+          {
+            "ID": 16380,
+            "INSTANCEID": 423316,
+            "NAME": "aXcelerate Client Forum",
+            "STARTDATE": "2017-03-14 09:30",
+            "FINISHDATE": "2017-03-14 13:00",
+            "DATEDESCRIPTOR": "14 March 2017",
+            "LOCATION": "Melbourne",
+            "COST": 0,
+            "GST_TYPE": 0,
+            "OWNERCONTACTID": 4744,
+            "TRAINERCONTACTID": 4744,
+            "NOTICES": null,
+            "PARTICIPANTS": 1,
+            "MAXPARTICIPANTS": 12,
+            "MINPARTICIPANTS": 5,
+            "PARTICIPANTVACANCY": 11,
+            "ENROLMENTOPEN": true,
+            "LASTUPDATEDUTC": "2021-03-16 23:40",
+            "ISACTIVE": true,
+            "STATUS": null
+          },
+          {
+            "ID": 16380,
+            "INSTANCEID": 407217,
+            "NAME": "aXcelerate Client Forum",
+            "STARTDATE": "2017-05-11 09:00",
+            "FINISHDATE": "2017-05-11 12:30",
+            "DATEDESCRIPTOR": "11 May 2017",
+            "LOCATION": "Brisbane City",
+            "COST": 0,
+            "GST_TYPE": 2,
+            "OWNERCONTACTID": 1038809,
+            "TRAINERCONTACTID": 8694,
+            "NOTICES": null,
+            "PARTICIPANTS": 0,
+            "MAXPARTICIPANTS": 20,
+            "MINPARTICIPANTS": 1,
+            "PARTICIPANTVACANCY": 20,
+            "ENROLMENTOPEN": true,
+            "LASTUPDATEDUTC": "2021-03-16 23:40",
+            "ISACTIVE": true,
+            "STATUS": null
+          }
+        ],
+        "DESCRIPTION": "Courses Instance data returned in JSON format. Note that some of these fields (those dealing with participant numbers) only apply to workshop instances. The example below is for workshops.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/instances",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "AE3EB37A96D9F02CE98078ABAFAB09A3",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "ID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The activity ID."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of the activity. w = workshop, p = accredited program, el = e-learning."
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "public",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Whether to include public courses only. If false, returns ALL course instances for type 'w' and 'el'. For type 'p', passing false will return ONLY non-public classes."
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "current",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Whether to include only current courses. A current course instance is a course that is currently running, or coming up. If false, returns all couse instances."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "isActive",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Whether to include active/inactive courses instances only. By default both will be included"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "lastUpdated_min",
+      "TYPE": "datetime",
+      "DESCRIPTION": "In 'YYYY-MM-DD hh:mm' format. The course instance last updated date must be greater than or equal to this datetime. Instances last updated prior to Nov 2018 may not appear. Time is optional and in client's current timezone. Only applicable to w or p types."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "lastUpdated_max",
+      "TYPE": "datetime",
+      "DESCRIPTION": "In 'YYYY-MM-DD hh:mm' format. The course instance last updated date must be less than or equal to this datetime. Instances last updated prior to Nov 2018 may not appear. Time is optional and in client's current timezone. Only applicable to w or p types."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getCourseInstances"
+  },
+  "DESCRIPTION": "Returns instances of an activity type."
+}

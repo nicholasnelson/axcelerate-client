@@ -1,0 +1,339 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "MESSAGE": "",
+          "STATUS": "success",
+          "INSTANCEID": 136293
+        },
+        "DESCRIPTION": "Upon a successful creation of an Instance, the API will return the InstanceID.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/instance/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "8AF836FB6A6D13DB383BA3CC2D77FCB3",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "ID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Type ID of the activity you want to Create - For now: the API can only create Workshop Instances (accredited [a linked class will be created] / non-accredited)."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity type of the activity. w = workshop, p = accredited program, el = e-learning."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "name",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity name for POST(create)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ProgramName",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity name for PUT(update)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "startDate",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity Start Date for POST(create)."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "PStartDate",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity Start Date for PUT(update)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "finishDate",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity Finish Date for POST(create)."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "PFinishDate",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity Finish Date for PUT(update)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "startTime",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity Start Time for POST(create)."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "PStartTime",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity Start Time for PUT(update)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "finishTime",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity Finish Time for POST(create)."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "PFinishTime",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity Finish Time for PUT(update)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "trainerContactID",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity trainer for POST(create)."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ConsultantID",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity trainer for PUT(update)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "location",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity location."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "contactID",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity owner.Optional for PUT(update)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "cost",
+      "TYPE": "string",
+      "DESCRIPTION": "The Cost Per Participant / Student."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "domainID",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity domain ID."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "comments",
+      "TYPE": "string",
+      "DESCRIPTION": "Any Comments for the Activity Instance."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "public",
+      "TYPE": "string",
+      "DESCRIPTION": "Public or Private - For type 'w' it is the coordination type: In-House (0) or Public Workshop (1)for POST(create). "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ptype",
+      "TYPE": "string",
+      "DESCRIPTION": " For type 'w' it is the coordination type. Valid types are: 'In-House', 'Public Workshop', 'Timetabled Unit' for PUT(update). "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "dateDescriptor",
+      "TYPE": "string",
+      "DESCRIPTION": "Specific to type 'w' - The Date Descriptor - i.e Between 2-5 PM on Thursday the 20/11/2014."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "syncDateDescriptor",
+      "TYPE": "string",
+      "DESCRIPTION": "Specific to type 'w' - Date Descriptor field will be automatically set based on workshop start and finish dates"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "minParticipants",
+      "TYPE": "string",
+      "DESCRIPTION": "Specific to type 'w' - The Minimum Participants."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "maxParticipants",
+      "TYPE": "string",
+      "DESCRIPTION": "Specific to type 'w' - The Maxium Participants."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "estimatedParticipants",
+      "TYPE": "string",
+      "DESCRIPTION": "Specific to type 'w' - The Estimated Participants expected to enrol. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "duration",
+      "TYPE": "string",
+      "DESCRIPTION": "Specific to Workshops - The Duration numerical value for POST(create). "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "PDuration",
+      "TYPE": "string",
+      "DESCRIPTION": "Specific to Workshops - The Duration numerical value for PUT(update). "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "durationType",
+      "TYPE": "string",
+      "DESCRIPTION": "Specific to Workshops - The Duration Type i.e: hour, hours, day, days, half-day, session, sessions."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "CloseDays",
+      "TYPE": "string",
+      "DESCRIPTION": "Close Days. If provided without CloseMinutes parameter - Closes will be calculated 'at midnight'"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "CloseMinutes",
+      "TYPE": "string",
+      "DESCRIPTION": "Close Minutes. If provided - Closes will be calculated 'befor start time'"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "FacilitatorFee",
+      "TYPE": "string",
+      "DESCRIPTION": "Facilitator Fee"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "FacilitatorInvRec",
+      "TYPE": "string",
+      "DESCRIPTION": "Facilitator InvRec"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "FWBRate",
+      "TYPE": "string",
+      "DESCRIPTION": "FWB Rate"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "Inclusions",
+      "TYPE": "string",
+      "DESCRIPTION": "Inclusions"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "Travel",
+      "TYPE": "string",
+      "DESCRIPTION": "Travel"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "Accom",
+      "TYPE": "string",
+      "DESCRIPTION": "Accomodation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "JobCardId",
+      "TYPE": "string",
+      "DESCRIPTION": "Job Card Id"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "GST_type",
+      "TYPE": "numeric",
+      "DESCRIPTION": "GST type; 0- no GST, 1- GST included, 2 - GST excluded "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "finCodeID",
+      "TYPE": "string",
+      "DESCRIPTION": "Valid finCodeID."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "customField_[variableName]",
+      "TYPE": "string",
+      "DESCRIPTION": "Replace [variableName] with the actual customField variable name to set a customField value against the enrolment (if enabled and set up). If updating a custom field that supports multiple values, you can use comma-delimited values or a JSON array. If using comma-delimited, it is expected the data is URL encoded first. For example, to get 2 values: 'A,B' and 'C' you would either pass: \"['A,B','C']\" or \"A%2CB,C\" "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "Status",
+      "TYPE": "string",
+      "DESCRIPTION": "Status of the Workshop. The available choices are as follows: Active, Cancelled, Completed, Incomplete, Tentative"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "PUT",
+  "ACTION": {
+    "PUT": "update",
+    "POST": "create"
+  },
+  "DESCRIPTION": "Creates an activity instance. (POST)or Updates existing activity instance(PUT)"
+}

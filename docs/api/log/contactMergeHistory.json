@@ -1,0 +1,92 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "OLDCONTACTID": 11111111,
+            "CURRENTCONTACTID": 33333333,
+            "MERGEDUTC": "2024-02-21 05:04",
+            "MERGEDBYCONTACTID": 44444444,
+            "STARTDATE": "2024-02-21",
+            "ENDDATE": "2024-02-22"
+          },
+          {
+            "OLDCONTACTID": 22222222,
+            "CURRENTCONTACTID": 44444444,
+            "MERGEDUTC": "2024-02-22 05:04",
+            "MERGEDBYCONTACTID": 55555555,
+            "STARTDATE": "2024-02-22",
+            "ENDDATE": "2024-02-23"
+          }
+        ],
+        "DESCRIPTION": "Returns an array of objects containing merged contact information limited to 500 results. If no results are returned the response will show [{merged: false}].",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/log/contactMergeHistory",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "719A9CCBD7FDE366FEB510FF4F10A040",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "2025-09-23 00:00:00",
+      "REQUIRED": true,
+      "NAME": "dateStart",
+      "TYPE": "date",
+      "DESCRIPTION": "yyyy-mm-dd 00:00:00 formatted date"
+    },
+    {
+      "DEFAULT": "2025-09-30 23:59:59",
+      "REQUIRED": true,
+      "NAME": "dateEnd",
+      "TYPE": "date",
+      "DESCRIPTION": "yyyy-mm-dd 23:59:59 formatted date"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "mergedByContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contact who completed this merge action"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "oldContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The previous contact post merge"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "currentContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The current contact post merge"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contact.mergeHistoryFilter",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "mergeHistoryFilter"
+  },
+  "DESCRIPTION": "Returns information for merged contacts."
+}

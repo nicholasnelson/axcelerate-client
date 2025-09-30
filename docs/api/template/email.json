@@ -1,0 +1,260 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "FAILEDCOUNT": 2,
+          "MESSAGE": "2 Email(s) sent successfully. 1 Email(s) not sent because the contact did not have a valid email address. 1 Email(s) not sent because the contact has unsubscribed. ",
+          "ATTEMPTEDCOUNT": 4,
+          "SUCCESSCOUNT": 2,
+          "REPORT": [
+            {
+              "SUBJECT": "Here is your email",
+              "CONTACTID": 434324,
+              "TO": [
+                {
+                  "EMAILADDRESS": "lisa.jones@abc.org.au",
+                  "MESSAGE": "Email sent successfully. ",
+                  "EMAILED": true,
+                  "CONTACTID": 434324
+                }
+              ],
+              "FROM": "no-reply@axcelerate.com"
+            },
+            {
+              "SUBJECT": "Here is your email",
+              "CONTACTID": 234234,
+              "TO": [
+                {
+                  "EMAILADDRESS": "j.smith@fake.edu.au",
+                  "MESSAGE": "Email sent successfully. ",
+                  "EMAILED": true,
+                  "CONTACTID": 234234
+                }
+              ],
+              "FROM": "no-reply@axcelerate.com"
+            },
+            {
+              "SUBJECT": "Here is your email",
+              "CONTACTID": 234342,
+              "TO": [
+                {
+                  "EMAILADDRESS": "bad.email.com.au",
+                  "MESSAGE": "Invalid email address. ",
+                  "EMAILED": false,
+                  "CONTACTID": 234342
+                }
+              ],
+              "FROM": "no-reply@axcelerate.com"
+            },
+            {
+              "SUBJECT": "Here is your email",
+              "CONTACTID": 98797,
+              "TO": [
+                {
+                  "EMAILADDRESS": "mr.parker@fake.com.au",
+                  "MESSAGE": "This contact has unsubscribed. ",
+                  "EMAILED": false,
+                  "CONTACTID": 98797
+                }
+              ],
+              "FROM": "no-reply@axcelerate.com"
+            }
+          ]
+        },
+        "DESCRIPTION": "This is an example of emailing students in a workshop. The parameters passed were: type=w, instanceID=123, includeStatus='Enrolled,Completed', planID=123, subject='Here is your email', and verbose=1 ",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/template/email",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "83D396339CF7F3DAC4583341A6FDD640",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "verbose",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If passed, an additional key REPORT will be passed which will be an array with information on each contact emailed. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "planID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of a template to use. One of planID or content is required. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "content",
+      "TYPE": "string",
+      "DESCRIPTION": "The template content to use. For example, anywhere you use the text [Trainee Full Name] it will replace that text with the contact's name. One of planID or content is required. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "subject",
+      "TYPE": "string",
+      "DESCRIPTION": "The email subject. This must be passed if content is used. If planID is used and this parameter is not passed, it will default to the name of the template. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "from",
+      "TYPE": "string",
+      "DESCRIPTION": "Must either be a valid email address or the contactID of a contact with a valid email address. If not passed, it will default to the API user. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "to",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional. Will default to the value of the contactID. Supports a contactID, a list of contactIDs, or the special values: [student,creator,client,owner,trainer] when used in conjunction with type=w or p and an instanceID. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contact to email the template to. Either contactID must be passed, or a search parameter to determine contacts (instanceID/type, userRoleID, etc.) "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of course to use. Use with the instanceID or ID parameters. Either a course type and ID must be passed or a contactID. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "instanceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The course instance. If you pass an instanceID and type, you can email a templates to each student on the course with the one call. Use the includeStatus parameter to determine which students to email. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The courseID to use. It is preferable to use instanceID as a course at the ID level does not have students. If you pass type and ID you must also pass a contactID. "
+    },
+    {
+      "DEFAULT": "Enrolled,Completed",
+      "REQUIRED": false,
+      "NAME": "includeStatus",
+      "TYPE": "string",
+      "DESCRIPTION": "A list of statuses. Students that fall under the status will get the email. The available statuses are: [All,Enrolled,Completed,Tentative,Cancelled,Suspended,Deferred]. This is used in combination with type and instanceID. "
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "honourUnsubscribed",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If passed, any student that has unsubscribed from merge documents will NOT receive an email. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "attachmentPlanID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of a template to use to attach as a PDF to the email. The filename will be the template name."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "invoiceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The invoiceID associated with this email. Passing this will correctly parse any invoice related fields. To include an invoice as a separate PDF attachment, you must also pass <em>invoiceAttachmentPlanID</em>. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "invoiceAttachmentPlanID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of a template to use to attach an invoiceID as a PDF to the email. If used with invoiceID, it will attach the template to the email with the filename <b>Invoice_[N].pdf</b>, where [N] is the invoice number."
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "attachAccreditedCertificate",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If true, the system will attach the latest accredited certificate issed to the student. In the case of an enrolment having mulitple certificates, it will attach the most recent Completed Qualification certificate by issue date. Statement of Attainments will only be considered if there are no Completed Qualification Certificates. Also note that this only works when an accredited instance ID is passed (type=p) or a workshop instance linked to an accredited unit enrolment (type=w). It also only works when emailing the student (to=student)"
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "attachWorkshopCertificate",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If true, the system will attach the latest non-accredited certificate associated with the student. In the case of an enrolment having mulitple certificates, it will attach the most recent by issue date. Also note that this only works when a workshop instanceID (type=w) is passed and when emailing the student (to=student). "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "userRoleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Email contacts who are users in this role. Can be a list."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "contactRoleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Enterprise only. Email contacts who belong to this contact role. Can be a list."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "skillGroupID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Enterprise only. Email contacts whose contact role contains this skill group. Can be a list."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "replaceContent",
+      "TYPE": "string",
+      "DESCRIPTION": "JSON object (stringified) containing key value pairs. Keys will represent template fields which will then be replaced within the template, allowing custom content to be added. The values can be HTML content that the template field will be replaced with."
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "hasIcalAttachment",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If on, the events for the workshop will be attached to the email in iCalendar format. "
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "copyToAlternateEmailAddress",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If on, the selected template will also be sent to the recipient's alternate email addresses if valid."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.template",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "email"
+  },
+  "DESCRIPTION": "Emails the selected template to the selected contacts. Returns a report of the results. As with /api/template you can pass either a planID from the system to use a saved template, or you can pass the actual content of the template. "
+}

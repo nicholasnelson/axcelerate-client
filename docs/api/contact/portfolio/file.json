@@ -1,0 +1,120 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "FILENAME": "licence_screenshot04.png",
+          "FOLDER": "licence",
+          "PORTFOLIODOCID": 79,
+          "ACCESSMIN": 30,
+          "TEMPORARYACCESSURL": "https://demo.app.axcelerate.com/example_only/9999"
+        },
+        "DESCRIPTION": "After a GET request, the endpoint returns an access URL. The URL is good for a specified number of minutes (also returned as ACCESSMIN).",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": {
+          "PORTFOLIOTYPE": "Licence",
+          "PORTFOLIOTYPENAME": "Driver Licence",
+          "CONTACTID": 12345,
+          "NUMBER": "ABC0034323",
+          "PORTFOLIOID": 34242,
+          "FILES": [
+            {
+              "FILENAME": "licence_screenshot04.png",
+              "FOLDER": "licence",
+              "PORTFOLIODOCID": 79,
+              "ACCESSMIN": 30,
+              "TEMPORARYACCESSURL": "https://demo.app.axcelerate.com/example_only/9999"
+            },
+            {
+              "FILENAME": "MY_NEW_UPLOAD.jpg",
+              "FOLDER": "licence",
+              "PORTFOLIODOCID": 233,
+              "ACCESSMIN": 30,
+              "TEMPORARYACCESSURL": "https://demo.app.axcelerate.com/example_only/6754"
+            }
+          ],
+          "PORTFOLIOTYPEID": 6783,
+          "DATEEXPIRES": "2021-09-05",
+          "ISSUEDBY": "Queensland Transport",
+          "DATEISSUED": "2016-09-06",
+          "DETAILS": null,
+          "CUSTOMFIELD_LICENCESTATE": "QLD",
+          "CUSTOMFIELD_PHOTOQUALITY": "Average",
+          "CUSTOMFIELD_MULTIFIELD": [
+            "Example A",
+            "Example X"
+          ]
+        },
+        "DESCRIPTION": "After a POST request, the endpoint returns the structure of a portfolio object upon a successful upload. The is the same as GET <b>api/contact/portfolio</b>",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contact/portfolio/file",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "D75291DCE6E2626E14069C3E644376B6",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Contact to interact with."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "portfolioID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the portfolio object to interact with."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "portfolioDocID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "GET requests only. To read the specified file. All 3 IDs contactID, portfolioID, and portfolioDocID must match up, or you will get a 404 not found."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "addFile",
+      "TYPE": "string",
+      "DESCRIPTION": "Only for POST (upload). The file field for the file to upload."
+    },
+    {
+      "DEFAULT": "other",
+      "REQUIRED": false,
+      "NAME": "addFileFolder",
+      "TYPE": "string",
+      "DESCRIPTION": "Only for POST (upload). The 'folder' in which to place the file within the portfolio record. This will be made lowercase and will be stripped of all but letters. Any values are acceptable, but the folder-naming convention used in the management portal is (by portfolio type <b>in bold</b>): <b>Licence</b>: licence; <b>Membership</b>: membership; <b>Qualification</b>: resume, certificate, testamur, academic; <b>Registration</b>: certificate, correspondence, tax; <b>Other</b>: other."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.portfolio",
+  "METHODS": "GET,POST",
+  "ACTION": {
+    "GET": "getFileURL",
+    "POST": "upload"
+  },
+  "DESCRIPTION": "Uploads or returns a link for a file against a contact's portfolio record. For GET, this endpont returns a temporary access URL to allow the file to be downloaded. This link is also available in the GET /contact/portfolio endpoint, but it is important to remember the link is only good for a set number of minutes (normally 30, but this value is returned as well). For POST (upload), this endpoint only accepts requests encoded using multipart/form-data. Note that you CANNOT test the POST part of this endpoint in the Relax console as it does not support file type parameters or multipart encoding."
+}

@@ -1,0 +1,117 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "HIERACHYDEPTH": 1,
+          "NWDF_ORGSIZEBRACKET": null,
+          "HIERACHYPATH": "/351300/",
+          "BOOKING_DISCOUNT": 0,
+          "ORGNAMEACCOUNTING": null,
+          "PURCHASEORDERREQUIRED": 0,
+          "SCHOOLTYPEID": "91",
+          "BOOKING_NOTES": null,
+          "LEGALNAME": "Nathan Robert Gordon Digital Solutions",
+          "FINANCESYSTEMCARDID": null,
+          "HIERACHYROOT": 351300,
+          "NAME": "NRG Digital Solutions",
+          "ORGID": 351300,
+          "HTMLBADGE": null,
+          "ABN": null,
+          "ANZSIC": null,
+          "ORGANISATIONNOTES": null,
+          "DETAILS": [],
+          "CHILDREN": [
+            {
+              "ORGID": 33534,
+              "NAME": "NRG Online Pty Ltd",
+              "LEGALNAME": null,
+              "ANZSIC": null,
+              "ORGANISATIONNOTES": null,
+              "HIERACHYROOT": 351300,
+              "HIERACHYPATH": "/351300/33534/",
+              "HIERACHYDEPTH": 2,
+              "BOOKING_NOTES": null,
+              "SCHOOLTYPEID": null,
+              "BOOKING_DISCOUNT": 0,
+              "FINANCESYSTEMCARDID": null,
+              "ORGNAMEACCOUNTING": null,
+              "ABN": null,
+              "PURCHASEORDERREQUIRED": 0,
+              "NWDF_ORGSIZEBRACKET": null,
+              "HTMLBADGE": null,
+              "HASCHILDREN": false,
+              "PARENTORGID": 351300,
+              "PAYERCONTACTID": 0,
+              "EMPLOYERCONTACTID": null
+            },
+            {
+              "ORGID": 351301,
+              "NAME": "NRG Automotive Solutions",
+              "LEGALNAME": "Nathan Robert Gordon Automotive",
+              "ANZSIC": null,
+              "ORGANISATIONNOTES": null,
+              "HIERACHYROOT": 351300,
+              "HIERACHYPATH": "/351300/351301/",
+              "HIERACHYDEPTH": 2,
+              "BOOKING_NOTES": null,
+              "SCHOOLTYPEID": null,
+              "BOOKING_DISCOUNT": 0,
+              "FINANCESYSTEMCARDID": null,
+              "ORGNAMEACCOUNTING": null,
+              "ABN": null,
+              "PURCHASEORDERREQUIRED": 0,
+              "NWDF_ORGSIZEBRACKET": null,
+              "HTMLBADGE": null,
+              "HASCHILDREN": false,
+              "PARENTORGID": 351300,
+              "PAYERCONTACTID": 0,
+              "EMPLOYERCONTACTID": null
+            }
+          ],
+          "PARENTORGID": null,
+          "PAYERCONTACTID": 0,
+          "EMPLOYERCONTACTID": null
+        },
+        "DESCRIPTION": "Organisations that are 'under' the organisation (ID) passed.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/organisation/:orgID/children/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "21021A472C3CA6B771A7850B14A067DB",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "orgID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The (parent) organisation ID"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.organisation",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getChildren"
+  },
+  "DESCRIPTION": "Get (GET) Child Organisations."
+}

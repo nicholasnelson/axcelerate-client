@@ -1,0 +1,317 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "UNITS": [
+            {
+              "MODULE": {},
+              "WORKSHOPS": [
+                {
+                  "INSTANCEID": 123456
+                },
+                {
+                  "INSTANCEID": 123457
+                }
+              ],
+              "UNITID": 35668,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Implement and monitor environmentally sustainable work practices",
+              "UNITCODE": "BSBSUS301A",
+              "UNITORDER": 1,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37713,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Provide technical advice",
+              "UNITCODE": "DEFCM008B",
+              "UNITORDER": 2,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37707,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Supervise contractors",
+              "UNITCODE": "DEFRM209B",
+              "UNITORDER": 3,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [
+                {
+                  "INSTANCEID": 123456
+                },
+                {
+                  "INSTANCEID": 123457
+                }
+              ],
+              "UNITID": 37706,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Conduct testing processes",
+              "UNITCODE": "DEFTE003A",
+              "UNITORDER": 4,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37702,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Use public sector financial processes",
+              "UNITCODE": "PSPFIN401A",
+              "UNITORDER": 5,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37712,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Gather and analyse information",
+              "UNITCODE": "PSPGOV406B",
+              "UNITORDER": 6,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37703,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Compose complex workplace documents",
+              "UNITCODE": "PSPGOV413A",
+              "UNITORDER": 7,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37701,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Undertake research and analysis",
+              "UNITCODE": "PSPGOV504B",
+              "UNITORDER": 8,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37704,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Refine complex workplace documents",
+              "UNITCODE": "PSPGOV513A",
+              "UNITORDER": 9,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37710,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Design simple projects",
+              "UNITCODE": "PSPPM401B",
+              "UNITORDER": 10,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37711,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Manage simple projects",
+              "UNITCODE": "PSPPM402B",
+              "UNITORDER": 11,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37700,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Close simple projects",
+              "UNITCODE": "PSPPM403B",
+              "UNITORDER": 12,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37698,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Carry out simple project activities",
+              "UNITCODE": "PSPPM404A",
+              "UNITORDER": 13,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37715,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Administer simple projects",
+              "UNITCODE": "PSPPM405A",
+              "UNITORDER": 14,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37705,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Provide services to clients",
+              "UNITCODE": "PUACOM002B",
+              "UNITORDER": 15,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37699,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Liaise with other organisations",
+              "UNITCODE": "PUACOM007B",
+              "UNITORDER": 16,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37714,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Conduct risk assessment",
+              "UNITCODE": "PUAEMR007B",
+              "UNITORDER": 17,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37708,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Treat operational risk",
+              "UNITCODE": "PUAEMR026",
+              "UNITORDER": 18,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            },
+            {
+              "MODULE": {},
+              "WORKSHOPS": [],
+              "UNITID": 37697,
+              "SCHEDULEDSTARTDATE": null,
+              "UNIT": "Assess operational risk",
+              "UNITCODE": "PUAEMR027",
+              "UNITORDER": 19,
+              "SCHEDULEDENDDATE": null,
+              "ELECTIVE": 0
+            }
+          ],
+          "REPORTINGSTANDARD": "QLD DETE (DETConnect)",
+          "OWNERCONTACTID": 1100635,
+          "ENROLMENTOPEN": false,
+          "LOCATION": "VM Learning Offices",
+          "DELIVERYLOCATIONID": 701,
+          "INSTANCEID": 67569,
+          "TRAINERCONTACTID": null,
+          "STARTDATE": "2014-05-22 00:00",
+          "FINISHDATE": "2014-05-22 00:00",
+          "QUALIFICATION": {
+            "STREAMNAME": null,
+            "CODE": "CHC30113",
+            "NAME": "Certificate III in Early Childhood Education and Care",
+            "ID": 4109
+          },
+          "FINANCECODE": {
+            "FINCODE": "A-001",
+            "FINCODEID": 12345,
+            "TILLCODE": "",
+            "DESCRIPTION": "Area A",
+            "COSTCENTRECODE": ""
+          },
+          "COST": 0,
+          "GST_TYPE": 1,
+          "NAME": "Childhood January to June",
+          "ID": 4109,
+          "DATEDESCRIPTOR": "22/05/2014 - 22/05/2014",
+          "PUBLIC": false,
+          "NOTICES": null,
+          "LASTUPDATEDUTC": "2021-03-16 23:40"
+        },
+        "DESCRIPTION": "Courses returned in JSON format. The example below is for an accredited program (type=p)",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/instance/detail",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "E6F9AEF4DB1476F0474B58ED940C399B",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "instanceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The instanceID of the activity you want details from."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity type of the activity. w = workshop, p = accredited program, el = e-learning."
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "includeAssociatedWorkshops",
+      "TYPE": "boolean",
+      "DESCRIPTION": "You can chose to include workshops associated to units (type P only)"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getCourseInstanceDetails"
+  },
+  "DESCRIPTION": "Returns details of an activity instance."
+}

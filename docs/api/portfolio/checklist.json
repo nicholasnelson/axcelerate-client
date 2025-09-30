@@ -1,0 +1,76 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "PORTFOLIOCHECKLISTID": 37,
+          "POINTSREQUIRED": 0,
+          "TYPES": [
+            {
+              "PORTFOLIOTYPE": "Licence",
+              "LINKID": 75712,
+              "POINTS": 0,
+              "PORTFOLIOTYPENAME": "Drivers Licence",
+              "PORTFOLIOTYPEID": 4618,
+              "SORTORDER": 1
+            },
+            {
+              "PORTFOLIOTYPE": "Membership",
+              "LINKID": 75713,
+              "POINTS": 0,
+              "PORTFOLIOTYPENAME": "Membership Card",
+              "PORTFOLIOTYPEID": 2577,
+              "SORTORDER": 2
+            }
+          ],
+          "NAME": "Enrolment Checklist"
+        },
+        "DESCRIPTION": "This is an example checklist with 2 item types. It is set as the CRICOS checklist so was retrieved using isCRICOS=1. In this example, this same response would be returned if using portfolioChecklistID=37",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/portfolio/checklist",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "C988F833AE08A512EEECE0A2E74518D2",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "portfolioChecklistID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Contact Portfolio Checklist to read. One of this or isCRICOS is required"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "isCRICOS",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If passed, will return the defined CRICOS checklist. This feature must be enabled and the checklist must defined in the client's System Settings or an error will be thrown."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.portfolio",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "checklist"
+  },
+  "DESCRIPTION": "Returns a single Contact Portfolio Checklist, along with the array of Portfolio document types that make up the checklist. These checklists can be used when searching for a contact's documents using GET <b>/api/contact/portfolio</b>."
+}

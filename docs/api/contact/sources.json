@@ -1,0 +1,163 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "SOURCECODEID": 138,
+            "SOURCE": "Client Referral",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 5,
+            "SOURCE": "Colleague",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 15,
+            "SOURCE": "Email promotion",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 213,
+            "SOURCE": "Employer organisation",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 136,
+            "SOURCE": "Google AdWords",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 13,
+            "SOURCE": "Manager referral",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 75,
+            "SOURCE": "Networking event",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 4,
+            "SOURCE": "Newspaper Advertisement",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 7,
+            "SOURCE": "Other",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 219,
+            "SOURCE": "Radio Station advertising",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 201,
+            "SOURCE": "Shopping Centre Promotion",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 42,
+            "SOURCE": "Television Ad",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 975,
+            "SOURCE": "Trainer",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 574,
+            "SOURCE": "Training Magazine",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 3,
+            "SOURCE": "Web Search",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 1316,
+            "SOURCE": "Website",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 964,
+            "SOURCE": "Word of Mouth",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          },
+          {
+            "SOURCECODEID": 177,
+            "SOURCE": "Yellow Pages",
+            "ISACTIVE": true,
+            "ISPUBLIC": true
+          }
+        ],
+        "DESCRIPTION": "The list is returned as an array of source structures. This list is different for every client and can be completely controlled in aXcelerate under Settings > Contact Sources.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contact/sources",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "CC871DC210CCF191D937CC8EF2780BE3",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "true",
+      "REQUIRED": false,
+      "NAME": "onlyPublic",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Set to true to return only publicly exposed marketing sources."
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": false,
+      "NAME": "onlyActive",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Set to true to return only currently active marketing sources."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contact",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getSources"
+  },
+  "DESCRIPTION": "Returns a JSON array of client specific contact sources. A source is a marketing tool that lets you track how contacts heard about your organisation or service. The sources are setup and pulled from aXcelerate and each element in the array is a structure that contains the Source name and the SourceCodeID. The SourceCodeID can be passed to the POST and PUT contact methods."
+}

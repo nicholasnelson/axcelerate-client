@@ -1,0 +1,39 @@
+{
+  "RESPONSE": {},
+  "PATTERN": "/learningVault/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "2AD28600DFC7815D31A3E3144FCD8478",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "awardID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Award. This can be a comma delimited list of award identifiers."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.learningVault",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "issueCertificates"
+  },
+  "DESCRIPTION": "Issues certificates for the specified awards."
+}

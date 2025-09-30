@@ -1,0 +1,107 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "ACTIVE": true,
+          "CONSULTANTID": 6912,
+          "CONTACTHRSTIMEFRAME": "WK",
+          "EMPTYPE": "FT",
+          "DOMAINID": null,
+          "CONENTRYDATE": "2014-12-03 09:58",
+          "CONSULTANTUPDATEDDATETIMEUTC": "2014-12-03 09:58",
+          "CONTACTHRS": 10,
+          "CONTACTID": 116482,
+          "EMAIL": "gathan.nordon@example.com",
+          "IMAGE": "",
+          "RATEAMOUNT": "",
+          "NAME": "Gathan Nordon",
+          "EXPERIENCE": "",
+          "PAYTIMEFRAME": "",
+          "FILLINONLY": false,
+          "PAGE": ""
+        },
+        "DESCRIPTION": "A successful call will give you a response like this:",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/trainer/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "B87EB85C53294D81FB5F03874711EF48",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Contact."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "Experience",
+      "TYPE": "string",
+      "DESCRIPTION": "The Trainer's Experience."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ContactHrs",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Trainer's Contact Hours."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ContactHrsTimeFrame",
+      "TYPE": "string",
+      "DESCRIPTION": "The Trainer's Contact Hours - Time Frame."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "EmpType",
+      "TYPE": "string",
+      "DESCRIPTION": "The Trainer's Employment Type."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "RateAmount",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Trainer's Rate."
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "fillInOnly",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Is this Trainer a 'fill-in'?."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.trainer",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "create"
+  },
+  "DESCRIPTION": "Create a Trainer."
+}

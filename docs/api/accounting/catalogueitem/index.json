@@ -1,0 +1,236 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "PK": 0,
+          "ItemDescription": "Super duper item",
+          "ItemCode": "supa_code",
+          "FinCodeID": 0,
+          "DefaultPrice": 12,
+          "GST_type": 1,
+          "GST_type_postage": 1,
+          "Inactive": true,
+          "LMSID": 528457344,
+          "Item_Details": "",
+          "Category": "",
+          "ImageName": "",
+          "DisplayPublic": false,
+          "Postage_nett": 0,
+          "Postage_gross": 0,
+          "Postage_tax_percent": 0,
+          "DomainID": 0,
+          "PostagePerItem_nett": 0,
+          "PostagePerItem_gross": 0
+        },
+        "DESCRIPTION": "On a POST request to create a Catalogue item, will return a catalogue item JSON object ",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "INACTIVE": "0",
+            "FINCODE": null,
+            "FINSUBCODE": null,
+            "DOMAINID": null,
+            "POSTAGEPERITEM_GROSS": "0",
+            "POSTAGE_GROSS": "0",
+            "POSTAGE_TAX_PERCENT": "0",
+            "PRICEGSTINCLUSIVE": "1",
+            "DISPLAYPUBLIC": "0",
+            "POSTAGEPERITEM_NETT": "0",
+            "POSTAGE_NETT": "0",
+            "ITEM_DETAILS": null,
+            "FINCODEID": null,
+            "ITEMCODE": "api_test_new1",
+            "IMAGENAME": null,
+            "CATEGORY": "Products",
+            "DEFAULTPRICE": "12",
+            "ITEMID": "12351",
+            "LMSID": "528457344",
+            "DESCRIPTION": null,
+            "ITEMDESCRIPTION": "Api tes newly created 1"
+          },
+          {
+            "INACTIVE": "0",
+            "FINCODE": null,
+            "FINSUBCODE": null,
+            "DOMAINID": null,
+            "POSTAGEPERITEM_GROSS": "2",
+            "POSTAGE_GROSS": "5",
+            "POSTAGE_TAX_PERCENT": "0",
+            "PRICEGSTINCLUSIVE": "1",
+            "DISPLAYPUBLIC": "0",
+            "POSTAGEPERITEM_NETT": "1.8182",
+            "POSTAGE_NETT": "4.5455",
+            "ITEM_DETAILS": null,
+            "FINCODEID": null,
+            "ITEMCODE": "api_test_new2",
+            "IMAGENAME": null,
+            "CATEGORY": "Products",
+            "DEFAULTPRICE": "10",
+            "ITEMID": "12352",
+            "LMSID": "528457344",
+            "DESCRIPTION": null,
+            "ITEMDESCRIPTION": "Api tes newly created 2"
+          },
+          {
+            "INACTIVE": "0",
+            "FINCODE": "0202",
+            "FINSUBCODE": null,
+            "DOMAINID": null,
+            "POSTAGEPERITEM_GROSS": "0.0100",
+            "POSTAGE_GROSS": "0.0900",
+            "POSTAGE_TAX_PERCENT": "10",
+            "PRICEGSTINCLUSIVE": "1",
+            "DISPLAYPUBLIC": "1",
+            "POSTAGEPERITEM_NETT": "0.0091",
+            "POSTAGE_NETT": "0.0818",
+            "ITEM_DETAILS": "api test&nbsp;",
+            "FINCODEID": "1432",
+            "ITEMCODE": "api_test_updated",
+            "IMAGENAME": "Screen Shot 2021-11-24 at 10.54.26 am.png",
+            "CATEGORY": "Products",
+            "DEFAULTPRICE": "0.9900",
+            "ITEMID": "12346",
+            "LMSID": "528457344",
+            "DESCRIPTION": "test",
+            "ITEMDESCRIPTION": "Api test updated"
+          },
+          {
+            "INACTIVE": "0",
+            "FINCODE": "101010",
+            "FINSUBCODE": null,
+            "DOMAINID": null,
+            "POSTAGEPERITEM_GROSS": "0",
+            "POSTAGE_GROSS": "0",
+            "POSTAGE_TAX_PERCENT": "10",
+            "PRICEGSTINCLUSIVE": "1",
+            "DISPLAYPUBLIC": "0",
+            "POSTAGEPERITEM_NETT": "0",
+            "POSTAGE_NETT": "0",
+            "ITEM_DETAILS": "sadSD",
+            "FINCODEID": "15231",
+            "ITEMCODE": "api_test2",
+            "IMAGENAME": null,
+            "CATEGORY": "Products",
+            "DEFAULTPRICE": "0.9900",
+            "ITEMID": "12349",
+            "LMSID": "528457344",
+            "DESCRIPTION": "TEST",
+            "ITEMDESCRIPTION": "API test2"
+          }
+        ],
+        "DESCRIPTION": "On a GET search request,returns array of Catalogue items JSON objects",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/accounting/catalogueitem/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "D130804CEA867C990E1CABB167C3A334",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "ItemDescription",
+      "TYPE": "string",
+      "DESCRIPTION": " REQUIRED for POST(create).Catalogue Item Description."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "itemCode",
+      "TYPE": "string",
+      "DESCRIPTION": "REQUIRED for POST(create).Catalogue Item Code."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "DefaultPrice",
+      "TYPE": "money",
+      "DESCRIPTION": "REQUIRED for POST(create).Catalogue Item default price."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "FinCodeID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional.Catalogue Item finance code. Only Finance Codes that exist for your account - could be used"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "GST_type",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional.GTS type applied to item price; 0- no GST, 1- GST included, 2- GST exclusive"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "GST_type_postage",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Optional.GTS type applied to item's postage'; 0- no GST, 1- GST included, 2- GST exclusive"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "Inactive",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Optional.If Catalogue item is active"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "Item_Details",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional.Detailed description of catalogue item "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "Category",
+      "TYPE": "string",
+      "DESCRIPTION": "Optional.Category Name that item related to "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "DisplayPublic",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Optional.if item will be visible to public"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "Postage_tax_percent",
+      "TYPE": "money",
+      "DESCRIPTION": "Optional.Amount of tax percent of Postage"
+    }
+  ],
+  "DEFAULTFORMAT": "JSON",
+  "HANDLER": "api.accounting.catalogueitem",
+  "METHODS": "POST",
+  "ACTION": {
+    "GET": "search",
+    "POST": "create"
+  },
+  "DESCRIPTION": "Get an array of catalogue items for a account(GET). Or create a new catalogue item (POST)."
+}

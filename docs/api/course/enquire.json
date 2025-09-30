@@ -1,0 +1,84 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "SUCCESS": true
+        },
+        "DESCRIPTION": "The response is a simple success value. On error, however, the success variable will not be present and the standard error structure will be returned instead.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/enquire",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "C38B334A34114F04F7B67606266EA370",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "contactID",
+      "TYPE": "string",
+      "DESCRIPTION": "The contactID of the user. This is the value returned by the create contact API method."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "noteCodeID",
+      "TYPE": "string",
+      "DESCRIPTION": "The noteCodeID for the aXcelerate note to attach to the contact. If left blank will default to leaving a system message"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "comments",
+      "TYPE": "string",
+      "DESCRIPTION": "The content of the enquiry."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The course type. w = workshop, p = accredited program, el = e-learning. Don't use this param for a general enquiry."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "ID",
+      "TYPE": "string",
+      "DESCRIPTION": "The ID relating to the course type. Leave blank or don't include for a general enquiry."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "emailTo",
+      "TYPE": "string",
+      "DESCRIPTION": "An email to send the enquiry to. It can be a comma delimited list of emails. If blank, an email will not be sent."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "enquire"
+  },
+  "DESCRIPTION": "Allows an established contact to enquire on a course, or send a general enquiry. This must be called with a valid aXcelerate contactID."
+}

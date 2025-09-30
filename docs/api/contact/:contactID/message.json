@@ -1,0 +1,63 @@
+{
+  "RESPONSE": {
+    "SCHEMAS": [
+      {
+        "BODY": "{\n \"MESSAGE\": \"This is a message that will be displayed on the contact's profile.\",\n \"SHOWALERT\": \"false\"\n}\n",
+        "DESCRIPTION": "The following will be returned",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contact/:contactID/message",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The resource contact ID to interact with"
+    }
+  ],
+  "RESOURCEID": "C4B68AC467A096092B91E650A5F49BF4",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "message",
+      "TYPE": "string",
+      "DESCRIPTION": "Message to be saved for the contact."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "showAlert",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Whether a modal alert should be shown when viewing the contact's profile."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contact",
+  "METHODS": "GET,PUT",
+  "ACTION": {
+    "PUT": "saveContactMessage",
+    "GET": "getContactMessage"
+  },
+  "DESCRIPTION": "Interacts with a specfic contact. You can read (GET) or update (PUT) a contact's message. The parameters below refer only to PUT requests."
+}

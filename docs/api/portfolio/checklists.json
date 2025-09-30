@@ -1,0 +1,202 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "PORTFOLIOCHECKLISTID": 37,
+            "POINTSREQUIRED": 0,
+            "TYPES": [
+              {
+                "PORTFOLIOTYPE": "Licence",
+                "LINKID": 75712,
+                "POINTS": 0,
+                "PORTFOLIOTYPENAME": "Drivers Licence",
+                "PORTFOLIOTYPEID": 4618,
+                "SORTORDER": 1
+              },
+              {
+                "PORTFOLIOTYPE": "Membership",
+                "LINKID": 75713,
+                "POINTS": 0,
+                "PORTFOLIOTYPENAME": "Membership Card",
+                "PORTFOLIOTYPEID": 2577,
+                "SORTORDER": 2
+              }
+            ],
+            "NAME": "Enrolment Checklist"
+          },
+          {
+            "PORTFOLIOCHECKLISTID": 2793,
+            "POINTSREQUIRED": 2,
+            "TYPES": [
+              {
+                "PORTFOLIOTYPE": "Membership",
+                "LINKID": 75669,
+                "POINTS": 1,
+                "PORTFOLIOTYPENAME": "a Description",
+                "PORTFOLIOTYPEID": 9704,
+                "SORTORDER": 1
+              },
+              {
+                "PORTFOLIOTYPE": "Qualification",
+                "LINKID": 75670,
+                "POINTS": 1,
+                "PORTFOLIOTYPENAME": "asdasdasd",
+                "PORTFOLIOTYPEID": 37104,
+                "SORTORDER": 2
+              },
+              {
+                "PORTFOLIOTYPE": "Qualification",
+                "LINKID": 75671,
+                "POINTS": 1,
+                "PORTFOLIOTYPENAME": "Forklift License",
+                "PORTFOLIOTYPEID": 14768,
+                "SORTORDER": 3
+              }
+            ],
+            "NAME": "My New Test Checklist"
+          }
+        ],
+        "DESCRIPTION": "This example returns all checklists defined in the account. In this case, there are 2.",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": {
+          "PORTFOLIOCHECKLISTID": 37,
+          "POINTSREQUIRED": 0,
+          "TYPES": [
+            {
+              "PORTFOLIOTYPE": "Licence",
+              "LINKID": 75712,
+              "POINTS": 0,
+              "PORTFOLIOTYPENAME": "Drivers Licence",
+              "PORTFOLIOTYPEID": 4618,
+              "SORTORDER": 1
+            },
+            {
+              "PORTFOLIOTYPE": "Membership",
+              "LINKID": 75713,
+              "POINTS": 0,
+              "PORTFOLIOTYPENAME": "Membership Card",
+              "PORTFOLIOTYPEID": 2577,
+              "SORTORDER": 2
+            }
+          ],
+          "NAME": "Enrolment Checklist"
+        },
+        "DESCRIPTION": "This example returns the checklist updated",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "points": 7,
+            "sortOrder": 3,
+            "portfolioTypeID": 2577
+          },
+          {
+            "points": 6,
+            "sortOrder": 5,
+            "portfolioTypeID": 4618
+          }
+        ],
+        "DESCRIPTION": "Example of Portfolio document types to be sent on the request if any.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/portfolio/checklists",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "6D8EA162BDDE1A4D72D9F0252B772A69",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "portfolioChecklistID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "A Contact Portfolio Checklist ID. Although this is supported, more likely you will use <b>/api/portfolio/checklist<b> if you want to return a single checklist."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "offset",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Used for paging - start at the record. Both offset and limit need to work paging."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "limit",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Used for paging - total records to retrieve. Both offset and limit needs to work paging."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "name",
+      "TYPE": "string",
+      "DESCRIPTION": "Name for the checklist to be created."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "pointsRequired",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Points to be set for the checklist."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "types",
+      "TYPE": "array",
+      "DESCRIPTION": "This should be the types to be linked to the checklist, and it can have multiple values."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "searchTerm",
+      "TYPE": "string",
+      "DESCRIPTION": "Search term to filter the checklists by name."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "includeTypes",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If true, will include the types linked to the checklist."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "orderBy",
+      "TYPE": "array",
+      "DESCRIPTION": "Sort by fields such as name, points required, etc. This should send as array of structure format.Expected keys are column and direction"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.portfolio",
+  "METHODS": "GET,POST",
+  "ACTION": {
+    "GET": "checklists",
+    "POST": "createChecklist"
+  },
+  "DESCRIPTION": "Returns a list of Contact Portfolio Checklists, along with the array of Portfolio document types that make up the checklist. These checklists can be used when searching for a contact's documents using GET <b>/api/contact/portfolio</b>."
+}

@@ -1,0 +1,31 @@
+{
+  "RESPONSE": {},
+  "PATTERN": "/task/categories",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "34448FCA5BCADC124CE6F7380DAF530A",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.task",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "categories"
+  },
+  "DESCRIPTION": "Pull back a list of workflow user task categories"
+}

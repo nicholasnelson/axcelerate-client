@@ -1,0 +1,76 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "SUCCESS": true,
+          "DATA": {
+            "ACTION": "https://checkout.stripe.com/pay/cs_test_a1PSGJOD",
+            "HTML": "<section id='stripe_payment_section'>\n<div>\nClick the button below to proceed to Stripe and process your payment.\n</div>\n<script src='https://stg.axcelerate.com/Assets/Scripts/accounting/ecommerce/checkout/stripe_checkout.js'></script>\n</section>",
+            "META": {},
+            "SCRIPT": ""
+          }
+        },
+        "DESCRIPTION": "SUCCESS: Returns true if a checkout form could be generated.<br>DATA.HTML: The HTML that should be rendered inside of an HTML form tag.<br>DATA.ACTION: The action attribute for the form into which the returned HTML is inserted.<br>DATA.META: This property will be removed. Do not use it in new implementations. <br>DATA.SCRIPT: This property will be removed. Do not use it in new implementations. <br><br>",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/accounting/ecommerce/payment/form",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "20B6E0F35033FBF4516A72540A4D0ED6",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "FORM",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "reference",
+      "TYPE": "string",
+      "DESCRIPTION": "The external identifier for the payment flow process."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "invoiceGUID",
+      "TYPE": "string",
+      "DESCRIPTION": "The GUID of the aXcelerate invoice for which payment should be collected."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "redirectURL",
+      "TYPE": "string",
+      "DESCRIPTION": "The URL to which the client will be redirected after payment processing."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "cancelURL",
+      "TYPE": "string",
+      "DESCRIPTION": "The URL to which the client is redirected if the client decides to cancel payment processing."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.accounting.ecommerce.flow_handler",
+  "METHODS": "FORM",
+  "ACTION": {
+    "FORM": "getPaymentForm"
+  },
+  "DESCRIPTION": "Returns the HTML and form action required to process an invoice payment using the payment platform configured in settings."
+}

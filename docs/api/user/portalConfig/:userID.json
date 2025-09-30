@@ -1,0 +1,115 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "enquiry_response_text": "This is a Test",
+          "config_name": "Sales Agent",
+          "enrolment_response_text": "This is a Test",
+          "step_order": [
+            "contactSearch",
+            "userLogin",
+            "enquiry",
+            "courses",
+            "portfolio"
+          ],
+          "stylesheet_override": "test",
+          "enroller_steps": {
+            "portfolio": {
+              "PORTFOLIOCHECKLISTID": null,
+              "DISPLAY": "Documentation",
+              "ID": "portfolio",
+              "TYPE": "portfolio",
+              "ISCRICOS": true
+            },
+            "enquiry": {
+              "emailTo": null,
+              "noteCodeID": "88",
+              "DISPLAY": "Enquiry",
+              "FIELDS": {
+                "ReplaceWithID": {
+                  "DISPLAY": "NewCustomField",
+                  "ID": "ReplaceWithID",
+                  "TYPE": "text",
+                  "CUSTOM": true
+                },
+                "GIVENNAME": {
+                  "DISPLAY": "Given Name",
+                  "TYPE": "text"
+                }
+              },
+              "ID": "enquiry",
+              "TYPE": "course-enquiry"
+            },
+            "courses": {
+              "DISPLAY": "Course",
+              "COURSE_TYPES": [
+                {
+                  "DISPLAY": "Short Course",
+                  "VALUE": "w"
+                },
+                {
+                  "DISPLAY": "Qualification",
+                  "VALUE": "p"
+                }
+              ],
+              "ID": "courses",
+              "TYPE": "courses"
+            },
+            "userLogin": {
+              "DISPLAY": "Login",
+              "ID": "userLogin",
+              "TYPE": "user-login"
+            },
+            "contactSearch": {
+              "contactList": null,
+              "DISPLAY": "Contact",
+              "ID": "contactSearch",
+              "TYPE": "contact-search"
+            }
+          },
+          "note_response_text": "This is a Test",
+          "config_id": "77775374-e8d8-1104-0fe0-a3b3e6a9bde8"
+        },
+        "DESCRIPTION": "The portal configuration will be returned (If a configuration exists for the User Type) in a JSON object.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/user/portalConfig/:userID",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "415EF149CFD6F36A6BF6514FE3438622",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service or AXToken Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "userID",
+      "TYPE": "string",
+      "DESCRIPTION": "The User ID"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.user",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getPortalConfig"
+  },
+  "DESCRIPTION": "Retrieve an aXcelerate User's Portal Configuration."
+}

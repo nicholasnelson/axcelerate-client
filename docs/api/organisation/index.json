@@ -1,0 +1,154 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": "21 - School - Government\r\n25 - School - Catholic\r\n27 - School - Independent\r\n31 - Technical and Further Education institute\r\n61 - Community-based adult education provider\r\n91 - Privately operated registered training organisation\r\n92 - Home school arrangement",
+        "DESCRIPTION": "School Type Identifier",
+        "FORMAT": "html"
+      },
+      {
+        "BODY": {
+          "MESSAGE": "Organisation Created Successfully",
+          "STATUS": "success",
+          "ORGID": 9999
+        },
+        "DESCRIPTION": "Example response for a successful request",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/organisation/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "7ACAC6ED6A6D0AAF05B279E7D23976B0",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "name",
+      "TYPE": "string",
+      "DESCRIPTION": "The name of the organisation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "legalName",
+      "TYPE": "string",
+      "DESCRIPTION": "The legal name of the organisation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "orgOptionalID",
+      "TYPE": "string",
+      "DESCRIPTION": "An optional identifier to use for this organisation record."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "parentOrgID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The parent organisation ID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "employerContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Contact ID of the Employer"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "payerContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Contact ID of the Payer"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ABN",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Australian Business Number"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "orgNameAccounting",
+      "TYPE": "string",
+      "DESCRIPTION": "The name of the organisation (for accounting / finance engine)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "organisationNotes",
+      "TYPE": "string",
+      "DESCRIPTION": "Notes field stored against the organisation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "purchaseOrderRequired",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Is a purchase order required when invoicing this organisation?"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "schoolTypeID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "School Type Identifier AVETMISS field. See samples below for valid values."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "categoryIDs",
+      "TYPE": "array",
+      "DESCRIPTION": "A list of valid Organisation Category IDs"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "keyContactIDs",
+      "TYPE": "array",
+      "DESCRIPTION": "A list of valid Contact IDs"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "active",
+      "TYPE": "boolean",
+      "DESCRIPTION": "The organisation's active status"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "customField_[variableName]",
+      "TYPE": "string",
+      "DESCRIPTION": "Replace [variableName] with the actual customField variable name to set a customField value against the Organisation. If updating a custom field that supports multiple values, you can use comma-delimited values or a JSON array. If using comma-delimited, it is expected the data is URL encoded first. For example, to get 2 values: 'A,B' and 'C' you would either pass: \"['A,B','C']\" or \"A%2CB,C\" "
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.organisation",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "create"
+  },
+  "DESCRIPTION": "Create an Organisation."
+}

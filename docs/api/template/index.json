@@ -1,0 +1,154 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "CONTENT": "Hello Lisa Jones",
+            "CONTACTID": 438788
+          },
+          {
+            "CONTENT": "Hello Julie Smith",
+            "CONTACTID": 508599
+          },
+          {
+            "CONTENT": "Hello Jill Watston",
+            "CONTACTID": 323099
+          }
+        ],
+        "DESCRIPTION": "This is an example of a return when getting a template for a workshop. The parameters passed were: type=w, instanceID=123, includeStatus=All, and content=Hello [Trainee Full Name] ",
+        "FORMAT": "json"
+      },
+      {
+        "BODY": [
+          {
+            "CONTENT": "Hello Jill Watston<br>\r\n<br>\r\nThank you for your interest in Certificate I in Business.<br>\r\n<br>\r\nHere are the units:\n\t\t<table border='\\'0\\'' cellpadding='\\'1\\'' cellspacing='\\'1\\'' style='\\'width:' 500px;\\'=''><tbody><tr><td><strong>Name</strong></td><td><strong>Code</strong></td></tr><tr class='\\'units\\''><td>BSBADM101A</td><td>Use business equipment and resources</td></tr><tr class='\\'units\\''><td>BSBCMM101A</td><td>Apply basic communication skills</td></tr><tr class='\\'units\\''><td>BSBIND201A</td><td>Work effectively in a business environment</td></tr><tr class='\\'units\\''><td>BSBITU101A</td><td>Operate a personal computer</td></tr><tr class='\\'units\\''><td>BSBITU102A</td><td>Develop keyboard skills</td></tr><tr class='\\'units\\''><td>BSBITU201A</td><td>Produce simple word processed documents</td></tr><tr class='\\'units\\''><td>BSBITU202A</td><td>Create and use spreadsheets</td></tr><tr class='\\'units\\''><td>BSBLED101A</td><td>Plan skills development</td></tr><tr class='\\'units\\''><td>BSBSUS201A</td><td>Participate in environmentally sustainable work practices</td></tr><tr class='\\'units\\''><td>BSBWHS201A</td><td>Contribute to health and safety of self and others</td></tr><tr class='\\'units\\''><td>BSBWOR202A</td><td>Organise and complete daily work activities</td></tr></tbody></table>\r\n<br>\r\n<br>\r\nHave a nice day,<br>\r\nTracey Benussi<br>\r\n<strong>VM Learning</strong><br>\r\naccounts@vmlearning.com.au",
+            "CONTACTID": 323099
+          }
+        ],
+        "DESCRIPTION": "This is an example of using a type and ID parameter with a contactID and a planID from a saved template in the system. ",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/template/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "0C466BAE93522656F077569A59120043",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "planID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of a template to use. One of planID or content is required. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "content",
+      "TYPE": "string",
+      "DESCRIPTION": "The template content to use. For example, anywhere you use the text [Trainee Full Name] it will replace that text with the contact's name. One of planID or content is required. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The contact to generate the template for. Either contactID must be passed, or a search parameter to determine contacts (instanceID/type, userRoleID, etc.) "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of course to generate the template for. Use with the instanceID or ID parameters. Either a course type and ID must be passed or a contactID. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "instanceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The course instance to generate the template for. If you pass an instanceID and type, you can generate an array of templates for each student on the course. Use the includeStatus parameter to determine which students you generate the template for. Either a course type and ID must be passed or another parameter which determines contacts (contactID, skillGroupID, contactRoleID, userRoleID). "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The course to generate the template for. It is preferable to use instanceID as a course at the ID level does not have students. If you pass type and ID you must also pass a contactID. "
+    },
+    {
+      "DEFAULT": "Enrolled,Completed",
+      "REQUIRED": false,
+      "NAME": "includeStatus",
+      "TYPE": "string",
+      "DESCRIPTION": "A list of statuses to generate a template for. The available statuses are: [All,Enrolled,Completed,Tentative,Cancelled,Suspended,Deferred]. This is used in combination with type and instanceID in order to generate templates for students. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "attachmentPlanID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of a template to use as an attachment. Will populate a key ATTACHMENT in the return."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "invoiceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "An invoiceID. Passing this will correctly parse any invoice related fields."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "userRoleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Return contacts who are users in this role. Can be a list."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "contactRoleID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Enterprise only. Return contacts who belong to this contact role. Can be a list."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "skillGroupID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "Enterprise only. Return contacts whose contact role contains this skill group. Can be a list."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "replaceContent",
+      "TYPE": "string",
+      "DESCRIPTION": "JSON object (stringified) containing key value pairs. Keys will represent template fields which will then be replaced within the template, allowing custom content to be added. The values can be HTML content that the template field will be replaced with."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.template",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getTemplate"
+  },
+  "DESCRIPTION": "Returns the results of a template filled in given the parameters. You can pass either a planID from the system to use a saved template, or you can pass the actual content of the template. It returns an array of results with two keys, CONTACTID and CONTENT. If attachmentPlanID is passed, it will also include the key ATTACHMENT. "
+}

@@ -1,0 +1,228 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "INVOICEID": 61649,
+            "CONTACTID": 14605,
+            "LEARNERID": 507097,
+            "AMOUNT": 490
+          },
+          {
+            "INVOICEID": 61649,
+            "CONTACTID": 15656,
+            "LEARNERID": 507098,
+            "AMOUNT": 490
+          }
+        ],
+        "DESCRIPTION": "Upon a successful enrolment, this returns an array of structs containing the unique learnerID and contactID for each student's enrolment",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/enrolMultiple",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "C3A476AA4EBF9ED597448E1F4AA14740",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "contactID",
+      "TYPE": "list",
+      "DESCRIPTION": "The IDs of the Contacts you are enrolling. This can be 1 or more."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "instanceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Activity Instance you are enrolling the contact into."
+    },
+    {
+      "DEFAULT": "w",
+      "REQUIRED": "false",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The type of the activity. w = workshop, p = accredited program, el = e-learning. For this method ONLY w is valid."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "payerID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Contact that is paying for the course. This must be passed for a multiple enrolment."
+    },
+    {
+      "DEFAULT": "0",
+      "REQUIRED": "false",
+      "NAME": "invoiceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the invoice created for this Contact (created during payment). If the invoiceID is not passed, or is 0, the booking will still go ahead and the contact will be invoiced for it."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "PONumber",
+      "TYPE": "string",
+      "DESCRIPTION": "If a new invoice is generated as a result of these bookings, use this as the Purchase Order Number. "
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "generateInvoice",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Determines whether you'd like a new invoice to be generated as a result of this booking. This will only work if the course cost is greater than $0. This also will not work if your aXcelerate System Settings are set to 'Free Online Bookings'. "
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "lockInvoiceItems",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If an new invoice is generated, determines whether the items are locked. Items must be locked before a payment can be applied against an invoice. However, some invoice details can later be changed, such as address and purchase order numbers. "
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "archiveInvoice",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If an new invoice is generated, determines whether it is completely locked and archived. Once archived, no invoice details can later be changed. "
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "suppressNotifications",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Don't send any email booking notifications. Auto-generate user emails will still send. "
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "sendAdminNotification",
+      "TYPE": "boolean",
+      "DESCRIPTION": "If suppressNotifications is true, this allows the admin booking notification to still be sent."
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "blockAdminNotification",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Explicitly blocks the admin notification, regardless of suppress settings"
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "useRegistrationFormDefaults",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Used for direct or linked accredited program bookings (type p). If true, the system will apply the default enrolment form values set against the system settings. This form can be edited under Settings > Registration Form > Class Enrolment Form. "
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "marketingAgentContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The ID of the Contact that should be set as the marketing agent for the enrolments."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "serviceDate",
+      "TYPE": "string",
+      "DESCRIPTION": "The (invoice item) Service date."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "PSTACDateVIC",
+      "TYPE": "date",
+      "DESCRIPTION": "[Type=P] Program Supervised Teaching Activity Completion Date for Victorian AVETMISS reporting."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "commencedWhileAtSchool",
+      "TYPE": "boolean",
+      "DESCRIPTION": "[Type=P] Commenced While at School Flag for Victorian AVETMISS reporting."
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "bookOnDefaultWorkshops",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Applicable only to program bookings (type=p), this will book the contact into any workshops linked to the class's units. For this to work, each unit in the class can only be linked to a single workshop. An error will be thrown if more than one workshop is against a class unit and this parameter is set to true."
+    },
+    {
+      "DEFAULT": "true",
+      "REQUIRED": "false",
+      "NAME": "syncDatesWithWorkshop",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Applicable only to program bookings (type=p) and where bookOnDefaultWorkshops is true. This will set unit start/end dates to the same as that of the linked workshops."
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "syncWithClassSchedule",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Applicable only to program bookings (type=p) and passing the dateCommenced parameter. This will offset all unit start/end dates based on the offset between the student's date commenced and the class start."
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "applyGST(DEPRECATED - Please use the GST_TYPE parameter)",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Applicable only to program bookings (type=p) - if true will mark the cost as includes GST. Normally, accredited training should be GST-free."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "GST_type",
+      "TYPE": "numeric",
+      "DESCRIPTION": "GST type; 0- no GST, 1- GST included"
+    },
+    {
+      "DEFAULT": "false",
+      "REQUIRED": "false",
+      "NAME": "autoGrantCT",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Applicable to any accredited bookings. The system will automatically set the subject outcome to CT for students where it detects a pre-existing competency. This will also prevent the student from being enrolled into any linked workshops or E-Learning for that subject. Subjects that expire will not have competencies automatically granted."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "dateCommenced",
+      "TYPE": "date",
+      "DESCRIPTION": "Applicable only to program bookings (type=p) - The enrolment Commencement Date."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "dateCompletionExpected",
+      "TYPE": "date",
+      "DESCRIPTION": "Applicable only to program bookings (type=p) - The Expected Completion Date. Ignored if using syncWithClassSchedule"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "enrolmultiple"
+  },
+  "DESCRIPTION": "Enrols one or more Contacts in a workshop activity Instance. For this enrolment function only workshops [type=w] is allowed. This method will also send an email to the students, the payer, and a notification to your administrator. Enrolments into linked E-Learning will be scheduled and done later by the system."
+}

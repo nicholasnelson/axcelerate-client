@@ -1,0 +1,212 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": "21 - School - Government\r\n25 - School - Catholic\r\n27 - School - Independent\r\n31 - Technical and Further Education institute\r\n61 - Community-based adult education provider\r\n91 - Privately operated registered training organisation\r\n92 - Home school arrangement",
+        "DESCRIPTION": "School Type Identifier",
+        "FORMAT": "html"
+      },
+      {
+        "BODY": {
+          "HIERACHYDEPTH": 2,
+          "HIERACHYPATH": "/264487/264488/",
+          "NWDF_ORGSIZEBRACKET": null,
+          "BANNER": "<img src='/images/logo.png'>",
+          "ORGNAMEACCOUNTING": null,
+          "PURCHASEORDERREQUIRED": 0,
+          "SCHOOLTYPEID": "91",
+          "BOOKING_NOTES": null,
+          "LEGALNAME": null,
+          "FINANCESYSTEMCARDID": null,
+          "HIERACHYROOT": 264487,
+          "PAYERCONTACTID": null,
+          "NAME": "DO Tha VooDoo2",
+          "ORGID": 264488,
+          "PARENT": {
+            "HIERACHYDEPTH": 1,
+            "HIERACHYPATH": "/264487/",
+            "NWDF_ORGSIZEBRACKET": null,
+            "ORGNAMEACCOUNTING": null,
+            "PURCHASEORDERREQUIRED": 0,
+            "BOOKING_NOTES": null,
+            "LEGALNAME": null,
+            "FINANCESYSTEMCARDID": null,
+            "HIERACHYROOT": 264487,
+            "PAYERCONTACTID": null,
+            "NAME": "DO Tha VooDoo",
+            "ORGID": 264487,
+            "EMPLOYERCONTACTID": null,
+            "ABN": null,
+            "ANZSIC": null,
+            "PARENTORGID": null,
+            "ORGANISATIONNOTES": "Testing 543210"
+          },
+          "ORGOPTIONALID": "1234",
+          "EMPLOYERCONTACTID": null,
+          "ABN": null,
+          "ANZSIC": null,
+          "PARENTORGID": 264487,
+          "ORGANISATIONNOTES": "Testing 9876543210",
+          "DETAILS": [],
+          "CATEGORIES": [
+            {
+              "CATEGORYID": 1234,
+              "CATEGORYCODE": "org101",
+              "CATEGORYDESCRIPTOR": "Organisation Group A",
+              "ACTIVE": 1
+            }
+          ],
+          "CUSTOMFIELD_MYFIRSTFIELD": "This is my first field",
+          "CUSTOMFIELD_MYMULTISELECT": [
+            "A",
+            "B"
+          ]
+        },
+        "DESCRIPTION": "Returns a structure of organisation information. ",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/organisation/:orgID",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "971A3AF0F4D290FCE082EFDE67858962",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "orgID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The organisation ID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "orgOptionalID",
+      "TYPE": "string",
+      "DESCRIPTION": "An optional identifier to use for this organisation record."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "parentOrgID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The parent organisation ID"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "employerContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Contact ID of the Employer"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "payerContactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Contact ID of the Payer"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "name",
+      "TYPE": "string",
+      "DESCRIPTION": "The name of the organisation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "legalName",
+      "TYPE": "string",
+      "DESCRIPTION": "The legal name of the organisation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "ABN",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Australian Business Number"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "orgNameAccounting",
+      "TYPE": "string",
+      "DESCRIPTION": "The name of the organisation (for accounting / finance engine)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "organisationNotes",
+      "TYPE": "string",
+      "DESCRIPTION": "Notes field stored against the organisation"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "purchaseOrderRequired",
+      "TYPE": "boolean",
+      "DESCRIPTION": "Is a purchase order required when invoicing this organisation?"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "schoolTypeID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "School Type Identifier AVETMISS field. See samples below for valid values."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "categoryIDs",
+      "TYPE": "array",
+      "DESCRIPTION": "A list of valid Organisation Category IDs"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "keyContactIDs",
+      "TYPE": "array",
+      "DESCRIPTION": "A list of valid Contact IDs"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "active",
+      "TYPE": "boolean",
+      "DESCRIPTION": "The organisation's active status"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "customField_[variableName]",
+      "TYPE": "string",
+      "DESCRIPTION": "Replace [variableName] with the actual customField variable name to set a customField value against the Organisation. If updating a custom field that supports multiple values, you can use comma-delimited values or a JSON array. If using comma-delimited, it is expected the data is URL encoded first. For example, to get 2 values: 'A,B' and 'C' you would either pass: \"['A,B','C']\" or \"A%2CB,C\" "
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.organisation",
+  "METHODS": "GET,PUT",
+  "ACTION": {
+    "PUT": "update",
+    "GET": "read"
+  },
+  "DESCRIPTION": "Read (GET) or Update (PUT) an Organisation record. The parameters below refer only to PUT requests."
+}

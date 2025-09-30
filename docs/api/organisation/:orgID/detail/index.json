@@ -1,0 +1,122 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "MESSAGE": "Organisation Details Created Successfully",
+          "DETAILID": 123456,
+          "STATUS": "success"
+        },
+        "DESCRIPTION": "Example response for a successful (POST) request",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/organisation/:orgID/detail/",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "orgID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Organisation ID"
+    }
+  ],
+  "RESOURCEID": "369790A0DAAB894FF1828466FE16F29D",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "POST",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The Detail type: 'Street Address' or 'Postal Address'."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "phone",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation phone number"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "fax",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation fax number"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "emailAddress",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation email address"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "address1",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation address (line 1)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "address2",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation address (line 2)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "city",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation city / suburb"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "state",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation state"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "postCode",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation post code"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "country",
+      "TYPE": "string",
+      "DESCRIPTION": "The organisation country"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.organisation",
+  "METHODS": "POST",
+  "ACTION": {
+    "POST": "createDetail"
+  },
+  "DESCRIPTION": "Create (POST) an Organisation Detail record."
+}

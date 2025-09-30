@@ -1,0 +1,415 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "INSTANCEID": 175740,
+            "TYPE": "w",
+            "COMPLEXID": 468817,
+            "DATE": "2015-08-27",
+            "STARTTIME": "08:30 AM",
+            "FINISHTIME": "04:30 PM",
+            "DURATION": 480,
+            "ENROLLEES": [
+              {
+                "ENROLID": 830308,
+                "CONTACTID": 1981857,
+                "GIVENNAME": "Letitia",
+                "SURNAME": "Vink",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": false,
+                "ATTENDANCEID": 1433877,
+                "ATTENDEDDURATION": 480,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/1981857.jpg"
+              },
+              {
+                "ENROLID": 868632,
+                "CONTACTID": 2010891,
+                "GIVENNAME": "Maxine",
+                "SURNAME": "Knox",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": true,
+                "ATTENDANCEID": 1433878,
+                "ATTENDEDDURATION": 120,
+                "COMMENT": "Testing 321",
+                "PHOTOURL": "https://example.com/photo/2010891.jpg"
+              },
+              {
+                "ENROLID": 899944,
+                "CONTACTID": 2104754,
+                "GIVENNAME": "Melissa",
+                "SURNAME": "Williams",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/2104754.jpg"
+              },
+              {
+                "ENROLID": 900312,
+                "CONTACTID": 1038809,
+                "GIVENNAME": "Emily",
+                "SURNAME": "Harris",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/1038809.jpg"
+              },
+              {
+                "ENROLID": 901375,
+                "CONTACTID": 2083804,
+                "GIVENNAME": "Gemma",
+                "SURNAME": "Willis",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/2083804.jpg"
+              },
+              {
+                "ENROLID": 913946,
+                "CONTACTID": 539585,
+                "GIVENNAME": "Danielle",
+                "SURNAME": "O'Neil",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/539585.jpg"
+              },
+              {
+                "ENROLID": 1027760,
+                "CONTACTID": 2399446,
+                "GIVENNAME": "Catherine",
+                "SURNAME": "Tan",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/2399446.jpg"
+              },
+              {
+                "ENROLID": 1027761,
+                "CONTACTID": 2399470,
+                "GIVENNAME": "Maxine",
+                "SURNAME": "Fairholm",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/2399470.jpg"
+              },
+              {
+                "ENROLID": 1027762,
+                "CONTACTID": 2403549,
+                "GIVENNAME": "Heidi",
+                "SURNAME": "McKellar",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/2403549.jpg"
+              },
+              {
+                "ENROLID": 1029508,
+                "CONTACTID": 2293648,
+                "GIVENNAME": "Elizabeth",
+                "SURNAME": "Harding",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/2293648.jpg"
+              },
+              {
+                "ENROLID": 1071001,
+                "CONTACTID": 2399413,
+                "GIVENNAME": "Serena",
+                "SURNAME": "Hoffman",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/2399413.jpg"
+              },
+              {
+                "ENROLID": 1071058,
+                "CONTACTID": 20614,
+                "GIVENNAME": "Suzette",
+                "SURNAME": "Powell",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/20614.jpg"
+              }
+            ]
+          },
+          {
+            "INSTANCEID": 175740,
+            "TYPE": "w",
+            "COMPLEXID": 468818,
+            "DATE": "2015-09-03",
+            "STARTTIME": "08:30 AM",
+            "FINISHTIME": "04:30 PM",
+            "DURATION": 480,
+            "ENROLLEES": [
+              {
+                "ENROLID": 1071058,
+                "CONTACTID": 20614,
+                "GIVENNAME": "Suzette",
+                "SURNAME": "Powell",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/20614.jpg"
+              },
+              {
+                "ENROLID": 1071001,
+                "CONTACTID": 2399413,
+                "GIVENNAME": "Serena",
+                "SURNAME": "Hoffman",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/2399413.jpg"
+              },
+              {
+                "ENROLID": 1029508,
+                "CONTACTID": 2293648,
+                "GIVENNAME": "Elizabeth",
+                "SURNAME": "Harding",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/2293648.jpg"
+              },
+              {
+                "ENROLID": 1027762,
+                "CONTACTID": 2403549,
+                "GIVENNAME": "Heidi",
+                "SURNAME": "McKellar",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/2403549.jpg"
+              },
+              {
+                "ENROLID": 1027761,
+                "CONTACTID": 2399470,
+                "GIVENNAME": "Maxine",
+                "SURNAME": "Fairholm",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/2399470.jpg"
+              },
+              {
+                "ENROLID": 1027760,
+                "CONTACTID": 2399446,
+                "GIVENNAME": "Catherine",
+                "SURNAME": "Tan",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/2399446.jpg"
+              },
+              {
+                "ENROLID": 913946,
+                "CONTACTID": 539585,
+                "GIVENNAME": "Danielle",
+                "SURNAME": "O'Neil",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/539585.jpg"
+              },
+              {
+                "ENROLID": 901375,
+                "CONTACTID": 2083804,
+                "GIVENNAME": "Gemma",
+                "SURNAME": "Willis",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/2083804.jpg"
+              },
+              {
+                "ENROLID": 900312,
+                "CONTACTID": 1038809,
+                "GIVENNAME": "Emily",
+                "SURNAME": "Harris",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/1038809.jpg"
+              },
+              {
+                "ENROLID": 899944,
+                "CONTACTID": 2104754,
+                "GIVENNAME": "Melissa",
+                "SURNAME": "Williams",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/2104754.jpg"
+              },
+              {
+                "ENROLID": 868632,
+                "CONTACTID": 2010891,
+                "GIVENNAME": "Maxine",
+                "SURNAME": "Knox",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/2010891.jpg"
+              },
+              {
+                "ENROLID": 830308,
+                "CONTACTID": 1981857,
+                "GIVENNAME": "Letitia",
+                "SURNAME": "Vink",
+                "COMPLETEDFLAG": false,
+                "ATTENDEDFLAG": null,
+                "ATTENDANCEID": null,
+                "ATTENDEDDURATION": null,
+                "COMMENT": "",
+                "PHOTOURL": "https://example.com/photo/1981857.jpg"
+              }
+            ]
+          }
+        ],
+        "DESCRIPTION": "Upon a successful call of this endpoint, the API will return the Sessions and Enrollees related to the Instance.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/instance/attendance",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "13CB7FA641173CBC2079C657A0CE0B85",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "instanceID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The Instance ID of the activity you want to retrieve the attendance for (currently only works for workshops [type=w])."
+    },
+    {
+      "DEFAULT": "w",
+      "REQUIRED": "false",
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "The activity type of the activity. w = workshop [ not currently availabile: p = accredited program & el = e-learning]."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "contactID",
+      "TYPE": "string",
+      "DESCRIPTION": "The contactID of the Enrollee. (required when updating)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "attended",
+      "TYPE": "string",
+      "DESCRIPTION": "The attended flag, 1 = attended, 0 = did not attend. (required when updating)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "complexID",
+      "TYPE": "string",
+      "DESCRIPTION": "The complexID of the Session. (required when updating)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "duration",
+      "TYPE": "string",
+      "DESCRIPTION": "This field is no longer supported for PUT or POST requests. aXcelerate will calculate the session duration from the Start and Finish times."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "arrival",
+      "TYPE": "dateTime",
+      "DESCRIPTION": "The date & time the student arrived (yyyy-mm-dd hh:mm)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "departure",
+      "TYPE": "dateTime",
+      "DESCRIPTION": "The date & time the student departed (yyyy-mm-dd hh:mm)"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "false",
+      "NAME": "comment",
+      "TYPE": "string",
+      "DESCRIPTION": "Associate a comment with this attendance record."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.course",
+  "METHODS": "GET, PUT",
+  "ACTION": {
+    "PUT": "setAttendance",
+    "GET": "getAttendance"
+  },
+  "DESCRIPTION": "Gets / Sets attendance for a Course Instance. <br/> <strong>NOTE:</strong> You cannot set attendance records against workshops that do not have Sessions."
+}

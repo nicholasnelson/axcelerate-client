@@ -1,0 +1,115 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "ID": 4566,
+            "CODE": "3000",
+            "NAME": "MELBOURNE",
+            "BUILDINGNAME": "E Building",
+            "UNITNO": "99A",
+            "STREETNO": "35",
+            "STREETNAME": "Vic Lane",
+            "CITY": "MELBOURNE",
+            "STATE": "VIC",
+            "POSTCODE": "3000",
+            "COUNTRY": "Australia",
+            "COUNTRYID": 1101,
+            "ACTIVE": true
+          },
+          {
+            "ID": 23222,
+            "CODE": "4680",
+            "NAME": "GLADSTONE",
+            "BUILDINGNAME": null,
+            "UNITNO": null,
+            "STREETNO": null,
+            "STREETNAME": null,
+            "CITY": "GLADSTONE",
+            "STATE": "QLD",
+            "POSTCODE": "4680",
+            "COUNTRY": "Australia",
+            "COUNTRYID": 1101,
+            "ACTIVE": true
+          },
+          {
+            "ID": 33259,
+            "CODE": "OSPC",
+            "NAME": "Overseas example - NZ",
+            "BUILDINGNAME": null,
+            "UNITNO": null,
+            "STREETNO": null,
+            "STREETNAME": null,
+            "CITY": "Overseas address",
+            "STATE": "OVS",
+            "POSTCODE": "OSPC",
+            "COUNTRY": "New Zealand",
+            "COUNTRYID": 1201,
+            "ACTIVE": true
+          },
+          {
+            "ID": 13533,
+            "CODE": "4070",
+            "NAME": "Moggill Hall",
+            "BUILDINGNAME": "Moggill Hall",
+            "UNITNO": null,
+            "STREETNO": "33",
+            "STREETNAME": "Moggill Rd",
+            "CITY": "MOGGILL",
+            "STATE": "QLD",
+            "POSTCODE": "4070",
+            "COUNTRY": "Australia",
+            "COUNTRYID": 1101,
+            "ACTIVE": false
+          }
+        ],
+        "DESCRIPTION": "",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/course/deliveryLocations/",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "D42373A9662C02F42D883A5C9F00E8B8",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "active",
+      "TYPE": "boolean",
+      "DESCRIPTION": "True to return the active Delivery Locations only"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "deliveryLocationCode",
+      "TYPE": "string",
+      "DESCRIPTION": "To search on the Delivery Location Code, which is not the unique numeric ID, but the identifier reported to NCVER"
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.deliveryLocation",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "search"
+  },
+  "DESCRIPTION": "Returns a list accredited Delivery Locations. These are the locations reported to NCVER through the AVETMISS reports and are attached to classes (type=p) and units only. The results are ordered by active first, then identifier and name."
+}

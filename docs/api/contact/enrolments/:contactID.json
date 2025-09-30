@@ -1,0 +1,198 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "ROWID": 1,
+            "TYPE": "p",
+            "ID": 3296,
+            "INSTANCEID": 27495,
+            "ENROLID": 913741,
+            "INVOICEID": 12344,
+            "INVOICEPAID": true,
+            "LEARNERID": 913741,
+            "CODE": "",
+            "LOCATION": "",
+            "DELIVERY": "Unknown",
+            "ACTIVITYTYPE": "Axcelerate Training Program",
+            "NAME": "May Intake 2013",
+            "STARTDATE": "2013-05-01",
+            "FINISHDATE": "2013-05-31",
+            "MANDATORY": false,
+            "STATUS": "Enrolled",
+            "SCHOOLTYPEID": "25",
+            "SCHOOLORGID": 538562,
+            "COUNT": 3,
+            "CUSTOMFIELD_TESTINGDATE": "2013-08-31",
+            "CUSTOMFIELD_CLASSFIELD": [
+              "Multi field at class level",
+              "Some other value"
+            ]
+          },
+          {
+            "ROWID": 2,
+            "TYPE": "el",
+            "ID": 1670,
+            "INSTANCEID": 1670,
+            "ENROLID": 6202,
+            "INVOICEID": null,
+            "INVOICEPAID": false,
+            "LEARNERID": 6202,
+            "CODE": "",
+            "LOCATION": "Online",
+            "DELIVERY": "Online",
+            "ACTIVITYTYPE": "moodle",
+            "NAME": "Hospitality for Cruise Ships b",
+            "STARTDATE": "2014-03-27",
+            "FINISHDATE": "",
+            "MANDATORY": false,
+            "STATUS": "Booked",
+            "SCHOOLTYPEID": null,
+            "SCHOOLORGID": null,
+            "COUNT": 3,
+            "LAUNCHURL": "http://moodle01.axcelerate.com.au/login/?axtoken=oQKBPj%2FuWV0rWzAlnkl59Q%3D%3D&courseid=937"
+          },
+          {
+            "ROWID": 3,
+            "TYPE": "w",
+            "ID": 1727,
+            "INSTANCEID": 12297,
+            "ENROLID": 56937,
+            "INVOICEID": null,
+            "INVOICEPAID": false,
+            "LEARNERID": 56937,
+            "CODE": "",
+            "LOCATION": "Yeppoon",
+            "DELIVERY": "Face-to-Face",
+            "ACTIVITYTYPE": "aXcelerate Training - Web-based (Mark)",
+            "NAME": "aXcelerate Training",
+            "STARTDATE": "2011-10-18",
+            "FINISHDATE": "2011-10-19",
+            "MANDATORY": true,
+            "STATUS": "Booked",
+            "SCHOOLTYPEID": null,
+            "SCHOOLORGID": null,
+            "COUNT": 3,
+            "COMPLEXDATES": [
+              {
+                "DATE": "2011-10-18",
+                "STARTTIME": "09:00:00",
+                "ENDTIME": "15:00:00",
+                "TRAINERCONTACTID": 28619,
+                "LOCATION": "",
+                "ROOMID": 0
+              },
+              {
+                "DATE": "2011-10-19",
+                "STARTTIME": "09:00:00",
+                "ENDTIME": "12:00:00",
+                "TRAINERCONTACTID": 28619,
+                "LOCATION": "",
+                "ROOMID": 0
+              }
+            ]
+          },
+          {
+            "ROWID": 4,
+            "TYPE": "s",
+            "ID": 118809,
+            "INSTANCEID": 118809,
+            "ENROLID": 1503065,
+            "INVOICEID": null,
+            "INVOICEPAID": false,
+            "LEARNERID": 1503065,
+            "CODE": "BSBITU201A",
+            "LOCATION": "VM Learning Offices",
+            "DELIVERY": "Unknown",
+            "NAME": "Produce simple word processed documents",
+            "STARTDATE": "2013-01-01",
+            "FINISHDATE": "2014-12-31",
+            "MANDATORY": false,
+            "STATUS": "C",
+            "OUTCOMECODE": "20",
+            "SCHOOLTYPEID": null,
+            "SCHOOLORGID": null,
+            "COUNT": 11
+          },
+          {
+            "ROWID": 5,
+            "TYPE": "s",
+            "ID": 118810,
+            "INSTANCEID": 118810,
+            "ENROLID": 1503065,
+            "INVOICEID": null,
+            "INVOICEPAID": false,
+            "LEARNERID": 1503065,
+            "CODE": "BSBADM101A",
+            "LOCATION": "VM Learning Offices",
+            "DELIVERY": "Unknown",
+            "ACTIVITYTYPE": "Certificate I in Business",
+            "NAME": "Use business equipment and resources",
+            "STARTDATE": "2013-01-01",
+            "FINISHDATE": "2014-12-31",
+            "MANDATORY": false,
+            "STATUS": "C",
+            "OUTCOMECODE": "20",
+            "SCHOOLTYPEID": null,
+            "SCHOOLORGID": null,
+            "COUNT": 11
+          }
+        ],
+        "DESCRIPTION": "The enrolment information will be returned in an object.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/contact/enrolments/:contactID",
+  "PLACEHOLDERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "contactID",
+      "TYPE": "numeric",
+      "DESCRIPTION": "The resource contact ID to interact with"
+    }
+  ],
+  "RESOURCEID": "94E9E5F75EC2E31D39857A6E890971EB",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "status",
+      "TYPE": "string",
+      "DESCRIPTION": "Filter enrolments by status."
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": false,
+      "NAME": "type",
+      "TYPE": "string",
+      "DESCRIPTION": "Filter enrolments by type."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.contact",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "getEnrolments"
+  },
+  "DESCRIPTION": "Returns enrolments for a specific contact."
+}

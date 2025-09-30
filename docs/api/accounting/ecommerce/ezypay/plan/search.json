@@ -1,0 +1,104 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": {
+          "TERM": [
+            {
+              "CREDIT_CARD": {
+                "SURCHARGE": {
+                  "PERCENT": 0,
+                  "TYPE": 0,
+                  "AMOUNT": 0
+                }
+              },
+              "INITIAL_PAYMENT_AMOUNT": 0,
+              "FREQUENCY": {
+                "UNIT": "w"
+              },
+              "AVAILABLE_PAYMENT_METHODS": [
+                "CREDIT_CARD",
+                "BANK_ACCOUNT"
+              ],
+              "TERM_ID": "e045d1e5-7398-4356-ba1b-e6bfce109a79",
+              "LABEL": "Weekly Payments",
+              "INITIAL_ONE_OF_PAYMENT": 0,
+              "BANK_ACCOUNT": {
+                "SURCHARGE": {
+                  "PERCENT": 0,
+                  "TYPE": 0,
+                  "AMOUNT": 0
+                }
+              }
+            },
+            {
+              "CREDIT_CARD": {
+                "SURCHARGE": {
+                  "PERCENT": 0,
+                  "TYPE": 0,
+                  "AMOUNT": 0
+                }
+              },
+              "INITIAL_PAYMENT_AMOUNT": 0,
+              "FREQUENCY": {
+                "UNIT": "m"
+              },
+              "AVAILABLE_PAYMENT_METHODS": [
+                "CREDIT_CARD",
+                "BANK_ACCOUNT"
+              ],
+              "TERM_ID": "64b9eb32-e6b6-47be-bd05-e4029ac2bd4b",
+              "LABEL": "Monthly Payment",
+              "INITIAL_ONE_OF_PAYMENT": 0,
+              "BANK_ACCOUNT": {
+                "SURCHARGE": {
+                  "PERCENT": 0,
+                  "TYPE": 0,
+                  "AMOUNT": 0
+                }
+              }
+            }
+          ]
+        },
+        "DESCRIPTION": "TERM_ID:The identifier for the payment terms.<br>LABEL:The user defined label describing the terms to the end user in plain text.<br>INITIAL_PAYMENT_AMOUNT:The fixed amount of money that will be due at checkout. (zero if a INITIAL_PAYMENT_PERCENTAGE has been set)<br>AVAILABLE_PAYMENT_METHODS:The payment methods that can be used to pay for the outstanding amount. Valid values are: CREDIT_CARD,BANK_ACCOUNT.<br><br><br>Depending on the available payment methods the following keys will also exist. The name of these keys are returned in the AVAILABLE_PAYMENT_METHODS field.<br>CREDIT_CARD: Information related to paying using a credit card. This key only exists if CREDIT_CARD is one of the available payment methods.<br><br>BANK_ACCOUNT: Information related to paying using direct debit from a bank account. This key only exists if BANK_ACCOUNT is one of the available payment methods.<br><br><br><br>The CREDIT_CARD and BANK_ACCOUNT keys have the following sub key:<br>SURCHARGE:The surcharge applied for using this payment method.<br>SURCHARGE.TYPE:0 No Surcharge, 1:Percentage of each transaction amount. 2:Fixed amount per transaction.<br>SURCHARGE.PERCENT:Percentage of surcharge applied. <br>SURCHARGE.AMOUNT:Fixed surcharge amount.<br><br><br>",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/accounting/ecommerce/ezypay/plan/search",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "F4CEB8E303772C4E94D631D887FCAC5E",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": true,
+      "NAME": "amount",
+      "TYPE": "string",
+      "DESCRIPTION": "The amount of money that is to be collected."
+    }
+  ],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.accounting.ecommerce.ezypay.ezpay_plan_handler",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "search"
+  },
+  "DESCRIPTION": "Returns an array of ezypay payment plans that are available for paying the passed in moneytary value."
+}

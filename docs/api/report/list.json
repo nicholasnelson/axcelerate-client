@@ -1,0 +1,54 @@
+{
+  "RESPONSE": {
+    "SAMPLES": [
+      {
+        "BODY": [
+          {
+            "NAME": "Classes",
+            "WAREHOUSED_REPORTREFERENCE": "classDetails_withAggregates",
+            "LIVE_REPORTREFERENCE": "classDetails",
+            "DESCRIPTION": "This report will display data relating to Classes.",
+            "GROUP": "Accredited Training"
+          },
+          {
+            "NAME": "Class Enrolments",
+            "WAREHOUSED_REPORTREFERENCE": "classEnrolmentDetailsCached",
+            "LIVE_REPORTREFERENCE": "classEnrolmentDetails",
+            "DESCRIPTION": "This report will display data relating to ....",
+            "GROUP": "Accredited Training"
+          }
+        ],
+        "DESCRIPTION": "An example report returned in JSON format.",
+        "FORMAT": "json"
+      }
+    ]
+  },
+  "PATTERN": "/report/list",
+  "PLACEHOLDERS": [],
+  "RESOURCEID": "B00E0C83D8493912D8DB03BE39CB2191",
+  "HEADERS": [
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "apitoken",
+      "TYPE": "string",
+      "DESCRIPTION": "API Key value"
+    },
+    {
+      "DEFAULT": "",
+      "REQUIRED": "true",
+      "NAME": "wstoken",
+      "TYPE": "string",
+      "DESCRIPTION": "Web Service Key value"
+    }
+  ],
+  "DEFAULTMETHOD": "GET",
+  "PARAMETERS": [],
+  "DEFAULTFORMAT": "json",
+  "HANDLER": "api.report",
+  "METHODS": "GET",
+  "ACTION": {
+    "GET": "list"
+  },
+  "DESCRIPTION": "Returns an array of available reports, their names and descriptions. The values returned in the warehoused_ReportReference and live_ReportReference are the reference values required in the other report APIs (e.g. api/report/run, api/report/fields)"
+}
